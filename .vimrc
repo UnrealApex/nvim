@@ -50,6 +50,9 @@ syntax on
 set showmatch
 set noswapfile
 set smartindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
 set smartcase
 " failed attempt to halt Vim creating those pesky .swp and .~un files
 set nobackup
@@ -76,7 +79,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 " Vim Commentary
 Plug 'tpope/vim-commentary'
+" Gruvbox
+Plug 'morhetz/gruvbox'
 call plug#end()
+
+" set Gruvbox as the color scheme
+colorscheme gruvbox
+set bg=dark
 
 " map the hypen key (-) to toggle NERDTree
 nmap - :NERDTreeToggle<CR>
