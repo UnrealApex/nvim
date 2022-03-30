@@ -80,3 +80,5 @@ call plug#end()
 
 " map the hypen key (-) to toggle NERDTree
 nmap - :NERDTreeToggle<CR>
+" map ctrl +  backspace to delete the previous word in insert mode
+imap <C-BS> <C-W>
