@@ -62,7 +62,8 @@ set wildmenu
 set number
 " Show relative line numbers
 set relativenumber
-
+" set updatetime to 750 milliseconds
+set updatetime=250
 " plugins (make sure you have VimPlug installed)
 call plug#begin('~/.vim/plugged')
 " NERDTree
