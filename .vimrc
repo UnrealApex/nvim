@@ -80,6 +80,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 " Vim Commentary
 Plug 'tpope/vim-commentary'
+" code completion
+Plug 'valloric/youcompleteme'
+" indent guides
+Plug 'yggdroot/indentline'
+" Goyo
+Plug 'junegunn/goyo.vim'
 " Gruvbox
 Plug 'morhetz/gruvbox'
 call plug#end()
