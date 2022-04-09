@@ -75,8 +75,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 " Vim Airline
 Plug 'vim-airline/vim-airline'
-" Fugitive Vim
+" Fugitive.vim
 Plug 'tpope/vim-fugitive'
+" Sensible.vim
+Plug 'tpope/vim-sensible'
 " Vim Surround
 Plug 'tpope/vim-surround'
 " Vim Commentary
