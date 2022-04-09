@@ -49,6 +49,7 @@ set noerrorbells visualbell t_vb=
 syntax on
 set showmatch
 set noswapfile
+set autoindent
 set smartindent
 set tabstop=2
 set shiftwidth=2
