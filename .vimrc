@@ -64,8 +64,6 @@ set number
 set relativenumber
 " set updatetime to 700 milliseconds
 set updatetime=700
-" set file encoding to utf-8
-set encoding=utf-8
 " plugins (make sure you have VimPlug installed)
 call plug#begin('~/.vim/plugged')
 " NERDTree
