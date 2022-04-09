@@ -65,7 +65,7 @@ set number
 set relativenumber
 " set updatetime to 700 milliseconds
 set updatetime=700
-" plugins (make sure you have VimPlug installed)
+" plugins (make sure you have VimPlug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
 " NERDTree
 Plug 'scrooloose/nerdtree'
