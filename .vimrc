@@ -85,8 +85,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 " Vim Commentary
 Plug 'tpope/vim-commentary'
-" code completion
-Plug 'valloric/youcompleteme'
 " indent guides
 Plug 'yggdroot/indentline'
 " Goyo
