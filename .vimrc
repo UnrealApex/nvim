@@ -47,7 +47,6 @@ set nu
 set noerrorbells visualbell t_vb=
 " syntax highlighting
 syntax on
-set showmatch
 set noswapfile
 set autoindent
 set smartindent
