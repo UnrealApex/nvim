@@ -45,6 +45,8 @@ Plug 'tpope/vim-commentary'
 Plug 'yggdroot/indentline'
 " Goyo
 Plug 'junegunn/goyo.vim'
+" GitHub Copilot
+Plug 'github/copilot.vim'
 call plug#end()
 
 set bg=dark
