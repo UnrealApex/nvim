@@ -89,8 +89,6 @@ Plug 'yggdroot/indentline'
 Plug 'junegunn/goyo.vim'
 call plug#end()
 
-" set Gruvbox as the color scheme
-colorscheme gruvbox
 set bg=dark
 
 " map the hypen key (-) to toggle NERDTree
