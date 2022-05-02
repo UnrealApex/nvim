@@ -87,8 +87,6 @@ Plug 'tpope/vim-commentary'
 Plug 'yggdroot/indentline'
 " Goyo
 Plug 'junegunn/goyo.vim'
-" Gruvbox
-Plug 'morhetz/gruvbox'
 call plug#end()
 
 " set Gruvbox as the color scheme
