@@ -63,8 +63,6 @@ set wildmenu
 set number
 " Show relative line numbers
 set relativenumber
-" briefly show the matching parenthesis, braces, brackets, quotes, etc...
-set showmatch
 " set updatetime to 700 milliseconds
 set updatetime=700
 " plugins (make sure you have VimPlug installed, run :PlugInstall to install them)
