@@ -1,7 +1,7 @@
 " set the font to Consolas and the font size to 14 pixels
 set guifont=Consolas:h14
 " show line numbers
-set nu
+set number
 " turn off annoying error bell
 set noerrorbells visualbell t_vb=
 " syntax highlighting
@@ -17,8 +17,6 @@ set smartcase
 set nobackup
 set wildmode=longest:full,full
 set wildmenu
-" Show current line number
-set number
 " Show relative line numbers
 set relativenumber
 " set updatetime to 700 milliseconds
