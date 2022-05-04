@@ -8,7 +8,6 @@ set relativenumber
 set noerrorbells visualbell t_vb=
 " syntax highlighting
 syntax on
-set noswapfile
 set autoindent
 set smartindent
 set tabstop=2
@@ -17,6 +16,7 @@ set expandtab
 set smartcase
 " failed attempt to halt Vim creating those pesky .swp and .~un files
 set nobackup
+set noswapfile
 set wildmode=longest:full,full
 set wildmenu
 " set updatetime to 700 milliseconds
