@@ -2,6 +2,8 @@
 set guifont=Consolas:h14
 " show line numbers
 set number
+" Show relative line numbers
+set relativenumber
 " turn off annoying error bell
 set noerrorbells visualbell t_vb=
 " syntax highlighting
@@ -17,8 +19,6 @@ set smartcase
 set nobackup
 set wildmode=longest:full,full
 set wildmenu
-" Show relative line numbers
-set relativenumber
 " set updatetime to 700 milliseconds
 set updatetime=700
 " plugins (make sure you have VimPlug installed, run :PlugInstall to install them)
