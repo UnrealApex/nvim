@@ -8,6 +8,9 @@ set relativenumber
 set noerrorbells visualbell t_vb=
 " syntax highlighting
 syntax on
+" Omni completion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 set autoindent
 set smartindent
 set tabstop=2
@@ -21,6 +24,8 @@ set wildmode=longest:full,full
 set wildmenu
 " set updatetime to 700 milliseconds
 set updatetime=700
+
+
 " plugins (make sure you have VimPlug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
 " NERDTree
