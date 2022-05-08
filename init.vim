@@ -52,6 +52,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'github/copilot.vim'
 " Rainbow Parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
+" Conquerer of Completion(code completion)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set bg=dark
