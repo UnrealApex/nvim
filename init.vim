@@ -24,7 +24,8 @@ set wildmode=longest:full,full
 set wildmenu
 " set updatetime to 700 milliseconds
 set updatetime=700
-
+" set the working directory as the one of the file currently being edited
+set autochdir
 
 " plugins (make sure you have VimPlug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
