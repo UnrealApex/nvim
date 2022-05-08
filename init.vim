@@ -73,6 +73,9 @@ call plug#end()
 
 set bg=dark
 
+" Refresh NerdTree when it is focused
+autocmd BufEnter NERD_tree_* | execute 'normal R'
+
 " map the hypen key (-) to toggle NERDTree
 nmap - :NERDTreeToggle<CR>
 " map ctrl +  backspace to delete the previous word in insert mode
