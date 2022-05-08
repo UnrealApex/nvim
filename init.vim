@@ -54,6 +54,21 @@ Plug 'github/copilot.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Conquerer of Completion(code completion)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" CoC language servers
+" Pyright
+Plug 'fannheyward/coc-pyright'
+" Markdown
+Plug 'fannheyward/coc-markdownlint'
+" C and friends
+Plug 'clangd/coc-clangd'
+" HTML
+Plug 'neoclide/coc-html'
+" JavaScript/TypeScript
+Plug 'neoclide/coc-tsserver'
+" CSS
+Plug 'neoclide/coc-css'
+" JSON
+Plug 'neoclide/coc-json'
 call plug#end()
 
 set bg=dark
