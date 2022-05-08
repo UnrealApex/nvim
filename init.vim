@@ -45,6 +45,8 @@ Plug 'yggdroot/indentline'
 Plug 'junegunn/goyo.vim'
 " GitHub Copilot
 Plug 'github/copilot.vim'
+" Rainbow Parentheses
+Plug 'junegunn/rainbow_parentheses.vim'
 call plug#end()
 
 set bg=dark
