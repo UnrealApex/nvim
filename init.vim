@@ -72,6 +72,9 @@ Plug 'neoclide/coc-css'
 Plug 'neoclide/coc-json'
 call plug#end()
 
+" Make sure that IndentLine is enabled
+let g:indentLine_enabled = 1
+
 set bg=dark
 
 " Refresh NerdTree when it is focused
