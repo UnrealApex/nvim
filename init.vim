@@ -93,3 +93,5 @@ autocmd BufEnter NERD_tree_* | execute 'normal R'
 nmap - :NERDTreeToggle<CR>
 " map ctrl +  backspace to delete the previous word in insert mode
 imap <C-BS> <C-W>
+" map shift + tab to unindent
+inoremap <S-Tab> <C-d>
