@@ -1,3 +1,14 @@
+" Install vim-plug if is not present on the system the init.vim is being used on
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Run :PlugInstall if there are any missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
 " set the font to Consolas and the font size to 14 pixels
 set guifont=Consolas:h14
 " show line numbers
