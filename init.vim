@@ -74,6 +74,8 @@ call plug#end()
 
 " Make sure that IndentLine is enabled
 let g:indentLine_enabled = 1
+" Activate RainbowParentheses
+RainbowParentheses
 
 set bg=dark
 
