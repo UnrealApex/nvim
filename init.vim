@@ -82,7 +82,10 @@ call plug#end()
 " Make sure that IndentLine is enabled
 let g:indentLine_enabled = 1
 " Activate RainbowParentheses
-RainbowParentheses
+augroup rainbow_parens
+  autocmd!
+  autocmd VimEnter * RainbowParentheses
+augroup end
 
 set bg=dark
 
