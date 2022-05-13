@@ -62,21 +62,6 @@ Plug 'github/copilot.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Conquerer of Completion(code completion)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" CoC language servers
-" Pyright
-Plug 'fannheyward/coc-pyright'
-" Markdown
-Plug 'fannheyward/coc-markdownlint'
-" C and friends
-Plug 'clangd/coc-clangd'
-" HTML
-Plug 'neoclide/coc-html'
-" JavaScript/TypeScript
-Plug 'neoclide/coc-tsserver'
-" CSS
-Plug 'neoclide/coc-css'
-" JSON
-Plug 'neoclide/coc-json'
 call plug#end()
 
 " Make sure that IndentLine is enabled
@@ -91,6 +76,26 @@ set bg=dark
 
 " Refresh NerdTree when it is focused
 autocmd BufEnter NERD_tree_* | execute 'normal R'
+
+" CoC Extensions
+let g:coc_global_extensions = [
+# Git
+\ 'coc-git',
+# Pyright
+\ 'coc-pyright',
+# Markdown
+\ 'coc-markdownlint',
+# C and friends
+\ 'coc-clangd',
+# HTML
+\ 'coc-html',
+# JavaScript/TypeScript
+\ 'coc-tsserver',
+# CSS
+\ 'coc-css',
+# JSON
+\ 'coc-json'
+\ ]
 
 " map the hypen key (-) to toggle NERDTree
 nmap - :NERDTreeToggle<CR>
