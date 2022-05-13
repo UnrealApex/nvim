@@ -42,8 +42,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 " Vim GitGutter
 Plug 'airblade/vim-gitgutter'
-" Vim Airline
-Plug 'vim-airline/vim-airline'
+" Lightline(status bar)
+Plug 'itchyny/lightline.vim'
 " Fugitive.vim
 Plug 'tpope/vim-fugitive'
 " Sensible.vim
