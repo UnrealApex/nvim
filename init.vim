@@ -1,7 +1,7 @@
 " Install vim-plug if is not present on the system the init.vim is being used on
-:echo "Installing Vim Plug"
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
+  :echo "Installing Vim Plug"
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   :echo "Vim Plug installed"
