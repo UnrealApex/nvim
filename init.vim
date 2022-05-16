@@ -99,3 +99,6 @@ nmap - :NERDTreeToggle<CR>
 imap <C-BS> <C-W>
 " map shift + tab to unindent
 inoremap <S-Tab> <C-d>
+
+" Start in home directory
+:cd $HOME
