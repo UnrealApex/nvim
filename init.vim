@@ -14,7 +14,7 @@ set guifont=Consolas:h14
 set number
 " Show relative line numbers
 set relativenumber
-" turn off annoying error bell
+" disable annoying error bell to prevent your ears from dying
 set noerrorbells visualbell t_vb=
 " syntax highlighting
 syntax on
