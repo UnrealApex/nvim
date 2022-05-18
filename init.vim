@@ -66,6 +66,8 @@ Plug 'github/copilot.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Conquerer of Completion(code completion)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Repeat.vim
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 " Make sure that IndentLine is enabled
