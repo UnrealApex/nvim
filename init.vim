@@ -70,6 +70,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-repeat'
 " Vim Rooter
 Plug 'airblade/vim-rooter'
+" Vim Startify
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Make sure that IndentLine is enabled
