@@ -68,6 +68,8 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Repeat.vim
 Plug 'tpope/vim-repeat'
+" Vim Rooter
+Plug 'airblade/vim-rooter'
 call plug#end()
 
 " Make sure that IndentLine is enabled
