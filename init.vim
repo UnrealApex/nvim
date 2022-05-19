@@ -1,5 +1,4 @@
 " Install vim-plug if is not present on the system the init.vim is being used on
-" Note that this will not work unless you have Git installed
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   :echo "Installing Vim Plug"
