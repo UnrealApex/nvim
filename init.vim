@@ -79,6 +79,18 @@ call plug#end()
 
 " Make sure that IndentLine is enabled
 let g:indentLine_enabled = 1
+
+" Custom startify header
+" https://github.com/goolord/alpha-nvim/blob/20ecf5c5af6d6b830f1dc08ae7f3325cd518f0be/doc/alpha.txt#L176
+let g:startify_custom_header = [
+            \  '                               __                ',
+            \  '  ___     ___    ___   __  __ /\_\    ___ ___    ',
+            \  ' / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ',
+            \  '/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ',
+            \  '\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\',
+            \  ' \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/',
+            \  ]
+
 " Activate RainbowParentheses
 augroup rainbow_parens
   autocmd!
