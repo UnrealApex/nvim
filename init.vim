@@ -74,6 +74,7 @@ Plug 'airblade/vim-rooter'
 Plug 'mhinz/vim-startify'
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Make sure that IndentLine is enabled
