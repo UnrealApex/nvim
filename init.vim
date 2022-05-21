@@ -103,9 +103,11 @@ let g:vim_custom_ascii_header = [
 " Set a different ASCII custom header depending on if you are using NeoVim,
 " Vim, or a Vim-like editor
 if has("nvim")
-  let g:startify_custom_header = neovim_custom_ascii_header
+  let g:startify_custom_header =
+        \ 'startify#pad(g:neovim_custom_ascii_header + startify#fortune#boxed())'
 else
-  let g:startify_custom_header = vim_custom_ascii_header
+  let g:startify_custom_header =
+        \ 'startify#pad(g:ascii + startify#fortune#boxed())'
 endif
 
 " Activate RainbowParentheses
