@@ -81,8 +81,8 @@ let g:indentLine_enabled = 1
 
 " Custom startify header
 " https://github.com/goolord/alpha-nvim/blob/20ecf5c5af6d6b830f1dc08ae7f3325cd518f0be/doc/alpha.txt#L176
-if has("nvim")
-  let g:startify_custom_header = [
+
+let g:neovim_custom_ascii_header = [
               \  '                               __                ',
               \  '  ___     ___    ___   __  __ /\_\    ___ ___    ',
               \  ' / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ',
@@ -90,8 +90,8 @@ if has("nvim")
               \  '\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\',
               \  ' \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/',
               \  ]
-else
-  let g:startify_custom_header = [
+
+let g:vim_custom_ascii_header = [
               \  '         __                ',
               \  ' __  __ /\_\    ___ ___    ',
               \  '/\ \/\ \\/\ \  / __` __`\  ',
@@ -99,6 +99,13 @@ else
               \  ' \ \___/  \ \_\ \_\ \_\ \_\',
               \  '  \/__/    \/_/\/_/\/_/\/_/',
               \  ]
+
+" Set a different ASCII custom header depending on if you are using NeoVim,
+" Vim, or a Vim-like editor
+if has("nvim")
+  let g:startify_custom_header = neovim_custom_ascii_header
+else
+  let g:startify_custom_header = vim_custom_ascii_header
 endif
 
 " Activate RainbowParentheses
