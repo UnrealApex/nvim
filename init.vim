@@ -50,7 +50,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 " Vim GitGutter
 Plug 'airblade/vim-gitgutter'
-" Lightline(status bar)
+" Lightline (status bar)
 Plug 'itchyny/lightline.vim'
 " Fugitive.vim
 Plug 'tpope/vim-fugitive'
