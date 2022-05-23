@@ -136,7 +136,6 @@ autocmd BufEnter NERD_tree_* | execute 'normal R'
 let g:coc_global_extensions = [
 \ 'coc-git',
 \ 'coc-pyright',
-\ 'coc-markdownlint',
 \ 'coc-clangd',
 \ 'coc-html',
 \ 'coc-tsserver',
