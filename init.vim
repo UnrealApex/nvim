@@ -11,13 +11,13 @@ endif
 set guifont=Consolas:h14
 " show line numbers
 set number
-" Show relative line numbers
+" show relative line numbers
 set relativenumber
 " disable annoying error bell to prevent your ears from dying
 set noerrorbells visualbell t_vb=
 " syntax highlighting
 syntax on
-" Omni completion
+" omni completion
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 set autoindent
@@ -76,10 +76,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
-" Make sure that IndentLine is enabled
+" make sure that IndentLine is enabled
 let g:indentLine_enabled = 1
 
-" Custom startify header
+" custom startify header
 " https://github.com/goolord/alpha-nvim/blob/20ecf5c5af6d6b830f1dc08ae7f3325cd518f0be/doc/alpha.txt#L176
 
 let g:neovim_custom_ascii_header = [
@@ -100,7 +100,7 @@ let g:vim_custom_ascii_header = [
               \  '  \/__/    \/_/\/_/\/_/\/_/',
               \  ]
 
-" Set a different ASCII custom header depending on if you are using NeoVim,
+" set a different ASCII custom header depending on if you are using NeoVim,
 " Vim, or a Vim-like editor
 if has("nvim")
   let g:startify_custom_header =
@@ -114,7 +114,7 @@ else
         " \ 'startify#pad(g:ascii + startify#fortune#boxed())'
 endif
 
-" Activate RainbowParentheses
+" activate RainbowParentheses
 augroup rainbow_parens
   autocmd!
   autocmd VimEnter * RainbowParentheses
@@ -122,7 +122,7 @@ augroup end
 
 set bg=dark
 
-" Refresh NerdTree when it is focused
+" refresh NerdTree when it is focused
 autocmd BufEnter NERD_tree_* | execute 'normal R'
 
 " CoC Extensions
@@ -171,13 +171,13 @@ function! s:show_documentation()
 endfunction
 
 
-" Highlight symbol under cursor on CursorHold
+" highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
 nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
 
-" List errors
+" list errors
 nnoremap <silent> <leader>cl  :<C-u>CocList locationlist<cr>
 
 " list commands available in tsserver (and others)
