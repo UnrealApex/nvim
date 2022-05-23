@@ -79,6 +79,8 @@ Plug 'mhinz/vim-startify'
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" vim-visual-multi (multi-cursors)
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()
 
 " make sure that IndentLine is enabled
