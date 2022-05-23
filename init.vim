@@ -21,6 +21,8 @@ syntax on
 filetype plugin on
 " 2 lines above/below cursor when scrolling
 set scrolloff=2
+" don't wrap lines
+set nowrap
 set omnifunc=syntaxcomplete#Complete
 set autoindent
 set smartindent
