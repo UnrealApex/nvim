@@ -19,6 +19,8 @@ set noerrorbells visualbell t_vb=
 syntax on
 " omni completion
 filetype plugin on
+" 2 lines above/below cursor when scrolling
+set scrolloff=2
 set omnifunc=syntaxcomplete#Complete
 set autoindent
 set smartindent
