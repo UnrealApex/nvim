@@ -79,6 +79,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " vim-visual-multi (multi-cursors)
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" Vim Sneak
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
 " make sure that IndentLine is enabled
