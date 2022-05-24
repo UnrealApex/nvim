@@ -19,6 +19,8 @@ set noerrorbells visualbell t_vb=
 syntax on
 " omni completion
 filetype plugin on
+" show how many lines are in a file
+set ruler
 " 2 lines above/below cursor when scrolling
 set scrolloff=2
 " don't wrap lines
