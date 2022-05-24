@@ -72,8 +72,6 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Repeat.vim
 Plug 'tpope/vim-repeat'
-" Vim Rooter
-Plug 'airblade/vim-rooter'
 " Vim Startify
 Plug 'mhinz/vim-startify'
 " fzf
