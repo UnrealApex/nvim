@@ -150,6 +150,15 @@ imap <C-BS> <C-W>
 " map shift + tab to unindent
 inoremap <S-Tab> <C-d>
 
+" automatically close brackets, parentheses, quotes, etc...
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
 " CoC bindings
 " taken from https://github.com/rstacruz/vim-coc-settings/blob/master/after/plugin/coc.vim#L2
 inoremap <silent><expr> <c-space> coc#refresh()
