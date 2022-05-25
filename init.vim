@@ -85,7 +85,7 @@ call plug#end()
 " make sure that IndentLine is enabled
 let g:indentLine_enabled = 1
 
-" custom startify header
+" custom startify headers
 " https://github.com/goolord/alpha-nvim/blob/20ecf5c5af6d6b830f1dc08ae7f3325cd518f0be/doc/alpha.txt#L176
 
 let g:neovim_custom_ascii_header = [
