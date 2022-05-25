@@ -41,7 +41,6 @@ set wildmenu
 " set updatetime to 600 milliseconds
 set updatetime=600
 " set the working directory as the one of the file currently being edited
-set autochdir
 autocmd BufEnter * lcd %:p:h
 
 " plugins (make sure you have VimPlug installed, run :PlugInstall to install them)
