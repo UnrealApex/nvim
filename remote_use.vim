@@ -9,6 +9,8 @@ set noerrorbells visualbell t_vb=
 syntax on
 " omni completion
 filetype plugin on
+" status bar
+set laststatus=2
 " show how many lines are in a file
 set ruler
 " 2 lines above/below cursor when scrolling
