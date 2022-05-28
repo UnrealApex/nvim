@@ -144,6 +144,9 @@ let g:coc_global_extensions = [
 
 " map the hypen key (-) to toggle NERDTree
 nmap - :NERDTreeToggle<CR>
+
+map <leader>r :NERDTreeFind<cr>
+
 " map ctrl +  backspace to delete the previous word in insert mode
 imap <C-BS> <C-W>
 " map shift + tab to unindent
