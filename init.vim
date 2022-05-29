@@ -145,6 +145,7 @@ let g:coc_global_extensions = [
 " map the hypen key (-) to toggle NERDTree
 nmap - :NERDTreeToggle<CR>
 
+" map \r to find directory of current buffer
 map <leader>r :NERDTreeFind<cr>
 
 " map ctrl +  backspace to delete the previous word in insert mode
