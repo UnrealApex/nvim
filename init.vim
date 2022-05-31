@@ -38,8 +38,8 @@ set nobackup
 set noswapfile
 set wildmode=longest:full,full
 set wildmenu
-" set updatetime to 600 milliseconds
-set updatetime=600
+" set updatetime to 300 milliseconds
+set updatetime=300
 " set the working directory as the one of the file currently being edited
 autocmd BufEnter * lcd %:p:h
 
