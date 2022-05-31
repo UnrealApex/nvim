@@ -38,6 +38,8 @@ set nobackup
 set noswapfile
 set wildmode=longest:full,full
 set wildmenu
+" auto close html tags
+set matchpairs+=<:>
 " set updatetime to 300 milliseconds
 set updatetime=300
 " set the working directory as the one of the file currently being edited
