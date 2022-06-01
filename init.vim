@@ -21,8 +21,8 @@ syntax on
 filetype plugin on
 " show how many lines are in a file
 set ruler
-" 2 lines above/below cursor when scrolling
-set scrolloff=2
+" 8 lines above/below cursor when scrolling
+set scrolloff=8
 " don't wrap lines
 set nowrap
 set omnifunc=syntaxcomplete#Complete
