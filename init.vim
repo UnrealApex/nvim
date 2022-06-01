@@ -53,6 +53,9 @@ set updatetime=50
 " set the working directory as the one of the file currently being edited
 autocmd BufEnter * lcd %:p:h
 
+" built in debugger
+packadd termdebug
+
 " plugins (make sure you have VimPlug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
 " NERDTree
