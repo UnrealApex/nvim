@@ -83,6 +83,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Vim Sneak
 Plug 'justinmk/vim-sneak'
+" minimap.vim
+Plug 'wfxr/minimap.vim'
 call plug#end()
 
 " make sure that IndentLine is enabled
