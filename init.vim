@@ -31,6 +31,7 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set magic
 set ignorecase
 set smartcase
 " failed attempt to halt Vim creating those pesky .swp and .~un files
