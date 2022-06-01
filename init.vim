@@ -19,8 +19,14 @@ set noerrorbells visualbell t_vb=
 syntax on
 " omni completion
 filetype plugin on
-" show how many lines are in a file
+" show mode in status bar (insert/replace/...)
+set showmode
+" show typed command in status bar
+set showcmd
+" show cursor position in status bar
 set ruler
+" show file in titlebar
+set title
 " 8 lines above/below cursor when scrolling
 set scrolloff=8
 " don't wrap lines
