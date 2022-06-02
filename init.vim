@@ -189,8 +189,6 @@ else
         \nhttps://github.com/sharkdp/bat"
 endif
 
-
-
 " map the hypen key (-) to toggle NERDTree
 nmap - :NERDTreeToggle<CR>
 
