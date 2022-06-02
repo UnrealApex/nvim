@@ -96,6 +96,9 @@ call plug#end()
 " make sure that IndentLine is enabled
 let g:indentLine_enabled = 1
 
+" configuration for fzf preview window
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+
 " custom startify headers
 " https://github.com/goolord/alpha-nvim/blob/20ecf5c5af6d6b830f1dc08ae7f3325cd518f0be/doc/alpha.txt#L176
 
@@ -170,6 +173,13 @@ nnoremap <C-p> :Files<CR>
 " list all the commands when ctrl + shift + p is pressed
 nnoremap <C-S-p> :Commands<CR>
 
+" fzf preview 
+" syntax highlighting is dependant on bat(https://github.com/sharkdp/bat)
+command! -bang -nargs=? -complete=dir Files
+      \ call fzf#vim#files(<q-args>, {'options': [
+        \ '--info=inline', '--preview',
+        \'bat --color=always --style=numbers --line-range=:500 {}']}, <bang>0)
+
 " map the hypen key (-) to toggle NERDTree
 nmap - :NERDTreeToggle<CR>
 
@@ -237,3 +247,4 @@ vmap <leader>cf  <Plug>(coc-format-selected)
 " run code actions
 vmap <leader>ca  <Plug>(coc-codeaction-selected)
 nmap <leader>ca  <Plug>(coc-codeaction-selected)
+
