@@ -60,8 +60,6 @@ packadd termdebug
 call plug#begin('~/.vim/plugged')
 " NERDTree
 Plug 'scrooloose/nerdtree'
-" ctrlp.vim
-Plug 'ctrlpvim/ctrlp.vim'
 " Vim GitGutter
 Plug 'airblade/vim-gitgutter'
 " Lightline (status bar)
@@ -165,6 +163,12 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" open FZF file search when ctrl + p is pressed
+nnoremap <C-p> :Files<CR>
+
+" list all the commands when ctrl + shift + p is pressed
+nnoremap <C-S-p> :Commands<CR>
 
 " map the hypen key (-) to toggle NERDTree
 nmap - :NERDTreeToggle<CR>
