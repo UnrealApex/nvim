@@ -101,6 +101,12 @@ let g:indentLine_enabled = 1
 " configuration for fzf preview window
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
+" open the minimap on startup
+let g:minimap_auto_start = 1
+
+" highlight git stuff in minimap
+let g:minimap_git_colors = 1
+
 " custom startify headers
 " https://github.com/goolord/alpha-nvim/blob/20ecf5c5af6d6b830f1dc08ae7f3325cd518f0be/doc/alpha.txt#L176
 
