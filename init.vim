@@ -148,12 +148,6 @@ augroup rainbow_parens
   autocmd VimEnter * RainbowParentheses
 augroup end
 
-" refresh minimap.vim on file change
-augroup minimap_refresh
-  autocmd!
-  autocmd TextChanged * MinimapRefresh
-augroup end
-
 set bg=dark
 
 " refresh NerdTree when it is focused
