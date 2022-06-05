@@ -1,5 +1,4 @@
-" TODO: move plugin specfic configurations to different files
-" Install vim-plug if is not present on the system the init.vim is being used on
+" automatically install vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   :echo "Installing Vim Plug"
@@ -32,17 +31,21 @@ set title
 set scrolloff=8
 " don't wrap lines
 set nowrap
+" basic completion
 set omnifunc=syntaxcomplete#Complete
+" automatic indentation
 set autoindent
 set smartindent
+" set tabs to two spaces
 set tabstop=2
 set shiftwidth=2
 set expandtab
+" incremental search
 set incsearch
 set magic
 set ignorecase
 set smartcase
-" failed attempt to halt Vim creating those pesky .swp and .~un files
+" prevent backup files from being created
 set nobackup
 set noswapfile
 set wildmode=longest:full,full
@@ -56,18 +59,18 @@ set bg=dark
 " set the working directory as the one of the file currently being edited
 autocmd BufEnter * lcd %:p:h
 
-" built in debugger
+" built in debugger(requires gdb)
 packadd termdebug
 
-" plugins (make sure you have VimPlug installed, run :PlugInstall to install them)
+" plugins (make sure you have vim plug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
-" NERDTree
+" NERDTree(file explorer)
 Plug 'scrooloose/nerdtree'
 " Vim GitGutter
 Plug 'airblade/vim-gitgutter'
 " Lightline (status bar)
 Plug 'itchyny/lightline.vim'
-" Fugitive.vim
+" Fugitive.vim(git superpowers)
 Plug 'tpope/vim-fugitive'
 " Sensible.vim
 Plug 'tpope/vim-sensible'
@@ -87,27 +90,27 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Repeat.vim
 Plug 'tpope/vim-repeat'
-" Vim Startify
+" Vim Startify(start screen)
 Plug 'mhinz/vim-startify'
-" fzf
+" fzf(fuzzy finder)
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Vim Sneak
+" Vim Sneak(better horizontal movement)
 Plug 'justinmk/vim-sneak'
 " minimap.vim
 " Plug 'wfxr/minimap.vim'
 call plug#end()
 
-" make sure that IndentLine is enabled
+" enable IndentLine
 let g:indentLine_enabled = 1
 
-" open the minimap on startup
+" open minimap on startup
 " let g:minimap_auto_start = 1
 
 " highlight git stuff in minimap
 " let g:minimap_git_colors = 1
 
-" activate RainbowParentheses
+" enable RainbowParentheses
 augroup rainbow_parens
   autocmd!
   autocmd VimEnter * RainbowParentheses
@@ -119,6 +122,9 @@ augroup end
 "   autocmd TextChanged * MinimapRefresh
 " augroup end
 
+" keybindings
+
+" line/selection movement binds
 " alt + k to move a line or selection up,
 " alt + j to move a line or selection down
 " amazing vim hack taken from the wiki:
@@ -130,11 +136,13 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-" map ctrl +  backspace to delete the previous word in insert mode
+" efficient editing in insert mode
+" map ctrl + backspace to delete the previous word in insert mode
 imap <C-BS> <C-W>
 " map shift + tab to unindent
 inoremap <S-Tab> <C-d>
 
+" plugin configurations
 runtime plugins/startify.vim
 runtime plugins/coc.vim
 runtime plugins/nerdtree.vim
