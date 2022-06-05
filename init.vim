@@ -272,3 +272,4 @@ vmap <leader>cf  <Plug>(coc-format-selected)
 vmap <leader>ca  <Plug>(coc-codeaction-selected)
 nmap <leader>ca  <Plug>(coc-codeaction-selected)
 
+runtime ./startify.vim
