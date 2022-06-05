@@ -170,3 +170,4 @@ imap <C-BS> <C-W>
 inoremap <S-Tab> <C-d>
 
 runtime plugins/startify.vim
+runtime plugins/coc.vim
