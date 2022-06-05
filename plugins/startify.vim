@@ -26,9 +26,10 @@ if has("nvim")
         \ 'startify#pad(g:neovim_custom_ascii_header)'
         " custom header with random quote in box
         " \ 'startify#pad(g:neovim_custom_ascii_header + startify#fortune#boxed())'
-else
+elseif has("vim")
   let g:startify_custom_header =
         \ 'startify#pad(g:vim_custom_ascii_header)'
         " custom header with random quote in box
         " \ 'startify#pad(g:ascii + startify#fortune#boxed())'
+else
 endif
