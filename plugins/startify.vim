@@ -33,3 +33,5 @@ elseif has("vim")
         " \ 'startify#pad(g:ascii + startify#fortune#boxed())'
 else
 endif
+
+let g:startify_bookmarks = ["$MYVIMRC"]
