@@ -122,9 +122,6 @@ augroup end
 
 set bg=dark
 
-" refresh NerdTree when it is focused
-autocmd BufEnter NERD_tree_* | execute 'normal R'
-
 " alt + k to move a line or selection up,
 " alt + j to move a line or selection down
 " amazing vim hack taken from the wiki:
@@ -158,12 +155,6 @@ else
         \nhttps://github.com/sharkdp/bat"
 endif
 
-" map the hypen key (-) to toggle NERDTree
-nmap - :NERDTreeToggle<CR>
-
-" map \r to find directory of current buffer
-map <leader>r :NERDTreeFind<cr>
-
 " map ctrl +  backspace to delete the previous word in insert mode
 imap <C-BS> <C-W>
 " map shift + tab to unindent
@@ -171,3 +162,4 @@ inoremap <S-Tab> <C-d>
 
 runtime plugins/startify.vim
 runtime plugins/coc.vim
+runtime plugins/nerdtree.vim
