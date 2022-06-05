@@ -51,6 +51,8 @@ set wildmenu
 set matchpairs+=<:>
 " set updatetime to 50 milliseconds
 set updatetime=50
+" set window background to dark
+set bg=dark
 " set the working directory as the one of the file currently being edited
 autocmd BufEnter * lcd %:p:h
 
@@ -116,8 +118,6 @@ augroup end
 "   autocmd!
 "   autocmd TextChanged * MinimapRefresh
 " augroup end
-
-set bg=dark
 
 " alt + k to move a line or selection up,
 " alt + j to move a line or selection down
