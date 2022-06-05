@@ -1,3 +1,4 @@
+" TODO: move plugin specfic configurations to different files
 " Install vim-plug if is not present on the system the init.vim is being used on
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -92,7 +93,7 @@ Plug 'junegunn/fzf.vim'
 " Vim Sneak
 Plug 'justinmk/vim-sneak'
 " minimap.vim
-Plug 'wfxr/minimap.vim'
+" Plug 'wfxr/minimap.vim'
 call plug#end()
 
 " make sure that IndentLine is enabled
@@ -102,10 +103,10 @@ let g:indentLine_enabled = 1
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
 " open the minimap on startup
-let g:minimap_auto_start = 1
+" let g:minimap_auto_start = 1
 
 " highlight git stuff in minimap
-let g:minimap_git_colors = 1
+" let g:minimap_git_colors = 1
 
 " custom startify headers
 " https://github.com/goolord/alpha-nvim/blob/20ecf5c5af6d6b830f1dc08ae7f3325cd518f0be/doc/alpha.txt#L176
@@ -149,10 +150,10 @@ augroup rainbow_parens
 augroup end
 
 " refresh minimap.vim on file change
-augroup minimap_refresh
-  autocmd!
-  autocmd TextChanged * MinimapRefresh
-augroup end
+" augroup minimap_refresh
+"   autocmd!
+"   autocmd TextChanged * MinimapRefresh
+" augroup end
 
 set bg=dark
 
