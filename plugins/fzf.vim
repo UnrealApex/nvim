@@ -5,7 +5,7 @@ nnoremap <C-p> :Files<CR>
 " list all the commands when ctrl + shift + p is pressed
 nnoremap <C-S-p> :Commands<CR>
 
-" fzf preview 
+" fzf preview
 " syntax highlighting is dependant on bat(https://github.com/sharkdp/bat)
 " so check if it is installed before trying to use it or don't use syntax
 " highlighting
