@@ -99,7 +99,6 @@ call plug#end()
 " make sure that IndentLine is enabled
 let g:indentLine_enabled = 1
 
-
 " open the minimap on startup
 " let g:minimap_auto_start = 1
 
