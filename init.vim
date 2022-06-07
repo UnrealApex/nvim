@@ -120,6 +120,7 @@ augroup end
 augroup minimap_refresh
   autocmd!
   autocmd TextChanged * MinimapRefresh
+  autocmd BufModifiedSet * MinimapRefresh
 augroup end
 
 " keybindings
