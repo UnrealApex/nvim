@@ -151,16 +151,16 @@ runtime plugins/fzf.vim
 " auto save file when it is modified
 augroup auto_save
   autocmd!
+  " call save function
   autocmd BufModifiedSet * call AutoSave()
 augroup end
 
-" TODO: add logic for buffers that are not writeable(handle error: cannot write,
-" buftype option is set)
 " save function that is called when buffer is modified
 function AutoSave()
-  if (bufname() != "")
+  if (bufname() != "" && &buftype == "" && &filetype != "")
     silent write
-  " prevent empty buffers from being saved
+  " prevent empty, readonly, etc.. buffers from being saved
   else
   endif
 endfunction
+
