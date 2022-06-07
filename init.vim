@@ -98,17 +98,17 @@ Plug 'junegunn/fzf.vim'
 " Vim Sneak(better horizontal movement)
 Plug 'justinmk/vim-sneak'
 " minimap.vim
-Plug 'wfxr/minimap.vim'
+" Plug 'wfxr/minimap.vim'
 call plug#end()
 
 " enable IndentLine
 let g:indentLine_enabled = 1
 
 " open minimap on startup
-let g:minimap_auto_start = 1
+" let g:minimap_auto_start = 1
 
 " highlight git stuff in minimap
-let g:minimap_git_colors = 1
+" let g:minimap_git_colors = 1
 
 " enable RainbowParentheses
 augroup rainbow_parens
@@ -117,11 +117,11 @@ augroup rainbow_parens
 augroup end
 
 " refresh minimap.vim on file change
-augroup minimap_refresh
-  autocmd!
-  autocmd TextChanged * MinimapRefresh
-  autocmd BufModifiedSet * MinimapRefresh
-augroup end
+" augroup minimap_refresh
+"   autocmd!
+"   autocmd TextChanged * MinimapRefresh
+"   autocmd BufModifiedSet * MinimapRefresh
+" augroup end
 
 " keybindings
 
