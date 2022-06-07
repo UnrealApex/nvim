@@ -117,10 +117,10 @@ augroup rainbow_parens
 augroup end
 
 " refresh minimap.vim on file change
-" augroup minimap_refresh
-"   autocmd!
-"   autocmd TextChanged * MinimapRefresh
-" augroup end
+augroup minimap_refresh
+  autocmd!
+  autocmd TextChanged * MinimapRefresh
+augroup end
 
 " keybindings
 
