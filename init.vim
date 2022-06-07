@@ -98,17 +98,17 @@ Plug 'junegunn/fzf.vim'
 " Vim Sneak(better horizontal movement)
 Plug 'justinmk/vim-sneak'
 " minimap.vim
-" Plug 'wfxr/minimap.vim'
+Plug 'wfxr/minimap.vim'
 call plug#end()
 
 " enable IndentLine
 let g:indentLine_enabled = 1
 
 " open minimap on startup
-" let g:minimap_auto_start = 1
+let g:minimap_auto_start = 1
 
 " highlight git stuff in minimap
-" let g:minimap_git_colors = 1
+let g:minimap_git_colors = 1
 
 " enable RainbowParentheses
 augroup rainbow_parens
