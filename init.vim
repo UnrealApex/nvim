@@ -159,7 +159,7 @@ augroup end
 function AutoSave()
   if (bufname() != "" && &buftype == "" && &filetype != "")
     silent write
-  " prevent empty, readonly, etc.. buffers from being saved
+  " prevent empty, readonly, etc... buffers from being saved
   else
   endif
 endfunction
