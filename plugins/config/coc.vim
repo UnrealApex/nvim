@@ -1,3 +1,5 @@
+" CoC configurations
+
 " CoC Extensions
 let g:coc_global_extensions = [
 \ 'coc-git',

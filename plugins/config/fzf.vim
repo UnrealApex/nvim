@@ -1,4 +1,5 @@
-" FZF config
+" FZF configurations
+
 " open FZF file search when ctrl + p is pressed
 nnoremap <C-p> :Files<CR>
 

@@ -1,3 +1,5 @@
+" startify configurations
+
 " custom startify headers
 " https://github.com/goolord/alpha-nvim/blob/20ecf5c5af6d6b830f1dc08ae7f3325cd518f0be/doc/alpha.txt#L176
 
