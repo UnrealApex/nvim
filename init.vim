@@ -1,12 +1,3 @@
-" automatically install vim plug
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  :echo "Installing Vim Plug"
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-  :echo "Vim Plug installed"
-endif
-
 " set the font to Consolas and the font size to 14 pixels
 set guifont=Consolas:h14
 " show line numbers
@@ -62,59 +53,6 @@ autocmd BufEnter * lcd %:p:h
 " built in debugger(requires gdb)
 packadd termdebug
 
-" plugins (make sure you have vim plug installed, run :PlugInstall to install them)
-call plug#begin('~/.vim/plugged')
-" NERDTree(file explorer)
-Plug 'scrooloose/nerdtree'
-" Vim GitGutter
-Plug 'airblade/vim-gitgutter'
-" Lightline (status bar)
-Plug 'itchyny/lightline.vim'
-" Fugitive.vim(git superpowers)
-Plug 'tpope/vim-fugitive'
-" Sensible.vim
-Plug 'tpope/vim-sensible'
-" Vim Surround
-Plug 'tpope/vim-surround'
-" Vim Commentary
-Plug 'tpope/vim-commentary'
-" indent guides
-Plug 'yggdroot/indentline'
-" Goyo
-Plug 'junegunn/goyo.vim'
-" GitHub Copilot
-Plug 'github/copilot.vim'
-" Rainbow Parentheses
-Plug 'junegunn/rainbow_parentheses.vim'
-" Conquerer of Completion(code completion)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Repeat.vim
-Plug 'tpope/vim-repeat'
-" Vim Startify(start screen)
-Plug 'mhinz/vim-startify'
-" fzf(fuzzy finder)
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-" Vim Sneak(better horizontal movement)
-Plug 'justinmk/vim-sneak'
-" minimap.vim
-" Plug 'wfxr/minimap.vim'
-call plug#end()
-
-" enable IndentLine
-let g:indentLine_enabled = 1
-
-" open minimap on startup
-" let g:minimap_auto_start = 1
-
-" highlight git stuff in minimap
-" let g:minimap_git_colors = 1
-
-" enable RainbowParentheses
-augroup rainbow_parens
-  autocmd!
-  autocmd VimEnter * RainbowParentheses
-augroup end
 
 " refresh minimap.vim on file change
 " augroup minimap_refresh
@@ -142,13 +80,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 imap <C-BS> <C-W>
 " map shift + tab to unindent
 inoremap <S-Tab> <C-d>
-
-" plugin configurations
-runtime plugins/startify.vim
-runtime plugins/coc.vim
-runtime plugins/nerdtree.vim
-runtime plugins/fzf.vim
-
 " auto save file when it is modified
 augroup auto_save
   autocmd!
@@ -165,3 +96,4 @@ function AutoSave()
   endif
 endfunction
 
+runtime plugins/plugins.vim
