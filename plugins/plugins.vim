@@ -50,6 +50,13 @@ call plug#end()
 " enable IndentLine
 let g:indentLine_enabled = 1
 
+" refresh minimap.vim on file change
+" augroup minimap_refresh
+"   autocmd!
+"   autocmd TextChanged * MinimapRefresh
+"   autocmd BufModifiedSet * MinimapRefresh
+" augroup end
+
 " open minimap on startup
 " let g:minimap_auto_start = 1
 

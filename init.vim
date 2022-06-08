@@ -53,14 +53,6 @@ autocmd BufEnter * lcd %:p:h
 " built in debugger(requires gdb)
 packadd termdebug
 
-
-" refresh minimap.vim on file change
-" augroup minimap_refresh
-"   autocmd!
-"   autocmd TextChanged * MinimapRefresh
-"   autocmd BufModifiedSet * MinimapRefresh
-" augroup end
-
 " keybindings
 
 " line/selection movement binds
