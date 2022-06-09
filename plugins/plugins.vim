@@ -74,4 +74,4 @@ runtime plugins/config/startify.vim
 runtime plugins/config/coc.vim
 runtime plugins/config/nerdtree.vim
 runtime plugins/config/fzf.vim
-
+runtime plugins/config/lightline.vim
