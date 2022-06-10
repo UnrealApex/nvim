@@ -45,6 +45,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 " minimap.vim
 " Plug 'wfxr/minimap.vim'
+" VM multi cursors
+Plug 'mg979/vim-visual-multi'
 call plug#end()
 
 " enable IndentLine
