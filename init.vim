@@ -60,12 +60,12 @@ packadd termdebug
 " alt + j to move a line or selection down
 " amazing vim hack taken from the wiki:
 " https://vim.fandom.com/wiki/Moving_lines_up_or_down#:~:text=In%20normal%20mode%20or%20in,to%20move%20the%20block%20up.
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <silent> <A-j> :m .+1<CR>==
+nnoremap <silent> <A-k> :m .-2<CR>==
+inoremap <silent> <A-j> <Esc>:m .+1<CR>==gi
+inoremap <silent> <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
+vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
 " efficient editing in insert mode
 " map ctrl + backspace to delete the previous word in insert mode
