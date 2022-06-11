@@ -49,6 +49,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'mg979/vim-visual-multi'
 " Emmet
 Plug 'mattn/emmet-vim'
+" Vim dev icons
+Plug 'ryanoasis/vim-devicons' 
 call plug#end()
 
 " enable IndentLine
