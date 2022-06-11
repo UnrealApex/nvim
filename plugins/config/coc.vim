@@ -9,6 +9,7 @@ let g:coc_global_extensions = [
 \ 'coc-html',
 \ 'coc-tsserver',
 \ 'coc-css',
+\ 'coc-highlight',
 \ 'coc-json'
 \ ]
 
