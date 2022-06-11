@@ -55,6 +55,9 @@ packadd termdebug
 
 " keybindings
 
+" change map leader to space
+let mapleader=" "
+
 " line/selection movement binds
 " alt + k to move a line or selection up,
 " alt + j to move a line or selection down
