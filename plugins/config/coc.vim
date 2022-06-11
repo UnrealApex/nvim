@@ -63,6 +63,8 @@ nnoremap <silent> <leader>cx  :<C-u>CocList extensions<cr>
 
 " rename the current word in the cursor
 nmap <leader>cr  <Plug>(coc-rename)
+" also bind F2 to the same command
+nmap <F2> <Plug>(coc-rename)
 nmap <leader>cf  <Plug>(coc-format-selected)
 vmap <leader>cf  <Plug>(coc-format-selected)
 
