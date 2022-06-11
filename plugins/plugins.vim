@@ -67,6 +67,11 @@ let g:indentLine_enabled = 1
 " highlight git stuff in minimap
 " let g:minimap_git_colors = 1
 
+
+" bind Enter to accept Copilot suggestions
+imap <silent><script><expr> <Enter> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
 " enable RainbowParentheses
 augroup rainbow_parens
   autocmd!
