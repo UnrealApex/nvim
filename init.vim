@@ -19,7 +19,7 @@ set ruler
 " show file in titlebar
 set title
 " Highlight current line
-set cursorline 
+set cursorline
 " 8 lines above/below cursor when scrolling
 set scrolloff=8
 " don't wrap lines
@@ -49,6 +49,8 @@ set matchpairs+=<:>
 set updatetime=50
 " set window background to dark
 set bg=dark
+" set path
+set path=.,**
 " set the working directory as the one of the file currently being edited
 autocmd BufEnter * lcd %:p:h
 
