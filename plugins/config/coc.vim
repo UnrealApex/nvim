@@ -2,6 +2,7 @@
 
 " CoC Extensions
 let g:coc_global_extensions = [
+\ 'coc-vimlsp',
 \ 'coc-git',
 \ 'coc-pyright',
 \ 'coc-clangd',
