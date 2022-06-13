@@ -18,8 +18,6 @@ set showcmd
 set ruler
 " show file in titlebar
 set title
-" Highlight current line
-set cursorline
 " 8 lines above/below cursor when scrolling
 set scrolloff=8
 " don't wrap lines
