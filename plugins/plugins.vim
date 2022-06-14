@@ -71,7 +71,7 @@ let g:indentLine_enabled = 1
 
 
 " bind Enter to accept Copilot suggestions
-imap <silent><script><expr> <Enter> copilot#Accept("\<CR>")
+imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
 " enable RainbowParentheses
