@@ -16,6 +16,11 @@ let g:coc_global_extensions = [
 \ ]
 
 " CoC keybindings
+
+" map ctrl + j and ctrl + k to traverse up and down the coc completion list
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+
 " taken from https://github.com/rstacruz/vim-coc-settings/blob/master/after/plugin/coc.vim#L2
 inoremap <silent><expr> <c-space> coc#refresh()
 
