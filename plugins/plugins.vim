@@ -11,7 +11,7 @@ endif
 " plugins (make sure you have vim plug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
 " NERDTree(file explorer)
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 " Vim GitGutter
 Plug 'airblade/vim-gitgutter'
 " Lightline (status bar)
