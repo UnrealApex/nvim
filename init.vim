@@ -1,5 +1,5 @@
 " set the font to Consolas and the font size to 14 pixels
-set guifont=Consolas:h14
+set guifont=Jetbrains\ Mono:h14
 " show line numbers
 set number
 " show relative line numbers
