@@ -20,6 +20,8 @@ let g:coc_global_extensions = [
 " map ctrl + j and ctrl + k to traverse up and down the coc completion list
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+" map tab to accept completion
+inoremap <silent><expr> <Tab> coc#_select_confirm()
 
 " taken from https://github.com/rstacruz/vim-coc-settings/blob/master/after/plugin/coc.vim#L2
 inoremap <silent><expr> <c-space> coc#refresh()
