@@ -58,6 +58,11 @@ call plug#end()
 " enable IndentLine
 let g:indentLine_enabled = 1
 
+" set ctags path
+let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
+" map F8 to toggle Tagbar
+nmap <silent> <F8> :TagbarToggle<CR>
+
 " refresh minimap.vim on file change
 " augroup minimap_refresh
 "   autocmd!
