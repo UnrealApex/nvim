@@ -43,8 +43,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Vim Sneak(better horizontal movement)
 Plug 'justinmk/vim-sneak'
-" minimap.vim
-" Plug 'wfxr/minimap.vim'
 " VM multi cursors
 Plug 'mg979/vim-visual-multi'
 " Emmet
