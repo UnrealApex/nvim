@@ -96,4 +96,4 @@ function AutoSave()
 endfunction
 
 " plugin management
-runtime plugins/plugins.vim
+runtime plugins/plug.vim

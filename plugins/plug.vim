@@ -51,6 +51,8 @@ Plug 'mg979/vim-visual-multi'
 Plug 'mattn/emmet-vim'
 " Vim dev icons
 Plug 'ryanoasis/vim-devicons' 
+" Tagbar
+Plug 'preservim/tagbar'
 call plug#end()
 
 " enable IndentLine
