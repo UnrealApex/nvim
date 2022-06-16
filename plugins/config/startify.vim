@@ -36,4 +36,5 @@ elseif has("vim")
 else
 endif
 
-let g:startify_bookmarks = ["$MYVIMRC"]
+" startify bookmarks
+let g:startify_bookmarks = ["$MYVIMRC", "$HOME/src"]
