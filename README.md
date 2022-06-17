@@ -1,7 +1,7 @@
 # .dotfiles
 ### About
 This is my `init.vim`. Like all other configuration files, these contain the configurations that make Neovim feel at home for me.
-That being said, my preferences are not be the same as yours, so feel free to delete or comment out parts of my config that you do not wish to use and keep the parts you like.
+That being said, my preferences are not be the same as yours, so if you wish to use my config, feel free to delete or comment out parts of my config that you do not wish to use and keep the parts you like.
 ### Plugins
 I have several plugins to enhance my experience using Neovim. As a side note, this config and its plugins are all compatible with Vim, just make sure to rename `init.vim` to `.vimrc`
 My plugins are managed using [vim-plug](https://github.com/junegunn/vim-plug).
