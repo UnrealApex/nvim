@@ -1,5 +1,6 @@
 " set the font to Consolas and the font size to 14 pixels
-set guifont=Jetbrains\ Mono:h14
+" set guifont=Jetbrains\ Mono:h14
+set guifont=Consolas:h14
 " show line numbers
 set number
 " show relative line numbers
@@ -61,6 +62,9 @@ packadd termdebug
 
 " change map leader to space
 let mapleader=" "
+
+" plugins
+let $PLUGINS = "$HOME/AppData/Local/nvim/plugins/plug.vim"
 
 " line/selection movement binds
 " alt + k to move a line or selection up,
