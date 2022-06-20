@@ -51,7 +51,7 @@ set updatetime=25
 " set window background to dark
 set bg=dark
 " set path
-set path=.,**
+set path+=**
 " set the working directory as the one of the file currently being edited
 autocmd BufEnter * lcd %:p:h
 
