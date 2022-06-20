@@ -12,8 +12,8 @@ endif
 call plug#begin('~/.vim/plugged')
 " NERDTree(file explorer)
 Plug 'preservim/nerdtree'
-" Vim GitGutter
-Plug 'airblade/vim-gitgutter'
+" Git gutter indicators
+Plug 'lewis6991/gitsigns.nvim'
 " Lightline (status bar)
 Plug 'itchyny/lightline.vim'
 " Fugitive.vim(git superpowers)
