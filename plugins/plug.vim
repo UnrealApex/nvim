@@ -48,7 +48,7 @@ Plug 'mg979/vim-visual-multi'
 " Emmet
 Plug 'mattn/emmet-vim'
 " Vim dev icons
-Plug 'ryanoasis/vim-devicons' 
+Plug 'ryanoasis/vim-devicons'
 " Tagbar
 Plug 'preservim/tagbar'
 call plug#end()
@@ -60,6 +60,8 @@ let g:indentLine_enabled = 1
 let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
 " map F8 to toggle Tagbar
 nmap <silent> <F8> :TagbarToggle<CR>
+" map Leader t to toggle Tagbar
+nmap <silent> <Leader>t :TagbarToggle<CR>
 
 " refresh minimap.vim on file change
 " augroup minimap_refresh
