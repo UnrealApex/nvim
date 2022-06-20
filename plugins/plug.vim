@@ -81,6 +81,9 @@ nmap <silent> <Leader>t :TagbarToggle<CR>
 imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
+" call basic setup
+lua require('gitsigns').setup()
+
 " enable RainbowParentheses
 augroup rainbow_parens
   autocmd!
