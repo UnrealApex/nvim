@@ -23,6 +23,7 @@ function SyncNERDTree()
   if stridx(bufname('%'), 'NERD_tree_') == -1 && bufname() != "" && &buftype == "" && &filetype != "" 
     cd %:p:h
     " open a new NERDTree buffer and close it
+    NERDTreeClose
     NERDTree
     NERDTreeClose
   endif
