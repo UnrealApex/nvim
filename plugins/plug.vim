@@ -51,6 +51,8 @@ Plug 'mattn/emmet-vim'
 Plug 'ryanoasis/vim-devicons'
 " Tagbar
 Plug 'preservim/tagbar'
+" ToggleTerm
+Plug 'akinsho/toggleterm.nvim'
 call plug#end()
 
 " enable IndentLine
@@ -86,6 +88,17 @@ augroup rainbow_parens
   autocmd!
   autocmd VimEnter * RainbowParentheses
 augroup end
+
+lua <<EOF
+require("toggleterm").setup({
+  direction = 'float',
+  open_mapping = [[<c-\>]],
+  start_in_insert = true,
+  insert_mappings = true,
+  close_on_exit = true,
+  shell = vim.o.shell
+})
+EOF
 
 " plugin configurations
 runtime plugins/config/startify.vim
