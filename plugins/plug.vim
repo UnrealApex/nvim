@@ -89,6 +89,7 @@ augroup rainbow_parens
   autocmd VimEnter * RainbowParentheses
 augroup end
 
+" lua configurations
 lua <<EOF
 require('gitsigns').setup({
   signs = {
