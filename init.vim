@@ -50,6 +50,8 @@ set matchpairs+=<:>
 set updatetime=25
 " set window background to dark
 set bg=dark
+" set gutter color to match background color
+highlight clear SignColumn
 " set path
 set path=.,**
 " set the working directory as the one of the file currently being edited
