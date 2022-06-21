@@ -53,6 +53,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/tagbar'
 " ToggleTerm
 Plug 'akinsho/toggleterm.nvim'
+" color highlighting
+Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 " enable IndentLine
@@ -142,6 +144,19 @@ require("toggleterm").setup({
   insert_mappings = true,
   close_on_exit = true,
   shell = vim.o.shell
+})
+
+require('colorizer').setup(
+  {'*';},
+  {
+	RGB      = true;         -- #RGB hex codes
+	RRGGBB   = true;         -- #RRGGBB hex codes
+	names    = true;         -- "Name" codes like Blue
+	RRGGBBAA = true;        -- #RRGGBBAA hex codes
+	rgb_fn   = true;        -- CSS rgb() and rgba() functions
+	hsl_fn   = true;        -- CSS hsl() and hsla() functions
+	css      = true;        -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+	css_fn   = true;        -- Enable all CSS *functions*: rgb_fn, hsl_fn
 })
 EOF
 
