@@ -52,6 +52,7 @@ set updatetime=25
 set bg=dark
 " set gutter color to match background color
 highlight clear SignColumn
+set conceallevel=3
 " set path
 set path=.,**
 " set the working directory as the one of the file currently being edited
