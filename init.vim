@@ -66,6 +66,9 @@ packadd termdebug
 " change map leader to space
 let mapleader=" "
 
+" remap this so that using Ctrl + C doesn't have a delay
+let g:ftplugin_sql_omni_key = '<C-;>'
+
 " plugins
 let $PLUGINS = "$HOME/AppData/Local/nvim/plugins/plug.vim"
 
