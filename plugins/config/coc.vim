@@ -11,7 +11,8 @@ let g:coc_global_extensions = [
 \ 'coc-tsserver',
 \ 'coc-css',
 \ 'coc-highlight',
-\ 'coc-json'
+\ 'coc-json',
+\ 'coc-tabnine'
 \ ]
 
 " CoC keybindings
