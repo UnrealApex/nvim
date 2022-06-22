@@ -91,7 +91,7 @@ augroup rainbow_parens
   autocmd VimEnter * RainbowParentheses
 augroup end
 
-" lua configurations
+" lua stuff
 lua <<EOF
 require('gitsigns').setup({
   signs = {
@@ -177,7 +177,6 @@ require("indent_blankline").setup {
         "IndentBlanklineIndent6",
     },
 }
-
 EOF
 
 " plugin configurations
