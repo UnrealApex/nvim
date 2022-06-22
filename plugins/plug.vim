@@ -55,6 +55,8 @@ Plug 'preservim/tagbar'
 Plug 'akinsho/toggleterm.nvim'
 " color highlighting
 Plug 'norcalli/nvim-colorizer.lua'
+" easily change dates
+Plug 'tpope/vim-speeddating'
 call plug#end()
 
 " enable IndentLine
