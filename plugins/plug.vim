@@ -25,7 +25,7 @@ Plug 'tpope/vim-surround'
 " Vim Commentary
 Plug 'tpope/vim-commentary'
 " indent guides
-Plug 'yggdroot/indentline'
+Plug 'lukas-reineke/indent-blankline.nvim'
 " Goyo
 Plug 'junegunn/goyo.vim'
 " GitHub Copilot
@@ -58,7 +58,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 " enable IndentLine
-let g:indentLine_enabled = 1
+" let g:indentLine_enabled = 1
 
 " set ctags path
 let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
@@ -158,6 +158,26 @@ require('colorizer').setup(
 	css      = true;        -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
 	css_fn   = true;        -- Enable all CSS *functions*: rgb_fn, hsl_fn
 })
+
+vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
+
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+    char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+        "IndentBlanklineIndent3",
+        "IndentBlanklineIndent4",
+        "IndentBlanklineIndent5",
+        "IndentBlanklineIndent6",
+    },
+}
+
 EOF
 
 " plugin configurations
