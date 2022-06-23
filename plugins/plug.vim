@@ -69,6 +69,11 @@ nmap <silent> <F8> :TagbarToggle<CR>
 " map Leader t to toggle Tagbar
 nmap <silent> <Leader>t :TagbarToggle<CR>
 
+" map Leader z to toggle Goyo
+nmap <silent> <Leader>z :Goyo<CR>
+" toggle limelight when Goyo is toggled
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 " refresh minimap.vim on file change
 " augroup minimap_refresh
 "   autocmd!
