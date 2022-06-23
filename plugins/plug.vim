@@ -66,8 +66,6 @@ call plug#end()
 let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
 " map F8 to toggle Tagbar
 nmap <silent> <F8> :TagbarToggle<CR>
-" map Leader t to toggle Tagbar
-nmap <silent> <Leader>t :TagbarToggle<CR>
 
 " map Leader z to toggle Goyo
 nmap <silent> <Leader>z :Goyo<CR>
@@ -138,7 +136,8 @@ require('gitsigns').setup({
   },
   yadm = {
     enable = false
-  }
+  },
+
 })
 
 require("toggleterm").setup({
@@ -199,3 +198,4 @@ runtime plugins/config/coc.vim
 runtime plugins/config/nerdtree.vim
 runtime plugins/config/fzf.vim
 runtime plugins/config/lightline.vim
+runtime plugins/config/gitsigns.vim
