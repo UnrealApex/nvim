@@ -74,7 +74,8 @@ let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
 nmap <silent> <F8> :TagbarToggle<CR>
 
 " map Leader z to toggle Goyo
-nmap <silent> <Leader>z :Goyo<CR>
+" hack around Goyo making indent guide colorization disappear
+nmap <silent><Leader>z :Goyo<bar>:so $MYVIMRC<bar>:echo ":Goyo"<CR>
 " refresh minimap.vim on file change
 " augroup minimap_refresh
 "   autocmd!
