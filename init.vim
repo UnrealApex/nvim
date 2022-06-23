@@ -91,6 +91,7 @@ function AutoSave()
   endif
 endfunction
 
+" keymap management
+runtime keymaps.vim
 " plugin management
 runtime plugins/plug.vim
-runtime keymaps.vim
