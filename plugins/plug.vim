@@ -57,6 +57,8 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 " easily change dates
 Plug 'tpope/vim-speeddating'
+" whichkey(keymap hints)
+Plug 'folke/which-key.nvim'
 call plug#end()
 
 " enable IndentLine
@@ -184,6 +186,8 @@ require("indent_blankline").setup {
         "IndentBlanklineIndent6",
     },
 }
+
+require("which-key").setup()
 
 vim.g.indent_blankline_filetype_exclude = {
 	"help",
