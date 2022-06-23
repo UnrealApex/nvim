@@ -7,8 +7,6 @@ inoremap <S-Tab> <C-d>
 " line/selection movement binds
 " alt + k to move a line or selection up,
 " alt + j to move a line or selection down
-" amazing vim hack taken from the wiki:
-" https://vim.fandom.com/wiki/Moving_lines_up_or_down#:~:text=In%20normal%20mode%20or%20in,to%20move%20the%20block%20up.
 nnoremap <silent> <A-j> :m .+1<CR>==
 nnoremap <silent> <A-k> :m .-2<CR>==
 inoremap <silent> <A-j> <Esc>:m .+1<CR>==gi
@@ -17,6 +15,7 @@ vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
 " tab stuff
+" leader 1 - 9 to jump to tab 1 - 9
 nnoremap <Leader>1 1gt<CR>
 nnoremap <Leader>2 2gt<CR>
 nnoremap <Leader>3 3gt<CR>
@@ -26,7 +25,9 @@ nnoremap <Leader>6 6gt<CR>
 nnoremap <Leader>7 7gt<CR>
 nnoremap <Leader>8 8gt<CR>
 nnoremap <Leader>9 9gt<CR>
+" leader n to create a new tab
 nnoremap <Leader>n :tabnew<CR>
+" leader x to close a new tab
 nnoremap <Leader>x :tabclose<CR>
 
 " search
@@ -38,7 +39,7 @@ nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 
-" Resize with arrows
+" Resize splits with arrows
 nnoremap <C-Up> :resize +2<CR>
 nnoremap <C-Down> :resize -2<CR>
 nnoremap <C-Left> :vertical resize -2<CR>
