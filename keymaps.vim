@@ -30,6 +30,8 @@ nnoremap <Leader>n :tabnew<CR>
 nnoremap <Leader>x :tabclose<CR>
 
 " search
+" turn off search highlighting until the next search
+nnoremap <silent> <Leader>h :noh<CR>
 " center search
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
