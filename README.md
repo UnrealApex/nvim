@@ -15,4 +15,4 @@ My config has several dependancies and when installing each, there are some spec
 - Tagbar requires [Universal Ctags](https://github.com/universal-ctags/ctags), and it should be installed under `$HOME/ctags/`.
 - Vim Devicons requires a [patched Nerd Font](https://github.com/ryanoasis/nerd-fonts#patched-fonts)(if you're just using the Nerd Font for icons, which font you choose does not matter) to be installed.
 - FZF requires [bat](https://github.com/sharkdp/bat) for file preview, [Ripgrep(rg)](https://github.com/BurntSushi/ripgrep) for search, and [Delta](https://github.com/dandavison/delta) for formatted Git output.
-- Finally, if you are not in the [GitHub Copilot beta](https://github.com/features/copilot/signup), [GitHub Copilot](https://github.com/features/copilot) will not work.
+- Finally, if you don't have access to [GitHub Copilot]([https://github.com/features/copilot/signup](https://github.com/features/copilot/)), [GitHub Copilot](https://github.com/features/copilot) will not work.
