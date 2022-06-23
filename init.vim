@@ -71,9 +71,9 @@ let mapleader=" "
 let g:ftplugin_sql_omni_key = '<C-;>'
 
 " plugins
-let $PLUGINS = "$HOME/AppData/Local/nvim/plugins/plug.vim"
+let $PLUGINS = stdpath("config") . "\\plugins/plug.vim"
 " keymaps
-let $KEYMAPS = "$HOME/AppData/Local/nvim/keymaps.vim"
+let $KEYMAPS =  stdpath("config") . "\\keymaps.vim"
 
 " auto save file when it is modified
 augroup auto_save
