@@ -1,8 +1,8 @@
 " Gitsigns mappings
 
 " hunk navigation
-nnoremap <Leader>n :Gitsigns next_hunk<CR>
-nnoremap <Leader>N :Gitsigns prev_hunk<CR>
+nnoremap <Leader>hn :Gitsigns next_hunk<CR>
+nnoremap <Leader>hN :Gitsigns prev_hunk<CR>
 " stage hunk
 nnoremap <Leader>hs :Gitsigns stage_hunk<CR>
 vnoremap <Leader>hs :Gitsigns stage_hunk<CR>
