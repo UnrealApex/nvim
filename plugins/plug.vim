@@ -89,6 +89,8 @@ nmap <silent><Leader>z :Goyo<bar>:so $MYVIMRC<bar>:echo ":Goyo"<CR>
 " highlight git stuff in minimap
 " let g:minimap_git_colors = 1
 
+nnoremap f <Plug>Sneak_s
+nnoremap F <Plug>Sneak_S
 
 " bind Enter to accept Copilot suggestions
 imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
