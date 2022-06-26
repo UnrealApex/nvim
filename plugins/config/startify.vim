@@ -37,4 +37,4 @@ else
 endif
 
 " startify bookmarks
-let g:startify_bookmarks = ["$MYVIMRC", "$HOME/src", "$PLUGINS"]
+let g:startify_bookmarks = ["$MYVIMRC", "$HOME/src", "$PLUGINS", "$KEYMAPS"]
