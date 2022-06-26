@@ -25,6 +25,8 @@ nnoremap <Leader>6 6gt<CR>
 nnoremap <Leader>7 7gt<CR>
 nnoremap <Leader>8 8gt<CR>
 nnoremap <Leader>9 9gt<CR>
+" go to the last tab
+nnoremap <Leader>0 :tablast<CR>
 " leader n to create a new tab
 nnoremap <Leader>n :tabnew<CR>
 " leader x to close a new tab
