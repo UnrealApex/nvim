@@ -202,9 +202,9 @@ vim.g.indent_blankline_filetype_exclude = {
 EOF
 
 " plugin configurations
-runtime plugins/config/startify.vim
-runtime plugins/config/coc.vim
-runtime plugins/config/nerdtree.vim
-runtime plugins/config/fzf.vim
-runtime plugins/config/lightline.vim
-runtime plugins/config/gitsigns.vim
+runtime plugins/startify.vim
+runtime plugins/coc.vim
+runtime plugins/nerdtree.vim
+runtime plugins/fzf.vim
+runtime plugins/lightline.vim
+runtime plugins/gitsigns.vim
