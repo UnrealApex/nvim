@@ -59,6 +59,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tpope/vim-speeddating'
 " whichkey(keymap hints)
 Plug 'folke/which-key.nvim'
+Plug 'vim/killersheep'
 call plug#end()
 
 " enable IndentLine
