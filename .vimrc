@@ -187,9 +187,10 @@ augroup rainbow_parens
   autocmd VimEnter * RainbowParentheses
 augroup end
 
+runtime plugins/plug.vim
 " plugin configurations
-runtime plugins/config/startify.vim
-runtime plugins/config/coc.vim
-runtime plugins/config/nerdtree.vim
-runtime plugins/config/fzf.vim
-runtime plugins/config/lightline.vim
+runtime plugins/startify.vim
+runtime plugins/coc.vim
+runtime plugins/nerdtree.vim
+runtime plugins/fzf.vim
+runtime plugins/lightline.vim
