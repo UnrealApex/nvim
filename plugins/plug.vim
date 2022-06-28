@@ -60,6 +60,7 @@ Plug 'tpope/vim-speeddating'
 " whichkey(keymap hints)
 Plug 'folke/which-key.nvim'
 Plug 'vim/killersheep'
+" color scheme
 Plug 'LunarVim/onedarker.nvim'
 call plug#end()
 
