@@ -50,6 +50,7 @@ set matchpairs+=<:>
 set updatetime=25
 " set window background to dark
 set bg=dark
+colorscheme onedarker
 set termguicolors
 " set gutter color to match background color
 highlight clear SignColumn
