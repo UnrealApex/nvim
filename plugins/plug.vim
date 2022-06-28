@@ -104,9 +104,9 @@ augroup end
 
 " lua stuff
 lua <<EOF
--- set the colorscheme to onedarker
-vim.cmd("colorscheme onedarker")
-
+-- set the colorscheme to onedarker
+vim.cmd("colorscheme onedarker")
+
 require('gitsigns').setup({
   signs = {
     add = { hl = "GitSignsAdd", text = "+", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
