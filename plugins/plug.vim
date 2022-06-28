@@ -41,8 +41,8 @@ Plug 'mhinz/vim-startify'
 " fzf(fuzzy finder)
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Hop(better horizontal movement)
-Plug 'phaazon/hop.nvim' 
+" Vim Sneak(better horizontal movement)
+Plug 'justinmk/vim-sneak'
 " VM multi cursors
 Plug 'mg979/vim-visual-multi'
 " Emmet
@@ -194,13 +194,6 @@ require("indent_blankline").setup {
 }
 
 require("which-key").setup()
-
-require('hop').setup()
-
-vim.api.nvim_set_keymap('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", {})
-vim.api.nvim_set_keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>", {})
 
 vim.g.indent_blankline_filetype_exclude = {
 	"help",
