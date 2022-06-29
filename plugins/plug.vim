@@ -59,7 +59,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tpope/vim-speeddating'
 " whichkey(keymap hints)
 Plug 'folke/which-key.nvim'
-Plug 'vim/killersheep'
+Plug 'seandewar/killersheep.nvim'
 " color scheme
 Plug 'LunarVim/onedarker.nvim'
 call plug#end()
