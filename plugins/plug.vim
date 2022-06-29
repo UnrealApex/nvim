@@ -68,8 +68,6 @@ call plug#end()
 " let g:indentLine_enabled = 1
 
 let g:VM_maps = {}
-let g:VM_maps["Select Cursor Down"] = '<Leader>j'
-let g:VM_maps["Select Cursor Up"]   = '<Leader>k'
 
 " set ctags path
 let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"

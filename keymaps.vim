@@ -31,6 +31,9 @@ nnoremap <Leader>0 :tablast<CR>
 nnoremap <Leader>n :tabnew<CR>
 " leader x to close a new tab
 nnoremap <Leader>x :tabclose<CR>
+" move current tab left or right
+nnoremap <C-Left> :tabm -1<CR>
+nnoremap <C-Right> :tabm +1<CR>
 
 " search
 " turn off search highlighting until the next search
@@ -41,11 +44,11 @@ nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 
-" Resize splits with arrows
-nnoremap <C-Up> :resize +2<CR>
-nnoremap <C-Down> :resize -2<CR>
-nnoremap <C-Left> :vertical resize -2<CR>
-nnoremap <C-Right> :vertical resize +2<CR>
+" Resize splits with leader + arrows
+nnoremap <Leader><Up> :resize +2<CR>
+nnoremap <Leader><Down> :resize -2<CR>
+nnoremap <Leader><Left> :vertical resize -2<CR>
+nnoremap <Leader><Right> :vertical resize +2<CR>
 
 "  w wq q   --  Quick Save
 nmap <Leader>w :w<CR>
