@@ -64,10 +64,6 @@ Plug 'seandewar/killersheep.nvim'
 Plug 'LunarVim/onedarker.nvim'
 call plug#end()
 
-" map f and F to sneak
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
-
 " enable IndentLine
 " let g:indentLine_enabled = 1
 
