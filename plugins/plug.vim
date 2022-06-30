@@ -95,6 +95,11 @@ nmap <silent><Leader>z :Goyo<bar>:so $MYVIMRC<bar>:echo ":Goyo"<CR>
 imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
+" after a re-source, fix syntax matching issues (concealing brackets):
+if exists('g:loaded_webdevicons')
+    call webdevicons#refresh()
+endif
+
 " enable RainbowParentheses
 augroup rainbow_parens
   autocmd!
