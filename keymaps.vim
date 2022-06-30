@@ -4,6 +4,9 @@ imap <C-BS> <C-W>
 " map shift + tab to unindent
 inoremap <S-Tab> <C-d>
 
+" turn off search highlighting until the next search
+nnoremap <Leader>l :noh<CR>
+
 " line/selection movement binds
 " alt + k to move a line or selection up,
 " alt + j to move a line or selection down
@@ -31,9 +34,6 @@ nnoremap <Leader>0 :tablast<CR>
 nnoremap <Leader>n :tabnew<CR>
 " leader x to close a new tab
 nnoremap <Leader>x :tabclose<CR>
-" move current tab left or right
-nnoremap <Leader>h :tabm -1<CR>
-nnoremap <Leader>l :tabm +1<CR>
 
 " search
 " center search
