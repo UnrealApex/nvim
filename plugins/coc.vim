@@ -12,6 +12,7 @@ let g:coc_global_extensions = [
 \ 'coc-tsserver',
 \ 'coc-css',
 \ 'coc-highlight',
+\ 'coc-snippets',
 \ 'coc-json',
 \ 'coc-tabnine'
 \ ]
