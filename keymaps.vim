@@ -63,3 +63,7 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+
+" don't lose selection when shifting text
+xnoremap <  <gv
+xnoremap >  >gv
