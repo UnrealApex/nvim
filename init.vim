@@ -90,6 +90,40 @@ function AutoSave()
   endif
 endfunction
 
+
+" prose mode(for writing)
+" FIXME: fix binding g + motion for visible lines
+command Prose call ToggleProseMode()
+
+function ToggleProseMode()
+  let w:prose_mode_enabled = 0
+  if w:prose_mode_enabled == 1
+    " disable word processor mode if it is enabled
+    let w:prose_mode_enabled = 0
+    setlocal nospell
+    setlocal nowrap
+    " allow j and k to navigate through lines on the screen rather than in the
+    " file
+    " unmap k
+    " unmap j
+    Goyo!
+    echo "Prose Mode Disabled"
+  else
+    " enable word processor mode if it is disabled
+    let w:prose_mode_enabled = 1
+    " set spell checking
+    setlocal spell spelllang=en_us
+    " set line wrapping
+    setlocal wrap
+    " map <buffer> <silent> k gk<cr> 
+    " map <buffer> <silent> j gj<cr>
+    " nnoremap j gj<CR>
+    " nnoremap k gk<CR>
+    Goyo
+    echo "Prose Mode Enabled"
+  endif
+endfunction
+
 " keymap management
 runtime keymaps.vim
 " plugin management
