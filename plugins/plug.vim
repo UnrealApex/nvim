@@ -41,8 +41,8 @@ Plug 'mhinz/vim-startify'
 " fzf(fuzzy finder)
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Vim Sneak(better horizontal movement)
-Plug 'justinmk/vim-sneak'
+" Leap(sneak improved, arguably the best movement plugin out there :)           )
+Plug 'ggandor/leap.nvim'
 " VM multi cursors
 Plug 'mg979/vim-visual-multi'
 " Emmet
@@ -198,6 +198,8 @@ require("indent_blankline").setup {
 }
 
 require("which-key").setup()
+
+require('leap').set_default_keymaps()
 
 vim.g.indent_blankline_filetype_exclude = {
 	"help",
