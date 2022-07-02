@@ -5,7 +5,7 @@ imap <C-BS> <C-W>
 inoremap <S-Tab> <C-d>
 
 " turn off search highlighting until the next search
-nnoremap <Leader>l :noh<CR>
+nnoremap <C-L> :nohlsearch<CR><C-L>
 
 " line/selection movement binds
 " alt + k to move a line or selection up,
