@@ -100,8 +100,8 @@ function ToggleProseMode()
   if w:prose_mode_enabled == 1
     " disable word processor mode if it is enabled
     let w:prose_mode_enabled = 0
-    setlocal nospell
-    setlocal nowrap
+    set nospell
+    set nowrap
     " allow j and k to navigate through lines on the screen rather than in the
     " file
     " unmap k
