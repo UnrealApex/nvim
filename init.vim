@@ -8,8 +8,12 @@ set relativenumber
 set noerrorbells visualbell t_vb=
 " syntax highlighting
 syntax on
+" enable filetype detection
+filetype on
 " omni completion
 filetype plugin on
+" better indentation
+filetype indent on
 " show mode in status bar (insert/replace/...)
 set showmode
 " show typed command in status bar
