@@ -22,7 +22,7 @@ set showcmd
 set ruler
 " show file in titlebar
 set title
-" 8 lines above/below cursor when scrolling
+" 8 lines above or below cursor when scrolling
 set scrolloff=8
 " don't wrap lines
 set nowrap
