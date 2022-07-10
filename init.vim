@@ -30,7 +30,6 @@ set nowrap
 set omnifunc=syntaxcomplete#Complete
 " automatic indentation
 set autoindent
-set smartindent
 " more powerful backspacing
 set backspace=indent,eol,start
 " set tabs to two spaces
