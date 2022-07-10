@@ -63,8 +63,6 @@ autocmd BufEnter * lcd %:p:h
 " built in debugger(requires gdb)
 packadd termdebug
 
-" keybindings
-
 " change map leader to space
 let mapleader=" "
 

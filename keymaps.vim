@@ -1,3 +1,5 @@
+" keymaps
+
 " efficient editing in insert mode
 " map ctrl + backspace to delete the previous word in insert mode
 imap <C-BS> <C-W>
