@@ -51,7 +51,7 @@ set matchpairs+=<:>
 " set updatetime to 25 milliseconds
 set updatetime=25
 " set window background to dark
-set bg=dark
+set background=dark
 set termguicolors
 " set gutter color to match background color
 highlight clear SignColumn
