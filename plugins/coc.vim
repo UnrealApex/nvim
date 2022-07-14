@@ -9,6 +9,7 @@ let g:coc_global_extensions = [
 \ 'coc-lua',
 \ 'coc-sql',
 \ 'coc-html',
+\ 'coc-html-css-support',
 \ 'coc-tsserver',
 \ 'coc-css',
 \ 'coc-highlight',
