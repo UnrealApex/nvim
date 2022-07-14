@@ -53,6 +53,7 @@ set updatetime=25
 " set window background to dark
 set background=dark
 set termguicolors
+set lazyredraw
 " set gutter color to match background color
 highlight clear SignColumn
 " set path
