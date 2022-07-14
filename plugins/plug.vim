@@ -74,8 +74,7 @@ let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
 nmap <silent> <F8> :TagbarToggle<CR>
 
 " map Leader z to toggle Goyo
-" hack around Goyo making indent guide colorization disappear
-nmap <silent><Leader>z :Goyo<bar>:so $MYVIMRC<bar>:echo ":Goyo"<CR>
+nnoremap <Leader>z :Goyo<CR>
 
 " bind Enter to accept Copilot suggestions
 imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
