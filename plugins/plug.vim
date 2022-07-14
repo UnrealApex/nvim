@@ -33,7 +33,30 @@ Plug 'github/copilot.vim'
 " Rainbow Parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
 " Conquerer of Completion(code completion)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ 
+Plug 'hrsh7th/nvim-cmp'
+" buffer completions
+Plug 'hrsh7th/cmp-buffer'
+" path completions
+Plug 'hrsh7th/cmp-path'
+" cmdline completions
+Plug 'hrsh7th/cmp-cmdline'
+" snippet completions
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
+
+"  snippets
+" snippet engine
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets' 
+
+" enable LSP
+Plug 'neovim/nvim-lspconfig'
+" simple to use language server installer
+Plug 'williamboman/nvim-lsp-installer'
+
 " Repeat.vim
 Plug 'tpope/vim-repeat'
 " Vim Startify(start screen)
