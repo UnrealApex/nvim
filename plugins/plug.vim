@@ -70,6 +70,8 @@ Plug 'ggandor/leap.nvim'
 Plug 'mg979/vim-visual-multi'
 " Emmet
 Plug 'mattn/emmet-vim'
+" Vim dev icons
+Plug 'ryanoasis/vim-devicons'
 " Tagbar
 Plug 'preservim/tagbar'
 " ToggleTerm
