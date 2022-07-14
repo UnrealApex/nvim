@@ -16,7 +16,8 @@ let g:coc_global_extensions = [
 \ 'coc-highlight',
 \ 'coc-snippets',
 \ 'coc-tabnine',
-\ 'coc-lightbulb'
+\ 'coc-lightbulb',
+\ 'coc-symbol-line'
 \ ]
 
 " CoC keybindings
