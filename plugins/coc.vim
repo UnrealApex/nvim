@@ -12,10 +12,11 @@ let g:coc_global_extensions = [
 \ 'coc-html-css-support',
 \ 'coc-tsserver',
 \ 'coc-css',
+\ 'coc-json',
 \ 'coc-highlight',
 \ 'coc-snippets',
-\ 'coc-json',
-\ 'coc-tabnine'
+\ 'coc-tabnine',
+\ 'coc-lightbulb'
 \ ]
 
 " CoC keybindings
