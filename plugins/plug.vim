@@ -89,7 +89,7 @@ call plug#end()
 " enable IndentLine
 let g:indentLine_enabled = 1
 " files for indentLine to exclude
-let g:indentLine_fileTypeExclude = ['help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'text', 'sh']
+let g:indentLine_fileTypeExclude = ['help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'text', 'sh']
 
 let g:VM_maps = {}
 
