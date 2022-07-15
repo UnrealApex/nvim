@@ -28,6 +28,7 @@ set scrolloff=8
 set nowrap
 " basic completion
 set omnifunc=syntaxcomplete#Complete
+set completeopt=menu,menuone,noselect
 " automatic indentation
 set autoindent
 " more powerful backspacing
