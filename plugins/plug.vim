@@ -42,11 +42,12 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 " cmdline completions
 Plug 'hrsh7th/cmp-cmdline'
-" snippet completions
-Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-emoji'
 
+" snippet completions
+Plug 'saadparwaiz1/cmp_luasnip'
 "  snippets
 " snippet engine
 Plug 'L3MON4D3/LuaSnip'
@@ -226,6 +227,8 @@ cmp.setup({
     { name = "nvim_lua" },
     { name = "buffer" },
     { name = "path" },
+    { name = "cmdline" },
+    { name = "emoji" },
     { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
