@@ -42,9 +42,13 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 " cmdline completions
 Plug 'hrsh7th/cmp-cmdline'
+" lsp completions
 Plug 'hrsh7th/cmp-nvim-lsp'
+" lua completions
 Plug 'hrsh7th/cmp-nvim-lua'
+" calcuation completions
 Plug 'hrsh7th/cmp-calc'
+" emoji completions 😄
 Plug 'hrsh7th/cmp-emoji'
 
 " snippet completions
@@ -52,6 +56,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 "  snippets
 " snippet engine
 Plug 'L3MON4D3/LuaSnip'
+" snippets library
 Plug 'rafamadriz/friendly-snippets' 
 
 " enable LSP
