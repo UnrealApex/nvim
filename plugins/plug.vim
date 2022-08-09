@@ -77,8 +77,8 @@ Plug 'ggandor/leap.nvim'
 Plug 'mg979/vim-visual-multi'
 " Emmet
 Plug 'mattn/emmet-vim'
-" Vim dev icons
-Plug 'ryanoasis/vim-devicons'
+" icons
+Plug 'kyazdani42/nvim-web-devicons'
 " Tagbar
 Plug 'preservim/tagbar'
 " ToggleTerm
@@ -199,6 +199,14 @@ require("which-key").setup()
 
 require('leap').set_default_keymaps()
 
+require('nvim-web-devicons').setup {
+ -- globally enable default icons (default to false)
+ -- will get overriden by `get_icons` option
+ default = true;
+}
+
+require('nvim-web-devicons').get_icons()
+
 require("nvim-lsp-installer").setup {}
 
 require('cmp')
@@ -207,6 +215,35 @@ require('luasnip')
 require("luasnip/loaders/from_vscode").lazy_load()
 -- Setup nvim-cmp.
 local cmp = require('cmp')
+
+-- cmp icons
+local kind_icons = {
+  Text = "",
+  Method = "m",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "",
+  Interface = "",
+  Module = "",
+  Property = "",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+}
 
 cmp.setup({
   snippet = {
@@ -218,6 +255,20 @@ cmp.setup({
   window = {
     -- completion = cmp.config.window.bordered(),
     -- documentation = cmp.config.window.bordered(),
+  },
+  formatting = {
+    fields = { "kind", "abbr", "menu" },
+    format = function(entry, vim_item)
+      -- Kind icons
+      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      vim_item.menu = ({
+        luasnip = "[Snippet]",
+        buffer = "[Buffer]",
+        path = "[Path]",
+      })[entry.source.name]
+      return vim_item
+    end,
   },
   mapping = cmp.mapping.preset.insert({
     ["<C-k>"] = cmp.mapping.select_prev_item(),
