@@ -44,6 +44,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-calc'
 Plug 'hrsh7th/cmp-emoji'
 
 " snippet completions
@@ -228,6 +229,7 @@ cmp.setup({
     { name = "buffer" },
     { name = "path" },
     { name = "cmdline" },
+    { name = "calc" },
     { name = "emoji" },
     { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
