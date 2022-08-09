@@ -46,7 +46,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-nvim-lsp'
 " lua completions
 Plug 'hrsh7th/cmp-nvim-lua'
-" calcuation completions
+" calculation completions
 Plug 'hrsh7th/cmp-calc'
 " emoji completions 😄
 Plug 'hrsh7th/cmp-emoji'
