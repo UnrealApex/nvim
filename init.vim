@@ -1,5 +1,5 @@
 " set the font to Ubuntu Mono and the font size to 14 pixels
-set guifont=Ubuntu\ Mono:h14
+set guifont=UbuntuMono\ NF:h14
 " show line numbers
 set number
 " show relative line numbers
