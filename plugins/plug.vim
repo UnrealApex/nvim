@@ -78,7 +78,7 @@ Plug 'mg979/vim-visual-multi'
 " Emmet
 Plug 'mattn/emmet-vim'
 " icons
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'ryanoasis/vim-devicons'
 " Tagbar
 Plug 'preservim/tagbar'
 " ToggleTerm
@@ -198,14 +198,6 @@ require('colorizer').setup(
 require("which-key").setup()
 
 require('leap').set_default_keymaps()
-
-require('nvim-web-devicons').setup {
- -- globally enable default icons (default to false)
- -- will get overriden by `get_icons` option
- default = true;
-}
-
-require('nvim-web-devicons').get_icons()
 
 require("nvim-lsp-installer").setup {}
 
