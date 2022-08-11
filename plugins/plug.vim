@@ -341,47 +341,47 @@ require('lspconfig')['pyright'].setup {
   flags = lsp_flags,
 }
 require('lspconfig')['clangd'].setup {
-  capabilities = capabilities
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['jdtls'].setup {
-  capabilities = capabilities
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['sumneko_lua'].setup {
-  capabilities = capabilities
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['jsonls'].setup {
-  capabilities = capabilities
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['sqlls'].setup {
-  capabilities = capabilities
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['marksman'].setup {
-  capabilities = capabilities
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['html'].setup {
-  capabilities = capabilities
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['tsserver'].setup {
-  capabilities = capabilities
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['cssls'].setup {
-  capabilities = capabilities
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
