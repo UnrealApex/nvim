@@ -331,57 +331,46 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 -- }
 
 require('lspconfig')['vimls'].setup {
-  capabilities = capabilities
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['pyright'].setup {
-  capabilities = capabilities
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['clangd'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['jdtls'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['sumneko_lua'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['jsonls'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['sqlls'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['marksman'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['html'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['tsserver'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 require('lspconfig')['cssls'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
