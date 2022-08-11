@@ -10,31 +10,30 @@ endif
 
 " plugins (make sure you have vim plug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
-" NERDTree(file explorer)
+" file explorer
 Plug 'preservim/nerdtree'
-" Gitsigns
+" richer git integration
 Plug 'lewis6991/gitsigns.nvim'
-" Lightline (status bar)
+" status bar
 Plug 'itchyny/lightline.vim'
-" Fugitive.vim(git superpowers)
+" basic git integration
 Plug 'tpope/vim-fugitive'
-" Sensible.vim
+" sensible default settings
 Plug 'tpope/vim-sensible'
 " Vim Surround
 Plug 'tpope/vim-surround'
-" Vim Commentary
+" commenter
 Plug 'tpope/vim-commentary'
 " indent guides
 Plug 'Yggdroot/indentLine'
-" Goyo
+" zen mode
 Plug 'junegunn/goyo.vim'
-" GitHub Copilot
+" ai code suggestions
 " Plug 'github/copilot.vim'
-" Rainbow Parentheses
+" easy parenthesis matching
 Plug 'junegunn/rainbow_parentheses.vim'
-" Conquerer of Completion(code completion)
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
- 
+
+" autocomplete
 Plug 'hrsh7th/nvim-cmp'
 " buffer completions
 Plug 'hrsh7th/cmp-buffer'
@@ -66,28 +65,28 @@ Plug 'williamboman/nvim-lsp-installer'
 
 " Repeat.vim
 Plug 'tpope/vim-repeat'
-" Vim Startify(start screen)
+" start screen
 Plug 'mhinz/vim-startify'
-" fzf(fuzzy finder)
+" fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Leap(sneak improved, arguably the best movement plugin out there :)           )
+" better movement
 Plug 'ggandor/leap.nvim'
-" VM multi cursors
+" multi cursor support
 Plug 'mg979/vim-visual-multi'
 " Emmet
 Plug 'mattn/emmet-vim'
 " icons
 Plug 'ryanoasis/vim-devicons'
-" Tagbar
+" ctags
 Plug 'preservim/tagbar'
-" ToggleTerm
+" integrated terminal
 Plug 'akinsho/toggleterm.nvim'
 " color highlighting
 Plug 'norcalli/nvim-colorizer.lua'
 " easily change dates
 Plug 'tpope/vim-speeddating'
-" whichkey(keymap hints)
+" keymap hints
 Plug 'folke/which-key.nvim'
 " color scheme
 Plug 'LunarVim/onedarker.nvim'
