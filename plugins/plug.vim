@@ -43,6 +43,8 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 " lsp completions
 Plug 'hrsh7th/cmp-nvim-lsp'
+" parameter hints
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 " lua completions
 Plug 'hrsh7th/cmp-nvim-lua'
 " calculation completions
@@ -272,6 +274,7 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'nvim_lsp_signature_help' },
     { name = "nvim_lua" },
     { name = "buffer" },
     { name = "path" },
