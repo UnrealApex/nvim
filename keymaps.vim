@@ -6,8 +6,8 @@ imap <C-BS> <C-W>
 " map shift + tab to unindent
 inoremap <S-Tab> <C-d>
 
-" turn off search highlighting until the next search
-nnoremap <C-L> :nohlsearch<CR><C-L>
+" saner CTRL-L
+nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
 " line/selection movement binds
 " alt + k to move a line or selection up,
