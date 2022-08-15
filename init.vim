@@ -85,7 +85,7 @@ augroup end
 
 " save function that is called when buffer is modified
 function AutoSave()
-  if (bufname() != "" && &buftype == "" && &filetype != "")
+  if (bufname() != "" && &buftype == "" && &filetype != "" && &readonly == 0)
     silent write
   " prevent empty, readonly, etc... buffers from being saved
   else
