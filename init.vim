@@ -95,6 +95,7 @@ endfunction
 
 " prose mode(for writing)
 " FIXME: fix binding g + motion for visible lines
+" FIXME: fix unmapping of j and k mappings
 command Prose call ToggleProseMode()
 
 function ToggleProseMode()
@@ -104,10 +105,11 @@ function ToggleProseMode()
     let w:prose_mode_enabled = 0
     set nospell
     set nowrap
-    " allow j and k to navigate through lines on the screen rather than in the
-    " file
-    " unmap k
-    " unmap j
+    " hack to map j and k to their original functionalities
+    nnoremap j j
+    nnoremap k k
+    vnoremap j j
+    vnoremap k k
     Goyo!
     echo "Prose Mode Disabled"
   else
@@ -117,10 +119,11 @@ function ToggleProseMode()
     setlocal spell spelllang=en_us
     " set line wrapping
     setlocal wrap
-    " map <buffer> <silent> k gk<cr> 
-    " map <buffer> <silent> j gj<cr>
-    " nnoremap j gj<CR>
-    " nnoremap k gk<CR>
+    " map j and k to navigate visual lines instead of actual lines
+    nnoremap j gj
+    nnoremap k gk
+    vnoremap j gj
+    vnoremap k gk
     Goyo
     echo "Prose Mode Enabled"
   endif
