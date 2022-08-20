@@ -98,6 +98,8 @@ call plug#end()
 
 " enable IndentLine
 let g:indentLine_enabled = 1
+" prevent indentLine from setting conceallevel for markdown files
+let g:markdown_syntax_conceal=0
 " files for indentLine to exclude
 let g:indentLine_fileTypeExclude = ['help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'text', 'sh']
 
