@@ -106,7 +106,7 @@ function ToggleProseMode()
     let g:prose_mode_enabled = 0
     set nospell
     set nowrap
-    " hack to keys back to their original functionalities
+    " hack to return keys back to their original functionalities
     " normal mode unmappings
     nnoremap j j
     nnoremap k k
