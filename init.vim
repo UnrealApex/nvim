@@ -95,14 +95,13 @@ endfunction
 
 " prose mode(for writing)
 " FIXME: fix binding g + motion for visible lines
-" FIXME: fix unmapping of j and k mappings
 command Prose call ToggleProseMode()
 
+let g:prose_mode_enabled = 0
 function ToggleProseMode()
-  let w:prose_mode_enabled = 0
-  if w:prose_mode_enabled == 1
+  if g:prose_mode_enabled == 1
     " disable word processor mode if it is enabled
-    let w:prose_mode_enabled = 0
+    let g:prose_mode_enabled = 0
     set nospell
     set nowrap
     " hack to map j and k to their original functionalities
@@ -114,7 +113,7 @@ function ToggleProseMode()
     echo "Prose Mode Disabled"
   else
     " enable word processor mode if it is disabled
-    let w:prose_mode_enabled = 1
+    let g:prose_mode_enabled = 1
     " set spell checking
     setlocal spell spelllang=en_us
     " set line wrapping
