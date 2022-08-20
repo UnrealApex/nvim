@@ -104,7 +104,7 @@ function ToggleProseMode()
     let g:prose_mode_enabled = 0
     set nospell
     set nowrap
-    " hack to map j and k to their original functionalities
+    " hack to map j and k back to their original functionalities
     nnoremap j j
     nnoremap k k
     vnoremap j j
