@@ -122,6 +122,7 @@ nnoremap <Leader>z :Goyo<CR>
 
 
 nnoremap <C-p> :Telescope find_files<CR>
+nnoremap <C-t> :Telescope live_grep<CR>
 
 " bind Enter to accept Copilot suggestions
 " imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
