@@ -516,8 +516,6 @@ EOF
 
 " plugin configurations
 runtime plugins/startify.vim
-" runtime plugins/coc.vim
 runtime plugins/nerdtree.vim
-" runtime plugins/fzf.vim
 runtime plugins/lightline.vim
 runtime plugins/gitsigns.vim
