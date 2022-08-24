@@ -10,7 +10,9 @@ endif
 
 " plugins (make sure you have vim plug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
+" lua libary
 Plug 'nvim-lua/plenary.nvim'
+" vim popup api
 Plug 'nvim-lua/popup.nvim'
 " file explorer
 Plug 'preservim/nerdtree'
@@ -79,6 +81,7 @@ Plug 'nvim-telescope/telescope.nvim'
 " Plug 'nvim-telescope/telescope-media-files.nvim'
 " TODO: get Telescope fzf working
 " TODO: figure out why this extension is not being found
+" increase telescope search speed
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
