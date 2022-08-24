@@ -77,6 +77,7 @@ Plug 'mhinz/vim-startify'
 Plug 'nvim-telescope/telescope.nvim'
 " not supported on windows
 " Plug 'nvim-telescope/telescope-media-files.nvim'
+" TODO: get Telescope fzf working
 " TODO: figure out why this extension is not being found
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -141,6 +142,7 @@ augroup end
 
 " lua stuff
 lua <<EOF
+-- TODO: organize lua code into modules
 -- set the colorscheme to onedarker
 -- vim.cmd("colorscheme onedarker")
 
