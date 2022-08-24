@@ -11,6 +11,7 @@ endif
 " plugins (make sure you have vim plug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
 " file explorer
 Plug 'preservim/nerdtree'
 " richer git integration
