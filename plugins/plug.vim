@@ -10,6 +10,10 @@ endif
 
 " plugins (make sure you have vim plug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
+" lua libary
+Plug 'nvim-lua/plenary.nvim'
+" vim popup api
+Plug 'nvim-lua/popup.nvim'
 " file explorer
 Plug 'preservim/nerdtree'
 " richer git integration
@@ -32,7 +36,6 @@ Plug 'junegunn/goyo.vim'
 " Plug 'github/copilot.vim'
 " easy parenthesis matching
 Plug 'junegunn/rainbow_parentheses.vim'
-
 " autocomplete
 Plug 'hrsh7th/nvim-cmp'
 " buffer completions
@@ -64,6 +67,7 @@ Plug 'rafamadriz/friendly-snippets'
 
 " enable LSP
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " simple to use language server installer
 Plug 'williamboman/nvim-lsp-installer'
 
@@ -72,6 +76,13 @@ Plug 'tpope/vim-repeat'
 " start screen
 Plug 'mhinz/vim-startify'
 " fuzzy finder
+Plug 'nvim-telescope/telescope.nvim'
+" not supported on windows
+" Plug 'nvim-telescope/telescope-media-files.nvim'
+" TODO: get Telescope fzf working
+" TODO: figure out why this extension is not being found
+" increase telescope search speed
+" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " better movement
@@ -113,6 +124,10 @@ nmap <silent> <F8> :TagbarToggle<CR>
 " map Leader z to toggle Goyo
 nnoremap <Leader>z :Goyo<CR>
 
+
+nnoremap <C-p> :Telescope find_files<CR>
+nnoremap <C-t> :Telescope live_grep<CR>
+
 " bind Enter to accept Copilot suggestions
 " imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
 " let g:copilot_no_tab_map = v:true
@@ -130,8 +145,9 @@ augroup end
 
 " lua stuff
 lua <<EOF
+-- TODO: organize lua code into modules
 -- set the colorscheme to onedarker
-vim.cmd("colorscheme onedarker")
+-- vim.cmd("colorscheme onedarker")
 
 require('gitsigns').setup({
   signs = {
@@ -373,12 +389,135 @@ require('lspconfig')['cssls'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
 }
+
+-- treesitter stuff
+local configs = require("nvim-treesitter.configs")
+configs.setup {
+  ensure_installed = "all",
+  sync_install = false, 
+  ignore_install = { "" }, -- List of parsers to ignore installing
+  highlight = {
+    enable = true, -- false will disable the whole extension
+    disable = { "" }, -- list of language that will be disabled
+    additional_vim_regex_highlighting = true,
+
+  },
+  indent = { enable = true, disable = { "yaml" } },
+}
+
+
+-- require('telescope').load_extension('media_files')
+
+
+require('telescope').setup {
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-j>"] = require('telescope.actions').move_selection_next,
+        ["<C-k>"] = require('telescope.actions').move_selection_previous,
+
+        ["<C-c>"] = require('telescope.actions').close,
+        ["<C-p>"] = require('telescope.actions').close,
+
+        ["<Down>"] = require('telescope.actions').move_selection_next,
+        ["<Up>"] = require('telescope.actions').move_selection_previous,
+
+        ["<CR>"] = require('telescope.actions').select_default,
+        ["<C-x>"] = require('telescope.actions').select_horizontal,
+        ["<C-v>"] = require('telescope.actions').select_vertical,
+        ["<C-t>"] = require('telescope.actions').select_tab,
+
+        ["<C-u>"] = require('telescope.actions').preview_scrolling_up,
+        ["<C-d>"] = require('telescope.actions').preview_scrolling_down,
+
+        ["<PageUp>"] = require('telescope.actions').results_scrolling_up,
+        ["<PageDown>"] = require('telescope.actions').results_scrolling_down,
+
+        ["<Tab>"] = require('telescope.actions').toggle_selection + require('telescope.actions').move_selection_worse,
+        ["<S-Tab>"] = require('telescope.actions').toggle_selection + require('telescope.actions').move_selection_better,
+        ["<C-q>"] = require('telescope.actions').send_to_qflist + require('telescope.actions').open_qflist,
+        ["<M-q>"] = require('telescope.actions').send_selected_to_qflist + require('telescope.actions').open_qflist,
+        ["<C-l>"] = require('telescope.actions').complete_tag,
+        ["<C-_>"] = require('telescope.actions').which_key, -- keys from pressing <C-/>
+      },
+
+      n = {
+        ["<esc>"] = require('telescope.actions').close,
+        ["<C-p>"] = require('telescope.actions').close,
+        ["<CR>"] = require('telescope.actions').select_default,
+        ["<C-x>"] = require('telescope.actions').select_horizontal,
+        ["<C-v>"] = require('telescope.actions').select_vertical,
+        ["<C-t>"] = require('telescope.actions').select_tab,
+
+        ["<Tab>"] = require('telescope.actions').toggle_selection + require('telescope.actions').move_selection_worse,
+        ["<S-Tab>"] = require('telescope.actions').toggle_selection + require('telescope.actions').move_selection_better,
+        ["<C-q>"] = require('telescope.actions').send_to_qflist + require('telescope.actions').open_qflist,
+        ["<M-q>"] = require('telescope.actions').send_selected_to_qflist + require('telescope.actions').open_qflist,
+
+        ["j"] = require('telescope.actions').move_selection_next,
+        ["k"] = require('telescope.actions').move_selection_previous,
+        ["H"] = require('telescope.actions').move_to_top,
+        ["M"] = require('telescope.actions').move_to_middle,
+        ["L"] = require('telescope.actions').move_to_bottom,
+
+        ["<Down>"] = require('telescope.actions').move_selection_next,
+        ["<Up>"] = require('telescope.actions').move_selection_previous,
+        ["gg"] = require('telescope.actions').move_to_top,
+        ["G"] = require('telescope.actions').move_to_bottom,
+
+        ["<C-u>"] = require('telescope.actions').preview_scrolling_up,
+        ["<C-d>"] = require('telescope.actions').preview_scrolling_down,
+
+        ["<PageUp>"] = require('telescope.actions').results_scrolling_up,
+        ["<PageDown>"] = require('telescope.actions').results_scrolling_down,
+
+        ["?"] = require('telescope.actions').which_key,
+      },
+    },
+  },
+  pickers = {
+    -- Default configuration for builtin pickers goes here:
+    -- picker_name = {
+    --   picker_config_key = value,
+    --   ...
+    -- }
+    -- Now the picker_config_key will be applied every time you call this
+    -- builtin picker
+  },
+  extensions = {
+    --[[ fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    },
+  --]]
+
+  --[[
+    media_files = {
+        -- filetypes whitelist
+        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+        filetypes = {"png", "webp", "jpg", "jpeg"},
+        find_cmd = "rg" -- find command (defaults to `fd`)
+      }
+    --]]
+
+    -- Your extension configuration goes here:
+    -- extension_name = {
+    --   extension_config_key = value,
+    -- }
+    -- please take a look at the readme of the extension you want to configure
+  },
+}
+
+-- require('telescope').load_extension('fzf')
 EOF
 
 " plugin configurations
 runtime plugins/startify.vim
 " runtime plugins/coc.vim
 runtime plugins/nerdtree.vim
-runtime plugins/fzf.vim
+" runtime plugins/fzf.vim
 runtime plugins/lightline.vim
 runtime plugins/gitsigns.vim
