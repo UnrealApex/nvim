@@ -128,8 +128,6 @@ Plug 'tpope/vim-commentary'
 Plug 'yggdroot/indentline'
 " Goyo
 Plug 'junegunn/goyo.vim'
-" GitHub Copilot(not supported in Vim)
-" Plug 'github/copilot.vim'
 " Rainbow Parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
 " Conquerer of Completion(code completion)
@@ -142,7 +140,8 @@ Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Vim Sneak(better horizontal movement)
-Plug 'justinmk/vim-sneak'
+" Plug 'justinmk/vim-sneak'
+Plug 'phaazon/hop.nvim'
 " VM multi cursors
 Plug 'mg979/vim-visual-multi'
 " Emmet
@@ -187,10 +186,167 @@ augroup rainbow_parens
   autocmd VimEnter * RainbowParentheses
 augroup end
 
-runtime plugins/plug.vim
-" plugin configurations
-runtime plugins/startify.vim
-runtime plugins/coc.vim
-runtime plugins/nerdtree.vim
-runtime plugins/fzf.vim
-runtime plugins/lightline.vim
+" plugins
+
+
+
+" NERDTree configurations
+
+" keybinds
+" refresh NerdTree when it is focused
+autocmd BufEnter NERD_tree_* | execute 'normal R'
+
+" map the hypen key (-) to toggle NERDTree
+nmap <silent> - :NERDTreeToggle %<CR>
+
+" CoC configurations
+
+" CoC Extensions
+let g:coc_global_extensions = [
+\ 'coc-vimlsp',
+\ 'coc-pyright',
+\ 'coc-clangd',
+\ 'coc-java',
+\ 'coc-lua',
+\ 'coc-sql',
+\ 'coc-html',
+\ 'coc-html-css-support',
+\ 'coc-tsserver',
+\ 'coc-css',
+\ 'coc-json',
+\ 'coc-highlight',
+\ 'coc-snippets',
+\ 'coc-tabnine',
+\ 'coc-lightbulb',
+\ 'coc-symbol-line'
+\ ]
+
+" CoC keybindings
+
+" map ctrl + j and ctrl + k to traverse up and down the coc completion list
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+" map tab to accept completion
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<Tab>"
+
+" taken from https://github.com/rstacruz/vim-coc-settings/blob/master/after/plugin/coc.vim#L2
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" gd - go to definition of word under cursor
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+
+" gi - go to implementation
+nmap <silent> gi <Plug>(coc-implementation)
+
+" gr - find references
+nmap <silent> gr <Plug>(coc-references)
+
+" gh - get hint on whatever's under the cursor
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> gh :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+
+" highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
+nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
+
+" list errors
+nnoremap <silent> <leader>cl  :<C-u>CocList locationlist<cr>
+
+" list commands available in tsserver (and others)
+nnoremap <silent> <leader>cc  :<C-u>CocList commands<cr>
+
+" restart when tsserver gets wonky
+nnoremap <silent> <leader>cR  :<C-u>CocRestart<CR>
+
+" view all errors
+nnoremap <silent> <leader>cl  :<C-u>CocList locationlist<CR>
+
+" manage extensions
+nnoremap <silent> <leader>cx  :<C-u>CocList extensions<cr>
+
+" rename the current word in the cursor
+nmap <leader>cr  <Plug>(coc-rename)
+" also bind F2 to the same command
+nmap <F2> <Plug>(coc-rename)
+nmap <leader>cf  <Plug>(coc-format-selected)
+vmap <leader>cf  <Plug>(coc-format-selected)
+
+" run code actions
+vmap <leader>ca  <Plug>(coc-codeaction-selected)
+nmap <leader>ca  <Plug>(coc-codeaction-selected)
+
+
+" FZF configurations
+
+" open FZF file search when ctrl + p is pressed
+nnoremap <C-p> :FZF<CR>
+" open FZF ripgrep search when ctrl + t is pressed
+nnoremap <C-t> :Rg<CR>
+
+" Lightline configurations
+
+" add git branch to lightline
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+\ }
+
+
+" startify configurations
+
+" custom startify headers
+" https://github.com/goolord/alpha-nvim/blob/20ecf5c5af6d6b830f1dc08ae7f3325cd518f0be/doc/alpha.txt#L176
+
+let g:neovim_custom_ascii_header = [
+              \  '                               __                ',
+              \  '  ___     ___    ___   __  __ /\_\    ___ ___    ',
+              \  ' / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ',
+              \  '/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ',
+              \  '\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\',
+              \  ' \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/',
+              \  ]
+
+let g:vim_custom_ascii_header = [
+              \  '         __                ',
+              \  ' __  __ /\_\    ___ ___    ',
+              \  '/\ \/\ \\/\ \  / __` __`\  ',
+              \  '\ \ \_/ |\ \ \/\ \/\ \/\ \ ',
+              \  ' \ \___/  \ \_\ \_\ \_\ \_\',
+              \  '  \/__/    \/_/\/_/\/_/\/_/',
+              \  ]
+
+" set a different ASCII custom header depending on if you are using NeoVim,
+" Vim, or a Vim-like editor
+if has("nvim")
+  let g:startify_custom_header =
+        \ 'startify#pad(g:neovim_custom_ascii_header)'
+        " custom header with random quote in box
+        " \ 'startify#pad(g:neovim_custom_ascii_header + startify#fortune#boxed())'
+elseif has("vim")
+  let g:startify_custom_header =
+        \ 'startify#pad(g:vim_custom_ascii_header)'
+        " custom header with random quote in box
+        " \ 'startify#pad(g:ascii + startify#fortune#boxed())'
+else
+endif
+
+" startify bookmarks
+let g:startify_bookmarks = ["$MYVIMRC", "$HOME/src", "$PLUGINS", "$KEYMAPS"]
