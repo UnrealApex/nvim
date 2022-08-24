@@ -10,6 +10,7 @@ endif
 
 " plugins (make sure you have vim plug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
+Plug 'nvim-lua/plenary.nvim'
 " file explorer
 Plug 'preservim/nerdtree'
 " richer git integration
@@ -32,7 +33,6 @@ Plug 'junegunn/goyo.vim'
 " Plug 'github/copilot.vim'
 " easy parenthesis matching
 Plug 'junegunn/rainbow_parentheses.vim'
-
 " autocomplete
 Plug 'hrsh7th/nvim-cmp'
 " buffer completions
@@ -64,6 +64,7 @@ Plug 'rafamadriz/friendly-snippets'
 
 " enable LSP
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " simple to use language server installer
 Plug 'williamboman/nvim-lsp-installer'
 
@@ -72,6 +73,9 @@ Plug 'tpope/vim-repeat'
 " start screen
 Plug 'mhinz/vim-startify'
 " fuzzy finder
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-media-files.nvim'
+" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " better movement
@@ -379,6 +383,6 @@ EOF
 runtime plugins/startify.vim
 " runtime plugins/coc.vim
 runtime plugins/nerdtree.vim
-runtime plugins/fzf.vim
+" runtime plugins/fzf.vim
 runtime plugins/lightline.vim
 runtime plugins/gitsigns.vim
