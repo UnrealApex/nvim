@@ -13,7 +13,7 @@ The plugins I use are [here](https://github.com/UnrealApex/dotfiles/blob/main/pl
 This config has several dependancies. I find it convenient to install some of these dependancies via a package manager:
 
 - [Git](https://git-scm.com/)
-- [Universal Ctags](https://github.com/universal-ctags/ctags).
+- [Universal Ctags](https://github.com/universal-ctags/ctags)
 - [Ubuntu Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono/Regular/complete)
 - [bat](https://github.com/sharkdp/bat)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
