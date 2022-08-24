@@ -75,7 +75,9 @@ Plug 'tpope/vim-repeat'
 Plug 'mhinz/vim-startify'
 " fuzzy finder
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-media-files.nvim'
+" not supported on windows
+" Plug 'nvim-telescope/telescope-media-files.nvim'
+" TODO: figure out why this extension is not being found
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -139,7 +141,7 @@ augroup end
 " lua stuff
 lua <<EOF
 -- set the colorscheme to onedarker
-vim.cmd("colorscheme onedarker")
+-- vim.cmd("colorscheme onedarker")
 
 require('gitsigns').setup({
   signs = {
@@ -398,7 +400,7 @@ configs.setup {
 }
 
 
-require('telescope').load_extension('media_files')
+-- require('telescope').load_extension('media_files')
 
 
 require('telescope').setup {
@@ -486,12 +488,15 @@ require('telescope').setup {
     },
   --]]
 
+  --[[
     media_files = {
         -- filetypes whitelist
         -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
         filetypes = {"png", "webp", "jpg", "jpeg"},
         find_cmd = "rg" -- find command (defaults to `fd`)
       }
+    --]]
+
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,
