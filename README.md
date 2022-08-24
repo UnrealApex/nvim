@@ -12,10 +12,12 @@ The plugins I use are [here](https://github.com/UnrealApex/dotfiles/blob/main/pl
 **Notes**
 This config has several dependancies. I find it convenient to install some of these dependancies via a package manager:
 
+- [Neovim](https://github.com/neovim/neovim)
 - [Git](https://git-scm.com/)
 - [Universal Ctags](https://github.com/universal-ctags/ctags)
-- [Ubuntu Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono/Regular/complete)
-- [bat](https://github.com/sharkdp/bat)
+- [GNU Compiler Collection](https://gcc.gnu.org/)
+- [make](https://www.gnu.org/software/make/)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
+- [bat](https://github.com/sharkdp/bat)
 - [Delta](https://github.com/dandavison/delta)
 - Access to [GitHub Copilot](https://github.com/features/copilot)
