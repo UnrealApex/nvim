@@ -67,9 +67,10 @@ Plug 'rafamadriz/friendly-snippets'
 
 " enable LSP
 Plug 'neovim/nvim-lspconfig'
+" simple to use package manager
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" simple to use language server installer
-Plug 'williamboman/nvim-lsp-installer'
 
 " Repeat.vim
 Plug 'tpope/vim-repeat'
@@ -216,11 +217,14 @@ require('colorizer').setup(
 	css_fn   = true;        -- Enable all CSS *functions*: rgb_fn, hsl_fn
 })
 
+require("mason").setup()
+require("mason-lspconfig").setup({
+  automatic_installation = true,
+})
+
 require("which-key").setup()
 
 require('leap').set_default_keymaps()
-
-require("nvim-lsp-installer").setup {}
 
 require('cmp')
 require('luasnip')
