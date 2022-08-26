@@ -5,4 +5,4 @@
 autocmd BufEnter NERD_tree_* | execute 'normal R'
 
 " map the hypen key (-) to toggle NERDTree
-nmap <silent> - :NERDTreeToggle %<CR>
+nmap <silent> <C-\> :NERDTreeToggle %<CR>
