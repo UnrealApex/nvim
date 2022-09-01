@@ -197,7 +197,7 @@ require('gitsigns').setup({
 
 require("toggleterm").setup({
   direction = 'float',
-  open_mapping = [[<c-~>]],
+  open_mapping = [[<c-\>]],
   start_in_insert = true,
   insert_mappings = true,
   close_on_exit = true,
