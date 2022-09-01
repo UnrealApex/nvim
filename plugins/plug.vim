@@ -88,6 +88,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " better movement
 Plug 'ggandor/leap.nvim'
+" Plug 'ggandor/lightspeed.nvim'
 " multi cursor support
 Plug 'mg979/vim-visual-multi'
 " Emmet
