@@ -522,5 +522,4 @@ EOF
 " plugin configurations
 runtime plugins/startify.vim
 runtime plugins/nerdtree.vim
-runtime plugins/lightline.vim
 runtime plugins/gitsigns.vim
