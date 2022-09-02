@@ -1,4 +1,3 @@
-
 " set the font to Consolas and the font size to 14 pixels
 set guifont=Jetbrains\ Mono:h14
 " show line numbers
@@ -80,6 +79,7 @@ vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 imap <C-BS> <C-W>
 " map shift + tab to unindent
 inoremap <S-Tab> <C-d>
+
 " auto save file when it is modified
 augroup auto_save
   autocmd!
@@ -89,7 +89,7 @@ augroup end
 
 " save function that is called when buffer is modified
 function AutoSave()
-  if (bufname() != "" && &buftype == "" && &filetype != "")
+  if (bufname() != "" && &buftype == "" && &filetype != "" && &readonly == 0)
     silent write
   " prevent empty, readonly, etc... buffers from being saved
   else
@@ -140,8 +140,7 @@ Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Vim Sneak(better horizontal movement)
-" Plug 'justinmk/vim-sneak'
-Plug 'phaazon/hop.nvim'
+Plug 'justinmk/vim-sneak'
 " VM multi cursors
 Plug 'mg979/vim-visual-multi'
 " Emmet
@@ -154,6 +153,9 @@ call plug#end()
 
 " enable IndentLine
 let g:indentLine_enabled = 1
+
+" enable sneak label mode
+let g:sneak#label = 1
 
 " set ctags path
 let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
@@ -187,7 +189,6 @@ augroup rainbow_parens
 augroup end
 
 " plugins
-
 
 
 " NERDTree configurations
@@ -294,21 +295,6 @@ nmap <leader>ca  <Plug>(coc-codeaction-selected)
 nnoremap <C-p> :FZF<CR>
 " open FZF ripgrep search when ctrl + t is pressed
 nnoremap <C-t> :Rg<CR>
-
-" Lightline configurations
-
-" add git branch to lightline
-let g:lightline = {
-      \ 'colorscheme': 'powerline',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-\ }
-
 
 " startify configurations
 
