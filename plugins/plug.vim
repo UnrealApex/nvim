@@ -84,8 +84,6 @@ Plug 'nvim-telescope/telescope.nvim'
 " TODO: figure out why this extension is not being found
 " increase telescope search speed
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 " better movement
 Plug 'ggandor/leap.nvim'
 " Plug 'ggandor/lightspeed.nvim'
