@@ -16,6 +16,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 " file explorer
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " richer git integration
 Plug 'lewis6991/gitsigns.nvim'
 " status bar
@@ -113,6 +114,7 @@ let g:indentLine_enabled = 1
 let g:markdown_syntax_conceal=0
 " files for indentLine to exclude
 let g:indentLine_fileTypeExclude = ['help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh']
+let g:NERDTreeGitStatusUseNerdFonts = 1 
 
 let g:VM_maps = {}
 
