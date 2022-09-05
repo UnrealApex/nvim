@@ -115,9 +115,10 @@ let g:indentLine_enabled = 1
 let g:markdown_syntax_conceal=0
 " files for indentLine to exclude
 let g:indentLine_fileTypeExclude = ['help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh']
+" use nerdfont icons for nerdtree git status indicators
 let g:NERDTreeGitStatusUseNerdFonts = 1
 
-" don't confirm opening, copying, or moving of files in NERDTree visual
+" don't confirm opening, copying, or moving of files in nerdtree visual
 " selection mode
 let g:nerdtree_vis_confirm_open = 0
 let g:nerdtree_vis_confirm_copy = 0
