@@ -16,6 +16,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 " file explorer
 Plug 'preservim/nerdtree'
+Plug 'PhilRunninger/nerdtree-visual-selection'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " richer git integration
 Plug 'lewis6991/gitsigns.nvim'
@@ -115,6 +116,12 @@ let g:markdown_syntax_conceal=0
 " files for indentLine to exclude
 let g:indentLine_fileTypeExclude = ['help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh']
 let g:NERDTreeGitStatusUseNerdFonts = 1 
+
+" don't confirm opening, copying, or moving of files in NERDTree visual
+" selection mode
+let g:nerdtree_vis_confirm_open = 0
+let g:nerdtree_vis_confirm_copy = 0
+let g:nerdtree_vis_confirm_move = 0
 
 let g:VM_maps = {}
 
