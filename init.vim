@@ -94,56 +94,51 @@ endfunction
 
 
 " prose mode(for writing)
-" TODO: allow Prose mode to be enabled for individual buffers rather than for
-" Vim itself
-" FIXME: fix binding g + motion for visible lines
-command Prose call ToggleProseMode()
+command Prose call EnableProseMode()
+command UnProse call DisableProseMode()
 
-let g:prose_mode_enabled = 0
-function ToggleProseMode()
-  if g:prose_mode_enabled == 1
-    " disable word processor mode if it is enabled
-    let g:prose_mode_enabled = 0
-    set nospell
-    set nowrap
-    " hack to return keys back to their original functionalities
-    " normal mode unmappings
-    nnoremap j j
-    nnoremap k k
-    nnoremap 0 0
-    nnoremap $ $
-    nnoremap ^ ^
-    " visual mode unmappings
-    vnoremap j j
-    vnoremap k k
-    vnoremap 0 0
-    vnoremap $ $
-    vnoremap ^ ^
-    Goyo!
-    echo "Prose Mode Disabled"
-  else
-    " enable word processor mode if it is disabled
-    let g:prose_mode_enabled = 1
-    " set spell checking
-    setlocal spell spelllang=en_us
-    " set line wrapping
-    setlocal wrap
-    " map j and k to navigate visual lines instead of actual lines
-    " normal mode mappings
-    nnoremap j gj
-    nnoremap k gk
-    nnoremap 0 g0
-    nnoremap $ g$
-    nnoremap ^ g^
-    " visual mode mappings
-    vnoremap j gj
-    vnoremap k gk
-    vnoremap 0 g0
-    vnoremap $ g$
-    vnoremap ^ g^
-    Goyo
-    echo "Prose Mode Enabled"
-  endif
+function EnableProseMode()
+  " enable word processor mode
+  " set spell checking
+  setlocal spell spelllang=en_us
+  " set line wrapping
+  setlocal wrap
+  " map j and k to navigate visual lines instead of actual lines
+  " normal mode mappings
+  nnoremap j gj
+  nnoremap k gk
+  nnoremap 0 g0
+  nnoremap $ g$
+  nnoremap ^ g^
+  " visual mode mappings
+  vnoremap j gj
+  vnoremap k gk
+  vnoremap 0 g0
+  vnoremap $ g$
+  vnoremap ^ g^
+  Goyo
+  echo "Prose Mode Enabled"
+endfunction
+
+function DisableProseMode()
+  " disable word processor mode
+  setlocal nospell spelllang=
+  setlocal nowrap
+  " hack to return keys back to their original functionalities
+  " normal mode unmappings
+  nnoremap j j
+  nnoremap k k
+  nnoremap 0 0
+  nnoremap $ $
+  nnoremap ^ ^
+  " visual mode unmappings
+  vnoremap j j
+  vnoremap k k
+  vnoremap 0 0
+  vnoremap $ $
+  vnoremap ^ ^
+  Goyo!
+  echo "Prose Mode Disabled"
 endfunction
 
 " keymap management
