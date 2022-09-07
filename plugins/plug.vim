@@ -157,7 +157,7 @@ augroup end
 lua <<EOF
 -- TODO: organize lua code into modules
 -- set the colorscheme to onedarker
--- vim.cmd("colorscheme onedarker")
+vim.cmd("colorscheme onedarker")
 
 require('gitsigns').setup({
   signs = {
