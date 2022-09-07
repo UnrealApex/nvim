@@ -93,11 +93,12 @@ function AutoSave()
 endfunction
 
 
-" prose mode(for writing)
-command Prose call EnableProseMode()
-command UnProse call DisableProseMode()
+command Prose call ProseMode()
 
-function EnableProseMode()
+" prose mode(for writing)
+" requires goyo
+function ProseMode()
+  if (!exists('t:goyo_master'))
   " enable word processor mode
   " set spell checking
   setlocal spell spelllang=en_us
@@ -118,9 +119,7 @@ function EnableProseMode()
   vnoremap ^ g^
   Goyo
   echo "Prose Mode Enabled"
-endfunction
-
-function DisableProseMode()
+else
   " disable word processor mode
   setlocal nospell spelllang=
   setlocal nowrap
@@ -139,6 +138,7 @@ function DisableProseMode()
   vnoremap ^ ^
   Goyo!
   echo "Prose Mode Disabled"
+endif
 endfunction
 
 " keymap management
