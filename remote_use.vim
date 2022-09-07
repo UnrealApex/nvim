@@ -1,4 +1,7 @@
 " my vimrc for remote use(no plugins)
+" vim -Nu <(curl https://raw.githubusercontent.com/UnrealApex/dotfiles/main/remote_use.vim)
+
+
 " show line numbers
 set number
 " show relative line numbers
