@@ -1,4 +1,4 @@
-" My config without vim plug and plugins
+" my simple vimrc for remote use(no plugins)
 " show line numbers
 set number
 " show relative line numbers
