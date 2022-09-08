@@ -97,8 +97,6 @@ Plug 'mg979/vim-visual-multi'
 Plug 'mattn/emmet-vim'
 " icons
 Plug 'ryanoasis/vim-devicons'
-" ctags
-Plug 'preservim/tagbar'
 " integrated terminal
 Plug 'akinsho/toggleterm.nvim'
 " color highlighting
@@ -127,11 +125,6 @@ let g:nerdtree_vis_confirm_copy = 0
 let g:nerdtree_vis_confirm_move = 0
 
 let g:VM_maps = {}
-
-" set ctags path
-let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
-" map F8 to toggle Tagbar
-nmap <silent> <F8> :TagbarToggle<CR>
 
 " map Leader z to toggle Goyo
 nnoremap <Leader>z :Goyo<CR>
