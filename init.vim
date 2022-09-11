@@ -49,8 +49,8 @@ set wildmode=longest:full,full
 set wildmenu
 " auto close html tags
 set matchpairs+=<:>
-" set updatetime to 25 milliseconds
-set updatetime=25
+" set updatetime to 200 milliseconds
+set updatetime=200
 " set window background to dark
 set background=dark
 set termguicolors
