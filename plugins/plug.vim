@@ -105,6 +105,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tpope/vim-speeddating'
 " keymap hints
 Plug 'folke/which-key.nvim'
+Plug 'folke/trouble.nvim'
 " color scheme
 Plug 'LunarVim/onedarker.nvim'
 call plug#end()
