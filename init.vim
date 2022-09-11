@@ -60,16 +60,6 @@ highlight clear SignColumn
 " set path
 set path=.,**
 
-autocmd BufEnter * call ChangeWorkingDirectory()
-" set the working directory as the one of the file currently being edited
-function ChangeWorkingDirectory()
-  if (bufname() != "" && &buftype == "" && &filetype != "" && &readonly == 0)
-    lcd %:p:h
-  " don't change the working directory for buffers that aren't files
-  else
-  endif
-endfunction
-
 " built in debugger(requires gdb)
 packadd termdebug
 
