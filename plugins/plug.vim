@@ -128,6 +128,11 @@ let g:VM_maps = {}
 
 " set ctags path
 let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
+
+if has_key(plugs, 'lightline.vim')
+  set noshowmode
+endif
+
 " map F8 to toggle Tagbar
 nmap <silent> <F8> :TagbarToggle<CR>
 
