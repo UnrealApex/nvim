@@ -357,10 +357,10 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 -- lspconfig mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>;', vim.diagnostic.setloclist, opts)
+-- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+-- vim.keymap.set('n', '<space>;', vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -484,10 +484,10 @@ keymap("n", "rn", "<cmd>Lspsaga rename<CR>", { silent = true })
 keymap("n", "gD", "<cmd>Lspsaga preview_definition<CR>", { silent = true })
 
 -- Show line diagnostics
-keymap("n", "<leader>ld", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+keymap("n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 
 -- Show cursor diagnostic
-keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
+keymap("n", "<leader>E", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
 
 -- Diagnsotic jump can use `<c-o>` to jump back
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
