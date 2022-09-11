@@ -1,3 +1,5 @@
+" disable vi-compatability mode and enables useful vim functionality
+set nocompatible
 " set the font to Ubuntu Mono and the font size to 14 pixels
 set guifont=UbuntuMono\ NF:h14
 " show line numbers
