@@ -31,6 +31,7 @@ set omnifunc=syntaxcomplete#Complete
 set completeopt=menu,menuone,noselect
 " automatic indentation
 set autoindent
+set fo+=jpor
 " more powerful backspacing
 set backspace=indent,eol,start
 " set tabs to two spaces
@@ -42,9 +43,17 @@ set incsearch
 set magic
 set ignorecase
 set smartcase
-" prevent backup files from being created
-set nobackup
-set noswapfile
+set autoread
+" save yourself some memory
+" you are never gonna undo 1000 steps which is the default value for undolevels
+" 50 is the default value for history which is relatively low to be useful.
+set undolevels=500 history=500
+" store all swap files in one directory
+set dir=$HOME/.vim/swap//
+" store all backup files in one directory
+set backupdir=$HOME/.vim/swap//
+" persistent undo tree
+set undofile undodir=$HOME/.vim/undo//
 set wildmode=longest:full,full
 set wildmenu
 " auto close html tags
