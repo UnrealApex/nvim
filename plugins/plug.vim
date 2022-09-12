@@ -628,10 +628,11 @@ require('telescope').setup {
         find_cmd = "rg" -- find command (defaults to `fd`)
       }
     --]]
-     ["ui-select"] = {
-      require("telescope.themes").get_dropdown {
-        -- even more opts
-      }
+  ["ui-select"] = {
+    require("telescope.themes").get_dropdown {
+    -- even more opts
+    }
+  }
 
     -- Your extension configuration goes here:
     -- extension_name = {
