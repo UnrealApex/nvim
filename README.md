@@ -1,12 +1,13 @@
 # .dotfiles
 ### About
-This repo just contains my Neovim configuration. Like most config files, my `init.vim` contains the configurations that make Neovim feel at home for me.
-You can use my configuration if you wish but acknowledge that some config options are specific to my machine like paths to executables and if you clone it, you will need to make appropriate modifications to it.
+This repo just contains my Neovim configuration. Like most config files, the files in this repository include the configurations that make Neovim feel at home for me.
+
+If you wish to use my configuration, acknowledge that there will be some work on your end to get this config working properly.
 
 ### Plugins
-I have several plugins to enhance my experience using Neovim. As a side note, this config and its plugins are not all compatible with Vim, if you're using Vim, see my [`.vimrc`](/.vimrc). Also, I use [Neovide](https://github.com/neovide/neovide) as my GUI client.
+I have several plugins to enhance my experience using Neovim. As a side note, a majority of the plugins in this config are Lua plugins which are currently only supported by Neovim, if you're using Vim, see my [`.vimrc`](/.vimrc).
 My plugins are managed using [vim-plug](https://github.com/junegunn/vim-plug).
-If you use my config and [vim-plug](https://github.com/junegunn/vim-plug) is not present on your system, it will automatically install it.
+My config contains a [script](https://github.com/UnrealApex/dotfiles/blob/main/plugins/plug.vim#L3) that automatically installs [vim-plug](https://github.com/junegunn/vim-plug) if it is not present on your system. If you do not want that to occur, you might want to remove it before executing my config.
 The plugins I use are [here](https://github.com/UnrealApex/dotfiles/blob/main/plugins/plug.vim#L12).
 
 **Notes**
