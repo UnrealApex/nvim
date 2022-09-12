@@ -14,7 +14,6 @@ This config has several dependancies. I find it convenient to install some of th
 
 - [Neovim](https://github.com/neovim/neovim)
 - [Git](https://git-scm.com/)
-- [Universal Ctags](https://github.com/universal-ctags/ctags)
 - [GNU Compiler Collection](https://gcc.gnu.org/)
 - [make](https://www.gnu.org/software/make/)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
