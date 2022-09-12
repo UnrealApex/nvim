@@ -14,6 +14,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 " vim popup api
 Plug 'nvim-lua/popup.nvim'
+" more aesthetic notifications
+Plug 'rcarriga/nvim-notify'
 " file explorer
 Plug 'preservim/nerdtree'
 Plug 'PhilRunninger/nerdtree-visual-selection'
@@ -240,6 +242,8 @@ require('leap').set_default_keymaps()
 
 require('cmp')
 require('luasnip')
+
+vim.notify = require("notify")
 
 require("luasnip/loaders/from_vscode").lazy_load()
 -- Setup nvim-cmp.
