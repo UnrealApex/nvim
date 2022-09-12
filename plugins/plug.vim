@@ -86,6 +86,8 @@ Plug 'tpope/vim-repeat'
 Plug 'mhinz/vim-startify'
 " fuzzy finder
 Plug 'nvim-telescope/telescope.nvim'
+" sets vim.ui.select to telescope
+Plug 'nvim-telescope/telescope-ui-select.nvim'
 " not supported on windows
 " Plug 'nvim-telescope/telescope-media-files.nvim'
 " TODO: get Telescope fzf working
@@ -626,6 +628,10 @@ require('telescope').setup {
         find_cmd = "rg" -- find command (defaults to `fd`)
       }
     --]]
+     ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+        -- even more opts
+      }
 
     -- Your extension configuration goes here:
     -- extension_name = {
@@ -635,6 +641,7 @@ require('telescope').setup {
   },
 }
 
+require("telescope").load_extension("ui-select")
 -- require('telescope').load_extension('fzf')
 EOF
 
