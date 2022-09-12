@@ -107,7 +107,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'folke/which-key.nvim'
 Plug 'folke/trouble.nvim'
 " color scheme
-Plug 'LunarVim/onedarker.nvim'
+Plug 'folke/tokyonight.nvim'
 call plug#end()
 
 " enable IndentLine
@@ -157,8 +157,8 @@ augroup end
 " lua stuff
 lua <<EOF
 -- TODO: organize lua code into modules
--- set the colorscheme to onedarker
-vim.cmd("colorscheme onedarker")
+-- set the colorscheme to tokyonight
+vim.cmd("colorscheme tokyonight")
 
 require('gitsigns').setup({
   signs = {
