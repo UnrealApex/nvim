@@ -24,6 +24,8 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'itchyny/lightline.vim'
 " basic git integration
 Plug 'tpope/vim-fugitive'
+" git conflict helper
+Plug 'rhysd/conflict-marker.vim'
 " sensible default settings
 Plug 'tpope/vim-sensible'
 " Vim Surround
