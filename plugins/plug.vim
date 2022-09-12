@@ -475,7 +475,7 @@ keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 keymap("v", "<leader>ca", "<cmd>Lspsaga range_code_action<CR>", { silent = true })
 
 -- Rename
-keymap("n", "rn", "<cmd>Lspsaga rename<CR>", { silent = true })
+keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { silent = true })
 
 -- Definition preview
 keymap("n", "gD", "<cmd>Lspsaga preview_definition<CR>", { silent = true })
