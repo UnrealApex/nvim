@@ -16,6 +16,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 " more aesthetic notifications
 Plug 'rcarriga/nvim-notify'
+" aesthetic code actions
+Plug 'CosmicNvim/cosmic-ui'
+Plug 'MunifTanjim/nui.nvim'
 " file explorer
 Plug 'preservim/nerdtree'
 Plug 'PhilRunninger/nerdtree-visual-selection'
@@ -392,10 +395,10 @@ local on_attach = function(client, bufnr)
   -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
   -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
   -- vim.keymap.set('n', '<space>wl', function()
-    -- print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  -- print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   -- end, bufopts)
   -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+  -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   -- vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
@@ -482,8 +485,8 @@ saga.init_lsp_saga()
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
 -- Code action
-keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
-keymap("v", "<leader>ca", "<cmd>Lspsaga range_code_action<CR>", { silent = true })
+-- keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+-- keymap("v", "<leader>ca", "<cmd>Lspsaga range_code_action<CR>", { silent = true })
 
 -- Rename
 -- keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { silent = true })
@@ -514,6 +517,17 @@ keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+
+
+-- cosmic ui ✨
+require('cosmic-ui').setup()
+
+-- cosmic ui renamer
+keymap("n", "<leader>rn", "<cmd>lua require('cosmic-ui').rename()<CR>", { silent = true })
+
+--cosmic ui code actions
+keymap("n", "<leader>ca", "<cmd>lua require('cosmic-ui').code_actions()<CR>", { silent = true })
+keymap("v", "<leader>ca", "<cmd>lua require('cosmic-ui').range_code_actions()<CR>", { silent = true })
 
 
 -- treesitter stuff
