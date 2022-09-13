@@ -248,7 +248,16 @@ require('leap').set_default_keymaps()
 require('cmp')
 require('luasnip')
 
+-- notify configurations
+require('notify').setup({
+  fps = 60,
+  timeout = 3000,
+  -- max_width = 50,
+  stages = "fade",
+})
+
 vim.notify = require("notify")
+
 
 local function notify_output(command, opts)
   local output = ""
