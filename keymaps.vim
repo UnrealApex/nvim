@@ -9,7 +9,7 @@ inoremap <S-Tab> <C-d>
 " saner CTRL-L
 nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
-nnoremap <leader>b :set nomore <Bar> echo "switch buffer" <Bar> :ls <Bar> :set more <CR>:b<Space>
+nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
 " nnoremap <leader>b :Telescope buffers<CR>
 
 " line/selection movement binds
