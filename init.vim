@@ -39,6 +39,8 @@ set backspace=indent,eol,start
 " set tabs to two spaces
 set tabstop=2
 set shiftwidth=2
+" indents to next multiple of 'shiftwidth'.
+set shiftround
 set expandtab
 " incremental search
 set incsearch
