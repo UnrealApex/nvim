@@ -260,10 +260,10 @@ require('jabs').setup({
   },
 
   -- Options for preview window
-  preview_position = 'left', -- top, bottom, left, right. Default top
+  preview_position = 'top', -- top, bottom, left, right. Default top
   preview = {
-      width = 40, -- default 70
-      height = 60, -- default 30
+      width = 70, -- default 70
+      height = 30, -- default 30
       border = 'single', -- none, single, double, rounded, solid, shadow, (or an array or chars). Default double
   },
 
