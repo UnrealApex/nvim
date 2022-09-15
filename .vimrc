@@ -230,7 +230,6 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 " map tab to accept completion
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<Tab>"
 
-" taken from https://github.com/rstacruz/vim-coc-settings/blob/master/after/plugin/coc.vim#L2
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " gd - go to definition of word under cursor
@@ -278,8 +277,7 @@ nnoremap <silent> <leader>cl  :<C-u>CocList locationlist<CR>
 nnoremap <silent> <leader>cx  :<C-u>CocList extensions<cr>
 
 " rename the current word in the cursor
-nmap <leader>cr  <Plug>(coc-rename)
-" also bind F2 to the same command
+nmap <leader>rn  <Plug>(coc-rename)
 nmap <F2> <Plug>(coc-rename)
 nmap <leader>cf  <Plug>(coc-format-selected)
 vmap <leader>cf  <Plug>(coc-format-selected)
