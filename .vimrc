@@ -217,7 +217,6 @@ let g:coc_global_extensions = [
 \ 'coc-json',
 \ 'coc-highlight',
 \ 'coc-snippets',
-\ 'coc-tabnine',
 \ 'coc-lightbulb',
 \ 'coc-symbol-line'
 \ ]
@@ -225,22 +224,23 @@ let g:coc_global_extensions = [
 " CoC keybindings
 
 " map ctrl + j and ctrl + k to traverse up and down the coc completion list
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
+inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-p>"
+
 " map tab to accept completion
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<Tab>"
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " gd - go to definition of word under cursor
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gd <Plug>(coc-definition)<CR>
+nmap <silent> gy <Plug>(coc-type-definition)<CR>
 
 " gi - go to implementation
-nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gi <Plug>(coc-implementation)<CR>
 
 " gr - find references
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gr <Plug>(coc-references)<CR>
 
 " gh - get hint on whatever's under the cursor
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -277,14 +277,14 @@ nnoremap <silent> <leader>cl  :<C-u>CocList locationlist<CR>
 nnoremap <silent> <leader>cx  :<C-u>CocList extensions<cr>
 
 " rename the current word in the cursor
-nmap <leader>rn  <Plug>(coc-rename)
-nmap <F2> <Plug>(coc-rename)
-nmap <leader>cf  <Plug>(coc-format-selected)
-vmap <leader>cf  <Plug>(coc-format-selected)
+nmap <leader>rn  <Plug>(coc-rename)<CR>
+nmap <F2> <Plug>(coc-rename)<CR>
+nmap <leader>cf  <Plug>(coc-format-selected)<CR>
+vmap <leader>cf  <Plug>(coc-format-selected)<CR>
 
 " run code actions
-vmap <leader>ca  <Plug>(coc-codeaction-selected)
-nmap <leader>ca  <Plug>(coc-codeaction-selected)
+vmap <leader>ca  <Plug>(coc-codeaction-selected)<CR>
+nmap <leader>ca  <Plug>(coc-codeaction-selected)<CR>
 
 
 " FZF configurations
