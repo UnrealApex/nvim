@@ -39,6 +39,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 " indent guides
 Plug 'Yggdroot/indentLine'
+" vim but cooler
+Plug 'romainl/vim-cool'
 " zen mode
 Plug 'junegunn/goyo.vim'
 " ai code suggestions
