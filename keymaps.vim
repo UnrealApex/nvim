@@ -1,20 +1,16 @@
 " keymaps
 
-" efficient editing in insert mode
-" map ctrl + backspace to delete the previous word in insert mode
+" delete previous word in insert mode
 imap <C-BS> <C-W>
-" map shift + tab to unindent
+" unindent in insert mode
 inoremap <S-Tab> <C-d>
 
 " saner CTRL-L
 nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
 nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
-" nnoremap <leader>b :Telescope buffers<CR>
 
-" line/selection movement binds
-" alt + k to move a line or selection up,
-" alt + j to move a line or selection down
+" move lines up or down
 nnoremap <silent> <A-j> :m .+1<CR>==
 nnoremap <silent> <A-k> :m .-2<CR>==
 inoremap <silent> <A-j> <Esc>:m .+1<CR>==gi
