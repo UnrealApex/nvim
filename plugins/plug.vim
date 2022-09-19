@@ -150,6 +150,8 @@ nnoremap <C-t> :Telescope live_grep<CR>
 
 nnoremap <C-m> :TroubleToggle<CR>
 
+nnoremap <leader>b :JABSOpen<CR>
+
 " bind Enter to accept Copilot suggestions
 " imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
 " let g:copilot_no_tab_map = v:true
