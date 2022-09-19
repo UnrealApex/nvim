@@ -22,21 +22,7 @@ inoremap <silent> <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
-" tab stuff
-" leader 1 - 9 to jump to tab 1 - 9
-" nnoremap <Leader>1 1gt<CR>
-" nnoremap <Leader>2 2gt<CR>
-" nnoremap <Leader>3 3gt<CR>
-" nnoremap <Leader>4 4gt<CR>
-" nnoremap <Leader>5 5gt<CR>
-" nnoremap <Leader>6 6gt<CR>
-" nnoremap <Leader>7 7gt<CR>
-" nnoremap <Leader>8 8gt<CR>
-" nnoremap <Leader>9 9gt<CR>
-" go to the last tab
-" nnoremap <Leader>0 :tablast<CR>
-" leader n to create a new tab
-" nnoremap <Leader>n :tabnew<CR>
+" buffer stuff
 nnoremap <Leader>n :enew<CR>
 " leader x to close a new tab
 " nnoremap <Leader>x :tabclose<CR>
