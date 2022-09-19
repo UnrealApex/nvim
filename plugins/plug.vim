@@ -138,9 +138,11 @@ let g:nerdtree_vis_confirm_move = 0
 
 let g:VM_maps = {}
 
+" don't show modes in the status bar if lightline is installed
 if has_key(plugs, 'lightline.vim')
   set noshowmode
 endif
+
 " map Leader z to toggle Goyo
 nnoremap <Leader>z :Goyo<CR>
 
