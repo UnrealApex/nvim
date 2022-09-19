@@ -1,8 +1,8 @@
 " disable vi-compatability mode and enables useful vim functionality
 set nocompatible
 set hidden
-" set the font to Cascadia Code and the font size to 14 pixels
-set guifont=CaskaydiaCove\ NF\ Mono:h14
+" set the font to Ubuntu Mono and the font size to 14 pixels
+set guifont=UbuntuMono\ NF:h14
 " show line numbers
 set number
 " show relative line numbers
