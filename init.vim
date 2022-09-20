@@ -32,6 +32,7 @@ set nowrap
 " basic completion
 set omnifunc=syntaxcomplete#Complete
 set completeopt=menu,menuone,noselect
+set list
 " automatic indentation
 set autoindent
 set fo+=jpor
@@ -73,6 +74,12 @@ set lazyredraw
 highlight clear SignColumn
 " set path
 set path=.,**
+
+augroup show_whitespace
+  autocmd!
+  autocmd ModeChanged *:[vV\x16]* :set listchars+=space:·
+  autocmd Modechanged [vV\x16]*:* :set listchars-=space:·
+augroup END
 
 autocmd BufEnter * call ChangeWorkingDirectory()
 " set the working directory as the one of the file currently being edited

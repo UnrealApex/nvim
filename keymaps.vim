@@ -1,5 +1,12 @@
 " keymaps
 
+
+" map <C-c> to <Esc>
+nnoremap <C-c> <Esc>
+inoremap <C-c> <Esc>
+cnoremap <C-c> <Esc>
+xnoremap <C-c> <Esc>
+
 " delete previous word in insert mode
 imap <C-BS> <C-W>
 " unindent in insert mode
