@@ -274,7 +274,6 @@ require('jabs').setup({
   -- Default highlights (must be a valid :highlight)
   highlight = {
       current = "Title", -- default StatusLine
-      hidden = "StatusLineNC", -- default ModeMsg
       split = "WarningMsg", -- default StatusLine
       alternate = "StatusLine" -- default WarningMsg
   },
