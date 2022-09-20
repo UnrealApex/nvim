@@ -1,9 +1,9 @@
 " keymaps
 
-
 " map <C-c> to <Esc>
 nnoremap <C-c> <Esc>
 inoremap <C-c> <Esc>
+vnoremap <C-c> <Esc>
 cnoremap <C-c> <Esc>
 xnoremap <C-c> <Esc>
 
