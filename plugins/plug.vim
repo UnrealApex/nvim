@@ -12,6 +12,7 @@ endif
 call plug#begin('~/.vim/plugged')
 " lua libary
 Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/impatient.nvim'
 " vim popup api
 Plug 'nvim-lua/popup.nvim'
 " more aesthetic notifications
@@ -174,6 +175,9 @@ lua <<EOF
 -- TODO: organize lua code into modules
 -- set the colorscheme to tokyonight
 vim.cmd("colorscheme tokyonight")
+
+-- make neovim faster
+require('impatient')
 
 require('gitsigns').setup({
   signs = {
