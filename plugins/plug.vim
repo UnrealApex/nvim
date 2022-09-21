@@ -107,8 +107,6 @@ Plug 'mg979/vim-visual-multi'
 Plug 'mattn/emmet-vim'
 " icons
 Plug 'ryanoasis/vim-devicons'
-" integrated terminal
-Plug 'akinsho/toggleterm.nvim'
 " color highlighting
 Plug 'norcalli/nvim-colorizer.lua'
 " easily change dates
@@ -222,15 +220,6 @@ require('gitsigns').setup({
     enable = false
   },
 
-})
-
-require("toggleterm").setup({
-  direction = 'float',
-  open_mapping = [[<c-\>]],
-  start_in_insert = true,
-  insert_mappings = true,
-  close_on_exit = true,
-  shell = vim.o.shell
 })
 
 require('colorizer').setup(
