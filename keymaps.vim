@@ -7,6 +7,9 @@ vnoremap <C-c> <Esc>
 cnoremap <C-c> <Esc>
 xnoremap <C-c> <Esc>
 
+" open a terminal buffer and go into insert mode
+nnoremap <silent> <leader>t :terminal<CR>i
+
 " delete previous word in insert mode
 imap <C-BS> <C-W>
 " unindent in insert mode
