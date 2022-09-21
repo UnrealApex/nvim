@@ -107,8 +107,6 @@ Plug 'mg979/vim-visual-multi'
 Plug 'mattn/emmet-vim'
 " icons
 Plug 'ryanoasis/vim-devicons'
-" color highlighting
-Plug 'norcalli/nvim-colorizer.lua'
 " easily change dates
 Plug 'tpope/vim-speeddating'
 " keymap hints
@@ -220,19 +218,6 @@ require('gitsigns').setup({
     enable = false
   },
 
-})
-
-require('colorizer').setup(
-  {'*';},
-  {
-	RGB      = true;         -- #RGB hex codes
-	RRGGBB   = true;         -- #RRGGBB hex codes
-	names    = true;         -- "Name" codes like Blue
-	RRGGBBAA = true;        -- #RRGGBBAA hex codes
-	rgb_fn   = true;        -- CSS rgb() and rgba() functions
-	hsl_fn   = true;        -- CSS hsl() and hsla() functions
-	css      = true;        -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-	css_fn   = true;        -- Enable all CSS *functions*: rgb_fn, hsl_fn
 })
 
 require("mason").setup()
