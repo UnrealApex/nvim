@@ -119,7 +119,6 @@ Plug 'folke/trouble.nvim'
 Plug 'folke/tokyonight.nvim'
 " better buffer management
 Plug 'matbme/JABS.nvim'
-Plug 'wfxr/minimap.vim'
 call plug#end()
 
 " enable IndentLine
@@ -130,11 +129,6 @@ let g:markdown_syntax_conceal=0
 let g:indentLine_fileTypeExclude = ['help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh']
 " use nerdfont icons for nerdtree git status indicators
 let g:NERDTreeGitStatusUseNerdFonts = 1
-
-" autostart minimap
-let g:minimap_auto_start = 1
-" show git diff colors in minimap
-let g:minimap_git_colors = 1
 
 " don't confirm opening, copying, or moving of files in nerdtree visual
 " selection mode
