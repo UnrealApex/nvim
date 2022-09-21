@@ -19,5 +19,6 @@ This config has several dependancies. I find it convenient to install some of th
 - [make](https://www.gnu.org/software/make/)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
 - [bat](https://github.com/sharkdp/bat)
+- [code-minimap](https://github.com/wfxr/code-minimap)
 - [Delta](https://github.com/dandavison/delta)
 - Access to [GitHub Copilot](https://github.com/features/copilot)

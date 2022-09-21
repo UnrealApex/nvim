@@ -13,7 +13,7 @@ imap <C-BS> <C-W>
 inoremap <S-Tab> <C-d>
 
 " saner CTRL-L
-nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
+nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr>:MinimapRefresh<cr><c-l>
 
 " nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
 
