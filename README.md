@@ -2,7 +2,7 @@
 ### About
 This repo just contains my Neovim configuration. Like most config files, the files in this repository include the configurations that make Neovim feel at home for me.
 
-If you wish to use my configuration, acknowledge that there will be some work on your end to get this config working properly.
+If you wish to use my configuration understand that **you** might need to make appropriate modifications to make this config work properly on your system. I have tailored my configuration specifically to my preferences but I am open to any suggestions.
 
 ### Plugins
 I have several plugins to enhance my experience using Neovim. As a side note, a majority of the plugins in this config are Lua plugins which are currently only supported by Neovim, if you're using Vim, see my [`.vimrc`](/.vimrc).
