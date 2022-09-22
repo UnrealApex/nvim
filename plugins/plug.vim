@@ -12,6 +12,7 @@ endif
 call plug#begin('~/.vim/plugged')
 " lua libary
 Plug 'nvim-lua/plenary.nvim'
+" make neovim faster
 Plug 'lewis6991/impatient.nvim'
 " vim popup api
 Plug 'nvim-lua/popup.nvim'
@@ -22,7 +23,9 @@ Plug 'CosmicNvim/cosmic-ui'
 Plug 'MunifTanjim/nui.nvim'
 " file explorer
 Plug 'preservim/nerdtree'
+" allow nerdtree operations on multiple file nodes
 Plug 'PhilRunninger/nerdtree-visual-selection'
+" show git signs in nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " richer git integration
 Plug 'lewis6991/gitsigns.nvim'
@@ -96,7 +99,6 @@ Plug 'nvim-telescope/telescope-ui-select.nvim'
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 " better movement
 Plug 'ggandor/leap.nvim'
-" Plug 'ggandor/lightspeed.nvim'
 " multi cursor support
 Plug 'mg979/vim-visual-multi'
 " Emmet
