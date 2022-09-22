@@ -27,7 +27,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " richer git integration
 Plug 'lewis6991/gitsigns.nvim'
 " status bar
-Plug 'itchyny/lightline.vim'
+Plug 'nvim-lualine/lualine.nvim'
 " basic git integration
 Plug 'tpope/vim-fugitive'
 " git conflict helper
@@ -135,11 +135,6 @@ let g:nerdtree_vis_confirm_move = 0
 
 let g:VM_maps = {}
 
-" don't show modes in the status bar if lightline is installed
-if has_key(plugs, 'lightline.vim')
-  set noshowmode
-endif
-
 " map Leader z to toggle Goyo
 nnoremap <Leader>z :Goyo<CR>
 
@@ -226,6 +221,47 @@ require("mason-lspconfig").setup({
 })
 
 require("which-key").setup()
+
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '|', right = '|'},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+    }
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
+}
 
 require('jabs').setup({
   -- Options for the main window
