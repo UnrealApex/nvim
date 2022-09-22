@@ -37,7 +37,7 @@ Plug 'tpope/vim-sensible'
 " Vim Surround
 Plug 'tpope/vim-surround'
 " commenter
-Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 " indent guides
 Plug 'Yggdroot/indentLine'
 " zen mode
@@ -169,6 +169,8 @@ vim.cmd("colorscheme tokyonight")
 
 -- make neovim faster
 require('impatient')
+
+require('Comment').setup()
 
 require('gitsigns').setup({
   signs = {
