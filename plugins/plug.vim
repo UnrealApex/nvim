@@ -34,16 +34,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'rhysd/conflict-marker.vim'
 " sensible default settings
 Plug 'tpope/vim-sensible'
-" Vim Surround
-Plug 'tpope/vim-surround'
 " commenter
 Plug 'numToStr/Comment.nvim'
 " indent guides
 Plug 'Yggdroot/indentLine'
 " zen mode
 Plug 'junegunn/goyo.vim'
-" ai code suggestions
-" Plug 'github/copilot.vim'
 " easy parenthesis matching
 Plug 'junegunn/rainbow_parentheses.vim'
 " autocomplete
