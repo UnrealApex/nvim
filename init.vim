@@ -1,5 +1,6 @@
 " disable vi-compatability mode and enables useful vim functionality
 set nocompatible
+" allow hidden buffers
 set hidden
 " set the font to Ubuntu Mono and the font size to 14 pixels
 set guifont=UbuntuMono\ NF:h14
@@ -48,8 +49,10 @@ set expandtab
 " incremental search
 set incsearch
 set magic
+" ignore case unless explicitly stated
 set ignorecase
 set smartcase
+" reread file if it has been modified outside of Vim
 set autoread
 " save yourself some memory
 " you are never gonna undo 1000 steps which is the default value for undolevels
@@ -106,14 +109,14 @@ let $PLUGINS = stdpath("config") . "\\plugins/plug.vim"
 " keymaps
 let $KEYMAPS =  stdpath("config") . "\\keymaps.vim"
 
-" auto save file when it is modified
+" automatically save file when it is modified
 augroup auto_save
   autocmd!
   " call save function
   autocmd BufModifiedSet * call AutoSave()
 augroup end
 
-" save function that is called when buffer is modified
+" saves file
 function AutoSave()
   if (bufname() != "" && &buftype == "" && &filetype != "" && &readonly == 0)
     silent write
@@ -125,11 +128,11 @@ endfunction
 
 command Prose call ProseMode()
 
-" prose mode(for writing)
-" requires goyo
+" prose mode
+" does not work without goyo
 function ProseMode()
   if (!exists('t:goyo_master'))
-  " enable word processor mode
+  " enable prose mode
   " set spell checking
   setlocal spell spelllang=en_us
   " set line wrapping
@@ -150,7 +153,7 @@ function ProseMode()
   Goyo
   echo "Prose Mode Enabled"
 else
-  " disable word processor mode
+  " disable prose mode
   setlocal nospell spelllang=
   setlocal nowrap
   " hack to return keys back to their original functionalities
