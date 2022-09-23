@@ -74,7 +74,7 @@ set lazyredraw
 " set gutter color to match background color
 highlight clear SignColumn
 " set path
-set path=.,**
+set path+=.,**
 
 augroup show_whitespace
   autocmd!
