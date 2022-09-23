@@ -17,8 +17,8 @@ filetype on
 filetype plugin on
 " better indentation
 filetype indent on
-" show mode in status bar (insert/replace/...)
-set showmode
+" don't show mode in status bar (insert/replace/...)
+set noshowmode
 " show typed command in status bar
 set showcmd
 " show cursor position in status bar
