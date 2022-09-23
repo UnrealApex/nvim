@@ -33,6 +33,7 @@ set nowrap
 set omnifunc=syntaxcomplete#Complete
 set completeopt=menu,menuone,noselect
 set list
+set listchars=
 " automatic indentation
 set autoindent
 set fo+=jpor
