@@ -114,6 +114,8 @@ Plug 'folke/trouble.nvim'
 Plug 'folke/tokyonight.nvim'
 " better buffer management
 Plug 'matbme/JABS.nvim'
+" markdown preview
+Plug 'ellisonleao/glow.nvim'
 call plug#end()
 
 " enable IndentLine
