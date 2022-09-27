@@ -26,7 +26,7 @@ inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
 inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-p>"
 
 " map tab to accept completion
-inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<Tab>"
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
