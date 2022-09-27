@@ -40,15 +40,18 @@ nmap <silent> gi <Plug>(coc-implementation)<CR>
 " gr - find references
 nmap <silent> gr <Plug>(coc-references)<CR>
 
-" gh - get hint on whatever's under the cursor
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-nnoremap <silent> gh :call <SID>show_documentation()<CR>
+nmap <silent> [d <Plug>(coc-diagnostic-prev)
+nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
-function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
+" gh - get hint on whatever's under the cursor
+nnoremap <silent> K :call ShowDocumentation()<CR>
+nnoremap <silent> gh :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
   else
-    call CocAction('doHover')
+    call feedkeys('K', 'in')
   endif
 endfunction
 
@@ -77,9 +80,17 @@ nnoremap <silent> <leader>cx  :<C-u>CocList extensions<cr>
 " rename the current word in the cursor
 nmap <leader>rn  <Plug>(coc-rename)<CR>
 nmap <F2> <Plug>(coc-rename)<CR>
-nmap <leader>cf  <Plug>(coc-format-selected)<CR>
-vmap <leader>cf  <Plug>(coc-format-selected)<CR>
+nmap <leader>f  <Plug>(coc-format-selected)<CR>
+vmap <leader>f  <Plug>(coc-format-selected)<CR>
 
 " run code actions
 vmap <leader>ca  <Plug>(coc-codeaction-selected)<CR>
 nmap <leader>ca  <Plug>(coc-codeaction-selected)<CR>
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Run the Code Lens action on the current line.
+nmap <leader>cl  <Plug>(coc-codelens-action)
