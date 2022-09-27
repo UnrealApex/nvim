@@ -73,7 +73,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-speeddating'
 " keymap hints
 Plug 'folke/which-key.nvim'
-Plug 'folke/trouble.nvim'
 " color scheme
 Plug 'folke/tokyonight.nvim'
 " better buffer management
@@ -105,8 +104,6 @@ nnoremap <Leader>z :Goyo<CR>
 
 nnoremap <C-p> :Telescope find_files<CR>
 nnoremap <C-t> :Telescope live_grep<CR>
-
-nnoremap <C-m> :TroubleToggle<CR>
 
 nnoremap <leader>b :JABSOpen<CR>
 
