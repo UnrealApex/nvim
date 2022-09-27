@@ -116,6 +116,7 @@ Plug 'folke/tokyonight.nvim'
 Plug 'matbme/JABS.nvim'
 " markdown preview
 Plug 'ellisonleao/glow.nvim'
+Plug 'akinsho/toggleterm.nvim'
 call plug#end()
 
 " enable IndentLine
@@ -859,6 +860,11 @@ require('telescope').setup {
 
 require("telescope").load_extension("ui-select")
 -- require('telescope').load_extension('fzf')
+
+-- todo get toggleterm to start in insert mode
+require("toggleterm").setup({
+  open_mapping = [[<leader>\]],
+})
 EOF
 
 " plugin configurations
