@@ -18,9 +18,6 @@ Plug 'lewis6991/impatient.nvim'
 Plug 'nvim-lua/popup.nvim'
 " more aesthetic notifications
 Plug 'rcarriga/nvim-notify'
-" aesthetic code actions
-Plug 'CosmicNvim/cosmic-ui'
-Plug 'MunifTanjim/nui.nvim'
 " file explorer
 Plug 'preservim/nerdtree'
 " allow nerdtree operations on multiple file nodes
@@ -184,10 +181,6 @@ require('gitsigns').setup({
 
 })
 
-require("mason").setup()
-require("mason-lspconfig").setup({
-  automatic_installation = true,
-})
 
 require("which-key").setup()
 
@@ -411,18 +404,6 @@ local severity = {
 vim.lsp.handlers["window/showMessage"] = function(err, method, params, client_id)
              vim.notify(method.message, severity[params.type])
 end
-
-
--- cosmic ui ✨
-require('cosmic-ui').setup()
-
--- cosmic ui renamer
-keymap("n", "<leader>rn", "<cmd>lua require('cosmic-ui').rename()<CR>", { silent = true })
-
---cosmic ui code actions
-keymap("n", "<leader>ca", "<cmd>lua require('cosmic-ui').code_actions()<CR>", { silent = true })
-keymap("v", "<leader>ca", "<cmd>lua require('cosmic-ui').range_code_actions()<CR>", { silent = true })
-
 
 -- treesitter stuff
 local configs = require("nvim-treesitter.configs")
