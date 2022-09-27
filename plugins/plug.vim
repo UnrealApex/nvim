@@ -555,6 +555,7 @@ require("telescope").load_extension("ui-select")
 EOF
 
 " plugin configurations
+runtime plugins/coc.vim
 runtime plugins/startify.vim
 runtime plugins/nerdtree.vim
 runtime plugins/gitsigns.vim
