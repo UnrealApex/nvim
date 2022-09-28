@@ -124,6 +124,8 @@ call plug#end()
 let g:indentLine_enabled = 1
 " prevent indentLine from setting conceallevel for markdown files
 let g:markdown_syntax_conceal=0
+" prevent indentLine from setting conceallevel for json files
+let g:vim_json_conceal=0
 " files for indentLine to exclude
 let g:indentLine_fileTypeExclude = ['help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh']
 " use nerdfont icons for nerdtree git status indicators
