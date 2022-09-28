@@ -95,6 +95,8 @@ function ChangeWorkingDirectory()
   endif
 endfunction
 
+" matchit plugin
+packadd matchit
 " built in debugger(requires gdb)
 packadd termdebug
 
