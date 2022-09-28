@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 " make neovim faster
 Plug 'lewis6991/impatient.nvim'
+Plug 'dstein64/vim-startuptime'
 " vim popup api
 Plug 'nvim-lua/popup.nvim'
 " more aesthetic notifications
