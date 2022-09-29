@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 " make neovim faster
 Plug 'lewis6991/impatient.nvim'
-Plug 'dstein64/vim-startuptime'
+Plug 'dstein64/vim-startuptime', {'on': 'StartupTime'}
 " vim popup api
 Plug 'nvim-lua/popup.nvim'
 " more aesthetic notifications
@@ -25,9 +25,9 @@ Plug 'MunifTanjim/nui.nvim'
 " file explorer
 Plug 'preservim/nerdtree'
 " allow nerdtree operations on multiple file nodes
-Plug 'PhilRunninger/nerdtree-visual-selection'
+Plug 'PhilRunninger/nerdtree-visual-selection', {'on': 'NERDTree'}
 " show git signs in nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTree'}
 " richer git integration
 Plug 'lewis6991/gitsigns.nvim'
 " status bar
@@ -43,7 +43,7 @@ Plug 'numToStr/Comment.nvim'
 " indent guides
 Plug 'Yggdroot/indentLine'
 " zen mode
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 " easy parenthesis matching
 Plug 'junegunn/rainbow_parentheses.vim'
 " autocomplete
@@ -80,8 +80,8 @@ Plug 'neovim/nvim-lspconfig'
 " lspsaga
 Plug 'glepnir/lspsaga.nvim'
 " simple to use package manager
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'williamboman/mason.nvim', {'on': 'Mason'}
+Plug 'williamboman/mason-lspconfig.nvim', {'on': 'Mason'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Repeat.vim
@@ -103,14 +103,14 @@ Plug 'ggandor/leap.nvim'
 " multi cursor support
 Plug 'mg979/vim-visual-multi'
 " Emmet
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 " icons
 Plug 'ryanoasis/vim-devicons'
 " easily change dates
 Plug 'tpope/vim-speeddating'
 " keymap hints
 Plug 'folke/which-key.nvim'
-Plug 'folke/trouble.nvim'
+Plug 'folke/trouble.nvim', {'on': 'Trouble'}
 " color scheme
 Plug 'folke/tokyonight.nvim'
 " better buffer management
