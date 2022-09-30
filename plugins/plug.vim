@@ -34,6 +34,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 " basic git integration
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 " git conflict helper
 Plug 'rhysd/conflict-marker.vim'
 " sensible default settings
