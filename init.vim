@@ -113,52 +113,6 @@ let $KEYMAPS =  stdpath("config") . "\\keymaps.vim"
 
 command Prose call ProseMode()
 
-" prose mode
-" does not work without goyo
-function ProseMode()
-  if (!exists('t:goyo_master'))
-  " enable prose mode
-  " set spell checking
-  setlocal spell spelllang=en_us
-  " set line wrapping
-  setlocal wrap
-  " map j and k to navigate visual lines instead of actual lines
-  " normal mode mappings
-  nnoremap j gj
-  nnoremap k gk
-  nnoremap 0 g0
-  nnoremap $ g$
-  nnoremap ^ g^
-  " visual mode mappings
-  vnoremap j gj
-  vnoremap k gk
-  vnoremap 0 g0
-  vnoremap $ g$
-  vnoremap ^ g^
-  Goyo
-  echo "Prose Mode Enabled"
-else
-  " disable prose mode
-  setlocal nospell spelllang=
-  setlocal nowrap
-  " hack to return keys back to their original functionalities
-  " normal mode unmappings
-  nnoremap j j
-  nnoremap k k
-  nnoremap 0 0
-  nnoremap $ $
-  nnoremap ^ ^
-  " visual mode unmappings
-  vnoremap j j
-  vnoremap k k
-  vnoremap 0 0
-  vnoremap $ $
-  vnoremap ^ ^
-  Goyo!
-  echo "Prose Mode Disabled"
-endif
-endfunction
-
 " keymap management
 runtime keymaps.vim
 " plugin management
