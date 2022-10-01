@@ -111,23 +111,6 @@ let $PLUGINS = stdpath("config") . "\\plugins/plug.vim"
 " keymaps
 let $KEYMAPS =  stdpath("config") . "\\keymaps.vim"
 
-" automatically save file when it is modified
-augroup auto_save
-  autocmd!
-  " call save function
-  autocmd BufModifiedSet * call AutoSave()
-augroup end
-
-" saves file
-function AutoSave()
-  if (bufname() != "" && &buftype == "" && &filetype != "" && &readonly == 0)
-    silent write
-  " prevent empty, readonly, etc... buffers from being saved
-  else
-  endif
-endfunction
-
-
 command Prose call ProseMode()
 
 " prose mode
