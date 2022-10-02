@@ -111,7 +111,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-speeddating'
 " keymap hints
 Plug 'folke/which-key.nvim'
-Plug 'folke/trouble.nvim', {'on': 'Trouble'}
+Plug 'folke/trouble.nvim'
 " color scheme
 Plug 'folke/tokyonight.nvim'
 " better buffer management
