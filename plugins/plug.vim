@@ -23,11 +23,7 @@ Plug 'rcarriga/nvim-notify'
 Plug 'CosmicNvim/cosmic-ui'
 Plug 'MunifTanjim/nui.nvim'
 " file explorer
-Plug 'preservim/nerdtree'
-" allow nerdtree operations on multiple file nodes
-Plug 'PhilRunninger/nerdtree-visual-selection', {'on': 'NERDTree'}
-" show git signs in nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTree'}
+Plug 'tpope/vim-vinegar'
 " richer git integration
 Plug 'lewis6991/gitsigns.nvim'
 " status bar
@@ -130,13 +126,13 @@ let g:vim_json_conceal=0
 " files for indentLine to exclude
 let g:indentLine_fileTypeExclude = ['help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh']
 " use nerdfont icons for nerdtree git status indicators
-let g:NERDTreeGitStatusUseNerdFonts = 1
+" let g:NERDTreeGitStatusUseNerdFonts = 1
 
 " don't confirm opening, copying, or moving of files in nerdtree visual
 " selection mode
-let g:nerdtree_vis_confirm_open = 0
-let g:nerdtree_vis_confirm_copy = 0
-let g:nerdtree_vis_confirm_move = 0
+" let g:nerdtree_vis_confirm_open = 0
+" let g:nerdtree_vis_confirm_copy = 0
+" let g:nerdtree_vis_confirm_move = 0
 
 let g:VM_maps = {}
 
@@ -255,7 +251,7 @@ EOF
 
 " plugin configurations
 runtime plugins/startify.vim
-runtime plugins/nerdtree.vim
+" runtime plugins/nerdtree.vim
 " lua files
 lua require("user.lualine")
 lua require("user.cmp")
