@@ -251,7 +251,6 @@ EOF
 
 " plugin configurations
 runtime plugins/startify.vim
-" runtime plugins/nerdtree.vim
 " lua files
 lua require("user.lualine")
 lua require("user.cmp")
