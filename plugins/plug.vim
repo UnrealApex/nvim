@@ -20,6 +20,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'rcarriga/nvim-notify'
 " file explorer
 Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
 " allow nerdtree operations on multiple file nodes
 Plug 'PhilRunninger/nerdtree-visual-selection'
 " show git signs in nerdtree
@@ -107,6 +108,9 @@ nnoremap <C-t> :Telescope live_grep<CR>
 
 nnoremap <leader>b :JABSOpen<CR>
 
+nmap <leader>o :TagbarToggle<CR>
+
+let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
 " bind Enter to accept Copilot suggestions
 " imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
 " let g:copilot_no_tab_map = v:true
