@@ -16,7 +16,8 @@ let g:coc_global_extensions = [
 \ 'coc-highlight',
 \ 'coc-snippets',
 \ 'coc-lightbulb',
-\ 'coc-symbol-line'
+\ 'coc-symbol-line',
+\ 'coc-calc'
 \ ]
 
 lua <<EOF
