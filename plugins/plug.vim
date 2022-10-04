@@ -22,10 +22,6 @@ Plug 'rcarriga/nvim-notify'
 " file explorer
 Plug 'tpope/vim-vinegar'
 Plug 'preservim/tagbar'
-" allow nerdtree operations on multiple file nodes
-Plug 'PhilRunninger/nerdtree-visual-selection'
-" show git signs in nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin'
 " richer git integration
 Plug 'lewis6991/gitsigns.nvim'
 " status bar
