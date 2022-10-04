@@ -202,7 +202,7 @@ augroup end
 " lua stuff
 lua <<EOF
 -- set the colorscheme to tokyonight
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme tokyonight-moon")
 
 -- make neovim faster
 require('impatient')
