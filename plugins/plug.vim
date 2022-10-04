@@ -19,11 +19,13 @@ Plug 'dstein64/vim-startuptime', {'on': 'StartupTime'}
 Plug 'nvim-lua/popup.nvim'
 " more aesthetic notifications
 Plug 'rcarriga/nvim-notify'
-" aesthetic code actions
-Plug 'CosmicNvim/cosmic-ui'
-Plug 'MunifTanjim/nui.nvim'
 " file explorer
 Plug 'tpope/vim-vinegar'
+Plug 'preservim/tagbar'
+" allow nerdtree operations on multiple file nodes
+Plug 'PhilRunninger/nerdtree-visual-selection'
+" show git signs in nerdtree
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " richer git integration
 Plug 'lewis6991/gitsigns.nvim'
 " status bar
@@ -44,41 +46,8 @@ Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 " easy parenthesis matching
 Plug 'junegunn/rainbow_parentheses.vim'
 " autocomplete
-Plug 'hrsh7th/nvim-cmp'
-" buffer completions
-Plug 'hrsh7th/cmp-buffer'
-" path completions
-Plug 'hrsh7th/cmp-path'
-" cmdline completions
-Plug 'hrsh7th/cmp-cmdline'
-" lsp completions
-Plug 'hrsh7th/cmp-nvim-lsp'
-" parameter hints
-Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
-" lua completions
-Plug 'hrsh7th/cmp-nvim-lua'
-" calculation completions
-Plug 'hrsh7th/cmp-calc'
-" spelling suggestions
-Plug 'f3fora/cmp-spell'
-" emoji completions 😄
-Plug 'hrsh7th/cmp-emoji'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" snippet completions
-Plug 'saadparwaiz1/cmp_luasnip'
-"  snippets
-" snippet engine
-Plug 'L3MON4D3/LuaSnip'
-" snippets library
-Plug 'rafamadriz/friendly-snippets' 
-
-" enable LSP
-Plug 'neovim/nvim-lspconfig'
-" lspsaga
-Plug 'glepnir/lspsaga.nvim'
-" simple to use package manager
-Plug 'williamboman/mason.nvim', {'on': 'Mason'}
-Plug 'williamboman/mason-lspconfig.nvim', {'on': 'Mason'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Repeat.vim
@@ -107,7 +76,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-speeddating'
 " keymap hints
 Plug 'folke/which-key.nvim'
-Plug 'folke/trouble.nvim'
 " color scheme
 Plug 'folke/tokyonight.nvim'
 " better buffer management
@@ -180,10 +148,11 @@ endfunction
 nnoremap <C-p> :Telescope find_files<CR>
 nnoremap <C-t> :Telescope live_grep<CR>
 
-nnoremap <C-m> :TroubleToggle<CR>
-
 nnoremap <leader>b :JABSOpen<CR>
 
+nmap <leader>o :TagbarToggle<CR>
+
+let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
 " bind Enter to accept Copilot suggestions
 " imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
 " let g:copilot_no_tab_map = v:true
@@ -208,11 +177,6 @@ vim.cmd("colorscheme tokyonight-moon")
 require('impatient')
 
 require('Comment').setup()
-
-require("mason").setup()
-require("mason-lspconfig").setup({
-  automatic_installation = true,
-})
 
 require("which-key").setup()
 
@@ -242,12 +206,11 @@ require("toggleterm").setup({
 EOF
 
 " plugin configurations
+runtime plugins/coc.vim
 runtime plugins/startify.vim
 " lua files
 lua require("user.lualine")
-lua require("user.cmp")
 lua require("user.gitsigns")
-lua require("user.lsp")
 lua require("user.notify")
 lua require("user.telescope")
 lua require("user.jabs")
