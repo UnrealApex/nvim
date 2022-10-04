@@ -11,13 +11,13 @@ My config contains a [script](https://github.com/UnrealApex/dotfiles/blob/main/p
 The plugins I use are [here](https://github.com/UnrealApex/dotfiles/blob/main/plugins/plug.vim#L12).
 
 **Notes**
-This config has several dependancies. I find it convenient to install some of these dependancies via a package manager:
+This config has several dependencies. I find it convenient to install them via a package manager:
 
 - [Neovim](https://github.com/neovim/neovim)
 - [Git](https://git-scm.com/)
+- [Nodejs](https://nodejs.org/en/)
 - [GNU Compiler Collection](https://gcc.gnu.org/)
 - [make](https://www.gnu.org/software/make/)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
-- [bat](https://github.com/sharkdp/bat)
-- [Delta](https://github.com/dandavison/delta)
-- Access to [GitHub Copilot](https://github.com/features/copilot)
+- [Ctags](https://github.com/universal-ctags/ctags)
+- [Glow](https://github.com/charmbracelet/glow)
