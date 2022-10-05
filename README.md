@@ -16,6 +16,7 @@ This config has several dependencies. I find it convenient to install them via a
 - [Neovim](https://github.com/neovim/neovim)
 - [Git](https://git-scm.com/)
 - [Nodejs](https://nodejs.org/en/)
+- [LLVM](https://www.llvm.org/)
 - [GNU Compiler Collection](https://gcc.gnu.org/)
 - [make](https://www.gnu.org/software/make/)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
