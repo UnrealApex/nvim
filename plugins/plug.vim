@@ -15,10 +15,12 @@ Plug 'nvim-lua/plenary.nvim'
 " make neovim faster
 Plug 'lewis6991/impatient.nvim'
 Plug 'dstein64/vim-startuptime', {'on': 'StartupTime'}
-" vim popup api
-Plug 'nvim-lua/popup.nvim'
+Plug 'folke/noice.nvim'
+Plug 'MunifTanjim/nui.nvim'
 " more aesthetic notifications
 Plug 'rcarriga/nvim-notify'
+" vim popup api
+Plug 'nvim-lua/popup.nvim'
 " file explorer
 Plug 'tpope/vim-vinegar'
 Plug 'preservim/tagbar'
@@ -79,6 +81,7 @@ Plug 'matbme/JABS.nvim'
 " markdown preview
 Plug 'ellisonleao/glow.nvim'
 Plug 'akinsho/toggleterm.nvim'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " enable IndentLine
@@ -89,6 +92,8 @@ let g:markdown_syntax_conceal=0
 let g:vim_json_conceal=0
 " files for indentLine to exclude
 let g:indentLine_fileTypeExclude = ['help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh']
+
+let g:NERDTreeMinimalMenu=1
 
 let g:VM_maps = {}
 
@@ -171,6 +176,8 @@ vim.cmd("colorscheme tokyonight-moon")
 
 -- make neovim faster
 require('impatient')
+
+require("noice").setup()
 
 require('Comment').setup()
 
