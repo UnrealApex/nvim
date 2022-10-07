@@ -38,7 +38,7 @@ Plug 'tpope/vim-sensible'
 " commenter
 Plug 'numToStr/Comment.nvim'
 " indent guides
-Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 " zen mode
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 " easy parenthesis matching
@@ -81,19 +81,9 @@ Plug 'matbme/JABS.nvim'
 " markdown preview
 Plug 'ellisonleao/glow.nvim'
 Plug 'akinsho/toggleterm.nvim'
-Plug 'preservim/nerdtree'
 call plug#end()
 
-" enable IndentLine
-let g:indentLine_enabled = 1
-" prevent indentLine from setting conceallevel for markdown files
-let g:markdown_syntax_conceal=0
-" prevent indentLine from setting conceallevel for json files
-let g:vim_json_conceal=0
-" files for indentLine to exclude
 let g:indentLine_fileTypeExclude = ['help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh']
-
-let g:NERDTreeMinimalMenu=1
 
 let g:VM_maps = {}
 
@@ -184,6 +174,11 @@ require('Comment').setup()
 require("which-key").setup()
 
 require('leap').set_default_keymaps()
+
+require("indent_blankline").setup {
+    show_current_context = true,
+    show_current_context_start = true,
+}
 
 -- treesitter stuff
 local configs = require("nvim-treesitter.configs")
