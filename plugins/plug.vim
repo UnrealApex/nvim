@@ -43,6 +43,7 @@ Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/rainbow_parentheses.vim'
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-sources'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -141,7 +142,6 @@ nnoremap <leader>b :JABSOpen<CR>
 
 nmap <leader>o :TagbarToggle<CR>
 
-let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
 " bind Enter to accept Copilot suggestions
 " imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
 " let g:copilot_no_tab_map = v:true
