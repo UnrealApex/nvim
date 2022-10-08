@@ -21,6 +21,7 @@ Plug 'rcarriga/nvim-notify'
 Plug 'nvim-lua/popup.nvim'
 " file explorer
 Plug 'tpope/vim-vinegar'
+Plug 'preservim/tagbar'
 " richer git integration
 Plug 'lewis6991/gitsigns.nvim'
 " status bar
@@ -138,6 +139,8 @@ nnoremap <C-p> :Telescope find_files<CR>
 nnoremap <C-t> :Telescope live_grep<CR>
 
 nnoremap <leader>b :JABSOpen<CR>
+
+nmap <leader>o :TagbarToggle<CR>
 
 " bind Enter to accept Copilot suggestions
 " imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
