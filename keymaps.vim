@@ -27,8 +27,6 @@ vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
 " buffer stuff
 nnoremap <Leader>n :enew<CR>
-" leader x to close a new tab
-" nnoremap <Leader>x :tabclose<CR>
 nnoremap <Leader>x :bd<CR>
 
 " Resize splits with alt + arrows
@@ -37,13 +35,7 @@ nnoremap <A-Down> :resize -2<CR>
 nnoremap <A-Left> :vertical resize -2<CR>
 nnoremap <A-Right> :vertical resize +2<CR>
 
-"  w wq q   --  Quick Save
-nmap <Leader>w :w<CR>
-nmap <Leader>q :q<CR>
-nmap <Leader>wq :wq<CR>
-nmap <Leader>Q :q!<CR>
-
-"  y d p P   --  Quick copy paste into system clipboard
+"  y d p P   --  Quick copy and paste into system clipboard
 nmap <Leader>y "+y
 nmap <Leader>d "+d
 vmap <Leader>y "+y
