@@ -192,7 +192,7 @@ configs.setup {
 
 -- todo get toggleterm to start in insert mode
 require("toggleterm").setup({
-  open_mapping = [[<leader>\]],
+  open_mapping = [[<leader>o]],
 })
 EOF
 
