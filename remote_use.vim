@@ -64,6 +64,12 @@ set path=.,**
 " set the working directory as the one of the file currently being edited
 autocmd BufEnter * lcd %:p:h
 
+augroup show_whitespace
+  autocmd!
+  autocmd ModeChanged *:[vV\x16]* :set listchars+=space:·
+  autocmd Modechanged [vV\x16]*:* :set listchars-=space:·
+augroup END
+
 " change map leader to space
 let mapleader=" "
 

@@ -148,19 +148,11 @@ nmap <silent> <F8> :TagbarToggle<CR>
 " map Leader t to toggle Tagbar
 nmap <silent> <Leader>t :TagbarToggle<CR>
 
-" refresh minimap.vim on file change
-" augroup minimap_refresh
-"   autocmd!
-"   autocmd TextChanged * MinimapRefresh
-"   autocmd BufModifiedSet * MinimapRefresh
-" augroup end
-
-" open minimap on startup
-" let g:minimap_auto_start = 1
-
-" highlight git stuff in minimap
-" let g:minimap_git_colors = 1
-
+augroup show_whitespace
+  autocmd!
+  autocmd ModeChanged *:[vV\x16]* :set listchars+=space:·
+  autocmd Modechanged [vV\x16]*:* :set listchars-=space:·
+augroup END
 
 " bind Enter to accept Copilot suggestions
 " imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
