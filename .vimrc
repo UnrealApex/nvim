@@ -114,6 +114,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Conquerer of Completion(code completion)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-sources'
 " Repeat.vim
 Plug 'tpope/vim-repeat'
 " Vim Startify(start screen)
@@ -163,7 +164,7 @@ let g:coc_global_extensions = [
 \ 'coc-pyright',
 \ 'coc-clangd',
 \ 'coc-java',
-\ 'coc-lua',
+\ 'coc-sumneko-lua',
 \ 'coc-sql',
 \ 'coc-html',
 \ 'coc-html-css-support',
@@ -173,7 +174,8 @@ let g:coc_global_extensions = [
 \ 'coc-highlight',
 \ 'coc-snippets',
 \ 'coc-lightbulb',
-\ 'coc-symbol-line'
+\ 'coc-symbol-line',
+\ 'coc-calc'
 \ ]
 
 " CoC keybindings
