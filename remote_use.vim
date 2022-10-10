@@ -92,6 +92,9 @@ inoremap <S-Tab> <C-d>
 " saner CTRL-L
 nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
+" switch buffers easily
+nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
+
 " line/selection movement binds
 " alt + k to move a line or selection up,
 " alt + j to move a line or selection down

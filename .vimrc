@@ -74,6 +74,9 @@ inoremap <silent> <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
+" switch buffers easily
+nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
+
 " efficient editing in insert mode
 " map ctrl + backspace to delete the previous word in insert mode
 imap <C-BS> <C-W>
