@@ -92,10 +92,8 @@ endif
 
 " plugins (make sure you have vim plug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
-" NERDTree(file explorer)
-Plug 'preservim/nerdtree'
-" Git gutter indicators(not supported in Vim)
-" Plug 'lewis6991/gitsigns.nvim'
+" file explorer
+Plug 'tpope/vim-vinegar'
 " Use vim gitgutter instead of gitsigns for git gutter indicators
 Plug 'airblade/vim-gitgutter'
 " Lightline (status bar)
@@ -165,16 +163,6 @@ augroup rainbow_parens
 augroup end
 
 " plugins
-
-
-" NERDTree configurations
-
-" keybinds
-" refresh NerdTree when it is focused
-autocmd BufEnter NERD_tree_* | execute 'normal R'
-
-" map the hypen key (-) to toggle NERDTree
-nmap <silent> - :NERDTreeToggle %<CR>
 
 " CoC configurations
 
