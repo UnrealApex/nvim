@@ -109,13 +109,6 @@ nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <
 nnoremap <Leader>n :enew<CR>
 nnoremap <Leader>x :bd<CR>
 
-" search
-" center search
-nnoremap <silent> n nzz
-nnoremap <silent> N Nzz
-nnoremap <silent> * *zz
-nnoremap <silent> # #zz
-
 " Resize splits with alt + arrows
 nnoremap <A-Up> :resize +2<CR>
 nnoremap <A-Down> :resize -2<CR>
