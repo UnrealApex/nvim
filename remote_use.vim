@@ -69,23 +69,6 @@ let mapleader=" "
 
 let g:ftplugin_sql_omni_key = '<C-;>'
 
-" auto save file when it is modified
-augroup auto_save
-  autocmd!
-  " call save function
-  autocmd BufModifiedSet * call AutoSave()
-augroup end
-
-" save function that is called when buffer is modified
-function AutoSave()
-  if (bufname() != "" && &buftype == "" && &filetype != "" && &readonly == 0)
-    silent write
-  " prevent empty, readonly, etc... buffers from being saved
-  else
-  endif
-endfunction
-
-
 " keymaps
 
 " map ctrl + c to escape
