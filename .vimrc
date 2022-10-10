@@ -129,8 +129,6 @@ Plug 'mg979/vim-visual-multi'
 Plug 'mattn/emmet-vim'
 " Vim dev icons
 Plug 'ryanoasis/vim-devicons'
-" Tagbar
-Plug 'preservim/tagbar'
 call plug#end()
 
 " enable IndentLine
@@ -138,13 +136,6 @@ let g:indentLine_enabled = 1
 
 " enable sneak label mode
 let g:sneak#label = 1
-
-" set ctags path
-let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
-" map F8 to toggle Tagbar
-nmap <silent> <F8> :TagbarToggle<CR>
-" map Leader t to toggle Tagbar
-nmap <silent> <Leader>t :TagbarToggle<CR>
 
 augroup show_whitespace
   autocmd!
