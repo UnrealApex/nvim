@@ -92,6 +92,9 @@ inoremap <S-Tab> <C-d>
 " saner CTRL-L
 nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
+" vim vinegar in a mapping
+let g:netrw_banner = 0
+nnoremap - :Explore %:h<CR>
 
 " line/selection movement binds
 " alt + k to move a line or selection up,
