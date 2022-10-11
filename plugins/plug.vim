@@ -67,7 +67,9 @@ Plug 'mg979/vim-visual-multi'
 " Emmet
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 " icons
-Plug 'ryanoasis/vim-devicons'
+if has("gui_running")
+  Plug 'ryanoasis/vim-devicons'
+endif
 " easily change dates
 Plug 'tpope/vim-speeddating'
 " keymap hints
