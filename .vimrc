@@ -74,27 +74,17 @@ inoremap <silent> <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
+" buffer stuff
+" switch buffers easily
+nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
+nnoremap <Leader>n :enew<CR>
+nnoremap <Leader>x :bd<CR>
+
 " efficient editing in insert mode
 " map ctrl + backspace to delete the previous word in insert mode
 imap <C-BS> <C-W>
 " map shift + tab to unindent
 inoremap <S-Tab> <C-d>
-
-" auto save file when it is modified
-augroup auto_save
-  autocmd!
-  " call save function
-  autocmd BufModifiedSet * call AutoSave()
-augroup end
-
-" save function that is called when buffer is modified
-function AutoSave()
-  if (bufname() != "" && &buftype == "" && &filetype != "" && &readonly == 0)
-    silent write
-  " prevent empty, readonly, etc... buffers from being saved
-  else
-  endif
-endfunction
 
 " plugin management
 " automatically install vim plug
@@ -108,10 +98,8 @@ endif
 
 " plugins (make sure you have vim plug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
-" NERDTree(file explorer)
-Plug 'preservim/nerdtree'
-" Git gutter indicators(not supported in Vim)
-" Plug 'lewis6991/gitsigns.nvim'
+" file explorer
+Plug 'tpope/vim-vinegar'
 " Use vim gitgutter instead of gitsigns for git gutter indicators
 Plug 'airblade/vim-gitgutter'
 " Lightline (status bar)
@@ -132,6 +120,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Conquerer of Completion(code completion)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-sources'
 " Repeat.vim
 Plug 'tpope/vim-repeat'
 " Vim Startify(start screen)
@@ -147,8 +136,6 @@ Plug 'mg979/vim-visual-multi'
 Plug 'mattn/emmet-vim'
 " Vim dev icons
 Plug 'ryanoasis/vim-devicons'
-" Tagbar
-Plug 'preservim/tagbar'
 call plug#end()
 
 " enable IndentLine
@@ -157,26 +144,11 @@ let g:indentLine_enabled = 1
 " enable sneak label mode
 let g:sneak#label = 1
 
-" set ctags path
-let g:tagbar_ctags_bin = "$HOME/ctags/ctags.exe"
-" map F8 to toggle Tagbar
-nmap <silent> <F8> :TagbarToggle<CR>
-" map Leader t to toggle Tagbar
-nmap <silent> <Leader>t :TagbarToggle<CR>
-
-" refresh minimap.vim on file change
-" augroup minimap_refresh
-"   autocmd!
-"   autocmd TextChanged * MinimapRefresh
-"   autocmd BufModifiedSet * MinimapRefresh
-" augroup end
-
-" open minimap on startup
-" let g:minimap_auto_start = 1
-
-" highlight git stuff in minimap
-" let g:minimap_git_colors = 1
-
+augroup show_whitespace
+  autocmd!
+  autocmd ModeChanged *:[vV\x16]* :set listchars+=space:·
+  autocmd Modechanged [vV\x16]*:* :set listchars-=space:·
+augroup END
 
 " bind Enter to accept Copilot suggestions
 " imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
@@ -190,16 +162,6 @@ augroup end
 
 " plugins
 
-
-" NERDTree configurations
-
-" keybinds
-" refresh NerdTree when it is focused
-autocmd BufEnter NERD_tree_* | execute 'normal R'
-
-" map the hypen key (-) to toggle NERDTree
-nmap <silent> - :NERDTreeToggle %<CR>
-
 " CoC configurations
 
 " CoC Extensions
@@ -208,7 +170,7 @@ let g:coc_global_extensions = [
 \ 'coc-pyright',
 \ 'coc-clangd',
 \ 'coc-java',
-\ 'coc-lua',
+\ 'coc-sumneko-lua',
 \ 'coc-sql',
 \ 'coc-html',
 \ 'coc-html-css-support',
@@ -218,7 +180,8 @@ let g:coc_global_extensions = [
 \ 'coc-highlight',
 \ 'coc-snippets',
 \ 'coc-lightbulb',
-\ 'coc-symbol-line'
+\ 'coc-symbol-line',
+\ 'coc-calc'
 \ ]
 
 " CoC keybindings

@@ -64,27 +64,16 @@ set path=.,**
 " set the working directory as the one of the file currently being edited
 autocmd BufEnter * lcd %:p:h
 
+augroup show_whitespace
+  autocmd!
+  autocmd ModeChanged *:[vV\x16]* :set listchars+=space:·
+  autocmd Modechanged [vV\x16]*:* :set listchars-=space:·
+augroup END
+
 " change map leader to space
 let mapleader=" "
 
 let g:ftplugin_sql_omni_key = '<C-;>'
-
-" auto save file when it is modified
-augroup auto_save
-  autocmd!
-  " call save function
-  autocmd BufModifiedSet * call AutoSave()
-augroup end
-
-" save function that is called when buffer is modified
-function AutoSave()
-  if (bufname() != "" && &buftype == "" && &filetype != "" && &readonly == 0)
-    silent write
-  " prevent empty, readonly, etc... buffers from being saved
-  else
-  endif
-endfunction
-
 
 " keymaps
 
@@ -103,6 +92,7 @@ inoremap <S-Tab> <C-d>
 " saner CTRL-L
 nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
+
 " line/selection movement binds
 " alt + k to move a line or selection up,
 " alt + j to move a line or selection down
@@ -113,30 +103,11 @@ inoremap <silent> <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
-" tab stuff
-" leader 1 - 9 to jump to tab 1 - 9
-nnoremap <Leader>1 1gt<CR>
-nnoremap <Leader>2 2gt<CR>
-nnoremap <Leader>3 3gt<CR>
-nnoremap <Leader>4 4gt<CR>
-nnoremap <Leader>5 5gt<CR>
-nnoremap <Leader>6 6gt<CR>
-nnoremap <Leader>7 7gt<CR>
-nnoremap <Leader>8 8gt<CR>
-nnoremap <Leader>9 9gt<CR>
-" go to the last tab
-nnoremap <Leader>0 :tablast<CR>
-" leader n to create a new tab
-nnoremap <Leader>n :tabnew<CR>
-" leader x to close a new tab
-nnoremap <Leader>x :tabclose<CR>
-
-" search
-" center search
-nnoremap <silent> n nzz
-nnoremap <silent> N Nzz
-nnoremap <silent> * *zz
-nnoremap <silent> # #zz
+" buffer stuff
+" switch buffers easily
+nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
+nnoremap <Leader>n :enew<CR>
+nnoremap <Leader>x :bd<CR>
 
 " Resize splits with alt + arrows
 nnoremap <A-Up> :resize +2<CR>
