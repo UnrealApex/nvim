@@ -97,8 +97,6 @@ endfunction
 
 " matchit plugin
 packadd matchit
-" built in debugger(requires gdb)
-packadd termdebug
 
 " change map leader to space
 let mapleader=" "
