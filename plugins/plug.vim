@@ -54,12 +54,10 @@ Plug 'mhinz/vim-startify'
 Plug 'nvim-telescope/telescope.nvim'
 " sets vim.ui.select to telescope
 Plug 'nvim-telescope/telescope-ui-select.nvim'
+" increase telescope search speed
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " not supported on windows
 " Plug 'nvim-telescope/telescope-media-files.nvim'
-" TODO: get Telescope fzf working
-" TODO: figure out why this extension is not being found
-" increase telescope search speed
-" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 " better movement
 Plug 'ggandor/leap.nvim'
 " multi cursor support
