@@ -3,7 +3,7 @@ set nocompatible
 " allow hidden buffers
 set hidden
 " set the font to Jetbrains Mono and the font size to 14 pixels
-set guifont=JetbrainsMono\ NF:h14
+set guifont=JetbrainsMono\ NF:h13
 " show line numbers
 set number
 " show relative line numbers
