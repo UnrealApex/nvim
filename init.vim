@@ -2,8 +2,8 @@
 set nocompatible
 " allow hidden buffers
 set hidden
-" set the font to Fixedsys Excelsior and the font size to 16 pixels
-set guifont=Fixedsys\ Excelsior:h16
+" set the font to Jetbrains Mono and the font size to 14 pixels
+set guifont=JetbrainsMono\ NF:h14
 " show line numbers
 set number
 " show relative line numbers
