@@ -51,7 +51,7 @@ nmap <silent> gd <Plug>(coc-definition)<CR>
 nmap <silent> gy <Plug>(coc-type-definition)<CR>
 
 " gi - go to implementation
-nmap <silent> gi <Plug>(coc-implementation)<CR>
+nmap <silent> <leader>gi <Plug>(coc-implementation)<CR>
 
 " gr - find references
 nmap <silent> gr <Plug>(coc-references)<CR>
