@@ -27,7 +27,7 @@ vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
 " buffer stuff
 nnoremap <Leader>n :enew<CR>
-nnoremap <Leader>x :bd<CR>
+nnoremap <Leader>q :bd<CR>
 
 " Resize splits with alt + arrows
 nnoremap <A-Up> :resize +2<CR>
