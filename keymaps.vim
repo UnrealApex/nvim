@@ -15,6 +15,7 @@ inoremap <S-Tab> <C-d>
 " saner CTRL-L
 nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
+" vanilla buffer switcher
 " nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
 
 " move lines up or down
@@ -26,7 +27,9 @@ vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
 " buffer stuff
+" " create a new buffer
 nnoremap <Leader>n :enew<CR>
+" delete a buffer
 nnoremap <Leader>q :bd<CR>
 
 " Resize splits with alt + arrows
@@ -35,7 +38,7 @@ nnoremap <A-Down> :resize -2<CR>
 nnoremap <A-Left> :vertical resize -2<CR>
 nnoremap <A-Right> :vertical resize +2<CR>
 
-"  y d p P   --  Quick copy and paste into system clipboard
+" faster copying and pasteing into system clipboard
 nmap <Leader>y "+y
 nmap <Leader>d "+d
 vmap <Leader>y "+y
