@@ -59,8 +59,6 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-nvim-lua'
 " calculation completions
 Plug 'hrsh7th/cmp-calc'
-" spelling suggestions
-Plug 'f3fora/cmp-spell'
 " emoji completions 😄
 Plug 'hrsh7th/cmp-emoji'
 
