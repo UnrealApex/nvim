@@ -122,8 +122,8 @@ keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 -- Rename
 -- keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { silent = true })
 
--- Definition preview
-keymap("n", "gD", "<cmd>Lspsaga preview_definition<CR>", { silent = true })
+-- Definition peek
+keymap("n", "gD", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
 -- Show line diagnostics
 keymap("n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
