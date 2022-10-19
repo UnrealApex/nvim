@@ -28,6 +28,8 @@ Plug 'nvim-lualine/lualine.nvim'
 " basic git integration
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+" git commit browser
+Plug 'junegunn/gv.vim', {'on': 'GV'}
 " git conflict helper
 Plug 'rhysd/conflict-marker.vim'
 " sensible default settings
