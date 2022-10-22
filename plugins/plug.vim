@@ -64,7 +64,6 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'ggandor/leap.nvim'
 " multi cursor support
 Plug 'mg979/vim-visual-multi'
-Plug 'terryma/vim-expand-region'
 " Emmet
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 " icons
