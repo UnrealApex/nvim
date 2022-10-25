@@ -15,6 +15,8 @@ Plug 'nvim-lua/plenary.nvim'
 " make neovim faster
 Plug 'lewis6991/impatient.nvim'
 Plug 'dstein64/vim-startuptime', {'on': 'StartupTime'}
+Plug 'folke/noice.nvim'
+Plug 'MunifTanjim/nui.nvim'
 " more aesthetic notifications
 Plug 'rcarriga/nvim-notify'
 " vim popup api
@@ -161,6 +163,8 @@ vim.cmd("colorscheme tokyonight-moon")
 
 -- make neovim faster
 require('impatient')
+
+require("noice").setup()
 
 require('Comment').setup()
 
