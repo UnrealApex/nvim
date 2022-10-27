@@ -78,7 +78,7 @@ vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 " switch buffers easily
 nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
 nnoremap <Leader>n :enew<CR>
-nnoremap <Leader>x :bd<CR>
+nnoremap <Leader>q :bd<CR>
 
 " efficient editing in insert mode
 " map ctrl + backspace to delete the previous word in insert mode
@@ -86,8 +86,7 @@ imap <C-BS> <C-W>
 " map shift + tab to unindent
 inoremap <S-Tab> <C-d>
 
-" plugin management
-" automatically install vim plug
+" vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   :echo "Installing Vim Plug"
@@ -96,7 +95,6 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   :echo "Vim Plug installed"
 endif
 
-" plugins (make sure you have vim plug installed, run :PlugInstall to install them)
 call plug#begin('~/.vim/plugged')
 " file explorer
 Plug 'tpope/vim-vinegar'
@@ -160,7 +158,7 @@ augroup rainbow_parens
   autocmd VimEnter * RainbowParentheses
 augroup end
 
-" plugins
+" plugin configs
 
 " CoC configurations
 
@@ -296,4 +294,4 @@ else
 endif
 
 " startify bookmarks
-let g:startify_bookmarks = ["$MYVIMRC", "$HOME/src", "$PLUGINS", "$KEYMAPS"]
+let g:startify_bookmarks = ["$MYVIMRC", "$HOME", "$PLUGINS", "$KEYMAPS"]
