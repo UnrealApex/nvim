@@ -110,7 +110,7 @@ vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 " switch buffers easily
 nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
 nnoremap <Leader>n :enew<CR>
-nnoremap <Leader>x :bd<CR>
+nnoremap <Leader>q :bd<CR>
 
 " Resize splits with alt + arrows
 nnoremap <A-Up> :resize +2<CR>
@@ -118,13 +118,6 @@ nnoremap <A-Down> :resize -2<CR>
 nnoremap <A-Left> :vertical resize -2<CR>
 nnoremap <A-Right> :vertical resize +2<CR>
 
-"  w wq q   --  Quick Save
-nmap <Leader>w :w<CR>
-nmap <Leader>q :q<CR>
-nmap <Leader>wq :wq<CR>
-nmap <Leader>Q :q!<CR>
-
-"  y d p P   --  Quick copy paste into system clipboard
 nmap <Leader>y "+y
 nmap <Leader>d "+d
 vmap <Leader>y "+y
