@@ -115,5 +115,5 @@ command Prose call ProseMode()
 
 " keymap management
 runtime keymaps.vim
-" plugin management
-runtime plugins/plug.vim
+" plugin stuff
+lua require('user.plugins')
