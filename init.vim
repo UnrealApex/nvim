@@ -74,6 +74,8 @@ set updatetime=200
 set background=dark
 set termguicolors
 set lazyredraw
+set foldmethod=indent
+set nofoldenable
 " set gutter color to match background color
 highlight clear SignColumn
 " set path
