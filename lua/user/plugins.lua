@@ -175,6 +175,10 @@ configs.setup {
   indent = { enable = true, disable = { "yaml" } },
 }
 
+
+-- globals
+vim.g['indentLine_fileTypeExclude'] = {'help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh'}
+
 -- plugin configurations
 require("user.lualine")
 require("user.gitsigns")
