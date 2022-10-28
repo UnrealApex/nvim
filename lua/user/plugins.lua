@@ -53,10 +53,19 @@ require('packer').startup(function(use)
     config = vim.cmd[[RainbowParentheses]]
   }
   -- autocomplete
-  use {'neoclide/coc.nvim', branch = 'release'}
-  use {'neoclide/coc-sources', requires = {'neoclide/coc.nvim'}}
+  use {
+    'neoclide/coc.nvim',
+    branch = 'release'
+  }
+  use {
+    'neoclide/coc-sources',
+    requires = {'neoclide/coc.nvim'}
+  }
 
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
 
 -- Repeat.vim
   use 'tpope/vim-repeat'
@@ -65,9 +74,16 @@ require('packer').startup(function(use)
   -- fuzzy finder
   use 'nvim-telescope/telescope.nvim'
   -- sets vim.ui.select to telescope
-  use {'nvim-telescope/telescope-ui-select.nvim', requires = {'nvim-telescope/telescope.nvim'}}
+  use {
+    'nvim-telescope/telescope-ui-select.nvim',
+    requires = {'nvim-telescope/telescope.nvim'}
+  }
   -- increase telescope search speed
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make', requires = {'nvim-telescope/telescope.nvim'}}
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make',
+    requires = {'nvim-telescope/telescope.nvim'}
+  }
   -- not supported on windows
   -- use 'nvim-telescope/telescope-media-files.nvim'
   -- better movement
@@ -75,7 +91,11 @@ require('packer').startup(function(use)
   -- multi cursor support
   use 'mg979/vim-visual-multi'
   -- Emmet
-  use {'mattn/emmet-vim', opt = true, ft = {'html', 'css', 'javascript'}}
+  use {
+    'mattn/emmet-vim',
+    opt = true,
+    ft = {'html', 'css', 'javascript'}
+  }
   -- icons
   use 'ryanoasis/vim-devicons'
   -- easily change dates
@@ -85,18 +105,30 @@ require('packer').startup(function(use)
   -- color scheme
   use 'folke/tokyonight.nvim'
   -- better buffer management
-  use {'matbme/JABS.nvim', opt = true, cmd= 'JABSOpen', config = function()
-    require('jabs').setup()
-    require('user.jabs')
-  end
+  use {
+    'matbme/JABS.nvim',
+    opt = true,
+    cmd= 'JABSOpen',
+    config = function()
+      require('jabs').setup()
+      require('user.jabs')
+    end
   }
   -- markdown preview
-  use {'ellisonleao/glow.nvim', opt = true, cmd = {'Glow'}}
-  use {'akinsho/toggleterm.nvim', opt = true, cmd = {'ToggleTerm'}, config = function()
-    require("toggleterm").setup({
-      open_mapping = [[<C-\>]],
-    })
-  end
+  use {
+    'ellisonleao/glow.nvim',
+    opt = true,
+    cmd = {'Glow'}
+  }
+  use {
+    'akinsho/toggleterm.nvim',
+    opt = true,
+    cmd = {'ToggleTerm'},
+    config = function()
+      require("toggleterm").setup({
+        open_mapping = [[<C-\>]],
+      })
+    end
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
