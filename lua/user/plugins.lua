@@ -49,7 +49,7 @@ require('packer').startup(function(use)
   use 'junegunn/rainbow_parentheses.vim'
   -- autocomplete
   use {'neoclide/coc.nvim', branch = 'release'}
-  use 'neoclide/coc-sources'
+  use {'neoclide/coc-sources', requires = {'neoclide/coc.nvim'}}
 
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
@@ -60,9 +60,9 @@ require('packer').startup(function(use)
   -- fuzzy finder
   use 'nvim-telescope/telescope.nvim'
   -- sets vim.ui.select to telescope
-  use 'nvim-telescope/telescope-ui-select.nvim'
+  use {'nvim-telescope/telescope-ui-select.nvim', requires = {'nvim-telescope/telescope.nvim'}}
   -- increase telescope search speed
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make', requires = {'nvim-telescope/telescope.nvim'}}
   -- not supported on windows
   -- use 'nvim-telescope/telescope-media-files.nvim'
   -- better movement
@@ -70,7 +70,7 @@ require('packer').startup(function(use)
   -- multi cursor support
   use 'mg979/vim-visual-multi'
   -- Emmet
-  use {'mattn/emmet-vim', ft = {'html', 'css'}}
+  use {'mattn/emmet-vim', opt = true, ft = {'html', 'css', 'javascript'}}
   -- icons
   use 'ryanoasis/vim-devicons'
   -- easily change dates
@@ -80,10 +80,19 @@ require('packer').startup(function(use)
   -- color scheme
   use 'folke/tokyonight.nvim'
   -- better buffer management
-  use 'matbme/JABS.nvim'
+  use {'matbme/JABS.nvim', opt = true, cmd= 'JABSOpen', config = function()
+    require('jabs').setup()
+    require('user.jabs')
+  end
+  }
   -- markdown preview
-  use 'ellisonleao/glow.nvim'
-  use 'akinsho/toggleterm.nvim'
+  use {'ellisonleao/glow.nvim', opt = true, cmd = {'Glow'}}
+  use {'akinsho/toggleterm.nvim', opt = true, cmd = {'ToggleTerm'}, config = function()
+    require("toggleterm").setup({
+      open_mapping = [[<C-\>]],
+    })
+  end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -98,7 +107,7 @@ require("user.lualine")
 require("user.gitsigns")
 require("user.notify")
 require("user.telescope")
-require("user.jabs")
+-- require("user.jabs")
 
 -- vimscript files
 vim.cmd[[
