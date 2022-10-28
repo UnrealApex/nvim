@@ -175,6 +175,8 @@ configs.setup {
   indent = { enable = true, disable = { "yaml" } },
 }
 
+-- TODO: implement prose mode function in lua
+
 vim.cmd[[colorscheme tokyonight-moon]]
 
 -- globals
