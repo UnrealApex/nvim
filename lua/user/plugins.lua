@@ -102,6 +102,13 @@ require('packer').startup(function(use)
 end)
 
 
+vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>')
+vim.keymap.set('n', '<C-t>', ':Telescope live_grep<CR>')
+
+vim.keymap.set('n', '<leader>b', ':JABSOpen<CR>')
+
+vim.keymap.set('n', '<leader>z', 'Goyo<CR>')
+
 -- plugin configurations
 require("user.lualine")
 require("user.gitsigns")
