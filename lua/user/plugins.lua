@@ -175,6 +175,7 @@ configs.setup {
   indent = { enable = true, disable = { "yaml" } },
 }
 
+vim.cmd[[colorscheme tokyonight-moon]]
 
 -- globals
 vim.g['indentLine_fileTypeExclude'] = {'help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh'}
