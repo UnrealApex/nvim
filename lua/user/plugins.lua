@@ -109,6 +109,35 @@ vim.keymap.set('n', '<leader>b', ':JABSOpen<CR>')
 
 vim.keymap.set('n', '<leader>z', 'Goyo<CR>')
 
+
+require('impatient')
+
+require('Comment').setup()
+
+require("which-key").setup()
+
+require('leap').set_default_keymaps()
+
+require("indent_blankline").setup {
+    show_current_context = true,
+    show_current_context_start = true,
+}
+
+-- treesitter stuff
+local configs = require("nvim-treesitter.configs")
+configs.setup {
+  ensure_installed = "all",
+  sync_install = false, 
+  ignore_install = { "" }, -- List of parsers to ignore installing
+  highlight = {
+    enable = true, -- false will disable the whole extension
+    disable = { "" }, -- list of language that will be disabled
+    additional_vim_regex_highlighting = true,
+
+  },
+  indent = { enable = true, disable = { "yaml" } },
+}
+
 -- plugin configurations
 require("user.lualine")
 require("user.gitsigns")
