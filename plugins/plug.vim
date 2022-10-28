@@ -26,7 +26,7 @@ Plug 'lewis6991/gitsigns.nvim'
 " status bar
 Plug 'nvim-lualine/lualine.nvim'
 " basic git integration
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', {'on': 'G'}
 Plug 'tpope/vim-surround'
 " git commit browser
 Plug 'junegunn/gv.vim', {'on': 'GV'}
