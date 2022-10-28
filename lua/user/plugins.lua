@@ -42,7 +42,10 @@ require('packer').startup(function(use)
   -- commenter
   use 'numToStr/Comment.nvim'
   -- indent guides
-  use 'lukas-reineke/indent-blankline.nvim'
+  use {
+  'lukas-reineke/indent-blankline.nvim',
+  requires = {'nvim-treesitter/nvim-treesitter'}
+  }
   -- zen mode
   use {'junegunn/goyo.vim', opt = true, cmd = {'Goyo'}}
   -- easy parenthesis matching
@@ -72,11 +75,14 @@ require('packer').startup(function(use)
   -- start screen
   use 'mhinz/vim-startify'
   -- fuzzy finder
-  use 'nvim-telescope/telescope.nvim'
+  use {
+  'nvim-telescope/telescope.nvim',
+  requires = {'nvim-lua/plenary.nvim'}
+  }
   -- sets vim.ui.select to telescope
   use {
     'nvim-telescope/telescope-ui-select.nvim',
-    requires = {'nvim-telescope/telescope.nvim'}
+    requires = {'nvim-telescope/telescope.nvim', 'nvim-telescope/telescope-fzf-native.nvim'}
   }
   -- increase telescope search speed
   use {
