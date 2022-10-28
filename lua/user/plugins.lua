@@ -46,7 +46,12 @@ require('packer').startup(function(use)
   -- zen mode
   use {'junegunn/goyo.vim', opt = true, cmd = {'Goyo'}}
   -- easy parenthesis matching
-  use 'junegunn/rainbow_parentheses.vim'
+  use {
+    'junegunn/rainbow_parentheses.vim',
+    opt = true,
+    event = 'VimEnter',
+    config = vim.cmd[[RainbowParentheses]]
+  }
   -- autocomplete
   use {'neoclide/coc.nvim', branch = 'release'}
   use {'neoclide/coc-sources', requires = {'neoclide/coc.nvim'}}
