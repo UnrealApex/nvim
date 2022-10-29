@@ -191,3 +191,5 @@ vnoremap <silent><nowait><expr> <C-d> coc#float#has_scroll() ? coc#float#scroll(
 vnoremap <silent><nowait><expr> <C-u> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 ]]
 
+vim.keymap.set('n', '[d', '<Plug>(coc-diagnostic-prev)', {silent = true})
+vim.keymap.set('n', ']d', '<Plug>(coc-diagnostic-next)', {silent = true})
