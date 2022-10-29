@@ -234,7 +234,7 @@ vim.api.nvim_create_user_command('Prose', prose, {})
 
 vim.cmd[[colorscheme tokyonight-moon]]
 
--- globals
+-- FIXME: fix indent guides still showing on excluded filetypes
 vim.g['indentLine_fileTypeExclude'] = {'help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh'}
 
 -- plugin configurations
