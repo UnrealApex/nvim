@@ -243,8 +243,4 @@ require("user.notify")
 require("user.telescope")
 -- require("user.jabs")
 require('user.coc')
-
--- vimscript files
-vim.cmd[[
-runtime plugins/startify.vim
-]]
+require('user.startify')
