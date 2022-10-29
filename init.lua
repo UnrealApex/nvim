@@ -65,12 +65,12 @@ vim.opt.autoread = true
 vim.opt.undolevels = 500
 vim.opt.history = 500
 --store all swap files in one directory
-vim.opt.dir='$HOME/.vim/swap//'
+vim.opt.dir = vim.fn.stdpath('config') .. '/swap'
 --store all backup files in one directory
-vim.opt.backupdir='$HOME/.vim/swap//'
+vim.opt.backupdir = vim.fn.stdpath('config') .. '/swap'
 --persistent undo tree
 vim.opt.undofile = true
-vim.opt.undodir = '$HOME/.vim/undo//'
+vim.opt.undodir = vim.fn.stdpath('config') .. '/undo'
 vim.opt.wildmode = 'longest:full,full'
 vim.opt.wildmenu = true
 --vim.opt.updatetime to 200 milliseconds
