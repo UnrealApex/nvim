@@ -48,9 +48,13 @@ require('packer').startup(function(use)
   }
   -- zen mode
   use {
-    'junegunn/goyo.vim',
+    'folke/zen-mode.nvim',
     opt = true,
-    cmd = {'Goyo'},
+    cmd = {'ZenMode'},
+    config = function()
+      -- TODO: make zen-mode window smaller, similar to the width of goyo's
+      require('zen-mode').setup()
+    end,
     ft = {'markdown'}
   }
   -- easy parenthesis matching
@@ -150,7 +154,7 @@ vim.keymap.set('n', '<C-t>', ':Telescope live_grep<CR>')
 
 vim.keymap.set('n', '<leader>b', ':JABSOpen<CR>')
 
-vim.keymap.set('n', '<leader>z', 'Goyo<CR>')
+vim.keymap.set('n', '<leader>z', ':ZenMode<CR>')
 
 
 require('impatient')
