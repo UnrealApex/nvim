@@ -107,7 +107,7 @@ let mapleader=" "
 let g:ftplugin_sql_omni_key = '<C-;>'
 
 " plugins
-let $PLUGINS = stdpath("config") . "\\plugins/plug.vim"
+let $PLUGINS = stdpath("config") . "\\lua\\user\\plugins.lua"
 " keymaps
 let $KEYMAPS =  stdpath("config") . "\\keymaps.vim"
 
