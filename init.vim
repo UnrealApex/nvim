@@ -111,8 +111,6 @@ let $PLUGINS = stdpath("config") . "\\plugins/plug.vim"
 " keymaps
 let $KEYMAPS =  stdpath("config") . "\\keymaps.vim"
 
-command Prose call ProseMode()
-
 " keymap management
 runtime keymaps.vim
 " plugin stuff
