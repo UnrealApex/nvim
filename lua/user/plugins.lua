@@ -186,7 +186,6 @@ configs.setup {
 }
 
 prosed = false
--- TODO: goyo support
 function prose()
  if not prosed then
     vim.opt_local.spell = true
@@ -206,6 +205,7 @@ function prose()
     vim.keymap.set('v', '$', 'g$')
     vim.keymap.set('v', '^', 'g^')
     prosed = true
+    vim.cmd[[ZenMode]]
     print('Prose Mode Enabled')
   else
     vim.opt_local.spell = false
@@ -225,6 +225,7 @@ function prose()
     vim.keymap.set('v', '$', '$')
     vim.keymap.set('v', '^', '^')
     prosed = false
+    vim.cmd[[ZenMode]]
     print('Prose Mode Disabled')
   end
 end
