@@ -47,7 +47,12 @@ require('packer').startup(function(use)
   requires = {'nvim-treesitter/nvim-treesitter'}
   }
   -- zen mode
-  use {'junegunn/goyo.vim', opt = true, cmd = {'Goyo'}}
+  use {
+    'junegunn/goyo.vim',
+    opt = true,
+    cmd = {'Goyo'},
+    ft = {'markdown'}
+  }
   -- easy parenthesis matching
   use 'junegunn/rainbow_parentheses.vim'
   -- autocomplete
