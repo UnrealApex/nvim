@@ -242,9 +242,9 @@ require("user.gitsigns")
 require("user.notify")
 require("user.telescope")
 -- require("user.jabs")
+require('user.coc')
 
 -- vimscript files
 vim.cmd[[
-runtime plugins/coc.vim
 runtime plugins/startify.vim
 ]]
