@@ -1,0 +1,6 @@
+# packer 
+plugin/*
+# swap files
+swap/*
+# undo files
+undo/*
