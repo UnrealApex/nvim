@@ -11,6 +11,9 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+-- declare before indent-blankline is loaded
+vim.g.indent_blankline_filetype_exclude = {'help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh'}
+
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
@@ -230,9 +233,6 @@ end
 vim.api.nvim_create_user_command('Prose', prose, {})
 
 vim.cmd[[colorscheme tokyonight-moon]]
-
--- FIXME: fix indent guides still showing on excluded filetypes
-vim.g['indentLine_fileTypeExclude'] = {'help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh'}
 
 -- plugin configurations
 require("user.lualine")
