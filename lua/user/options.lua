@@ -102,7 +102,7 @@ vim.cmd[[packadd matchit]]
 vim.g.mapleader = ' '
 
 --remap this so that using Ctrl + C doesn't have a delay
-vim.g['ftplugin_sql_omni_key '] = '<C-;>'
+vim.g.ftplugin_sql_omni_key = '<C-;>'
 
 -- options
 vim.env.OPTIONS = vim.fn.stdpath('config') .."\\lua\\user\\options.lua"
