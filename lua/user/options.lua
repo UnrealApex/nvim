@@ -114,7 +114,7 @@ endfunction
 vim.cmd[[packadd matchit]]
 
 --change map leader to space
-vim.g['mapleader'] = ' '
+vim.g.mapleader = ' '
 
 --remap this so that using Ctrl + C doesn't have a delay
 vim.g['ftplugin_sql_omni_key '] = '<C-;>'
