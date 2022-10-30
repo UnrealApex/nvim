@@ -76,7 +76,6 @@ vim.cmd[[highlight clear SignColumn]]
 -- vim.opt.path
 vim.opt.path:append('.,**')
 
--- TODO: do this in lua
 vim.cmd[[
 augroup show_whitespace
   autocmd!
