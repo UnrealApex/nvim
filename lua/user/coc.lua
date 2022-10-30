@@ -1,4 +1,4 @@
--- TODO: check if this works
+-- FIXME: mirror coc.vim
 vim.g['coc_global_extensions'] = {
  'coc-vimlsp',
  'coc-pyright',
@@ -188,3 +188,6 @@ vnoremap <silent><nowait><expr> <C-u> coc#float#has_scroll() ? coc#float#scroll(
 
 vim.keymap.set('n', '[d', '<Plug>(coc-diagnostic-prev)', {silent = true})
 vim.keymap.set('n', ']d', '<Plug>(coc-diagnostic-next)', {silent = true})
+
+vim.keymap.set('n', '<leader>ca', '<Plug>(coc-codeaction-selected)<CR>')
+vim.keymap.set('v', '<leader>ca', '<Plug>(coc-codeaction-selected)<CR>')
