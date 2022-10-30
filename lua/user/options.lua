@@ -14,13 +14,6 @@ vim.opt.visualbell = false
 -- TODO: figure out if there is a lua way to do this
 -- syntax highlighting
 vim.cmd[[syntax on]]
--- enable filetype detection
-vim.cmd[[filetype on]]
--- omni completion
-vim.cmd[[filetype plugin on]]
--- better indentation
-vim.cmd[[filetype indent on]]
--- don't show mode in status bar (insert/replace/...)
 vim.opt.showmode = false
 -- show typed command in status bar
 vim.opt.showcmd = true
@@ -96,6 +89,10 @@ augroup END
 
 -- matchit plugin
 vim.cmd[[packadd matchit]]
+
+-- enable filetype.lua
+vim.g.did_load_filetypes = 0
+vim.g.do_filetype_lua = 1
 
 -- change map leader to space
 vim.g.mapleader = ' '
