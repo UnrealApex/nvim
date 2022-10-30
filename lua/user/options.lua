@@ -124,6 +124,5 @@ vim.g['ftplugin_sql_omni_key '] = '<C-;>'
 vim.env.PLUGINS = vim.fn.stdpath('config') .."\\lua\\user\\plugins.lua"
 
 --keymaps
--- TODO: change this path after keymaps.vim rewrite
-vim.env.KEYMAPS = vim.fn.stdpath('config') .."\\keymaps.vim"
+vim.env.KEYMAPS = vim.fn.stdpath('config') .."\\lua\\user\\keymaps.lua"
 
