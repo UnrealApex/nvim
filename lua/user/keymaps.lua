@@ -15,6 +15,9 @@ vim.keymap.set('i', '<S-Tab>', '<C-d>')
 -- saner CTRL-L
 vim.keymap.set('n', '<C-l>', ':nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>')
 
+-- change directory
+vim.keymap.set('n', '<leader>cd', ':cd %:h<CR>')
+
 -- vanilla buffer switcher
 -- nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
 -- lua implementation
