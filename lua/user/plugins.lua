@@ -153,6 +153,8 @@ vim.keymap.set('n', '<C-t>', ':Telescope live_grep<CR>')
 
 vim.keymap.set('n', '<leader>b', ':JABSOpen<CR>')
 
+vim.keymap.set('n', '<leader>z', ':ZenMode<CR>')
+
 
 require('impatient')
 
