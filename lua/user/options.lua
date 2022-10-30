@@ -1,4 +1,3 @@
--- TODO: move options to options.lua
 --disable vi-compatability mode and enables useful vim functionality
 vim.opt.compatible = false
 --allow hidden buffers
@@ -34,7 +33,6 @@ vim.opt.scrolloff=8
 --don't wrap lines
 vim.opt.wrap = false
 --basic completion
--- TODO: make sure this works
 vim.opt.omnifunc = 'syntaxcomplete#Complete'
 vim.opt.completeopt = 'menu,menuone,noselect'
 vim.opt.list = true
@@ -94,22 +92,9 @@ augroup show_whitespace
   autocmd ModeChanged *:[vV\x16]* :set listchars+=space:·
   autocmd Modechanged [vV\x16]*:* :set listchars-=space:·
 augroup END
+]]
 
 
-" autocmd BufEnter * call ChangeWorkingDirectory()
-]]
---set the working directory as the one of the file currently being edited
--- TODO: rewrite this to lua
---[[ vim.cmd[[
-function ChangeWorkingDirectory()
-  if (bufname() != "--&& &buftype == "--&& &filetype != "--&& &readonly == 0)
-    lcd %:p:h
-  --don't change the working directory for buffers that aren't files
-  else
-  endif
-endfunction
-]]
--- ]]
 --matchit plugin
 vim.cmd[[packadd matchit]]
 
