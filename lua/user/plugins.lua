@@ -52,7 +52,6 @@ require('packer').startup(function(use)
     opt = true,
     cmd = {'ZenMode'},
     config = function()
-      -- TODO: make zen-mode window smaller, similar to the width of goyo's
       require('zen-mode').setup()
     end,
     ft = {'markdown'}
