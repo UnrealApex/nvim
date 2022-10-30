@@ -1,4 +1,3 @@
--- FIXME: mirror coc.vim
 vim.g['coc_global_extensions'] = {
  'coc-vimlsp',
  'coc-pyright',
@@ -75,8 +74,8 @@ vim.keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
 
 
 -- Formatting selected code.
-vim.keymap.set("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
 vim.keymap.set("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
+vim.keymap.set("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
 
 
 -- Setup formatexpr specified filetype(s).
@@ -125,20 +124,6 @@ vim.keymap.set("o", "ic", "<Plug>(coc-classobj-i)", opts)
 vim.keymap.set("x", "ac", "<Plug>(coc-classobj-a)", opts)
 vim.keymap.set("o", "ac", "<Plug>(coc-classobj-a)", opts)
 
-
--- Remap <C-f> and <C-b> for scroll float windows/popups.
----@diagnostic disable-next-line: redefined-local
-local opts = {silent = true, nowait = true, expr = true}
-vim.keymap.set("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
-vim.keymap.set("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
-vim.keymap.set("i", "<C-f>",
-       'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
-vim.keymap.set("i", "<C-b>",
-       'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
-vim.keymap.set("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
-vim.keymap.set("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
-
-
 -- Use CTRL-S for selections ranges.
 -- Requires 'textDocument/selectionRange' support of language server.
 vim.keymap.set("n", "<C-s>", "<Plug>(coc-range-select)", {silent = true})
@@ -165,15 +150,18 @@ vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}"
 ---@diagnostic disable-next-line: redefined-local
 local opts = {silent = true, nowait = true}
 -- Show all diagnostics.
-vim.keymap.set("n", "<space>a", ":<C-u>CocList diagnostics<cr>", opts)
+vim.keymap.set("n", "<leader>a", ":<C-u>CocList diagnostics<cr>", opts)
 -- Manage extensions.
--- vim.keymap.set("n", "<space>e", ":<C-u>CocList extensions<cr>", opts)
+-- vim.keymap.set("n", "<leader>e", ":<C-u>CocList extensions<cr>", opts)
 -- Show commands.
--- vim.keymap.set("n", "<space>c", ":<C-u>CocList commands<cr>", opts)
+-- vim.keymap.set("n", "<leader>c", ":<C-u>CocList commands<cr>", opts)
 -- Find symbol of current document.
-vim.keymap.set("n", "<space>o", ":<C-u>CocList outline<cr>", opts)
+vim.keymap.set("n", "<leader>co", ":<C-u>CocList outline<cr>", opts)
 -- Search workspace symbols.
-vim.keymap.set("n", "<space>s", ":<C-u>CocList -I symbols<cr>", opts)
+vim.keymap.set("n", "<leader>cs", ":<C-u>CocList -I symbols<cr>", opts)
+
+-- start coc if needed
+vim.keymap.set('n', '<leader>cr', ':<C-u>CocRestart<CR>', {silent = true})
 
 -- scroll through coc hover doc
 vim.cmd[[
