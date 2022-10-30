@@ -123,7 +123,7 @@ require('packer').startup(function(use)
     cmd= 'JABSOpen',
     config = function()
       require('jabs').setup()
-      require('user.jabs')
+      require('user.plugins.jabs')
     end
   }
   -- markdown preview
