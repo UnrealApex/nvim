@@ -175,8 +175,7 @@ vim.keymap.set("n", "<space>o", ":<C-u>CocList outline<cr>", opts)
 -- Search workspace symbols.
 vim.keymap.set("n", "<space>s", ":<C-u>CocList -I symbols<cr>", opts)
 
-
--- TODO: convert these mappings to lua
+-- scroll through coc hover doc
 vim.cmd[[
 nnoremap <silent><nowait><expr> <C-d> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 nnoremap <silent><nowait><expr> <C-u> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
