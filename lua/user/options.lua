@@ -11,7 +11,6 @@ vim.opt.relativenumber = true
 -- disable annoying error bell to prevent your ears from dying
 vim.opt.errorbells = false
 vim.opt.visualbell = false
--- TODO: figure out if there is a lua way to do this
 -- syntax highlighting
 vim.cmd[[syntax on]]
 vim.opt.showmode = false
