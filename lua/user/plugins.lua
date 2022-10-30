@@ -97,7 +97,7 @@ require('packer').startup(function(use)
   -- not supported on windows
   -- use 'nvim-telescope/telescope-media-files.nvim'
   -- better movement
-  use 'ggandor/leap.nvim'
+  use 'justinmk/vim-sneak'
   -- multi cursor support
   use 'mg979/vim-visual-multi'
   -- Emmet
@@ -162,8 +162,6 @@ require('impatient')
 require('Comment').setup()
 
 require("which-key").setup()
-
-require('leap').set_default_keymaps()
 
 require("indent_blankline").setup {
     show_current_context = true,
