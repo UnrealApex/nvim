@@ -16,9 +16,6 @@ vim.g.indent_blankline_filetype_exclude = {'help', 'startify', 'dashboard', 'pac
 
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
   use 'nvim-lua/plenary.nvim'
   -- make neovim faster
   use 'lewis6991/impatient.nvim'
