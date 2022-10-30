@@ -99,11 +99,11 @@ vim.g.mapleader = ' '
 vim.g.ftplugin_sql_omni_key = '<C-;>'
 
 -- options
-vim.env.OPTIONS = vim.fn.stdpath('config') .."\\lua\\user\\options.lua"
+vim.env.OPTIONS = vim.fn.stdpath('config') .."\\lua\\user\\core\\options.lua"
 
 -- plugins
-vim.env.PLUGINS = vim.fn.stdpath('config') .."\\lua\\user\\plugins.lua"
+vim.env.PLUGINS = vim.fn.stdpath('config') .."\\lua\\user\\core\\plugins.lua"
 
 -- keymaps
-vim.env.KEYMAPS = vim.fn.stdpath('config') .."\\lua\\user\\keymaps.lua"
+vim.env.KEYMAPS = vim.fn.stdpath('config') .."\\lua\\user\\core\\keymaps.lua"
 

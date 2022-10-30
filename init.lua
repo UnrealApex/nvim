@@ -1,7 +1,7 @@
 -- init.lua
 -- options
-require('user.options')
+require('user.core.options')
 --keymap management
-require('user.keymaps')
+require('user.core.keymaps')
 --plugin stuff
-require('user.plugins')
+require('user.core.plugins')

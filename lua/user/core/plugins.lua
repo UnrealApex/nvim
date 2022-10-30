@@ -235,9 +235,9 @@ vim.api.nvim_create_user_command('Prose', prose, {})
 vim.cmd[[colorscheme tokyonight-moon]]
 
 -- plugin configurations
-require("user.lualine")
-require("user.gitsigns")
-require("user.notify")
-require("user.telescope")
-require('user.coc')
-require('user.startify')
+require("user.plugins.lualine")
+require("user.plugins.gitsigns")
+require("user.plugins.notify")
+require("user.plugins.telescope")
+require('user.plugins.coc')
+require('user.plugins.startify')
