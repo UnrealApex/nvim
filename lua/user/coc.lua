@@ -1,4 +1,4 @@
-vim.g['coc_global_extensions'] = {
+vim.g.coc_global_extensions = {
  'coc-vimlsp',
  'coc-pyright',
  'coc-clangd',
