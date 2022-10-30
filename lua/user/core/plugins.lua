@@ -22,7 +22,11 @@ require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   -- make neovim faster
   use 'lewis6991/impatient.nvim'
-  use {'dstein64/vim-startuptime', opt = true, cmd = {'StartupTime'}}
+  use {
+    'dstein64/vim-startuptime',
+    opt = true,
+    cmd = {'StartupTime'}
+  }
   -- more aesthetic notifications
   use 'rcarriga/nvim-notify'
   -- vim popup api
@@ -34,10 +38,18 @@ require('packer').startup(function(use)
   -- status bar
   use 'nvim-lualine/lualine.nvim'
   -- basic git integration
-  use {'tpope/vim-fugitive', opt = true, cmd = {'G'}}
+  use {
+    'tpope/vim-fugitive',
+    opt = true,
+    cmd = {'G'}
+  }
   use 'tpope/vim-surround'
   -- git commit browser
-  use {'junegunn/gv.vim', opt = true, cmd = {'GV'}}
+  use {
+    'junegunn/gv.vim',
+    opt = true,
+    cmd = {'GV'}
+  }
   -- git conflict helper
   use 'rhysd/conflict-marker.vim'
   -- sensible default settings
