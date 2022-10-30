@@ -79,8 +79,7 @@ vim.opt.termguicolors = true
 vim.opt.lazyredraw = true
 vim.opt.foldmethod = 'indent'
 vim.opt.foldenable = false
---vim.opt.gutter color to match background color
--- TODO: do this in lua
+-- make gutter match background color
 vim.cmd[[highlight clear SignColumn]]
 --vim.opt.path
 vim.opt.path:append('.,**')
