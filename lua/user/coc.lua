@@ -157,6 +157,7 @@ vim.api.nvim_create_user_command("OR", "call CocActionAsync('runCommand', 'edito
 -- Add (Neo)Vim's native statusline support.
 -- NOTE: Please see `:h coc-status` for integrations with external plugins that
 -- provide custom statusline: lightline.vim, vim-airline.
+-- TODO: check this out
 vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
 
 -- Mappings for CoCList
@@ -166,19 +167,13 @@ local opts = {silent = true, nowait = true}
 -- Show all diagnostics.
 vim.keymap.set("n", "<space>a", ":<C-u>CocList diagnostics<cr>", opts)
 -- Manage extensions.
-vim.keymap.set("n", "<space>e", ":<C-u>CocList extensions<cr>", opts)
+-- vim.keymap.set("n", "<space>e", ":<C-u>CocList extensions<cr>", opts)
 -- Show commands.
-vim.keymap.set("n", "<space>c", ":<C-u>CocList commands<cr>", opts)
+-- vim.keymap.set("n", "<space>c", ":<C-u>CocList commands<cr>", opts)
 -- Find symbol of current document.
 vim.keymap.set("n", "<space>o", ":<C-u>CocList outline<cr>", opts)
 -- Search workspace symbols.
 vim.keymap.set("n", "<space>s", ":<C-u>CocList -I symbols<cr>", opts)
--- Do default action for next item.
-vim.keymap.set("n", "<space>j", ":<C-u>CocNext<cr>", opts)
--- Do default action for previous item.
-vim.keymap.set("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
--- Resume latest coc list.
-vim.keymap.set("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 
 
 -- TODO: convert these mappings to lua
