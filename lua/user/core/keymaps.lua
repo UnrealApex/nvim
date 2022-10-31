@@ -18,6 +18,9 @@ vim.keymap.set('n', '<C-l>', ':nohlsearch<cr>:diffupdate<cr>:syntax sync fromsta
 -- change directory
 vim.keymap.set('n', '<leader>cd', ':cd %:h<CR>')
 
+-- source init.lua
+vim.keymap.set('n', '<leader><CR>', ':source $MYVIMRC<CR>')
+
 -- vanilla buffer switcher
 -- nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
 -- lua implementation
