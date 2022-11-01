@@ -8,6 +8,8 @@ vim.opt.guifont='JetbrainsMono NF:h14'
 vim.opt.number = true
 -- show relative line numbers
 vim.opt.relativenumber = true
+-- enable cursor line
+vim.opt.cursorline = true
 -- disable annoying error bell to prevent your ears from dying
 vim.opt.errorbells = false
 vim.opt.visualbell = false
