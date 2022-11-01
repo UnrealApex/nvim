@@ -70,6 +70,7 @@ require('packer').startup(function(use)
   }
   -- easy parenthesis matching
   use 'junegunn/rainbow_parentheses.vim'
+  use 'romainl/vim-cool'
   -- autocomplete
   use {
     'neoclide/coc.nvim',
