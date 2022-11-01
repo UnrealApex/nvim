@@ -244,7 +244,7 @@ end
 
 vim.api.nvim_create_user_command('Prose', prose, {})
 
-vim.cmd[[colorscheme tokyonight-moon]]
+vim.cmd[[colorscheme tokyonight-night]]
 
 -- plugin configurations
 require("user.plugins.lualine")
