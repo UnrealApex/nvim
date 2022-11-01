@@ -98,8 +98,6 @@ vim.api.nvim_create_autocmd("User", {
 -- Applying codeAction to the selected region.
 -- Example: `<leader>aap` for current paragraph
 local opts = {silent = true, nowait = true}
-vim.keymap.set("x", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
-vim.keymap.set("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 
 -- Remap keys for applying codeAction to the current buffer.
 vim.keymap.set("n", "<leader>ac", "<Plug>(coc-codeaction)", opts)
