@@ -45,7 +45,8 @@ require('packer').startup(function(use)
   use {
     'junegunn/gv.vim',
     opt = true,
-    cmd = {'GV'}
+    cmd = {'GV'},
+    requires = {'tpope/vim-fugitive'}
   }
   -- git conflict helper
   use 'rhysd/conflict-marker.vim'
