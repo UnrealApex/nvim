@@ -74,6 +74,7 @@ require('packer').startup(function(use)
   use 'romainl/vim-cool'
   -- autocomplete
   use {
+    -- completion and lsp
     'neoclide/coc.nvim',
     branch = 'release'
   }
@@ -83,6 +84,7 @@ require('packer').startup(function(use)
   }
 
   use {
+    -- better syntax highlighting
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
@@ -144,6 +146,7 @@ require('packer').startup(function(use)
     cmd = {'Glow'}
   }
   use {
+    -- terminal
     'akinsho/toggleterm.nvim',
     opt = true,
     cmd = {'ToggleTerm'},
