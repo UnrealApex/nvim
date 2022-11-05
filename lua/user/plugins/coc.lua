@@ -59,6 +59,8 @@ end
 vim.keymap.set("n", "K", '<CMD>lua _G.show_docs()<CR>', {silent = true})
 vim.keymap.set("n", "gh", '<CMD>lua _G.show_docs()<CR>', {silent = true})
 
+-- Highlight the symbol and its references when holding the cursor.
+vim.api.nvim_create_augroup("CocGroup", {})
 
 -- Symbol renaming.
 vim.keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
