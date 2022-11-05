@@ -4,8 +4,6 @@
         "unused-local"
     ],
     "Lua.diagnostics.globals": [
-        "Users",
-        "TestClass",
-        "jdtls"
+        "vim"
     ]
 }
