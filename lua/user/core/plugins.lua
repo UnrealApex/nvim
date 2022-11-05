@@ -128,7 +128,7 @@ require('packer').startup(function(use)
   -- keymap hints
   use 'folke/which-key.nvim'
   -- color scheme
-  use 'rebelot/kanagawa.nvim'
+  use 'folke/tokyonight.nvim'
   -- better buffer management
   use {
     'matbme/JABS.nvim',
@@ -248,7 +248,7 @@ end
 
 vim.api.nvim_create_user_command('Prose', prose, {})
 
-vim.cmd[[colorscheme kanagawa]]
+vim.cmd[[colorscheme tokyonight-night]]
 
 -- plugin configurations
 require("user.plugins.lualine")
