@@ -51,9 +51,11 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 -- reread file if it has been modified outside of Vim
 vim.opt.autoread = true
--- save yourself some memory
--- you are never gonna undo 1000 steps which is the default value for undolevels
--- 50 is the default value for history which is relatively low to be useful.
+--[[
+save yourself some memory
+you are never gonna undo 1000 steps which is the default value for undolevels
+50 is the default value for history which is relatively low to be useful.
+--]]
 vim.opt.undolevels = 500
 vim.opt.history = 500
 -- store all swap files in one directory
@@ -71,13 +73,14 @@ vim.opt.updatetime = 200
 vim.opt.background = 'dark'
 vim.opt.termguicolors = true
 vim.opt.lazyredraw = true
+-- enable folding
 vim.opt.foldmethod = 'indent'
 vim.opt.foldenable = false
 -- make gutter match background color
 vim.cmd[[highlight clear SignColumn]]
--- vim.opt.path
 vim.opt.path:append('.,**')
 
+-- show whitespaces as characters in visual mode
 vim.cmd[[
 augroup show_whitespace
   autocmd!
@@ -87,25 +90,27 @@ augroup END
 ]]
 
 
--- matchit plugin
+-- load the matchit plugin
 vim.cmd[[packadd matchit]]
 
 -- enable filetype.lua
 vim.g.did_load_filetypes = 0
 vim.g.do_filetype_lua = 1
 
--- change map leader to space
+-- set the mapleader to space
 vim.g.mapleader = ' '
 
 -- remap this so that using Ctrl + C doesn't have a delay
 vim.g.ftplugin_sql_omni_key = '<C-;>'
 
--- options
+-- environment variables
+
+-- $OPTIONS
 vim.env.OPTIONS = vim.fn.stdpath('config') .."\\lua\\user\\core\\options.lua"
 
--- plugins
+-- $PLUGINS
 vim.env.PLUGINS = vim.fn.stdpath('config') .."\\lua\\user\\core\\plugins.lua"
 
--- keymaps
+-- $KEYMAPS
 vim.env.KEYMAPS = vim.fn.stdpath('config') .."\\lua\\user\\core\\keymaps.lua"
 

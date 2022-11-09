@@ -1,3 +1,4 @@
+-- bootstrap packer
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -14,6 +15,7 @@ local packer_bootstrap = ensure_packer()
 -- declare before indent-blankline is loaded
 vim.g.indent_blankline_filetype_exclude = {'help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh'}
 
+-- plugins
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/plenary.nvim'
@@ -127,7 +129,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-speeddating'
   -- keymap hints
   use 'folke/which-key.nvim'
-  -- color scheme
+  -- colorscheme
   use 'folke/tokyonight.nvim'
   -- better buffer management
   use {
@@ -165,6 +167,7 @@ require('packer').startup(function(use)
 end)
 
 
+-- plugin related keymaps
 vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>')
 vim.keymap.set('n', '<C-t>', ':Telescope live_grep<CR>')
 
