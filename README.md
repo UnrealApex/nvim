@@ -2,7 +2,7 @@
 ### About
 This repo just contains my Neovim configuration for now. Like most config files, the files in this repository include the configurations that make Neovim fit my needs.
 
-You're free to copy my config but it is generally [frowned upon](https://github.com/romainl/idiomatic-vimrc) because people's editor preferences tend to be different. Rather, if you are interested in using my config, I suggest borrowing snippets that you like from this repo.
+You're free to copy my config but it is generally [frowned upon](https://github.com/romainl/idiomatic-vimrc) because dotfiles tend be something really personal. Rather, if you are interested in using my config, I suggest copying whatever you like and putting it in your own config.
 That being said, suggestions are definitely open!
 
 ### Plugins
@@ -22,6 +22,5 @@ This config has several dependencies. I find it convenient to install them via a
 - [python](https://www.python.org/)
 - [pynvim](https://github.com/neovim/pynvim)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
-- [Ctags](https://github.com/universal-ctags/ctags)
 - a [nerd font](https://github.com/ryanoasis/nerd-fonts)
 - [Glow](https://github.com/charmbracelet/glow)
