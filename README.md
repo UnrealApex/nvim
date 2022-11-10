@@ -1,6 +1,6 @@
 # .dotfiles
 ### About
-This repo just contains my Neovim configuration. Like most config files, the files in this repository include the configurations that make Neovim fit my needs.
+This repo just contains my Neovim configuration for now. Like most config files, the files in this repository include the configurations that make Neovim fit my needs.
 
 You're free to copy my config but it is generally [frowned upon](https://github.com/romainl/idiomatic-vimrc) because people's editor preferences tend to be different. Rather, if you are interested in using my config, I suggest borrowing snippets that you like from this repo.
 That being said, suggestions are definitely open!
