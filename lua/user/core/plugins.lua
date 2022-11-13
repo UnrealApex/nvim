@@ -37,11 +37,7 @@ require('packer').startup({function(use)
   -- status bar
   use 'nvim-lualine/lualine.nvim'
   -- basic git integration
-  use {
-    'tpope/vim-fugitive',
-    opt = true,
-    cmd = {'G'}
-  }
+  use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'
   -- git commit browser
   use {
