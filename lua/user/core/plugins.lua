@@ -16,7 +16,7 @@ local packer_bootstrap = ensure_packer()
 vim.g.indent_blankline_filetype_exclude = {'help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh'}
 
 -- plugins
-require('packer').startup(function(use)
+require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/plenary.nvim'
   -- make neovim faster
@@ -158,13 +158,20 @@ require('packer').startup(function(use)
       })
     end
   }
-
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
     require('packer').sync()
   end
-end)
+end,
+  config = {
+    display = {
+      open_fn = function()
+      return require('packer.util').float({ border = 'single' })
+    end
+    }
+  }
+})
 
 
 -- plugin related keymaps
