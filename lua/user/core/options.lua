@@ -105,6 +105,9 @@ vim.g.ftplugin_sql_omni_key = '<C-;>'
 
 -- environment variables
 
+-- $CONFIG
+vim.env.CONFIG = vim.fn.stdpath('config')
+
 -- $OPTIONS
 vim.env.OPTIONS = vim.fn.stdpath('config') .."\\lua\\user\\core\\options.lua"
 
