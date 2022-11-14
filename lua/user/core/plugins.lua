@@ -32,22 +32,42 @@ require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/plenary.nvim'
   -- make neovim faster
-  use 'lewis6991/impatient.nvim'
+  use {
+    'lewis6991/impatient.nvim',
+    config = function()
+      require('impatient')
+    end
+  }
   use {
     'dstein64/vim-startuptime',
     opt = true,
     cmd = {'StartupTime'}
   }
   -- more aesthetic notifications
-  use 'rcarriga/nvim-notify'
+  use {
+    'rcarriga/nvim-notify',
+    config = function()
+      require("user.plugins.notify")
+    end
+  }
   -- vim popup api
   use 'nvim-lua/popup.nvim'
   -- file explorer
   use 'tpope/vim-vinegar'
   -- richer git integration
-  use 'lewis6991/gitsigns.nvim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require("user.plugins.gitsigns")
+    end
+  }
   -- status bar
-  use 'nvim-lualine/lualine.nvim'
+  use {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require("user.plugins.lualine")
+    end
+  }
   -- basic git integration
   use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'
@@ -63,11 +83,22 @@ require('packer').startup({function(use)
   -- sensible default settings
   use 'tpope/vim-sensible'
   -- commenter
-  use 'numToStr/Comment.nvim'
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
   -- indent guides
   use {
   'lukas-reineke/indent-blankline.nvim',
-  requires = {'nvim-treesitter/nvim-treesitter'}
+  requires = {'nvim-treesitter/nvim-treesitter'},
+  config = function()
+    require("indent_blankline").setup {
+      show_current_context = true,
+      show_current_context_start = true,
+    }
+  end
   }
   -- zen mode
   use {
@@ -86,7 +117,10 @@ require('packer').startup({function(use)
   use {
     -- completion and lsp
     'neoclide/coc.nvim',
-    branch = 'release'
+    branch = 'release',
+    config = function()
+      require('user.plugins.coc')
+    end
   }
   use {
     'neoclide/coc-sources',
@@ -96,17 +130,45 @@ require('packer').startup({function(use)
   use {
     -- better syntax highlighting
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    run = ':TSUpdate',
+    config = function()
+      -- treesitter stuff
+      local configs = require("nvim-treesitter.configs")
+      configs.setup {
+        ensure_installed = "all",
+        sync_install = false,
+        ignore_install = { "" }, -- List of parsers to ignore installing
+        highlight = {
+          enable = true, -- false will disable the whole extension
+          disable = { "" }, -- list of language that will be disabled
+          additional_vim_regex_highlighting = true,
+
+        },
+        indent = { enable = true, disable = { "yaml" } },
+      }
+    end
   }
 
 -- Repeat.vim
   use 'tpope/vim-repeat'
   -- start screen
-  use 'mhinz/vim-startify'
+  use {
+    'mhinz/vim-startify',
+    config = function()
+      require('user.plugins.startify')
+    end
+  }
   -- fuzzy finder
   use {
-  'nvim-telescope/telescope.nvim',
-  requires = {'nvim-lua/plenary.nvim'}
+    'nvim-telescope/telescope.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require("user.plugins.telescope")
+
+      -- telescope keymaps
+      vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>')
+      vim.keymap.set('n', '<C-t>', ':Telescope live_grep<CR>')
+    end
   }
   -- sets vim.ui.select to telescope
   use {
@@ -125,7 +187,12 @@ require('packer').startup({function(use)
   -- not supported on windows
   -- use 'nvim-telescope/telescope-media-files.nvim'
   -- better movement
-  use 'ggandor/leap.nvim'
+  use {
+    'ggandor/leap.nvim',
+    config = function()
+      require('leap').set_default_keymaps()
+    end
+  }
   -- multi cursor support
   use 'mg979/vim-visual-multi'
   -- Emmet
@@ -139,9 +206,19 @@ require('packer').startup({function(use)
   -- easily change dates
   use 'tpope/vim-speeddating'
   -- keymap hints
-  use 'folke/which-key.nvim'
+  use {
+  'folke/which-key.nvim',
+  config = function()
+    require("which-key").setup()
+  end
+  }
   -- colorscheme
-  use 'folke/tokyonight.nvim'
+  use {
+  'folke/tokyonight.nvim',
+  config = function()
+    vim.cmd[[colorscheme tokyonight-night]]
+  end
+  }
   -- better buffer management
   use {
     'matbme/JABS.nvim',
@@ -186,41 +263,14 @@ end,
 
 
 -- plugin related keymaps
-vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>')
-vim.keymap.set('n', '<C-t>', ':Telescope live_grep<CR>')
+-- lazy loaded plugin keymaps set here
+-- NOTE: ensure that keymaps for plugins lazy loaded by command are here or
+-- else they won't load
 
 vim.keymap.set('n', '<leader>b', ':JABSOpen<CR>')
 
 vim.keymap.set('n', '<leader>z', ':ZenMode<CR>')
 
-
-require('impatient')
-
-require('Comment').setup()
-
-require("which-key").setup()
-
-require('leap').set_default_keymaps()
-
-require("indent_blankline").setup {
-    show_current_context = true,
-    show_current_context_start = true,
-}
-
--- treesitter stuff
-local configs = require("nvim-treesitter.configs")
-configs.setup {
-  ensure_installed = "all",
-  sync_install = false, 
-  ignore_install = { "" }, -- List of parsers to ignore installing
-  highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
-
-  },
-  indent = { enable = true, disable = { "yaml" } },
-}
 
 prosed = false
 function prose()
@@ -269,12 +319,3 @@ end
 
 vim.api.nvim_create_user_command('Prose', prose, {})
 
-vim.cmd[[colorscheme tokyonight-night]]
-
--- plugin configurations
-require("user.plugins.lualine")
-require("user.plugins.gitsigns")
-require("user.plugins.notify")
-require("user.plugins.telescope")
-require('user.plugins.coc')
-require('user.plugins.startify')
