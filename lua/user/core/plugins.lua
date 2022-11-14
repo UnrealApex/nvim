@@ -13,7 +13,19 @@ end
 local packer_bootstrap = ensure_packer()
 
 -- declare before indent-blankline is loaded
-vim.g.indent_blankline_filetype_exclude = {'help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh'}
+vim.g.indent_blankline_filetype_exclude = {
+  'help',
+  'startify', 'dashboard',
+  'packer',
+  'neogitstatus',
+  'NvimTree',
+  'Trouble',
+  'WhichKey',
+  'lsp-installer',
+  'mason',
+  'text',
+  'sh'
+}
 
 -- plugins
 require('packer').startup({function(use)
@@ -99,7 +111,10 @@ require('packer').startup({function(use)
   -- sets vim.ui.select to telescope
   use {
     'nvim-telescope/telescope-ui-select.nvim',
-    requires = {'nvim-telescope/telescope.nvim', 'nvim-telescope/telescope-fzf-native.nvim'}
+    requires = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-telescope/telescope-fzf-native.nvim'
+    }
   }
   -- increase telescope search speed
   use {
