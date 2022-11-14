@@ -170,14 +170,7 @@ require('packer').startup({function(use)
       vim.keymap.set('n', '<C-t>', ':Telescope live_grep<CR>')
     end
   }
-  -- sets vim.ui.select to telescope
-  use {
-    'nvim-telescope/telescope-ui-select.nvim',
-    requires = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-telescope/telescope-fzf-native.nvim'
-    }
-  }
+
   -- increase telescope search speed
   use {
     'nvim-telescope/telescope-fzf-native.nvim',
