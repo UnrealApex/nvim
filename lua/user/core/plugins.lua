@@ -77,8 +77,7 @@ require('packer').startup({function(use)
   use 'tpope/vim-fugitive'
   use {
     'tpope/vim-surround',
-    -- TODO: put more maps here if utilized more
-    keys = {{"n", "ds"}, {"n", "cs"}, {"n", "ys"}}
+    keys = {{"n", "ds"}, {"n", "cs"}, {"n", "ys"}, {"v", "S"}, {"v", "gS"}}
   }
   -- git commit browser
   use {
