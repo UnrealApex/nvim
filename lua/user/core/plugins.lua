@@ -53,7 +53,11 @@ require('packer').startup({function(use)
   -- vim popup api
   use 'nvim-lua/popup.nvim'
   -- file explorer
-  use 'tpope/vim-vinegar'
+  use {
+    'tpope/vim-vinegar',
+    ft = {"netrw"},
+    keys = {{'n', '-'}}
+  }
   -- richer git integration
   use {
     'lewis6991/gitsigns.nvim',
@@ -70,7 +74,11 @@ require('packer').startup({function(use)
   }
   -- basic git integration
   use 'tpope/vim-fugitive'
-  use 'tpope/vim-surround'
+  use {
+    'tpope/vim-surround',
+    -- TODO: put more maps here if utilized more
+    keys = {{"n", "ds"}, {"n", "cs"}, {"n", "ys"}}
+  }
   -- git commit browser
   use {
     'junegunn/gv.vim',
@@ -85,6 +93,7 @@ require('packer').startup({function(use)
   -- commenter
   use {
     'numToStr/Comment.nvim',
+    keys = {{"n", "gc"}, {"n", "gb"}},
     config = function()
       require('Comment').setup()
     end
@@ -112,7 +121,11 @@ require('packer').startup({function(use)
   }
   -- easy parenthesis matching
   use 'junegunn/rainbow_parentheses.vim'
-  use 'romainl/vim-cool'
+  use {
+    'romainl/vim-cool',
+    -- load vim-cool when doing a search
+    keys = {{"n", "/"}}
+  }
   -- autocomplete
   use {
     -- completion and lsp
@@ -192,6 +205,7 @@ require('packer').startup({function(use)
   -- better movement
   use {
     'ggandor/leap.nvim',
+    keys = {{'n', 's'}, {'n', 'S'}},
     config = function()
       require('leap').set_default_keymaps()
     end
@@ -206,7 +220,10 @@ require('packer').startup({function(use)
   -- icons
   use 'ryanoasis/vim-devicons'
   -- easily change dates
-  use 'tpope/vim-speeddating'
+  use {
+    'tpope/vim-speeddating',
+    keys = {{"n", "<C-a>"}, {"n", "<C-x>"}}
+  }
   -- keymap hints
   use {
   'folke/which-key.nvim',
