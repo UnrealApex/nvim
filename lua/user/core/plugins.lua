@@ -131,13 +131,10 @@ require('packer').startup({function(use)
     -- completion and lsp
     'neoclide/coc.nvim',
     branch = 'release',
+    requires = {"neoclide/coc-sources"},
     config = function()
       require('user.plugins.coc')
     end
-  }
-  use {
-    'neoclide/coc-sources',
-    requires = {'neoclide/coc.nvim'}
   }
 
   use {
