@@ -196,8 +196,7 @@ require('packer').startup({function(use)
       require('leap').set_default_keymaps()
     end
   }
-  -- multi cursor support
-  use 'mg979/vim-visual-multi'
+
   -- Emmet
   use {
     'mattn/emmet-vim',
