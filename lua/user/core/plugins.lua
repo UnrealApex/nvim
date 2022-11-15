@@ -149,6 +149,16 @@ require('packer').startup({function(use)
     end
   }
 
+  use {
+    "windwp/nvim-autopairs",
+    opt = true,
+    event = {"InsertEnter"},
+    config = function()
+      require("nvim-autopairs").setup()
+    end
+  }
+
+
 -- Repeat.vim
   use 'tpope/vim-repeat'
   -- start screen
