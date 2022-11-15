@@ -15,7 +15,8 @@ local packer_bootstrap = ensure_packer()
 -- declare before indent-blankline is loaded
 vim.g.indent_blankline_filetype_exclude = {
   'help',
-  'startify', 'dashboard',
+  'startify',
+  'dashboard',
   'packer',
   'neogitstatus',
   'NvimTree',
