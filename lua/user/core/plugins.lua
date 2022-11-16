@@ -39,11 +39,6 @@ require('packer').startup({function(use)
       require('impatient')
     end
   }
-  use {
-    'dstein64/vim-startuptime',
-    opt = true,
-    cmd = {'StartupTime'}
-  }
   -- more aesthetic notifications
   use {
     'rcarriga/nvim-notify',
@@ -51,8 +46,6 @@ require('packer').startup({function(use)
       require("user.plugins.notify")
     end
   }
-  -- vim popup api
-  use 'nvim-lua/popup.nvim'
   -- file explorer
   use {
     'tpope/vim-vinegar',
@@ -167,10 +160,6 @@ require('packer').startup({function(use)
       require("nvim-autopairs").setup()
     end
   }
-
-
--- Repeat.vim
-  use 'tpope/vim-repeat'
   -- start screen
   use {
     'mhinz/vim-startify',
@@ -207,27 +196,8 @@ require('packer').startup({function(use)
       require('leap').set_default_keymaps()
     end
   }
-
-  -- Emmet
-  use {
-    'mattn/emmet-vim',
-    opt = true,
-    ft = {'html', 'css', 'javascript'}
-  }
   -- icons
   use 'ryanoasis/vim-devicons'
-  -- easily change dates
-  use {
-    'tpope/vim-speeddating',
-    keys = {{"n", "<C-a>"}, {"n", "<C-x>"}}
-  }
-  -- keymap hints
-  use {
-  'folke/which-key.nvim',
-  config = function()
-    require("which-key").setup()
-  end
-  }
   -- colorscheme
   use {
   'folke/tokyonight.nvim',
