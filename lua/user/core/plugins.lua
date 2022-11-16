@@ -46,13 +46,13 @@ require('packer').startup({function(use)
       require("user.plugins.notify")
     end
   }
-  -- file explorer
+  -- enhance netrw
   use {
     'tpope/vim-vinegar',
     ft = {"netrw"},
     keys = {{'n', '-'}}
   }
-  -- richer git integration
+  -- better git integration
   use {
     'lewis6991/gitsigns.nvim',
     config = function()
@@ -66,7 +66,7 @@ require('packer').startup({function(use)
       require("user.plugins.lualine")
     end
   }
-  -- basic git integration
+  -- convieniently execute git commands from vim
   use 'tpope/vim-fugitive'
   use {
     'tpope/vim-surround',
@@ -112,16 +112,15 @@ require('packer').startup({function(use)
     end,
     ft = {'markdown'}
   }
-  -- easy parenthesis matching
+  -- easy parentheses matching
   use 'junegunn/rainbow_parentheses.vim'
   use {
     'romainl/vim-cool',
     -- load vim-cool when doing a search
     keys = {{"n", "/"}}
   }
-  -- autocomplete
+  -- completion + lsp
   use {
-    -- completion and lsp
     'neoclide/coc.nvim',
     branch = 'release',
     requires = {"neoclide/coc-sources"},
@@ -129,9 +128,8 @@ require('packer').startup({function(use)
       require('user.plugins.coc')
     end
   }
-
+  -- better syntax highlighting
   use {
-    -- better syntax highlighting
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = function()
@@ -151,7 +149,7 @@ require('packer').startup({function(use)
       }
     end
   }
-
+  -- automatically close pairs
   use {
     "windwp/nvim-autopairs",
     opt = true,
