@@ -86,7 +86,7 @@ require('packer').startup({function(use)
   -- commenter
   use {
     'numToStr/Comment.nvim',
-    keys = {{"n", "gc"}, {"n", "gb"}},
+    keys = {{"n", "gc"}, {"n", "gb"}, {"v", "gc"}, {"v", "gb"}},
     config = function()
       require('Comment').setup()
     end
