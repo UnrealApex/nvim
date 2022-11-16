@@ -66,7 +66,7 @@ require('packer').startup({function(use)
       require("user.plugins.lualine")
     end
   }
-  -- convieniently execute git commands from vim
+  -- conveniently run git commands from vim
   use 'tpope/vim-fugitive'
   use {
     'tpope/vim-surround',
