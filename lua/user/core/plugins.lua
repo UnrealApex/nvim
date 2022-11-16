@@ -251,6 +251,7 @@ require('packer').startup({function(use)
     opt = true,
     cmd = {'Glow'}
   }
+  -- FIXME: figure out how to lazy load toggleterm properly
   use {
     -- terminal
     'akinsho/toggleterm.nvim',
@@ -287,7 +288,7 @@ vim.keymap.set('n', '<leader>b', ':JABSOpen<CR>')
 
 vim.keymap.set('n', '<leader>z', ':ZenMode<CR>')
 
-
+-- FIXME: make sure that ZenMode is installed
 prosed = false
 function prose()
  if not prosed then
