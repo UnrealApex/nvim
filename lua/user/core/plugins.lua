@@ -80,7 +80,11 @@ require('packer').startup({function(use)
     requires = {'tpope/vim-fugitive'}
   }
   -- git conflict helper
-  use 'rhysd/conflict-marker.vim'
+  use {
+    'rhysd/conflict-marker.vim',
+    opt = true,
+    event = {'BufReadPre'}
+  }
   -- sensible default settings
   use 'tpope/vim-sensible'
   -- commenter
@@ -94,6 +98,8 @@ require('packer').startup({function(use)
   -- indent guides
   use {
   'lukas-reineke/indent-blankline.nvim',
+  opt = true,
+  event = {'BufReadPre'},
   requires = {'nvim-treesitter/nvim-treesitter'},
   config = function()
     require("indent_blankline").setup {
@@ -113,7 +119,11 @@ require('packer').startup({function(use)
     ft = {'markdown'}
   }
   -- easy parentheses matching
-  use 'junegunn/rainbow_parentheses.vim'
+  use {
+    'junegunn/rainbow_parentheses.vim'
+    opt = true,
+    event = {'BufReadPre'}
+  }
   use {
     'romainl/vim-cool',
     -- load vim-cool when doing a search
@@ -132,6 +142,8 @@ require('packer').startup({function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
+    opt = true,
+    event = 'BufReadPre',
     config = function()
       -- treesitter stuff
       local configs = require("nvim-treesitter.configs")
