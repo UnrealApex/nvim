@@ -55,6 +55,8 @@ require('packer').startup({function(use)
   -- better git integration
   use {
     'lewis6991/gitsigns.nvim',
+    opt = true,
+    event = {'BufReadPre'},
     config = function()
       require("user.plugins.gitsigns")
     end
