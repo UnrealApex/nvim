@@ -6,12 +6,12 @@ You're free to copy my config but it is generally [frowned upon](https://github.
 That being said, suggestions are definitely open!
 
 ### Plugins
-I have several plugins to enhance my experience using Neovim. As a side note, this config only works in Neovim, if you're using Vim, see my [`.vimrc`](/.vimrc).
+I have several plugins to enhance my experience using Neovim. As a side note, this config only works in Neovim. If you're using Vim, it might be more useful to look at my [`.vimrc`](/.vimrc).
 My plugins are managed using [packer](https://github.com/wbthomason/packer.nvim). Packer is bootstrapped automatically when you first run the config.
-The plugins I use are [here](https://github.com/UnrealApex/dotfiles/blob/main/lua/user/core/plugins.lua#L17).
+The plugins I use are [here](https://github.com/UnrealApex/dotfiles/blob/main/lua/user/core/plugins.lua#L31).
 
 **Notes**
-This config has several dependencies. I find it convenient to install them via a package manager:
+This config has several dependencies. Plugins will break if these are not installed:
 
 - [Neovim](https://github.com/neovim/neovim)
 - [Git](https://git-scm.com/)
@@ -24,3 +24,6 @@ This config has several dependencies. I find it convenient to install them via a
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
 - a [nerd font](https://github.com/ryanoasis/nerd-fonts)
 - [Glow](https://github.com/charmbracelet/glow)
+
+---
+If you're interested in what I'm currently working on, I have a [GitHub project](https://github.com/users/UnrealApex/projects/2) that I use to track my Neovim journey.
