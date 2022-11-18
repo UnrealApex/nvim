@@ -1,4 +1,4 @@
--- enter the current millenium
+-- enter the current millennium
 vim.opt.compatible = false
 -- allow hidden buffers
 vim.opt.hidden = true
