@@ -123,7 +123,7 @@ require('packer').startup({function(use)
   }
   -- easy parentheses matching
   use {
-    'junegunn/rainbow_parentheses.vim'
+    'junegunn/rainbow_parentheses.vim',
     opt = true,
     event = {'BufReadPre'}
   }
