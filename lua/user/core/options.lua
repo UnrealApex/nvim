@@ -1,4 +1,4 @@
--- disable vi-compatability mode and enables useful vim functionality
+-- enter the current millenium
 vim.opt.compatible = false
 -- allow hidden buffers
 vim.opt.hidden = true
