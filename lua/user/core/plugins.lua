@@ -184,7 +184,17 @@ require('packer').startup({function(use)
   -- fuzzy finder
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      {
+        -- increase telescope search speed
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make',
+      }
+      -- not supported on windows
+      -- use 'nvim-telescope/telescope-media-files.nvim'
+    },
     config = function()
       require("user.plugins.telescope")
 
@@ -194,14 +204,6 @@ require('packer').startup({function(use)
     end
   }
 
-  -- increase telescope search speed
-  use {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'make',
-    requires = {'nvim-telescope/telescope.nvim'}
-  }
-  -- not supported on windows
-  -- use 'nvim-telescope/telescope-media-files.nvim'
   -- better movement
   use {
     'ggandor/leap.nvim',
