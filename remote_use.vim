@@ -92,9 +92,21 @@ inoremap <S-Tab> <C-d>
 " saner CTRL-L
 nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
-" vim vinegar in a mapping
-let g:netrw_banner = 0
+" emulate vim vinegar
+" disable annoying banner
+let g:netrw_banner=0
+" open in prior window
+let g:netrw_browse_split=4
+" open splits to the right
+let g:netrw_altv=1
+" tree view
+let g:netrw_liststyle=3  
+" hide files that are ignored by gitignore
+let g:netrw_list_hide=netrw_gitignore#Hide()
+" hide dotfiles by default
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 nnoremap - :Explore %:h<CR>
+
 
 " line/selection movement binds
 " alt + k to move a line or selection up,
