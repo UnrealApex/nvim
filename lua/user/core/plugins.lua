@@ -213,9 +213,9 @@ require('packer').startup({function(use)
   use 'ryanoasis/vim-devicons'
   -- colorscheme
   use {
-  'folke/tokyonight.nvim',
+  'dracula/vim',
   config = function()
-    vim.cmd[[colorscheme tokyonight-night]]
+    vim.cmd[[colorscheme dracula]]
   end
   }
   -- better buffer management
