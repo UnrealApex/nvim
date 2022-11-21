@@ -206,8 +206,11 @@ require('packer').startup({function(use)
 
   -- better movement
   use {
-    'justinmk/vim-sneak',
+    'ggandor/leap.nvim',
     keys = {{'n', 's'}, {'n', 'S'}},
+    config = function()
+      require('leap').set_default_keymaps()
+    end
   }
   -- icons
   use 'ryanoasis/vim-devicons'

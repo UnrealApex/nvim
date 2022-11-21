@@ -139,6 +139,9 @@ call plug#end()
 " enable IndentLine
 let g:indentLine_enabled = 1
 
+" enable sneak label mode
+let g:sneak#label = 1
+
 augroup show_whitespace
   autocmd!
   autocmd ModeChanged *:[vV\x16]* :set listchars+=space:·
