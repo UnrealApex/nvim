@@ -168,8 +168,14 @@ require('packer').startup({function(use)
   -- automatically close pairs
   use {
     "windwp/nvim-autopairs",
-    opt = true,
-    event = {"InsertEnter"},
+    -- load when starting bracket delimiter is pressed
+    keys = {
+      {'i', '('},
+      {'i', '{'},
+      {'i', '['},
+      {'i', '"'},
+      {'i', "'"}
+    },
     config = function()
       require("nvim-autopairs").setup()
     end
