@@ -221,16 +221,6 @@ require('packer').startup({function(use)
     vim.cmd[[colorscheme dracula]]
   end
   }
-  -- better buffer management
-  use {
-    'matbme/JABS.nvim',
-    opt = true,
-    cmd= 'JABSOpen',
-    config = function()
-      require('jabs').setup()
-      require('user.plugins.jabs')
-    end
-  }
   -- markdown preview
   use {
     'ellisonleao/glow.nvim',
@@ -270,7 +260,6 @@ end,
 -- NOTE: ensure that keymaps for plugins lazy loaded by command are here or
 -- else they won't load
 
-vim.keymap.set('n', '<leader>b', ':JABSOpen<CR>')
 
 vim.keymap.set('n', '<leader>z', ':ZenMode<CR>')
 

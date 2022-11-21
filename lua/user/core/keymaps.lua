@@ -22,9 +22,7 @@ vim.keymap.set('n', '<leader>cd', ':cd %:h<CR>')
 vim.keymap.set('n', '<leader><CR>', ':source $MYVIMRC<CR>')
 
 -- vanilla buffer switcher
--- nnoremap <leader>b :set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>
--- lua implementation
--- vim.keymap.set('n', '<leader>b', ':set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>')
+vim.keymap.set('n', '<leader>b', ':set nomore <Bar> echo ":buffers" <Bar> :ls <Bar> :set more <CR>:b<Space>')
 
 
 -- TODO: write this in lua
