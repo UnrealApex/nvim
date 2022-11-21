@@ -88,6 +88,19 @@ vim.keymap.set('n', '<leader>n', ':enew<CR>')
 -- delete a buffer
 vim.keymap.set('n', '<leader>q', ':bd<CR>')
 
+-- switch tabs quickly
+vim.keymap.set('n', '<leader>1', '1gt<CR>')
+vim.keymap.set('n', '<leader>2', '2gt<CR>')
+vim.keymap.set('n', '<leader>3', '3gt<CR>')
+vim.keymap.set('n', '<leader>4', '4gt<CR>')
+vim.keymap.set('n', '<leader>5', '5gt<CR>')
+vim.keymap.set('n', '<leader>6', '6gt<CR>')
+vim.keymap.set('n', '<leader>7', '7gt<CR>')
+vim.keymap.set('n', '<leader>8', '8gt<CR>')
+vim.keymap.set('n', '<leader>9', '9gt<CR>')
+-- close a tab
+vim.keymap.set('n', '<Leader>x', ':tabclose<CR>')
+
 -- Resize splits with alt + arrows
 vim.keymap.set('n', '<A-Up>', ':resize +2<CR>')
 vim.keymap.set('n', '<A-Down>', ':resize -2<CR>')
