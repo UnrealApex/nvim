@@ -188,6 +188,7 @@ require('packer').startup({function(use)
     end
   }
   -- fuzzy finder
+  -- TODO: figure out how to lazy load this properly
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
