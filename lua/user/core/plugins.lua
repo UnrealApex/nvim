@@ -12,6 +12,14 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+vim.cmd([[
+  " automatically compile plugins when this file is written
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
+
 -- declare before indent-blankline is loaded
 vim.g.indent_blankline_filetype_exclude = {
   'help',
