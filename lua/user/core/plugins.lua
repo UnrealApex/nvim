@@ -59,6 +59,13 @@ require('packer').startup({function(use)
     ft = {"netrw"},
     keys = {{'n', '-'}}
   }
+  use {
+    'tpope/vim-unimpaired',
+    keys = {
+      {'n', '['},
+      {'n', ']'}
+    }
+  }
   -- better git integration
   use {
     'lewis6991/gitsigns.nvim',
