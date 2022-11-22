@@ -224,6 +224,7 @@ require('packer').startup({function(use)
   -- colorscheme
   use {
   'dracula/vim',
+  as = 'dracula',
   config = function()
     vim.cmd[[colorscheme dracula]]
   end
