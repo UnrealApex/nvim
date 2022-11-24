@@ -54,11 +54,7 @@ require('packer').startup({function(use)
     end
   }
   -- enhance netrw
-  use {
-    'tpope/vim-vinegar',
-    ft = {"netrw"},
-    keys = {{'n', '-'}}
-  }
+  use 'tpope/vim-vinegar'
   use {
     'tpope/vim-unimpaired',
     keys = {
