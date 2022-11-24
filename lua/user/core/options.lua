@@ -2,7 +2,7 @@
 vim.opt.compatible = false
 -- allow hidden buffers
 vim.opt.hidden = true
--- vim.opt.the font to Jetbrains Mono and the font size to 15 pixels
+-- set the guifont to Jetbrains Mono and the font size to 15 pixels
 vim.opt.guifont='JetbrainsMono NF:h15'
 -- show line numbers
 vim.opt.number = true
