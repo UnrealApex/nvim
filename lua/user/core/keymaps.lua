@@ -1,12 +1,5 @@
 -- keymaps
 
--- map <C-c> to <Esc>
-vim.keymap.set('n', '<C-c>', '<Esc>')
-vim.keymap.set('i', '<C-c>', '<Esc>')
-vim.keymap.set('v', '<C-c>', '<Esc>')
-vim.keymap.set('c', '<C-c>', '<Esc>')
-vim.keymap.set('x', '<C-c>', '<Esc>')
-
 -- delete previous word in insert mode
 vim.keymap.set('i', '<C-BS>', '<C-W>')
 -- unindent in insert mode
