@@ -100,9 +100,6 @@ vim.g.do_filetype_lua = 1
 -- set the mapleader to space
 vim.g.mapleader = ' '
 
--- remap this so that using Ctrl + C doesn't have a delay
-vim.g.ftplugin_sql_omni_key = '<C-;>'
-
 -- environment variables
 
 -- $CONFIG
