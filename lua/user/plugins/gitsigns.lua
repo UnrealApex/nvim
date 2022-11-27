@@ -1,6 +1,5 @@
-local bufopts = { noremap=true, silent=true, buffer=bufnr }
 -- Gitsigns mappings
-
+local bufopts = { noremap=true, silent=true, buffer=bufnr }
 -- hunk navigation
 vim.keymap.set('n', '<Leader>hn', ':Gitsigns next_hunk<CR>', bufopts)
 vim.keymap.set('n', '<Leader>hN', ':Gitsigns prev_hunk<CR>', bufopts)
@@ -23,7 +22,6 @@ vim.keymap.set('n', '<Leader>hp', ':Gitsigns preview_hunk<CR>', bufopts)
 -- line blame
 vim.keymap.set('n', '<Leader>hb', ':Gitsigns blame_line<CR>', bufopts)
 vim.keymap.set('n', '<Leader>tb', ':Gitsigns toggle_current_line_blame<CR>', bufopts)
-
 
 require('gitsigns').setup({
   signs = {

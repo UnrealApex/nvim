@@ -37,7 +37,6 @@ vim.keymap.set("i", "<Tab>", [[coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"]
 -- Use <c-space> to trigger completion.
 vim.keymap.set("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
 
-
 -- GoTo code navigation.
 vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})
 vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
@@ -95,14 +94,11 @@ local opts = {silent = true, nowait = true}
 -- Remap keys for applying codeAction to the current buffer.
 vim.keymap.set("n", "<leader>ac", "<Plug>(coc-codeaction)", opts)
 
-
 -- Apply AutoFix to problem on the current line.
 vim.keymap.set("n", "<leader>qf", "<Plug>(coc-fix-current)", opts)
 
-
 -- Run the Code Lens action on the current line.
 vim.keymap.set("n", "<leader>cl", "<Plug>(coc-codelens-action)", opts)
-
 
 -- Map function and class text objects
 -- NOTE: Requires 'textDocument.documentSymbol' support from the language server.

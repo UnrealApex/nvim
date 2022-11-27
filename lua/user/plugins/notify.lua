@@ -6,9 +6,7 @@ require('notify').setup({
   stages = "fade",
 })
 
-
 vim.notify = require("notify")
-
 
 local function notify_output(command, opts)
   local output = ""
@@ -35,7 +33,6 @@ local function notify_output(command, opts)
     end,
   })
 end
-
 
 -- Utility functions shared between progress reports for LSP and DAP
 
