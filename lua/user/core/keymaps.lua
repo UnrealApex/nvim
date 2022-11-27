@@ -94,11 +94,11 @@ vim.keymap.set('n', '<leader>9', '9gt<CR>')
 -- close a tab
 vim.keymap.set('n', '<Leader>x', ':tabclose<CR>')
 
--- Resize splits with alt + arrows
-vim.keymap.set('n', '<A-Up>', ':resize +2<CR>')
-vim.keymap.set('n', '<A-Down>', ':resize -2<CR>')
-vim.keymap.set('n', '<A-Left>', ':vertical resize -2<CR>')
-vim.keymap.set('n', '<A-Right>', ':vertical resize +2<CR>')
+-- Resize splits with ctrl + arrows
+vim.keymap.set('n', '<C-Up>', ':resize +2<CR>')
+vim.keymap.set('n', '<C-Down>', ':resize -2<CR>')
+vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>')
+vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
 
 -- faster copying and pasteing into system clipboard
 vim.keymap.set('n', '<leader>y', '"+y')
