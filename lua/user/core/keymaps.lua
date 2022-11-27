@@ -63,10 +63,6 @@ endfunction
 vnoremap <C-r> <Esc>:%s/<c-r>=GetVisual()<cr>//g<left><left>
 ]]
 
-
--- replace occurrences of current selection
--- vim.keymap.set('v', '<C-r>', '"hy:%s/<C-r>h//gc<left><left><left>')
-
 -- move lines up or down
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', {silent = true})
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', {silent = true})
