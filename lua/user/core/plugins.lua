@@ -283,49 +283,56 @@ vim.keymap.set('n', '<leader>z', ':ZenMode<CR>')
 
 vim.keymap.set('n', '<C-\\>', ':ToggleTerm<CR>')
 
--- FIXME: make sure that ZenMode is installed
 prosed = false
 function prose()
- if not prosed then
-    vim.opt_local.spell = true
-    vim.opt_local.spelllang = 'en_us'
-    vim.opt_local.wrap = true
+  if packer_plugins["zen-mode.nvim"] then
+  if not prosed then
+      vim.opt_local.spell = true
+      vim.opt_local.spelllang = 'en_us'
+      vim.opt_local.wrap = true
 
-    -- normal mode mappings
-    vim.keymap.set('n', 'j', 'gj')
-    vim.keymap.set('n', 'k', 'gk')
-    vim.keymap.set('n', '0', 'g0')
-    vim.keymap.set('n', '$', 'g$')
-    vim.keymap.set('n', '^', 'g^')
+      -- normal mode mappings
+      vim.keymap.set('n', 'j', 'gj')
+      vim.keymap.set('n', 'k', 'gk')
+      vim.keymap.set('n', '0', 'g0')
+      vim.keymap.set('n', '$', 'g$')
+      vim.keymap.set('n', '^', 'g^')
 
-    vim.keymap.set('v', 'j', 'gj')
-    vim.keymap.set('v', 'k', 'gk')
-    vim.keymap.set('v', '0', 'g0')
-    vim.keymap.set('v', '$', 'g$')
-    vim.keymap.set('v', '^', 'g^')
-    prosed = true
-    vim.cmd[[ZenMode]]
-    print('Prose Mode Enabled')
+      vim.keymap.set('v', 'j', 'gj')
+      vim.keymap.set('v', 'k', 'gk')
+      vim.keymap.set('v', '0', 'g0')
+      vim.keymap.set('v', '$', 'g$')
+      vim.keymap.set('v', '^', 'g^')
+      prosed = true
+      vim.cmd[[ZenMode]]
+      print('Prose Mode Enabled')
+    else
+      vim.opt_local.spell = false
+      vim.opt_local.spelllang = nil
+      vim.opt_local.wrap = false
+
+      -- normal mode mappings
+      vim.keymap.set('n', 'j', 'j')
+      vim.keymap.set('n', 'k', 'k')
+      vim.keymap.set('n', '0', '0')
+      vim.keymap.set('n', '$', '$')
+      vim.keymap.set('n', '^', '^')
+
+      vim.keymap.set('v', 'j', 'j')
+      vim.keymap.set('v', 'k', 'k')
+      vim.keymap.set('v', '0', '0')
+      vim.keymap.set('v', '$', '$')
+      vim.keymap.set('v', '^', '^')
+      prosed = false
+      vim.cmd[[ZenMode]]
+      print('Prose Mode Disabled')
+    end
   else
-    vim.opt_local.spell = false
-    vim.opt_local.spelllang = nil
-    vim.opt_local.wrap = false
-
-    -- normal mode mappings
-    vim.keymap.set('n', 'j', 'j')
-    vim.keymap.set('n', 'k', 'k')
-    vim.keymap.set('n', '0', '0')
-    vim.keymap.set('n', '$', '$')
-    vim.keymap.set('n', '^', '^')
-
-    vim.keymap.set('v', 'j', 'j')
-    vim.keymap.set('v', 'k', 'k')
-    vim.keymap.set('v', '0', '0')
-    vim.keymap.set('v', '$', '$')
-    vim.keymap.set('v', '^', '^')
-    prosed = false
-    vim.cmd[[ZenMode]]
-    print('Prose Mode Disabled')
+    print(
+      "error: zen-mode.nvim is not installed!" ..
+      "\n" ..
+      "prose mode will not function without it!"
+    )
   end
 end
 
