@@ -78,6 +78,8 @@ vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv', {silent = true})
 -- buffer stuff
 -- create a new buffer
 vim.keymap.set('n', '<leader>n', ':enew<CR>')
+-- delete a buffer
+vim.keymap.set('n', '<leader>q', ':bd<CR>')
 
 -- switch tabs quickly
 vim.keymap.set('n', '<leader>1', '1gt<CR>')
@@ -93,10 +95,10 @@ vim.keymap.set('n', '<leader>9', '9gt<CR>')
 vim.keymap.set('n', '<Leader>x', ':tabclose<CR>')
 
 -- Resize splits with ctrl + arrows
-vim.keymap.set('n', '<C-Up>', ':resize -2<CR>')
-vim.keymap.set('n', '<C-Down>', ':resize +2<CR>')
-vim.keymap.set('n', '<C-Left>', ':vertical resize +2<CR>')
-vim.keymap.set('n', '<C-Right>', ':vertical resize -2<CR>')
+vim.keymap.set('n', '<C-Up>', ':resize +2<CR>')
+vim.keymap.set('n', '<C-Down>', ':resize -2<CR>')
+vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>')
+vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
 
 -- faster copying and pasteing into system clipboard
 vim.keymap.set('n', '<leader>y', '"+y')
