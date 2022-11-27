@@ -12,7 +12,7 @@ vim.keymap.set('n', '<C-l>', ':nohlsearch<cr>:diffupdate<cr>:syntax sync fromsta
 vim.keymap.set('n', '<leader>cd', ':cd %:h <BAR> :cd<CR>')
 
 -- source init.lua
-vim.keymap.set('n', '<leader><CR>', ':source $MYVIMRC<CR>')
+vim.keymap.set('n', '<leader><CR>', ':luafile $MYVIMRC<CR>')
 
 -- vanilla buffer switcher
 vim.keymap.set('n', '<leader>b', ':set nomore <Bar> echo "Open buffers:" <Bar> :buffers <Bar> :set more <CR>:b<Space>')
