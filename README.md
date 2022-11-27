@@ -8,7 +8,7 @@ That being said, suggestions are definitely open!
 ### Plugins
 I have several plugins to enhance my experience using Neovim. As a side note, this config only works in Neovim. If you're using Vim, it might be more useful to look at my [`.vimrc`](/.vimrc).
 My plugins are managed using [packer](https://github.com/wbthomason/packer.nvim). Packer is bootstrapped automatically when you first run the config.
-The plugins I use are [here](https://github.com/UnrealApex/dotfiles/blob/main/lua/user/core/plugins.lua#L31).
+The plugins I use are [here](https://github.com/UnrealApex/dotfiles/blob/main/lua/user/core/plugins.lua#L39).
 
 **Notes**
 This config has several dependencies. Plugins will break if these are not installed:
