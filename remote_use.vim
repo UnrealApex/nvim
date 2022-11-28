@@ -77,12 +77,6 @@ let g:ftplugin_sql_omni_key = '<C-;>'
 
 " keymaps
 
-" map ctrl + c to escape
-nnoremap <C-c> <Esc>
-inoremap <C-c> <Esc>
-cnoremap <C-c> <Esc>
-xnoremap <C-c> <Esc>
-
 " efficient editing in insert mode
 " map ctrl + backspace to delete the previous word in insert mode
 imap <C-BS> <C-W>
