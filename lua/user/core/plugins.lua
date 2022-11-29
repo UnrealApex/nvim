@@ -234,11 +234,10 @@ require('packer').startup({function(use)
   use 'ryanoasis/vim-devicons'
   -- colorscheme
   use {
-  'dracula/vim',
-  as = 'dracula',
-  config = function()
-    vim.cmd[[colorscheme dracula]]
-  end
+    "folke/tokyonight.nvim",
+    config = function()
+      vim.cmd[[colorscheme tokyonight]]
+    end
   }
   -- markdown preview
   use {
