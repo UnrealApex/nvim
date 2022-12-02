@@ -147,7 +147,7 @@ require('packer').startup({function(use)
     'neoclide/coc.nvim',
     branch = 'release',
     opt = true,
-    event = 'UIEnter',
+    event = 'BufReadPre',
     requires = {"neoclide/coc-sources"},
     config = function()
       require('user.plugins.coc')
