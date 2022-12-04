@@ -112,7 +112,7 @@ require('packer').startup({function(use)
   use {
   'lukas-reineke/indent-blankline.nvim',
   opt = true,
-  event = {'BufReadPre', 'BufNewFile', 'FileType'},
+  event = {'BufReadPre', 'BufNewFile'},
   requires = {'nvim-treesitter/nvim-treesitter'},
   config = function()
     require("indent_blankline").setup {
@@ -135,7 +135,7 @@ require('packer').startup({function(use)
   use {
     'junegunn/rainbow_parentheses.vim',
     opt = true,
-    event = {'BufReadPre', 'BufNewFile', 'FileType'}
+    event = {'BufReadPre', 'BufNewFile'}
   }
   use {
     'romainl/vim-cool',
@@ -158,7 +158,7 @@ require('packer').startup({function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     opt = true,
-    event = {'BufReadPre', 'BufNewFile', 'FileType'},
+    event = {'BufReadPre', 'BufNewFile'},
     config = function()
       -- treesitter stuff
       local configs = require("nvim-treesitter.configs")
