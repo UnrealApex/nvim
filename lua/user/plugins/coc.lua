@@ -27,8 +27,6 @@ end
 -- NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 -- other plugin before putting this into your config.
 local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
-vim.keymap.set("i", "<C-j>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "" : coc#refresh()', opts)
-vim.keymap.set("i", "<C-k>", [[coc#pum#visible() ? coc#pum#prev(1) : ""]], opts)
 
 -- Make <CR> to accept selected completion item or notify coc.nvim to format
 -- <C-g>u breaks current undo, please make your own choice.
@@ -66,8 +64,8 @@ vim.keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
 
 
 -- Formatting selected code.
-vim.keymap.set("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
-vim.keymap.set("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
+vim.keymap.set("n", "<leader>cf", "<Plug>(coc-format-selected)", {silent = true})
+vim.keymap.set("x", "<leader>cf", "<Plug>(coc-format-selected)", {silent = true})
 
 
 -- Setup formatexpr specified filetype(s).

@@ -2,12 +2,7 @@ require('telescope').setup {
   defaults = {
     mappings = {
       i = {
-        ["<C-j>"] = require('telescope.actions').move_selection_next,
-        ["<C-k>"] = require('telescope.actions').move_selection_previous,
-
-        ["<C-c>"] = require('telescope.actions').close,
-        ["<C-p>"] = require('telescope.actions').close,
-
+        ["<C-[>"] = require('telescope.actions').close,
         ["<Down>"] = require('telescope.actions').move_selection_next,
         ["<Up>"] = require('telescope.actions').move_selection_previous,
 
@@ -32,7 +27,6 @@ require('telescope').setup {
 
       n = {
         ["<esc>"] = require('telescope.actions').close,
-        ["<C-p>"] = require('telescope.actions').close,
         ["<CR>"] = require('telescope.actions').select_default,
         ["<C-x>"] = require('telescope.actions').select_horizontal,
         ["<C-v>"] = require('telescope.actions').select_vertical,
