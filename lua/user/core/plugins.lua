@@ -132,6 +132,7 @@ require('packer').startup({function(use)
     ft = {'markdown'}
   }
   -- easy parentheses matching
+  -- FIXME: figure out why this plugin is not working(related to treesitter)
   use {
     'junegunn/rainbow_parentheses.vim',
     opt = true,
