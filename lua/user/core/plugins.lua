@@ -243,7 +243,7 @@ require('packer').startup({function(use)
   use {
     'ellisonleao/glow.nvim',
     opt = true,
-    cmd = {'Glow'}
+    ft = 'markdown'
   }
   use {
     -- terminal
