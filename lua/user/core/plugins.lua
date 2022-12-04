@@ -66,7 +66,7 @@ require('packer').startup({function(use)
   use {
     'lewis6991/gitsigns.nvim',
     opt = true,
-    event = {'BufReadPre'},
+    event = {'BufReadPre', 'BufNewFile'},
     config = function()
       require("user.plugins.gitsigns")
     end
@@ -112,7 +112,7 @@ require('packer').startup({function(use)
   use {
   'lukas-reineke/indent-blankline.nvim',
   opt = true,
-  event = {'BufReadPre'},
+  event = {'BufReadPre', 'BufNewFile', 'FileType'},
   requires = {'nvim-treesitter/nvim-treesitter'},
   config = function()
     require("indent_blankline").setup {
@@ -135,7 +135,7 @@ require('packer').startup({function(use)
   use {
     'junegunn/rainbow_parentheses.vim',
     opt = true,
-    event = {'BufReadPre'}
+    event = {'BufReadPre', 'BufNewFile', 'FileType'}
   }
   use {
     'romainl/vim-cool',
@@ -147,7 +147,7 @@ require('packer').startup({function(use)
     'neoclide/coc.nvim',
     branch = 'release',
     opt = true,
-    event = 'BufReadPre',
+    event = {'BufReadPre', 'BufNewFile'},
     requires = {"neoclide/coc-sources"},
     config = function()
       require('user.plugins.coc')
@@ -158,7 +158,7 @@ require('packer').startup({function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     opt = true,
-    event = 'BufReadPre',
+    event = {'BufReadPre', 'BufNewFile', 'FileType'},
     config = function()
       -- treesitter stuff
       local configs = require("nvim-treesitter.configs")
