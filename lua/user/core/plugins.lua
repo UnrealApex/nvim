@@ -128,8 +128,7 @@ require('packer').startup({function(use)
     cmd = {'ZenMode'},
     config = function()
       require('zen-mode').setup()
-    end,
-    ft = {'markdown'}
+    end
   }
   -- easy parentheses matching
   -- FIXME: figure out why this plugin is not working(related to treesitter)
