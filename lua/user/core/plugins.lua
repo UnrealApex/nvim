@@ -159,6 +159,25 @@ require('packer').startup({function(use)
     run = ':TSUpdate',
     opt = true,
     event = {'BufReadPre', 'BufNewFile'},
+    cmd = {
+      'TSBufDisable',
+      'TSBufEnable',
+      'TSBufToggle',
+      'TSConfigInfo',
+      'TSDisable',
+      'TSEditQuery',
+      'TSEditQueryUserAfter',
+      'TSEnable',
+      'TSInstall',
+      'TSInstallFromGrammar',
+      'TSInstallInfo',
+      'TSInstallSync',
+      'TSModuleInfo',
+      'TSToggle',
+      'TSUninstall',
+      'TSUpdate',
+      'TSUpdateSync',
+    },
     config = function()
       -- treesitter stuff
       local configs = require("nvim-treesitter.configs")
