@@ -9,7 +9,11 @@ vim.keymap.set('i', '<S-Tab>', '<C-d>')
 vim.keymap.set('n', '<C-l>', ':nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>')
 
 -- change directory
-vim.keymap.set('n', '<leader>cd', ':cd %:h <BAR> :cd<CR>')
+vim.keymap.set('n', '<leader>cd', function()
+  vim.cmd(':cd ' .. vim.fn.expand("%:p:h"))
+  print(vim.fn.getcwd())
+  end
+)
 
 -- source init.lua
 vim.keymap.set('n', '<leader><CR>', ':luafile $MYVIMRC<CR>')
