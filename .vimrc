@@ -1,3 +1,4 @@
+colorscheme elflord
 " set the font to Consolas and the font size to 14 pixels
 set guifont=Jetbrains\ Mono:h14
 " show line numbers
