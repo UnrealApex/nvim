@@ -175,7 +175,7 @@ require('packer').startup({function(use)
       'CocUpdateSync',
       'CocWatch',
     },
-    requires = {"neoclide/coc-sources"},
+    requires = {'neoclide/coc-sources', 'honza/vim-snippets'},
     config = function()
       require('user.plugins.coc')
     end
