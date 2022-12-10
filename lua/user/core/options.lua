@@ -132,6 +132,8 @@ vim.g.do_filetype_lua = 1
 -- set the mapleader to space
 vim.g.mapleader = ' '
 
+vim.g.netrw_keepdir = 0
+
 -- environment variables
 
 -- $CONFIG
