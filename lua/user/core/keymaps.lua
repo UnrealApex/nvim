@@ -19,7 +19,7 @@ vim.keymap.set('n', '<leader>cd', function()
 vim.keymap.set('n', '<leader><CR>', ':luafile $MYVIMRC<CR>')
 
 -- vanilla buffer switcher
-vim.keymap.set('n', '<leader>b', ':set nomore <Bar> echo "Open buffers:" <Bar> :buffers <Bar> :set more <CR>:b<Space>')
+-- vim.keymap.set('n', '<leader>b', ':set nomore <Bar> echo "Open buffers:" <Bar> :buffers <Bar> :set more <CR>:b<Space>')
 
 
 -- TODO: write this in lua

@@ -264,6 +264,7 @@ require('packer').startup({function(use)
 
       -- telescope keymaps
       vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
+      vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>')
       vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>')
     end
   }
