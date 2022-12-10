@@ -222,8 +222,6 @@ require('packer').startup({function(use)
       }
     end
   }
-
-  use 'wellle/context.vim'
   -- automatically close pairs
   use {
     "windwp/nvim-autopairs",
