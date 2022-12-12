@@ -135,7 +135,10 @@ require('packer').startup({function(use)
   use {
     'junegunn/rainbow_parentheses.vim',
     opt = true,
-    event = {'BufReadPre', 'BufNewFile'}
+    event = {'BufReadPre', 'BufNewFile'},
+    config = function()
+      vim.cmd[[RainbowParentheses]]
+    end
   }
   use {
     'romainl/vim-cool',
