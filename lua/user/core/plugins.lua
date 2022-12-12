@@ -271,8 +271,6 @@ require('packer').startup({ function(use)
         'nvim-telescope/telescope-fzf-native.nvim',
         run = 'make',
       }
-      -- not supported on windows
-      -- use 'nvim-telescope/telescope-media-files.nvim'
     },
     config = function()
       require("user.plugins.telescope")
