@@ -131,7 +131,6 @@ require('packer').startup({function(use)
     end
   }
   -- easy parentheses matching
-  -- FIXME: figure out why this plugin is not working(related to treesitter)
   use {
     'junegunn/rainbow_parentheses.vim',
     opt = true,
@@ -234,6 +233,8 @@ require('packer').startup({function(use)
         },
         indent = { enable = true, disable = { "yaml" } },
       }
+      -- hack to make rainbow_parentheses work with treesitter
+      vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "" })
     end
   }
   -- automatically close pairs
