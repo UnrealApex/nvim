@@ -12,7 +12,7 @@ vim.keymap.set('n', '<C-l>', ':nohlsearch<cr>:diffupdate<cr>:syntax sync fromsta
 vim.keymap.set('n', '<leader>cd', function()
   vim.cmd(':cd ' .. vim.fn.expand("%:p:h"))
   print(vim.fn.getcwd())
-  end
+end
 )
 
 -- source init.lua
@@ -26,7 +26,7 @@ vim.keymap.set('n', '<leader><CR>', ':luafile $MYVIMRC<CR>')
 -- find and replace on current selection
 -- snippet written by Bryan Kennedy and Peter Butkovic
 -- https://stackoverflow.com/a/6171215/14111707
-vim.cmd[[
+vim.cmd [[
 " Escape special characters in a string for exact matching.
 " This is useful to copying strings from the file to the search tool
 " Based on this - http://peterodding.com/code/vim/profile/autoload/xolox/escape.vim
@@ -68,12 +68,12 @@ vnoremap <C-r> <Esc>:%s/<c-r>=GetVisual()<cr>//g<left><left>
 ]]
 
 -- move lines up or down
-vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', {silent = true})
-vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', {silent = true})
-vim.keymap.set('i', '<A-j>', '<Esc>:m .+1<CR>==gi', {silent = true})
-vim.keymap.set('i', '<A-k>', '<Esc>:m .-2<CR>==gi', {silent = true})
-vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv', {silent = true})
-vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv', {silent = true})
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { silent = true })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { silent = true })
+vim.keymap.set('i', '<A-j>', '<Esc>:m .+1<CR>==gi', { silent = true })
+vim.keymap.set('i', '<A-k>', '<Esc>:m .-2<CR>==gi', { silent = true })
+vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv', { silent = true })
+vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv', { silent = true })
 
 -- buffer stuff
 -- create a new buffer
@@ -115,4 +115,3 @@ vim.keymap.set('v', '<leader>P', '"+P')
 -- don't lose selection when shifting text
 vim.keymap.set('x', '<', '<gv')
 vim.keymap.set('x', '>', '>gv')
-

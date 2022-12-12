@@ -1,9 +1,9 @@
 -- bootstrap packer
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -37,7 +37,7 @@ vim.g.indent_blankline_filetype_exclude = {
 }
 
 -- plugins
-require('packer').startup({function(use)
+require('packer').startup({ function(use)
   use 'wbthomason/packer.nvim'
   -- make neovim faster
   use {
@@ -58,15 +58,15 @@ require('packer').startup({function(use)
   use {
     'tpope/vim-unimpaired',
     keys = {
-      {'n', '['},
-      {'n', ']'}
+      { 'n', '[' },
+      { 'n', ']' }
     }
   }
   -- better git integration
   use {
     'lewis6991/gitsigns.nvim',
     opt = true,
-    event = {'BufReadPre', 'BufNewFile'},
+    event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       require("user.plugins.gitsigns")
     end
@@ -82,50 +82,50 @@ require('packer').startup({function(use)
   use 'tpope/vim-fugitive'
   use {
     'tpope/vim-surround',
-    keys = {{"n", "ds"}, {"n", "cs"}, {"n", "ys"}, {"v", "S"}, {"v", "gS"}}
+    keys = { { "n", "ds" }, { "n", "cs" }, { "n", "ys" }, { "v", "S" }, { "v", "gS" } }
   }
   -- git commit browser
   use {
     'junegunn/gv.vim',
     opt = true,
-    cmd = {'GV'},
-    requires = {'tpope/vim-fugitive'}
+    cmd = { 'GV' },
+    requires = { 'tpope/vim-fugitive' }
   }
   -- git conflict helper
   use {
     'rhysd/conflict-marker.vim',
     opt = true,
-    event = {'BufReadPre'}
+    event = { 'BufReadPre' }
   }
   -- sensible default settings
   use 'tpope/vim-sensible'
   -- commenter
   use {
     'numToStr/Comment.nvim',
-    requires = {'nvim-treesitter/nvim-treesitter'},
-    keys = {{"n", "gc"}, {"n", "gb"}, {"v", "gc"}, {"v", "gb"}},
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+    keys = { { "n", "gc" }, { "n", "gb" }, { "v", "gc" }, { "v", "gb" } },
     config = function()
       require('Comment').setup()
     end
   }
   -- indent guides
   use {
-  'lukas-reineke/indent-blankline.nvim',
-  opt = true,
-  event = {'BufReadPre', 'BufNewFile'},
-  requires = {'nvim-treesitter/nvim-treesitter'},
-  config = function()
-    require("indent_blankline").setup {
-      show_current_context = true,
-      show_current_context_start = true,
-    }
-  end
+    'lukas-reineke/indent-blankline.nvim',
+    opt = true,
+    event = { 'BufReadPre', 'BufNewFile' },
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require("indent_blankline").setup {
+        show_current_context = true,
+        show_current_context_start = true,
+      }
+    end
   }
   -- zen mode
   use {
     'folke/zen-mode.nvim',
     opt = true,
-    cmd = {'ZenMode'},
+    cmd = { 'ZenMode' },
     config = function()
       require('zen-mode').setup()
     end
@@ -134,25 +134,25 @@ require('packer').startup({function(use)
   use {
     'junegunn/rainbow_parentheses.vim',
     opt = true,
-    event = {'BufReadPre', 'BufNewFile'},
+    event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      vim.cmd[[RainbowParentheses]]
+      vim.cmd [[RainbowParentheses]]
     end
   }
   use {
     'romainl/vim-cool',
     -- load vim-cool when doing a search
     keys = {
-      {"n", "/"},
-      {"n", "?"},
-      {"n", "n"},
-      {"n", "N"},
-      {"n", "*"},
-      {"n", "#"},
-      {"v", "*"},
-      {"v", "#"},
-      {"n", "g*"},
-      {"n", "g#"},
+      { "n", "/" },
+      { "n", "?" },
+      { "n", "n" },
+      { "n", "N" },
+      { "n", "*" },
+      { "n", "#" },
+      { "v", "*" },
+      { "v", "#" },
+      { "n", "g*" },
+      { "n", "g#" },
     }
   }
   -- completion + lsp
@@ -160,7 +160,7 @@ require('packer').startup({function(use)
     'neoclide/coc.nvim',
     branch = 'release',
     opt = true,
-    event = {'BufReadPre', 'BufNewFile'},
+    event = { 'BufReadPre', 'BufNewFile' },
     cmd = {
       'CocCommand',
       'CocConfig',
@@ -188,7 +188,7 @@ require('packer').startup({function(use)
       'CocUpdateSync',
       'CocWatch',
     },
-    requires = {'neoclide/coc-sources', 'honza/vim-snippets'},
+    requires = { 'neoclide/coc-sources', 'honza/vim-snippets' },
     config = function()
       require('user.plugins.coc')
     end
@@ -198,7 +198,7 @@ require('packer').startup({function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     opt = true,
-    event = {'BufReadPre', 'BufNewFile'},
+    event = { 'BufReadPre', 'BufNewFile' },
     cmd = {
       'TSBufDisable',
       'TSBufEnable',
@@ -242,11 +242,11 @@ require('packer').startup({function(use)
     "windwp/nvim-autopairs",
     -- load when starting bracket delimiter is pressed
     keys = {
-      {'i', '('},
-      {'i', '{'},
-      {'i', '['},
-      {'i', '"'},
-      {'i', "'"}
+      { 'i', '(' },
+      { 'i', '{' },
+      { 'i', '[' },
+      { 'i', '"' },
+      { 'i', "'" }
     },
     config = function()
       require("nvim-autopairs").setup()
@@ -287,7 +287,7 @@ require('packer').startup({function(use)
   -- better movement
   use {
     'ggandor/leap.nvim',
-    keys = {{'n', 's'}, {'n', 'S'}},
+    keys = { { 'n', 's' }, { 'n', 'S' } },
     config = function()
       require('leap').set_default_keymaps()
     end
@@ -298,7 +298,7 @@ require('packer').startup({function(use)
   use {
     "folke/tokyonight.nvim",
     config = function()
-      vim.cmd[[colorscheme tokyonight-night]]
+      vim.cmd [[colorscheme tokyonight-night]]
     end
   }
   -- markdown preview
@@ -311,7 +311,7 @@ require('packer').startup({function(use)
     -- terminal
     'akinsho/toggleterm.nvim',
     opt = true,
-    cmd = {'ToggleTerm'},
+    cmd = { 'ToggleTerm' },
     config = function()
       require("toggleterm").setup({
         open_mapping = [[<C-\>]],
@@ -327,8 +327,8 @@ end,
   config = {
     display = {
       open_fn = function()
-      return require('packer.util').float({ border = 'single' })
-    end
+        return require('packer.util').float({ border = 'single' })
+      end
     }
   }
 })
@@ -349,50 +349,50 @@ function prose()
   if packer_plugins["zen-mode.nvim"] then
     -- toggle prose mode
     if not prosed then
-        -- enable spellcheck and line wrapping
-        vim.opt_local.spell = true
-        vim.opt_local.spelllang = 'en_us'
-        vim.opt_local.wrap = true
+      -- enable spellcheck and line wrapping
+      vim.opt_local.spell = true
+      vim.opt_local.spelllang = 'en_us'
+      vim.opt_local.wrap = true
 
-        -- normal mode mappings
-        vim.keymap.set('n', 'j', 'gj')
-        vim.keymap.set('n', 'k', 'gk')
-        vim.keymap.set('n', '0', 'g0')
-        vim.keymap.set('n', '$', 'g$')
-        vim.keymap.set('n', '^', 'g^')
+      -- normal mode mappings
+      vim.keymap.set('n', 'j', 'gj')
+      vim.keymap.set('n', 'k', 'gk')
+      vim.keymap.set('n', '0', 'g0')
+      vim.keymap.set('n', '$', 'g$')
+      vim.keymap.set('n', '^', 'g^')
 
-        -- visual mode mappings
-        vim.keymap.set('v', 'j', 'gj')
-        vim.keymap.set('v', 'k', 'gk')
-        vim.keymap.set('v', '0', 'g0')
-        vim.keymap.set('v', '$', 'g$')
-        vim.keymap.set('v', '^', 'g^')
-        prosed = true
-        vim.cmd[[ZenMode]]
-        print('Prose Mode Enabled')
-      else
-        -- disable spellcheck and line wrapping
-        vim.opt_local.spell = false
-        vim.opt_local.spelllang = nil
-        vim.opt_local.wrap = false
+      -- visual mode mappings
+      vim.keymap.set('v', 'j', 'gj')
+      vim.keymap.set('v', 'k', 'gk')
+      vim.keymap.set('v', '0', 'g0')
+      vim.keymap.set('v', '$', 'g$')
+      vim.keymap.set('v', '^', 'g^')
+      prosed = true
+      vim.cmd [[ZenMode]]
+      print('Prose Mode Enabled')
+    else
+      -- disable spellcheck and line wrapping
+      vim.opt_local.spell = false
+      vim.opt_local.spelllang = nil
+      vim.opt_local.wrap = false
 
-        -- reset normal mode mappings
-        vim.keymap.set('n', 'j', 'j')
-        vim.keymap.set('n', 'k', 'k')
-        vim.keymap.set('n', '0', '0')
-        vim.keymap.set('n', '$', '$')
-        vim.keymap.set('n', '^', '^')
+      -- reset normal mode mappings
+      vim.keymap.set('n', 'j', 'j')
+      vim.keymap.set('n', 'k', 'k')
+      vim.keymap.set('n', '0', '0')
+      vim.keymap.set('n', '$', '$')
+      vim.keymap.set('n', '^', '^')
 
-        -- reset visual mode mappings
-        vim.keymap.set('v', 'j', 'j')
-        vim.keymap.set('v', 'k', 'k')
-        vim.keymap.set('v', '0', '0')
-        vim.keymap.set('v', '$', '$')
-        vim.keymap.set('v', '^', '^')
-        prosed = false
-        vim.cmd[[ZenMode]]
-        print('Prose Mode Disabled')
-      end
+      -- reset visual mode mappings
+      vim.keymap.set('v', 'j', 'j')
+      vim.keymap.set('v', 'k', 'k')
+      vim.keymap.set('v', '0', '0')
+      vim.keymap.set('v', '$', '$')
+      vim.keymap.set('v', '^', '^')
+      prosed = false
+      vim.cmd [[ZenMode]]
+      print('Prose Mode Disabled')
+    end
   else
     print(
       "error: zen-mode.nvim is not installed!" ..
@@ -403,4 +403,3 @@ function prose()
 end
 
 vim.api.nvim_create_user_command('Prose', prose, {})
-

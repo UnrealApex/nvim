@@ -3,7 +3,7 @@ vim.opt.compatible = false
 -- allow hidden buffers
 vim.opt.hidden = true
 -- set the guifont to Jetbrains Mono and the font size to 15 pixels
-vim.opt.guifont='JetbrainsMono NF:h15'
+vim.opt.guifont = 'JetbrainsMono NF:h15'
 -- show line numbers
 vim.opt.number = true
 -- show relative line numbers
@@ -14,7 +14,7 @@ vim.opt.cursorline = true
 vim.opt.errorbells = false
 vim.opt.visualbell = false
 -- syntax highlighting
-vim.cmd[[syntax on]]
+vim.cmd [[syntax on]]
 vim.opt.showmode = false
 -- show typed command in status bar
 vim.opt.showcmd = true
@@ -23,7 +23,7 @@ vim.opt.ruler = true
 -- show file in titlebar
 vim.opt.title = true
 -- 8 lines above or below cursor when scrolling
-vim.opt.scrolloff=8
+vim.opt.scrolloff = 8
 -- don't wrap lines
 vim.opt.wrap = false
 -- basic completion
@@ -35,7 +35,7 @@ vim.opt.listchars = ''
 vim.opt.autoindent = true
 vim.opt.fo:append('jpor')
 -- more powerful backspacing
-vim.opt.backspace='indent,eol,start'
+vim.opt.backspace = 'indent,eol,start'
 -- vim.opt.tabs to two spaces
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -77,11 +77,11 @@ vim.opt.lazyredraw = true
 vim.opt.foldmethod = 'indent'
 vim.opt.foldenable = false
 -- make gutter match background color
-vim.cmd[[highlight clear SignColumn]]
+vim.cmd [[highlight clear SignColumn]]
 vim.opt.path:append('.,**')
 
 -- show whitespaces as characters in visual mode
-vim.cmd[[
+vim.cmd [[
 augroup show_whitespace
   autocmd!
   autocmd ModeChanged *:[vV\x16]* :set listchars+=space:·
@@ -93,17 +93,16 @@ augroup END
 function LargeFileHandler()
   print('Large file detected, disabling certain features for performance reasons')
   if vim.fn.exists(':TSBufDisable') then
-    vim.cmd[[TSBufDisable highlight]]
-    vim.cmd[[TSBufDisable autotag]]
+    vim.cmd [[TSBufDisable highlight]]
+    vim.cmd [[TSBufDisable autotag]]
   end
   vim.opt.foldmethod = 'manual'
-  vim.cmd[[syntax clear]]
-  vim.cmd[[syntax off]]
-  vim.cmd[[filetype off]]
+  vim.cmd [[syntax clear]]
+  vim.cmd [[syntax off]]
+  vim.cmd [[filetype off]]
   vim.opt.undofile = false
   vim.opt.swapfile = false
 end
-
 
 function LargeFileChecker()
   if vim.fn.getfsize(vim.fn.expand("%")) > (512 * 1024) then
@@ -113,7 +112,7 @@ function LargeFileChecker()
 end
 
 -- TODO: find a way to make these two autocommands one
-vim.cmd[[
+vim.cmd [[
 augroup LargeFileDetection
     autocmd!
     autocmd BufReadPre * lua LargeFileChecker()
@@ -123,11 +122,11 @@ augroup END
 
 
 -- load the matchit plugin
-vim.cmd[[packadd matchit]]
+vim.cmd [[packadd matchit]]
 
 -- enable filetype.lua
-vim.g.did_load_filetypes = 0
 vim.g.do_filetype_lua = 1
+vim.g.did_load_filetypes = 0
 
 -- set the mapleader to space
 vim.g.mapleader = ' '
@@ -140,11 +139,10 @@ vim.g.netrw_keepdir = 0
 vim.env.CONFIG = vim.fn.stdpath('config')
 
 -- $OPTIONS
-vim.env.OPTIONS = vim.fn.stdpath('config') .."\\lua\\user\\core\\options.lua"
+vim.env.OPTIONS = vim.fn.stdpath('config') .. "\\lua\\user\\core\\options.lua"
 
 -- $PLUGINS
-vim.env.PLUGINS = vim.fn.stdpath('config') .."\\lua\\user\\core\\plugins.lua"
+vim.env.PLUGINS = vim.fn.stdpath('config') .. "\\lua\\user\\core\\plugins.lua"
 
 -- $KEYMAPS
-vim.env.KEYMAPS = vim.fn.stdpath('config') .."\\lua\\user\\core\\keymaps.lua"
-
+vim.env.KEYMAPS = vim.fn.stdpath('config') .. "\\lua\\user\\core\\keymaps.lua"

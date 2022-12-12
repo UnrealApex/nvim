@@ -1,5 +1,5 @@
 -- Gitsigns mappings
-local bufopts = { noremap=true, silent=true, buffer=bufnr }
+local bufopts = { noremap = true, silent = true, buffer = bufnr }
 -- hunk navigation
 vim.keymap.set('n', '<Leader>hn', ':Gitsigns next_hunk<CR>', bufopts)
 vim.keymap.set('n', '<Leader>hN', ':Gitsigns prev_hunk<CR>', bufopts)
@@ -41,7 +41,8 @@ require('gitsigns').setup({
       hl = "GitSignsDelete",
       text = "契",
       numhl = "GitSignsDeleteNr",
-      linehl = "GitSignsDeleteLn" },
+      linehl = "GitSignsDeleteLn"
+    },
     topdelete = {
       hl = "GitSignsDelete",
       text = "契",

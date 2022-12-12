@@ -23,7 +23,7 @@ vim.g['vim_custom_ascii_header'] = {
 
 if vim.fn.has('nvim') == 1 then
   vim.g['startify_custom_header'] = 'startify#pad(g:neovim_custom_ascii_header)'
--- NOTE: this condition is redundant because vim doesn't have lua support
+  -- NOTE: this condition is redundant because vim doesn't have lua support
 elseif vim.fn.has('vim') == 1 then
   vim.g['startify_custom_header'] = 'startify#pad(g:neovim_custom_ascii_header)'
 else
