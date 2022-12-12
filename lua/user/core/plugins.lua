@@ -39,7 +39,7 @@ vim.g.indent_blankline_filetype_exclude = {
 -- plugins
 require('packer').startup({ function(use)
   use 'wbthomason/packer.nvim'
-  -- make neovim faster
+  -- performance enhancements
   use {
     'lewis6991/impatient.nvim',
     config = function()
@@ -130,7 +130,7 @@ require('packer').startup({ function(use)
       require('zen-mode').setup()
     end
   }
-  -- easy parentheses matching
+  -- parentheses colorizer
   use {
     'junegunn/rainbow_parentheses.vim',
     opt = true,
@@ -139,6 +139,7 @@ require('packer').startup({ function(use)
       vim.cmd [[RainbowParentheses]]
     end
   }
+  -- turn off search highlighting automatically
   use {
     'romainl/vim-cool',
     -- load vim-cool when doing a search
@@ -193,7 +194,7 @@ require('packer').startup({ function(use)
       require('user.plugins.coc')
     end
   }
-  -- better syntax highlighting
+  -- improved syntax highlighting
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -282,7 +283,7 @@ require('packer').startup({ function(use)
     end
   }
 
-  -- better movement
+  -- improved movement
   use {
     'ggandor/leap.nvim',
     keys = { { 'n', 's' }, { 'n', 'S' } },
