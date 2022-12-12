@@ -143,7 +143,18 @@ require('packer').startup({function(use)
   use {
     'romainl/vim-cool',
     -- load vim-cool when doing a search
-    keys = {{"n", "/"}}
+    keys = {
+      {"n", "/"},
+      {"n", "?"},
+      {"n", "n"},
+      {"n", "N"},
+      {"n", "*"},
+      {"n", "#"},
+      {"v", "*"},
+      {"v", "#"},
+      {"n", "g*"},
+      {"n", "g#"},
+    }
   }
   -- completion + lsp
   use {
