@@ -64,8 +64,9 @@ vim.api.nvim_create_augroup("CocGroup", {})
 vim.keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
 
 
--- Formatting selected code.
-vim.keymap.set("n", "<leader>cf", "<Plug>(coc-format-selected)", { silent = true })
+-- format whole file
+vim.keymap.set("n", "<leader>cf", "<Plug>(coc-format)", { silent = true })
+-- format selected code
 vim.keymap.set("x", "<leader>cf", "<Plug>(coc-format-selected)", { silent = true })
 
 
