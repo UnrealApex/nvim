@@ -1,10 +1,10 @@
 vim.g.coc_global_extensions = {
   'coc-vimlsp',
+  'coc-sumneko-lua',
   'coc-sh',
   'coc-pyright',
   'coc-clangd',
   'coc-java',
-  'coc-sumneko-lua',
   'coc-sql',
   'coc-html',
   'coc-html-css-support',
