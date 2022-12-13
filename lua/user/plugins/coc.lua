@@ -1,5 +1,6 @@
 vim.g.coc_global_extensions = {
   'coc-vimlsp',
+  'coc-sh',
   'coc-pyright',
   'coc-clangd',
   'coc-java',
