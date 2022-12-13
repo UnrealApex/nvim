@@ -148,7 +148,7 @@ vim.keymap.set("n", "<leader>co", ":<C-u>CocList outline<cr>", opts)
 -- Search workspace symbols.
 vim.keymap.set("n", "<leader>cs", ":<C-u>CocList -I symbols<cr>", opts)
 
--- start coc if needed
+-- restart coc if needed
 vim.keymap.set('n', '<leader>cr', ':<C-u>CocRestart<CR>', { silent = true })
 
 -- scroll through coc hover doc
