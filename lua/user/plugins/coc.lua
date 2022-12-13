@@ -29,7 +29,7 @@ end
 -- other plugin before putting this into your config.
 local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
 
--- Make <CR> to accept selected completion item or notify coc.nvim to format
+-- Make <Tab> to accept selected completion item or notify coc.nvim to format
 -- <C-g>u breaks current undo, please make your own choice.
 vim.keymap.set("i", "<Tab>", [[coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"]], opts)
 
