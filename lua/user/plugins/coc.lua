@@ -166,3 +166,5 @@ vim.keymap.set('n', ']d', '<Plug>(coc-diagnostic-next)', { silent = true })
 
 vim.keymap.set('n', '<leader>ca', '<Plug>(coc-codeaction-selected)<CR>')
 vim.keymap.set('v', '<leader>ca', '<Plug>(coc-codeaction-selected)<CR>')
+
+vim.keymap.set('n', '<leader>ce', ':CocList extensions<CR>')
