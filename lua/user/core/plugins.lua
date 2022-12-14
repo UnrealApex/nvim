@@ -294,9 +294,9 @@ require('packer').startup({ function(use)
   use 'ryanoasis/vim-devicons'
   -- colorscheme
   use {
-    "folke/tokyonight.nvim",
+    "rebelot/kanagawa.nvim",
     config = function()
-      vim.cmd [[colorscheme tokyonight-night]]
+      vim.cmd [[colorscheme kanagawa]]
     end
   }
   -- markdown preview
