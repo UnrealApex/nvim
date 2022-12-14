@@ -184,6 +184,7 @@ require('packer').startup({ function(use)
       'CocRestart',
       'CocSearch',
       'CocStart',
+      'CocRestart',
       'CocUninstall',
       'CocUpdate',
       'CocUpdateSync',
