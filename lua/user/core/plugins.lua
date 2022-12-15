@@ -91,12 +91,6 @@ require('packer').startup({ function(use)
     cmd = { 'GV' },
     requires = { 'tpope/vim-fugitive' }
   }
-  -- git conflict helper
-  use {
-    'rhysd/conflict-marker.vim',
-    opt = true,
-    event = { 'BufReadPre' }
-  }
   -- sensible default settings
   use 'tpope/vim-sensible'
   -- commenter
