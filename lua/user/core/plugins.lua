@@ -273,17 +273,7 @@ require('packer').startup({ function(use)
     opt = true,
     ft = 'markdown'
   }
-  use {
-    -- terminal
-    'akinsho/toggleterm.nvim',
-    opt = true,
-    cmd = { 'ToggleTerm' },
-    config = function()
-      require("toggleterm").setup({
-        open_mapping = [[<C-\>]],
-      })
-    end
-  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
