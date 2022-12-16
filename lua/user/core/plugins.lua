@@ -261,7 +261,7 @@ require('packer').startup({ function(use)
     end
   }
   -- icons
-  use 'ryanoasis/vim-devicons'
+  use 'nvim-tree/nvim-web-devicons'
   -- colorscheme
   use {
     "rebelot/kanagawa.nvim",
