@@ -36,6 +36,8 @@ vim.g.indent_blankline_filetype_exclude = {
   'sh'
 }
 
+vim.g['rainbow#pairs'] = {{'(', ')'}, {'[', ']'}, {'{', '}'}}
+
 -- plugins
 require('packer').startup({ function(use)
   use 'wbthomason/packer.nvim'
