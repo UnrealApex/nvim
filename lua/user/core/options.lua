@@ -89,7 +89,10 @@ augroup END
 
 
 function LargeFileHandler()
-  print('Large file detected, disabling certain features for performance reasons')
+  vim.notify(
+    'Large file detected, disabling certain features for performance reasons',
+    vim.log.levels.WARNING
+  )
   if vim.fn.exists(':TSBufDisable') then
     vim.cmd [[TSBufDisable highlight]]
     vim.cmd [[TSBufDisable autotag]]

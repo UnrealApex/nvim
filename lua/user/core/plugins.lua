@@ -325,7 +325,7 @@ function prose()
       vim.keymap.set('v', '^', 'g^')
       prosed = true
       vim.cmd [[ZenMode]]
-      print('Prose Mode Enabled')
+      vim.notify('Prose Mode Enabled')
     else
       -- disable spellcheck and line wrapping
       vim.opt_local.spell = false
@@ -347,13 +347,14 @@ function prose()
       vim.keymap.set('v', '^', '^')
       prosed = false
       vim.cmd [[ZenMode]]
-      print('Prose Mode Disabled')
+      vim.notify('Prose Mode Disabled')
     end
   else
-    print(
+    vim.notify(
       "error: zen-mode.nvim is not installed!" ..
       "\n" ..
-      "prose mode will not function without it!"
+      "prose mode will not function without it!",
+      vim.log.levels.ERROR
     )
   end
 end
