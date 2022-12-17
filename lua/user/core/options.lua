@@ -88,40 +88,6 @@ augroup END
 ]]
 
 
-function LargeFileHandler()
-  vim.notify(
-    'Large file detected, disabling certain features for performance reasons',
-    vim.log.levels.WARNING
-  )
-  if vim.fn.exists(':TSBufDisable') then
-    vim.cmd [[TSBufDisable highlight]]
-    vim.cmd [[TSBufDisable autotag]]
-  end
-  vim.opt.foldmethod = 'manual'
-  vim.cmd [[syntax clear]]
-  vim.cmd [[syntax off]]
-  vim.cmd [[filetype off]]
-  vim.opt.undofile = false
-  vim.opt.swapfile = false
-end
-
-function LargeFileChecker()
-  if vim.fn.getfsize(vim.fn.expand("%")) > (512 * 1024) then
-    LargeFileHandler()
-  else
-  end
-end
-
--- TODO: find a way to make these two autocommands one
-vim.cmd [[
-augroup LargeFileDetection
-    autocmd!
-    autocmd BufReadPre * lua LargeFileChecker()
-    autocmd FileReadPre * lua LargeFileChecker()
-augroup END
-]]
-
-
 -- load the matchit plugin
 vim.cmd [[packadd matchit]]
 
