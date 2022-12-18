@@ -13,7 +13,7 @@ The plugins I use are [here](https://github.com/UnrealApex/dotfiles/blob/main/lu
 **Notes**
 This config has several dependencies. Plugins will break if these are not installed:
 
-- [Neovim](https://github.com/neovim/neovim)
+- [Neovim v0.8.0 or higher](https://github.com/neovim/neovim)
 - [Git](https://git-scm.com/)
 - [Nodejs](https://nodejs.org/en/)
 - [LLVM](https://www.llvm.org/)
