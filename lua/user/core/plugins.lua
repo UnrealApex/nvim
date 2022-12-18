@@ -1,251 +1,443 @@
-" plugins
-" automatically install vim plug
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  :echo "Installing Vim Plug"
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-  :echo "Vim Plug installed"
-endif
+-- bootstrap packer
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
 
-" plugins (make sure you have vim plug installed, run :PlugInstall to install them)
-call plug#begin('~/.vim/plugged')
-" lua libary
-Plug 'nvim-lua/plenary.nvim'
-" make neovim faster
-Plug 'lewis6991/impatient.nvim'
-Plug 'dstein64/vim-startuptime', {'on': 'StartupTime'}
-" vim popup api
-Plug 'nvim-lua/popup.nvim'
-" more aesthetic notifications
-Plug 'rcarriga/nvim-notify'
-" aesthetic code actions
-Plug 'CosmicNvim/cosmic-ui'
-Plug 'MunifTanjim/nui.nvim'
-" file explorer
-Plug 'tpope/vim-vinegar'
-" richer git integration
-Plug 'lewis6991/gitsigns.nvim'
-" status bar
-Plug 'nvim-lualine/lualine.nvim'
-" basic git integration
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-" git conflict helper
-Plug 'rhysd/conflict-marker.vim'
-" sensible default settings
-Plug 'tpope/vim-sensible'
-" commenter
-Plug 'numToStr/Comment.nvim'
-" indent guides
-Plug 'Yggdroot/indentLine'
-" zen mode
-Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
-" easy parenthesis matching
-Plug 'junegunn/rainbow_parentheses.vim'
-" autocomplete
-Plug 'hrsh7th/nvim-cmp'
-" buffer completions
-Plug 'hrsh7th/cmp-buffer'
-" path completions
-Plug 'hrsh7th/cmp-path'
-" cmdline completions
-Plug 'hrsh7th/cmp-cmdline'
-" lsp completions
-Plug 'hrsh7th/cmp-nvim-lsp'
-" parameter hints
-Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
-" lua completions
-Plug 'hrsh7th/cmp-nvim-lua'
-" calculation completions
-Plug 'hrsh7th/cmp-calc'
-" emoji completions 😄
-Plug 'hrsh7th/cmp-emoji'
+local packer_bootstrap = ensure_packer()
 
-" snippet completions
-Plug 'saadparwaiz1/cmp_luasnip'
-"  snippets
-" snippet engine
-Plug 'L3MON4D3/LuaSnip'
-" snippets library
-Plug 'rafamadriz/friendly-snippets' 
+vim.cmd([[
+  " automatically compile plugins when this file is written
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
 
-" enable LSP
-Plug 'neovim/nvim-lspconfig'
-" lspsaga
-Plug 'glepnir/lspsaga.nvim'
-" simple to use package manager
-Plug 'williamboman/mason.nvim', {'on': 'Mason'}
-Plug 'williamboman/mason-lspconfig.nvim', {'on': 'Mason'}
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" Repeat.vim
-Plug 'tpope/vim-repeat'
-" start screen
-Plug 'mhinz/vim-startify'
-" fuzzy finder
-Plug 'nvim-telescope/telescope.nvim'
-" sets vim.ui.select to telescope
-Plug 'nvim-telescope/telescope-ui-select.nvim'
-" not supported on windows
-" Plug 'nvim-telescope/telescope-media-files.nvim'
-" TODO: get Telescope fzf working
-" TODO: figure out why this extension is not being found
-" increase telescope search speed
-" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-" better movement
-Plug 'ggandor/leap.nvim'
-" multi cursor support
-Plug 'mg979/vim-visual-multi'
-" Emmet
-Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
-" icons
-Plug 'ryanoasis/vim-devicons'
-" easily change dates
-Plug 'tpope/vim-speeddating'
-" keymap hints
-Plug 'folke/which-key.nvim'
-Plug 'folke/trouble.nvim'
-" color scheme
-Plug 'folke/tokyonight.nvim'
-" better buffer management
-Plug 'matbme/JABS.nvim'
-" markdown preview
-Plug 'ellisonleao/glow.nvim'
-Plug 'akinsho/toggleterm.nvim'
-call plug#end()
-
-" enable IndentLine
-let g:indentLine_enabled = 1
-" prevent indentLine from setting conceallevel for markdown files
-let g:markdown_syntax_conceal=0
-" prevent indentLine from setting conceallevel for json files
-let g:vim_json_conceal=0
-" files for indentLine to exclude
-let g:indentLine_fileTypeExclude = ['help', 'startify', 'dashboard', 'packer', 'neogitstatus', 'NvimTree', 'Trouble', 'WhichKey', 'lsp-installer', 'mason', 'text', 'sh']
-
-let g:VM_maps = {}
-
-" map Leader z to toggle Goyo
-nnoremap <Leader>z :Goyo<CR>
-
-" prose mode
-" does not work without goyo
-function ProseMode()
-  if (!exists('t:goyo_master'))
-  " enable prose mode
-  " set spell checking
-  setlocal spell spelllang=en_us
-  " set line wrapping
-  setlocal wrap
-  " map j and k to navigate visual lines instead of actual lines
-  " normal mode mappings
-  nnoremap j gj
-  nnoremap k gk
-  nnoremap 0 g0
-  nnoremap $ g$
-  nnoremap ^ g^
-  " visual mode mappings
-  vnoremap j gj
-  vnoremap k gk
-  vnoremap 0 g0
-  vnoremap $ g$
-  vnoremap ^ g^
-  Goyo
-  echo "Prose Mode Enabled"
-else
-  " disable prose mode
-  setlocal nospell spelllang=
-  setlocal nowrap
-  " hack to return keys back to their original functionalities
-  " normal mode unmappings
-  nnoremap j j
-  nnoremap k k
-  nnoremap 0 0
-  nnoremap $ $
-  nnoremap ^ ^
-  " visual mode unmappings
-  vnoremap j j
-  vnoremap k k
-  vnoremap 0 0
-  vnoremap $ $
-  vnoremap ^ ^
-  Goyo!
-  echo "Prose Mode Disabled"
-endif
-endfunction
-
-nnoremap <C-p> :Telescope find_files<CR>
-nnoremap <C-t> :Telescope live_grep<CR>
-
-nnoremap <C-m> :TroubleToggle<CR>
-
-nnoremap <leader>b :JABSOpen<CR>
-
-" bind Enter to accept Copilot suggestions
-" imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
-" let g:copilot_no_tab_map = v:true
-
-" after a re-source, fix syntax matching issues (concealing brackets):
-if exists('g:loaded_webdevicons')
-    call webdevicons#refresh()
-endif
-
-" enable RainbowParentheses
-augroup rainbow_parens
-  autocmd!
-  autocmd VimEnter * RainbowParentheses
-augroup end
-
-" lua stuff
-lua <<EOF
--- set the colorscheme to tokyonight
-vim.cmd("colorscheme tokyonight-moon")
-
--- make neovim faster
-require('impatient')
-
-require('Comment').setup()
-
-require("mason").setup()
-require("mason-lspconfig").setup({
-  automatic_installation = true,
-})
-
-require("which-key").setup()
-
-require('leap').set_default_keymaps()
-
--- treesitter stuff
-local configs = require("nvim-treesitter.configs")
-configs.setup {
-  ensure_installed = "all",
-  sync_install = false, 
-  ignore_install = { "" }, -- List of parsers to ignore installing
-  highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
-
-  },
-  indent = { enable = true, disable = { "yaml" } },
+-- declare before indent-blankline is loaded
+vim.g.indent_blankline_filetype_exclude = {
+  'help',
+  'startify',
+  'dashboard',
+  'packer',
+  'neogitstatus',
+  'NvimTree',
+  'Trouble',
+  'WhichKey',
+  'lsp-installer',
+  'mason',
+  'text',
+  'sh'
 }
 
--- require('telescope').load_extension('media_files')
+vim.g['rainbow#pairs'] = {{'(', ')'}, {'[', ']'}, {'{', '}'}}
 
--- todo get toggleterm to start in insert mode
-require("toggleterm").setup({
-  open_mapping = [[<leader>\]],
+-- plugins
+require('packer').startup({ function(use)
+  use 'wbthomason/packer.nvim'
+  -- performance enhancements
+  use {
+    'lewis6991/impatient.nvim',
+    config = function()
+      require('impatient')
+    end
+  }
+  -- more aesthetic notifications
+  use {
+    'rcarriga/nvim-notify',
+    config = function()
+      require("user.plugins.notify")
+    end
+  }
+  -- enhance netrw
+  use 'tpope/vim-vinegar'
+  use {
+    'tpope/vim-unimpaired',
+    keys = {
+      { 'n', '[' },
+      { 'n', ']' }
+    }
+  }
+  -- better git integration
+  use {
+    'lewis6991/gitsigns.nvim',
+    opt = true,
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      require("user.plugins.gitsigns")
+    end
+  }
+  -- status bar
+  use {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require("user.plugins.lualine")
+    end
+  }
+  -- conveniently run git commands from vim
+  use 'tpope/vim-fugitive'
+  use {
+    'tpope/vim-surround',
+    keys = { { "n", "ds" }, { "n", "cs" }, { "n", "ys" }, { "v", "S" }, { "v", "gS" } }
+  }
+  -- git commit browser
+  use {
+    'junegunn/gv.vim',
+    opt = true,
+    cmd = { 'GV' },
+    requires = { 'tpope/vim-fugitive' }
+  }
+  -- sensible default settings
+  use 'tpope/vim-sensible'
+  -- commenter
+  use {
+    'numToStr/Comment.nvim',
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+    keys = { { "n", "gc" }, { "n", "gb" }, { "v", "gc" }, { "v", "gb" } },
+    config = function()
+      require('Comment').setup()
+    end
+  }
+  -- indent guides
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    opt = true,
+    event = { 'BufReadPre', 'BufNewFile' },
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require("indent_blankline").setup {
+        show_current_context = true,
+        show_current_context_start = true,
+      }
+    end
+  }
+  -- zen mode
+  use {
+    'folke/zen-mode.nvim',
+    opt = true,
+    cmd = { 'ZenMode' },
+    config = function()
+      require('zen-mode').setup()
+    end
+  }
+  -- parentheses colorizer
+  use {
+    'junegunn/rainbow_parentheses.vim',
+    opt = true,
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      vim.cmd [[RainbowParentheses]]
+    end
+  }
+  -- turn off search highlighting automatically
+  use {
+    'romainl/vim-cool',
+    -- load vim-cool when doing a search
+    keys = {
+      { "n", "/" },
+      { "n", "?" },
+      { "n", "n" },
+      { "n", "N" },
+      { "n", "*" },
+      { "n", "#" },
+      { "v", "*" },
+      { "v", "#" },
+      { "n", "g*" },
+      { "n", "g#" },
+    }
+  }
+
+
+  -- TODO: lazy-load lsp related plugins
+  use {
+    'neovim/nvim-lspconfig',
+    config = require('user.plugins.lsp')
+  }
+  use {
+    'williamboman/mason.nvim',
+    config = require('mason').setup(),
+    requires = {
+      {
+          'williamboman/mason-lspconfig.nvim',
+          config = function()
+            require("mason-lspconfig").setup({
+              automatic_installation = true,
+            })
+          end
+      }
+    }
+  }
+  use {
+    'glepnir/lspsaga.nvim',
+    config = require('user.plugins.lsp')
+  }
+
+  use {
+    'CosmicNvim/cosmic-ui',
+    config = require('user.plugins.lsp'),
+    requires = {'MunifTanjim/nui.nvim'}
+  }
+
+  use {
+    'hrsh7th/nvim-cmp',
+    opt = true,
+    event = {'InsertEnter', 'CmdlineEnter'},
+    config = function()
+      require('user.plugins.cmp')
+      require('user.plugins.lsp')
+    end,
+    requires = {
+       'hrsh7th/cmp-cmdline',
+       'hrsh7th/cmp-nvim-lsp',
+       'hrsh7th/cmp-nvim-lsp-signature-help',
+       'hrsh7th/cmp-nvim-lua',
+       'hrsh7th/cmp-calc',
+       'hrsh7th/cmp-emoji',
+       'saadparwaiz1/cmp_luasnip',
+       'L3MON4D3/LuaSnip',
+       'rafamadriz/friendly-snippets',
+      }
+    }
+
+  use {
+    'folke/trouble.nvim',
+    config = require('trouble').setup()
+  }
+
+  -- improved syntax highlighting
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    opt = true,
+    event = { 'BufReadPre', 'BufNewFile' },
+    cmd = {
+      'TSBufDisable',
+      'TSBufEnable',
+      'TSBufToggle',
+      'TSConfigInfo',
+      'TSDisable',
+      'TSEditQuery',
+      'TSEditQueryUserAfter',
+      'TSEnable',
+      'TSInstall',
+      'TSInstallFromGrammar',
+      'TSInstallInfo',
+      'TSInstallSync',
+      'TSModuleInfo',
+      'TSToggle',
+      'TSUninstall',
+      'TSUpdate',
+      'TSUpdateSync',
+    },
+    config = function()
+      -- treesitter stuff
+      local configs = require("nvim-treesitter.configs")
+      configs.setup {
+        ensure_installed = "all",
+        sync_install = false,
+        ignore_install = { "" }, -- List of parsers to ignore installing
+        highlight = {
+          enable = true, -- false will disable the whole extension
+          disable = { "" }, -- list of language that will be disabled
+        },
+        indent = { enable = true, disable = { "yaml" } },
+      }
+      -- hack to make rainbow_parentheses work with treesitter
+      vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "" })
+    end
+  }
+  -- automatically close pairs
+  use {
+    "windwp/nvim-autopairs",
+    -- load when starting bracket delimiter is pressed
+    keys = {
+      { 'i', '(' },
+      { 'i', '{' },
+      { 'i', '[' },
+      { 'i', '"' },
+      { 'i', "'" }
+    },
+    config = function()
+      require("nvim-autopairs").setup()
+    end
+  }
+  -- start screen
+  use {
+    'mhinz/vim-startify',
+    config = function()
+      require('user.plugins.startify')
+    end
+  }
+  -- fuzzy finder
+  -- TODO: figure out how to lazy load this properly
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      {
+        -- increase telescope search speed
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make',
+      }
+    },
+    config = function()
+      require("user.plugins.telescope")
+
+      -- telescope keymaps
+      vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
+      vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>')
+    end
+  }
+
+  -- improved movement
+  use {
+    'ggandor/leap.nvim',
+    keys = { { 'n', 's' }, { 'n', 'S' } },
+    config = function()
+      require('leap').set_default_keymaps()
+    end
+  }
+  -- icons
+  use 'nvim-tree/nvim-web-devicons'
+  -- colorscheme
+  use {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      vim.cmd [[colorscheme kanagawa]]
+    end
+  }
+  -- markdown preview
+  use {
+    'ellisonleao/glow.nvim',
+    opt = true,
+    ft = 'markdown'
+  }
+
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require('packer').sync()
+  end
+end,
+  config = {
+    display = {
+      open_fn = function()
+        return require('packer.util').float({ border = 'single' })
+      end
+    }
+  }
 })
-EOF
 
-" plugin configurations
-runtime plugins/startify.vim
-" lua files
-lua require("user.lualine")
-lua require("user.cmp")
-lua require("user.gitsigns")
-lua require("user.lsp")
-lua require("user.notify")
-lua require("user.telescope")
-lua require("user.jabs")
+
+-- plugin related keymaps
+-- lazy loaded plugin keymaps set here
+-- NOTE: ensure that keymaps for plugins lazy loaded by command are here or
+-- else they won't load
+
+vim.keymap.set('n', '<leader>z', ':ZenMode<CR>')
+
+vim.keymap.set('n', '<C-\\>', ':ToggleTerm<CR>')
+
+
+function LargeFileHandler()
+  vim.notify(
+    'Large file detected, disabling certain features for performance reasons',
+    vim.log.levels.WARNING
+  )
+  if vim.fn.exists(':TSBufDisable') then
+    vim.cmd [[TSBufDisable highlight]]
+    vim.cmd [[TSBufDisable autotag]]
+  end
+  vim.opt.foldmethod = 'manual'
+  vim.cmd [[syntax clear]]
+  vim.cmd [[syntax off]]
+  vim.cmd [[filetype off]]
+  vim.opt.undofile = false
+  vim.opt.swapfile = false
+end
+
+function LargeFileChecker()
+  if vim.fn.getfsize(vim.fn.expand("%")) > (512 * 1024) then
+    LargeFileHandler()
+  else
+  end
+end
+
+-- TODO: find a way to make these two autocommands one
+vim.cmd [[
+augroup LargeFileDetection
+    autocmd!
+    autocmd BufReadPre * lua LargeFileChecker()
+    autocmd FileReadPre * lua LargeFileChecker()
+augroup END
+]]
+
+
+prosed = false
+function prose()
+  -- make sure zen-mode.nvim is installed
+  if packer_plugins["zen-mode.nvim"] then
+    -- toggle prose mode
+    if not prosed then
+      -- enable spellcheck and line wrapping
+      vim.opt_local.spell = true
+      vim.opt_local.spelllang = 'en_us'
+      vim.opt_local.wrap = true
+
+      -- normal mode mappings
+      vim.keymap.set('n', 'j', 'gj')
+      vim.keymap.set('n', 'k', 'gk')
+      vim.keymap.set('n', '0', 'g0')
+      vim.keymap.set('n', '$', 'g$')
+      vim.keymap.set('n', '^', 'g^')
+
+      -- visual mode mappings
+      vim.keymap.set('v', 'j', 'gj')
+      vim.keymap.set('v', 'k', 'gk')
+      vim.keymap.set('v', '0', 'g0')
+      vim.keymap.set('v', '$', 'g$')
+      vim.keymap.set('v', '^', 'g^')
+      prosed = true
+      vim.cmd [[ZenMode]]
+      vim.notify('Prose Mode Enabled')
+    else
+      -- disable spellcheck and line wrapping
+      vim.opt_local.spell = false
+      vim.opt_local.spelllang = nil
+      vim.opt_local.wrap = false
+
+      -- reset normal mode mappings
+      vim.keymap.set('n', 'j', 'j')
+      vim.keymap.set('n', 'k', 'k')
+      vim.keymap.set('n', '0', '0')
+      vim.keymap.set('n', '$', '$')
+      vim.keymap.set('n', '^', '^')
+
+      -- reset visual mode mappings
+      vim.keymap.set('v', 'j', 'j')
+      vim.keymap.set('v', 'k', 'k')
+      vim.keymap.set('v', '0', '0')
+      vim.keymap.set('v', '$', '$')
+      vim.keymap.set('v', '^', '^')
+      prosed = false
+      vim.cmd [[ZenMode]]
+      vim.notify('Prose Mode Disabled')
+    end
+  else
+    vim.notify(
+      "error: zen-mode.nvim is not installed!" ..
+      "\n" ..
+      "prose mode will not function without it!",
+      vim.log.levels.ERROR
+    )
+  end
+end
+
+vim.api.nvim_create_user_command('Prose', prose, {})
