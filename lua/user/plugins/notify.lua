@@ -4,6 +4,7 @@ require('notify').setup({
   timeout = 3000,
   -- max_width = 50,
   stages = "fade",
+  background_colour = "#000000",
 })
 
 vim.notify = require("notify")
