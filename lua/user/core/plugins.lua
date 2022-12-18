@@ -44,16 +44,12 @@ require('packer').startup({ function(use)
   -- performance enhancements
   use {
     'lewis6991/impatient.nvim',
-    config = function()
-      require('impatient')
-    end
+    config = "require('impatient')"
   }
   -- more aesthetic notifications
   use {
     'rcarriga/nvim-notify',
-    config = function()
-      require("user.plugins.notify")
-    end
+    config = "require('user.plugins.notify')"
   }
   -- enhance netrw
   use 'tpope/vim-vinegar'
@@ -69,16 +65,12 @@ require('packer').startup({ function(use)
     'lewis6991/gitsigns.nvim',
     opt = true,
     event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
-      require("user.plugins.gitsigns")
-    end
+    config = "require('user.plugins.gitsigns')"
   }
   -- status bar
   use {
     'nvim-lualine/lualine.nvim',
-    config = function()
-      require("user.plugins.lualine")
-    end
+    config = "require('user.plugins.lualine')"
   }
   -- conveniently run git commands from vim
   use 'tpope/vim-fugitive'
@@ -100,9 +92,7 @@ require('packer').startup({ function(use)
     'numToStr/Comment.nvim',
     requires = { 'nvim-treesitter/nvim-treesitter' },
     keys = { { "n", "gc" }, { "n", "gb" }, { "v", "gc" }, { "v", "gb" } },
-    config = function()
-      require('Comment').setup()
-    end
+    config = "require('Comment').setup()"
   }
   -- indent guides
   use {
@@ -122,18 +112,14 @@ require('packer').startup({ function(use)
     'folke/zen-mode.nvim',
     opt = true,
     cmd = { 'ZenMode' },
-    config = function()
-      require('zen-mode').setup()
-    end
+    config = "require('zen-mode').setup()"
   }
   -- parentheses colorizer
   use {
     'junegunn/rainbow_parentheses.vim',
     opt = true,
     event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
-      vim.cmd [[RainbowParentheses]]
-    end
+    config = 'vim.cmd [[RainbowParentheses]]'
   }
   -- turn off search highlighting automatically
   use {
@@ -160,9 +146,7 @@ require('packer').startup({ function(use)
     -- VimEnter loads coc faster but startup time is increased by ~20ms
     event = {'UIEnter'},
     requires = { 'neoclide/coc-sources', 'honza/vim-snippets' },
-    config = function()
-      require('user.plugins.coc')
-    end
+    config = "require('user.plugins.coc')"
   }
   -- improved syntax highlighting
   use {
@@ -217,16 +201,12 @@ require('packer').startup({ function(use)
       { 'i', '"' },
       { 'i', "'" }
     },
-    config = function()
-      require("nvim-autopairs").setup()
-    end
+    config = "require('nvim-autopairs').setup()"
   }
   -- start screen
   use {
     'mhinz/vim-startify',
-    config = function()
-      require('user.plugins.startify')
-    end
+    config = "require('user.plugins.startify')"
   }
   -- fuzzy finder
   -- TODO: figure out how to lazy load this properly
@@ -254,18 +234,14 @@ require('packer').startup({ function(use)
   use {
     'ggandor/leap.nvim',
     keys = { { 'n', 's' }, { 'n', 'S' } },
-    config = function()
-      require('leap').set_default_keymaps()
-    end
+    config = "require('leap').set_default_keymaps()"
   }
   -- icons
   use 'nvim-tree/nvim-web-devicons'
   -- colorscheme
   use {
     "rebelot/kanagawa.nvim",
-    config = function()
-      vim.cmd [[colorscheme kanagawa]]
-    end
+    config = 'vim.cmd [[colorscheme kanagawa]]'
   }
   -- markdown preview
   use {
