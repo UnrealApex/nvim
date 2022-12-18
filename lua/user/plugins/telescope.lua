@@ -2,12 +2,7 @@ require('telescope').setup {
   defaults = {
     mappings = {
       i = {
-        ["<C-j>"] = require('telescope.actions').move_selection_next,
-        ["<C-k>"] = require('telescope.actions').move_selection_previous,
-
-        ["<C-c>"] = require('telescope.actions').close,
-        ["<C-p>"] = require('telescope.actions').close,
-
+        ["<C-[>"] = require('telescope.actions').close,
         ["<Down>"] = require('telescope.actions').move_selection_next,
         ["<Up>"] = require('telescope.actions').move_selection_previous,
 
@@ -32,7 +27,6 @@ require('telescope').setup {
 
       n = {
         ["<esc>"] = require('telescope.actions').close,
-        ["<C-p>"] = require('telescope.actions').close,
         ["<CR>"] = require('telescope.actions').select_default,
         ["<C-x>"] = require('telescope.actions').select_horizontal,
         ["<C-v>"] = require('telescope.actions').select_vertical,
@@ -74,28 +68,13 @@ require('telescope').setup {
     -- builtin picker
   },
   extensions = {
-    --[[ fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                       -- the default case_mode is "smart_case"
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      -- the default case_mode is "smart_case"
     },
-  --]]
-
-  --[[
-    media_files = {
-        -- filetypes whitelist
-        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-        filetypes = {"png", "webp", "jpg", "jpeg"},
-        find_cmd = "rg" -- find command (defaults to `fd`)
-      }
-    --]]
-  ["ui-select"] = {
-    require("telescope.themes").get_dropdown {
-    -- even more opts
-    }
-  }
 
     -- Your extension configuration goes here:
     -- extension_name = {
@@ -105,5 +84,5 @@ require('telescope').setup {
   },
 }
 
-require("telescope").load_extension("ui-select")
--- require('telescope').load_extension('fzf')
+require('telescope').load_extension('fzf')
+require("telescope").load_extension("notify")
