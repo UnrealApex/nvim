@@ -70,7 +70,6 @@ vim.opt.updatetime = 200
 -- set window background to dark
 vim.opt.background = 'dark'
 vim.opt.termguicolors = true
-vim.opt.lazyredraw = true
 -- enable folding
 vim.opt.foldmethod = 'indent'
 vim.opt.foldenable = false
