@@ -8,7 +8,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 -- enable cursor line
 vim.opt.cursorline = true
--- disable annoying error bell to prevent your ears from dying
+-- disable annoying error bell
 vim.opt.errorbells = false
 vim.opt.visualbell = false
 -- syntax highlighting
@@ -34,7 +34,7 @@ vim.opt.autoindent = true
 vim.opt.fo:append('jpor')
 -- more powerful backspacing
 vim.opt.backspace = 'indent,eol,start'
--- vim.opt.tabs to two spaces
+-- set tabs to two spaces
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 -- indents to next multiple of 'shiftwidth'.
