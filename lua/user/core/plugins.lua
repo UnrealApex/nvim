@@ -154,13 +154,14 @@ require('packer').startup({ function(use)
   }
 
 
-  -- TODO: lazy-load lsp related plugins
   use {
     'neovim/nvim-lspconfig',
     config = require('user.plugins.lsp')
   }
   use {
     'williamboman/mason.nvim',
+    opt = true,
+    cmd = {'Mason'},
     config = require('mason').setup(),
     requires = {
       {
@@ -175,11 +176,15 @@ require('packer').startup({ function(use)
   }
   use {
     'glepnir/lspsaga.nvim',
+    opt = true,
+    event = { 'BufReadPre', 'BufNewFile' },
     config = require('user.plugins.lsp')
   }
 
   use {
     'CosmicNvim/cosmic-ui',
+    opt = true,
+    event = { 'BufReadPre', 'BufNewFile' },
     config = require('user.plugins.lsp'),
     requires = {'MunifTanjim/nui.nvim'}
   }
@@ -207,6 +212,8 @@ require('packer').startup({ function(use)
 
   use {
     'folke/trouble.nvim',
+    opt = true,
+    event = { 'BufReadPre', 'BufNewFile' },
     config = require('trouble').setup()
   }
 
