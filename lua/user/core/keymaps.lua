@@ -102,7 +102,7 @@ vim.keymap.set('n', '<C-Down>', ':resize -2<CR>')
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>')
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
 
--- faster copying and pasteing into system clipboard
+-- easier copying and pasteing into clipboard
 vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>d', '"+d')
 vim.keymap.set('v', '<leader>y', '"+y')
