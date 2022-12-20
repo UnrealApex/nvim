@@ -46,10 +46,11 @@ require('packer').startup({ function(use)
     'lewis6991/impatient.nvim',
     config = "require('impatient')"
   }
-  -- more aesthetic notifications
   use {
-    'rcarriga/nvim-notify',
-    config = "require('user.plugins.notify')"
+    'vigoux/notifier.nvim',
+    opt = true,
+    event = 'UIEnter',
+    config = "require('notifier').setup()"
   }
   -- enhance netrw
   use 'tpope/vim-vinegar'
