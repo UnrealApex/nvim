@@ -38,7 +38,7 @@ vim.g.indent_blankline_filetype_exclude = {
   'sh'
 }
 
-vim.g['rainbow#pairs'] = {{'(', ')'}, {'[', ']'}, {'{', '}'}}
+vim.g['rainbow#pairs'] = { { '(', ')' }, { '[', ']' }, { '{', '}' } }
 
 -- plugins
 require('packer').startup({ function(use)
@@ -147,7 +147,7 @@ require('packer').startup({ function(use)
     branch = 'release',
     opt = true,
     -- VimEnter loads coc faster but startup time is increased by ~20ms
-    event = {'UIEnter'},
+    event = { 'UIEnter' },
     requires = { 'neoclide/coc-sources', 'honza/vim-snippets' },
     config = "require('user.plugins.coc')"
   }
