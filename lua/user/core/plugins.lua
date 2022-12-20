@@ -234,7 +234,7 @@ require('packer').startup({ function(use)
   -- improved movement
   use {
     'ggandor/leap.nvim',
-    keys = { { 'n', 's' }, { 'n', 'S' } },
+    keys = { { 'n', 's' }, { 'n', 'S' }, { 'v', 's' }, { 'v', 'S' }, { 'n', 'gs' } },
     config = "require('leap').set_default_keymaps()"
   }
   -- icons
