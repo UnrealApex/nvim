@@ -3,7 +3,9 @@ local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    fn.system({
+      'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path
+    })
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -282,7 +284,7 @@ function LargeFileHandler()
     'Large file detected, disabling certain features for performance reasons',
     vim.log.levels.WARNING
   )
-  if vim.fn.exists(':TSBufDisable') then
+  if fn.exists(':TSBufDisable') then
     vim.cmd [[TSBufDisable highlight]]
     vim.cmd [[TSBufDisable autotag]]
   end
@@ -295,7 +297,7 @@ function LargeFileHandler()
 end
 
 function LargeFileChecker()
-  if vim.fn.getfsize(vim.fn.expand("%")) > (512 * 1024) then
+  if fn.getfsize(fn.expand("%")) > (512 * 1024) then
     LargeFileHandler()
   else
   end
