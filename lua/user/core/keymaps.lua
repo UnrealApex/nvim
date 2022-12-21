@@ -16,6 +16,7 @@ end
 )
 
 -- source init.lua
+-- FIXME: this does not work because modules are cached when nvim loads
 vim.keymap.set('n', '<leader><CR>', ':luafile $MYVIMRC<CR>')
 
 -- vanilla buffer switcher
