@@ -90,6 +90,9 @@ augroup END
 -- load the matchit plugin
 vim.cmd [[packadd matchit]]
 
+
+--globals
+
 -- enable filetype.lua
 vim.g.do_filetype_lua = 1
 vim.g.did_load_filetypes = 0
