@@ -21,7 +21,6 @@ return {
     'tpope/vim-unimpaired',
     keys = { '[', ']' }
   },
-  'andymass/vim-matchup',
   -- better git integration
   {
     'lewis6991/gitsigns.nvim',
@@ -159,9 +158,6 @@ return {
           disable = { "" }, -- list of language that will be disabled
         },
         indent = { enable = true, disable = { "yaml" } },
-        matchup = {
-          enable = true,
-        },
       }
       -- hack to make rainbow_parentheses work with treesitter
       vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "" })

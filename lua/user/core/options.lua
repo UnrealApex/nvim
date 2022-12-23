@@ -86,6 +86,10 @@ augroup show_whitespace
 augroup END
 ]]
 
+
+-- load the matchit plugin
+vim.cmd [[packadd matchit]]
+
 -- enable filetype.lua
 vim.g.do_filetype_lua = 1
 vim.g.did_load_filetypes = 0
@@ -113,7 +117,6 @@ vim.g.indent_blankline_filetype_exclude = {
 
 vim.g['rainbow#pairs'] = { { '(', ')' }, { '[', ']' }, { '{', '}' } }
 
-vim.g.matchup_matchparen_offscreen = { method = "popup" }
 
 function LargeFileHandler()
   vim.notify(
