@@ -1,5 +1,4 @@
-# packer 
-plugin/*
+lazy-lock.json
 # swap files
 swap/*
 # undo files
