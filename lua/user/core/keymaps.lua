@@ -116,3 +116,13 @@ vim.keymap.set('v', '<leader>P', '"+P')
 -- don't lose selection when shifting text
 vim.keymap.set('x', '<', '<gv')
 vim.keymap.set('x', '>', '>gv')
+
+-- plugin related keymaps
+-- lazy loaded plugin keymaps set here
+-- NOTE: ensure that keymaps for plugins lazy loaded by command are here or
+-- else they won't load
+
+vim.keymap.set('n', '<leader>z', ':ZenMode<CR>')
+
+vim.keymap.set('n', '<C-\\>', ':ToggleTerm<CR>')
+
