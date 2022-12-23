@@ -19,10 +19,7 @@ return {
   'tpope/vim-vinegar',
   {
     'tpope/vim-unimpaired',
-    keys = {
-      { 'n', '[' },
-      { 'n', ']' }
-    }
+    keys = {'[', ']'}
   },
   -- better git integration
   {
@@ -44,7 +41,7 @@ return {
   'tpope/vim-fugitive',
  {
     'tpope/vim-surround',
-    keys = { { "n", "ds" }, { "n", "cs" }, { "n", "ys" }, { "v", "S" }, { "v", "gS" } }
+    keys = {"ds" , "cs" , "ys", {"S", mode ='v'}, {"gS", mode='v'}}
   },
   -- git commit browser
   {
@@ -59,7 +56,7 @@ return {
   {
     'numToStr/Comment.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    keys = { { "n", "gc" }, { "n", "gb" }, { "v", "gc" }, { "v", "gb" } },
+    keys = { "gc" , "gb" ,{"gc", mode = 'v' }, {"gb", mode='v'}},
     config = function()
       require('Comment').setup()
     end
@@ -100,16 +97,16 @@ return {
     'romainl/vim-cool',
     -- load vim-cool when doing a search
     keys = {
-      { "n", "/" },
-      { "n", "?" },
-      { "n", "n" },
-      { "n", "N" },
-      { "n", "*" },
-      { "n", "#" },
-      { "v", "*" },
-      { "v", "#" },
-      { "n", "g*" },
-      { "n", "g#" },
+      "/",
+      "?",
+      "n",
+      "N",
+      "*",
+      "#",
+      {"*", mode ='v' },
+      {"#", mode ='v' },
+      "g*",
+      "g#",
     }
   },
   -- completion + lsp
@@ -171,11 +168,11 @@ return {
     "windwp/nvim-autopairs",
     -- load when starting bracket delimiter is pressed
     keys = {
-      { 'i', '(' },
-      { 'i', '{' },
-      { 'i', '[' },
-      { 'i', '"' },
-      { 'i', "'" }
+      {'(', mode ='i'},
+      {'{',  mode ='i'},
+      {'[', mode ='i'},
+      {'"',  mode ='i'},
+      {"'",  mode ='i'}
     },
     config = function()
       require('nvim-autopairs').setup()
@@ -213,7 +210,7 @@ return {
   -- improved movement
   {
     'ggandor/leap.nvim',
-    keys = { { 'n', 's' }, { 'n', 'S' }, { 'v', 's' }, { 'v', 'S' }, { 'n', 'gs' } },
+    keys = {'s', 'S', {'s', mode='v'}, {'S', mode='v' }, 'gs'},
     config = function()
       require('leap').set_default_keymaps()
     end
