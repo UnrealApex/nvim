@@ -5,7 +5,7 @@ return {
     'lewis6991/impatient.nvim',
     config = function()
       require('impatient')
-  end
+    end
   },
   {
     'vigoux/notifier.nvim',
@@ -13,13 +13,13 @@ return {
     event = 'UIEnter',
     config = function()
       require('notifier').setup()
-  end
+    end
   },
   -- enhance netrw
   'tpope/vim-vinegar',
   {
     'tpope/vim-unimpaired',
-    keys = {'[', ']'}
+    keys = { '[', ']' }
   },
   -- better git integration
   {
@@ -39,9 +39,9 @@ return {
   },
   -- conveniently run git commands from vim
   'tpope/vim-fugitive',
- {
+  {
     'tpope/vim-surround',
-    keys = {"ds" , "cs" , "ys", {"S", mode ='v'}, {"gS", mode='v'}}
+    keys = { "ds", "cs", "ys", { "S", mode = 'v' }, { "gS", mode = 'v' } }
   },
   -- git commit browser
   {
@@ -56,7 +56,7 @@ return {
   {
     'numToStr/Comment.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    keys = { "gc" , "gb" ,{"gc", mode = 'v' }, {"gb", mode='v'}},
+    keys = { "gc", "gb", { "gc", mode = 'v' }, { "gb", mode = 'v' } },
     config = function()
       require('Comment').setup()
     end
@@ -103,8 +103,8 @@ return {
       "N",
       "*",
       "#",
-      {"*", mode ='v' },
-      {"#", mode ='v' },
+      { "*", mode = 'v' },
+      { "#", mode = 'v' },
       "g*",
       "g#",
     }
@@ -124,7 +124,7 @@ return {
   -- improved syntax highlighting
   {
     'nvim-treesitter/nvim-treesitter',
-    build= ':TSUpdate',
+    build = ':TSUpdate',
     lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
     cmd = {
@@ -168,11 +168,11 @@ return {
     "windwp/nvim-autopairs",
     -- load when starting bracket delimiter is pressed
     keys = {
-      {'(', mode ='i'},
-      {'{',  mode ='i'},
-      {'[', mode ='i'},
-      {'"',  mode ='i'},
-      {"'",  mode ='i'}
+      { '(', mode = 'i' },
+      { '{', mode = 'i' },
+      { '[', mode = 'i' },
+      { '"', mode = 'i' },
+      { "'", mode = 'i' }
     },
     config = function()
       require('nvim-autopairs').setup()
@@ -195,7 +195,7 @@ return {
       {
         -- increase telescope search speed
         'nvim-telescope/telescope-fzf-native.nvim',
-        build= 'make',
+        build = 'make',
       }
     },
     config = function()
@@ -210,7 +210,7 @@ return {
   -- improved movement
   {
     'ggandor/leap.nvim',
-    keys = {'s', 'S', {'s', mode='v'}, {'S', mode='v' }, 'gs'},
+    keys = { 's', 'S', { 's', mode = 'v' }, { 'S', mode = 'v' }, 'gs' },
     config = function()
       require('leap').set_default_keymaps()
     end
