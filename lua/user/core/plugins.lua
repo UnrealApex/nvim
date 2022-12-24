@@ -180,9 +180,9 @@ return {
   },
   -- start screen
   {
-    'mhinz/vim-startify',
+    'goolord/alpha-nvim',
     config = function()
-      require('user.plugins.startify')
+      require('user.plugins.alpha')
     end
   },
   -- fuzzy finder
