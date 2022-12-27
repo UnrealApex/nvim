@@ -1,12 +1,5 @@
 -- plugins
 return {
-  -- performance enhancements
-  {
-    'lewis6991/impatient.nvim',
-    config = function()
-      require('impatient')
-    end
-  },
   {
     'vigoux/notifier.nvim',
     lazy = true,
