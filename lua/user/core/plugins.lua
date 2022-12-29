@@ -3,7 +3,7 @@ return {
   {
     'vigoux/notifier.nvim',
     lazy = true,
-    event = 'UIEnter',
+    event = 'VeryLazy',
     config = function()
       require('notifier').setup()
     end
