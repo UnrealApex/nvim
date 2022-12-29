@@ -31,7 +31,11 @@ return {
     end
   },
   -- conveniently run git commands from vim
-  'tpope/vim-fugitive',
+  {
+    'tpope/vim-fugitive',
+    lazy = true,
+    cmd = {'G'}
+  },
   {
     'tpope/vim-surround',
     keys = { "ds", "cs", "ys", { "S", mode = 'v' }, { "gS", mode = 'v' } }
