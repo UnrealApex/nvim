@@ -122,6 +122,16 @@ vim.keymap.set('x', '>', '>gv')
 -- NOTE: ensure that keymaps for plugins lazy loaded by command are here or
 -- else they won't load
 
+-- telescope keymaps
+vim.keymap.set('n', '<leader>ff', function()
+  require('telescope.builtin').find_files()
+end
+)
+vim.keymap.set('n', '<leader>fg', function()
+  require('telescope.builtin').live_grep()
+end
+)
+
 vim.keymap.set('n', '<leader>z', ':ZenMode<CR>')
 
 vim.keymap.set('n', '<C-\\>', ':ToggleTerm<CR>')

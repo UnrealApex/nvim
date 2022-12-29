@@ -183,9 +183,9 @@ return {
     end
   },
   -- fuzzy finder
-  -- TODO: figure out how to lazy load this properly
   {
     'nvim-telescope/telescope.nvim',
+    lazy = true,
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
@@ -197,10 +197,6 @@ return {
     },
     config = function()
       require("user.plugins.telescope")
-
-      -- telescope keymaps
-      vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
-      vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>')
     end
   },
 
