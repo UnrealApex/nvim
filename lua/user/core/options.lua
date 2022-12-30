@@ -139,10 +139,10 @@ function LargeFileHandler()
   end
 
   function LargeFileChecker()
-  if vim.fn.getfsize(vim.fn.expand("%")) > (512 * 1024) then
-    LargeFileHandler()
-  else
-  end
+    if vim.fn.getfsize(vim.fn.expand("%")) > (512 * 1024) then
+      LargeFileHandler()
+    else
+    end
   end
 
   -- TODO: find a way to make these two autocommands one
