@@ -19,12 +19,12 @@ dashboard.section.buttons.val = {
 
 local function footer()
 -- NOTE: requires the fortune-mod package to work
-	local handle = io.popen("fortune")
-	local fortune = handle:read("*a")
-	handle:close()
-	return fortune
+	-- local handle = io.popen("fortune")
+	-- local fortune = handle:read("*a")
+	-- handle:close()
+	-- return fortune
   -- show number of plugins
-	-- return (require("lazy").stats().count ~= 1 and require("lazy").stats().count .. " plugins" or require("lazy").stats().count .. " plugin")
+	return (require("lazy").stats().count ~= 1 and require("lazy").stats().count .. " plugins" or require("lazy").stats().count .. " plugin")
 end
 
 dashboard.section.footer.val = footer()
