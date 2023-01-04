@@ -47,8 +47,6 @@ return {
     cmd = { 'GV' },
     dependencies = { 'tpope/vim-fugitive' }
   },
-  -- sensible default settings
-  'tpope/vim-sensible',
   -- commenter
   {
     'numToStr/Comment.nvim',
