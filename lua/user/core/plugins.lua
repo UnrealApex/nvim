@@ -207,6 +207,12 @@ return {
       require('leap').set_default_keymaps()
     end
   },
+
+  {
+    'wellle/targets.vim',
+    lazy = true,
+    event = { 'BufReadPre', 'BufNewFile' }
+  },
   -- icons
   'nvim-tree/nvim-web-devicons',
   -- colorscheme
