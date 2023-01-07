@@ -136,17 +136,17 @@ function LargeFileHandler()
   vim.cmd [[filetype off]]
   vim.opt.undofile = false
   vim.opt.swapfile = false
-  end
+end
 
-  function LargeFileChecker()
-    if vim.fn.getfsize(vim.fn.expand("%")) > (512 * 1024) then
-      LargeFileHandler()
-    else
-    end
+function LargeFileChecker()
+  if vim.fn.getfsize(vim.fn.expand("%")) > (512 * 1024) then
+    LargeFileHandler()
+  else
   end
+end
 
-  -- TODO: find a way to make these two autocommands one
-  vim.cmd [[
+-- TODO: find a way to make these two autocommands one
+vim.cmd [[
   augroup LargeFileDetection
     autocmd!
     autocmd BufReadPre * lua LargeFileChecker()
@@ -155,55 +155,55 @@ function LargeFileHandler()
   ]]
 
 
-  prosed = false
-  function prose()
+prosed = false
+function prose()
   -- make sure zen-mode.nvim is installed
-    -- toggle prose mode
-    if not prosed then
-      -- enable spellcheck and line wrapping
-      vim.opt_local.spell = true
-      vim.opt_local.spelllang = 'en_us'
-      vim.opt_local.wrap = true
+  -- toggle prose mode
+  if not prosed then
+    -- enable spellcheck and line wrapping
+    vim.opt_local.spell = true
+    vim.opt_local.spelllang = 'en_us'
+    vim.opt_local.wrap = true
 
-      -- normal mode mappings
-      vim.keymap.set('n', 'j', 'gj')
-      vim.keymap.set('n', 'k', 'gk')
-      vim.keymap.set('n', '0', 'g0')
-      vim.keymap.set('n', '$', 'g$')
-      vim.keymap.set('n', '^', 'g^')
+    -- normal mode mappings
+    vim.keymap.set('n', 'j', 'gj')
+    vim.keymap.set('n', 'k', 'gk')
+    vim.keymap.set('n', '0', 'g0')
+    vim.keymap.set('n', '$', 'g$')
+    vim.keymap.set('n', '^', 'g^')
 
-      -- visual mode mappings
-      vim.keymap.set('v', 'j', 'gj')
-      vim.keymap.set('v', 'k', 'gk')
-      vim.keymap.set('v', '0', 'g0')
-      vim.keymap.set('v', '$', 'g$')
-      vim.keymap.set('v', '^', 'g^')
-      prosed = true
-      vim.cmd [[ZenMode]]
-      vim.notify('Prose Mode Enabled')
-    else
-      -- disable spellcheck and line wrapping
-      vim.opt_local.spell = false
-      vim.opt_local.spelllang = nil
-      vim.opt_local.wrap = false
+    -- visual mode mappings
+    vim.keymap.set('v', 'j', 'gj')
+    vim.keymap.set('v', 'k', 'gk')
+    vim.keymap.set('v', '0', 'g0')
+    vim.keymap.set('v', '$', 'g$')
+    vim.keymap.set('v', '^', 'g^')
+    prosed = true
+    vim.cmd [[ZenMode]]
+    vim.notify('Prose Mode Enabled')
+  else
+    -- disable spellcheck and line wrapping
+    vim.opt_local.spell = false
+    vim.opt_local.spelllang = nil
+    vim.opt_local.wrap = false
 
-      -- reset normal mode mappings
-      vim.keymap.set('n', 'j', 'j')
-      vim.keymap.set('n', 'k', 'k')
-      vim.keymap.set('n', '0', '0')
-      vim.keymap.set('n', '$', '$')
-      vim.keymap.set('n', '^', '^')
+    -- reset normal mode mappings
+    vim.keymap.set('n', 'j', 'j')
+    vim.keymap.set('n', 'k', 'k')
+    vim.keymap.set('n', '0', '0')
+    vim.keymap.set('n', '$', '$')
+    vim.keymap.set('n', '^', '^')
 
-      -- reset visual mode mappings
-      vim.keymap.set('v', 'j', 'j')
-      vim.keymap.set('v', 'k', 'k')
-      vim.keymap.set('v', '0', '0')
-      vim.keymap.set('v', '$', '$')
-      vim.keymap.set('v', '^', '^')
-      prosed = false
-      vim.cmd [[ZenMode]]
-      vim.notify('Prose Mode Disabled')
-    end
+    -- reset visual mode mappings
+    vim.keymap.set('v', 'j', 'j')
+    vim.keymap.set('v', 'k', 'k')
+    vim.keymap.set('v', '0', '0')
+    vim.keymap.set('v', '$', '$')
+    vim.keymap.set('v', '^', '^')
+    prosed = false
+    vim.cmd [[ZenMode]]
+    vim.notify('Prose Mode Disabled')
+  end
 end
 
 vim.api.nvim_create_user_command('Prose', prose, {})

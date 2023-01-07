@@ -34,7 +34,7 @@ return {
   {
     'tpope/vim-fugitive',
     lazy = true,
-    cmd = {'G'}
+    cmd = { 'G' }
   },
   {
     'tpope/vim-surround',
@@ -184,7 +184,7 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     lazy = true,
-    cmd = {'Telescope'},
+    cmd = { 'Telescope' },
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
