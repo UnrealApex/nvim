@@ -211,7 +211,7 @@ return {
   {
     'wellle/targets.vim',
     lazy = true,
-    event = { 'BufReadPre', 'BufNewFile' }
+    event = 'VeryLazy'
   },
   -- icons
   'nvim-tree/nvim-web-devicons',
