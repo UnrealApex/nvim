@@ -209,6 +209,15 @@ return {
   },
 
   {
+    'wellle/context.vim',
+    lazy = true,
+    event = 'VeryLazy',
+    config = function()
+      vim.cmd [[ContextEnable]]
+    end
+  },
+
+  {
     'wellle/targets.vim',
     lazy = true,
     event = 'VeryLazy'
