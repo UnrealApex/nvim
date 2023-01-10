@@ -15,10 +15,6 @@ vim.keymap.set('n', '<leader>cd', function()
 end
 )
 
--- source init.lua
--- FIXME: this does not work because modules are cached when nvim loads
-vim.keymap.set('n', '<leader><CR>', ':luafile $MYVIMRC<CR>')
-
 -- vanilla buffer switcher
 vim.keymap.set('n', '<leader>b', ':set nomore <Bar> echo "Open buffers:" <Bar> :buffers <Bar> :set more <CR>:b<Space>')
 
@@ -139,6 +135,4 @@ vim.keymap.set('n', '<leader>z', function()
     }
   })
 end)
-
-vim.keymap.set('n', '<C-\\>', ':ToggleTerm<CR>')
 
