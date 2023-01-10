@@ -1,11 +1,5 @@
 -- plugins
 return {
-  {
-    'vigoux/notifier.nvim',
-    lazy = true,
-    event = 'VeryLazy',
-    config = true,
-  },
   -- enhance netrw
   'tpope/vim-vinegar',
   {
