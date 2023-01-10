@@ -126,7 +126,7 @@ function LargeFileHandler()
     'Large file detected, disabling certain features for performance reasons',
     vim.log.levels.WARNING
   )
-  if fn.exists(':TSBufDisable') then
+  if vim.fn.exists(':TSBufDisable') then
     vim.cmd [[TSBufDisable highlight]]
     vim.cmd [[TSBufDisable autotag]]
   end
