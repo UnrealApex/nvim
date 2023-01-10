@@ -204,7 +204,7 @@ return {
   {
     'wellle/context.vim',
     lazy = true,
-    event = 'VeryLazy',
+    event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       vim.cmd [[ContextEnable]]
     end
