@@ -1,7 +1,10 @@
 -- plugins
 return {
-  -- enhance netrw
-  'tpope/vim-vinegar',
+  -- better file explorer
+  {
+    'justinmk/vim-dirvish',
+    dependencies = 'tpope/vim-eunuch'
+  },
   {
     'tpope/vim-unimpaired',
     keys = { '[', ']' }
