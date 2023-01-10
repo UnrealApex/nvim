@@ -219,6 +219,9 @@ if vim.fn.has('unix') == 1 then
   -- $OPTIONS
   vim.env.OPTIONS = vim.fn.stdpath('config') .. "/lua/user/core/options.lua"
 
+  -- $LAZY
+  vim.env.LAZY = vim.fn.stdpath('config') .. "/lua/user/core/lazy.lua"
+
   -- $PLUGINS
   vim.env.PLUGINS = vim.fn.stdpath('config') .. "/lua/user/core/plugins.lua"
 
@@ -228,6 +231,9 @@ elseif vim.fn.has('win32') == 1 then
 
   -- $OPTIONS
   vim.env.OPTIONS = vim.fn.stdpath('config') .. "\\lua\\user\\core\\options.lua"
+
+  -- $LAZY
+  vim.env.LAZY = vim.fn.stdpath('config') .. "\\lua\\user\\core\\lazy.lua"
 
   -- $PLUGINS
   vim.env.PLUGINS = vim.fn.stdpath('config') .. "\\lua\\user\\core\\plugins.lua"
