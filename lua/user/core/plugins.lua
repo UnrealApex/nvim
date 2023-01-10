@@ -4,9 +4,7 @@ return {
     'vigoux/notifier.nvim',
     lazy = true,
     event = 'VeryLazy',
-    config = function()
-      require('notifier').setup()
-    end
+    config = true,
   },
   -- enhance netrw
   'tpope/vim-vinegar',
@@ -52,9 +50,7 @@ return {
     'numToStr/Comment.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     keys = { "gc", "gb", { "gc", mode = 'v' }, { "gb", mode = 'v' } },
-    config = function()
-      require('Comment').setup()
-    end
+    config = true,
   },
   -- indent guides
   {
@@ -74,9 +70,7 @@ return {
     'folke/zen-mode.nvim',
     lazy = true,
     cmd = { 'ZenMode' },
-    config = function()
-      require('zen-mode').setup()
-    end
+    config = true,
   },
   -- parentheses colorizer
   {
@@ -169,10 +163,9 @@ return {
       { '"', mode = 'i' },
       { "'", mode = 'i' }
     },
-    config = function()
-      require('nvim-autopairs').setup()
-    end
+    config = true,
   },
+
   -- start screen
   {
     'goolord/alpha-nvim',
