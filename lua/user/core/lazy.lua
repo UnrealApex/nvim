@@ -26,7 +26,7 @@ require("lazy").setup("user.core.plugins", {
     },
   },
   install = {
-    colorscheme = { "kanagawa" },
+    colorscheme = { "kanagawa", "habamax" },
   },
 })
 
