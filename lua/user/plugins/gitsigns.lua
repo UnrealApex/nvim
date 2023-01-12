@@ -1,27 +1,4 @@
 -- Gitsigns mappings
-local bufopts = { noremap = true, silent = true, buffer = bufnr }
--- hunk navigation
-vim.keymap.set('n', '<Leader>hn', ':Gitsigns next_hunk<CR>', bufopts)
-vim.keymap.set('n', '<Leader>hN', ':Gitsigns prev_hunk<CR>', bufopts)
--- stage hunk
-vim.keymap.set('n', '<Leader>hs', ':Gitsigns stage_hunk<CR>', bufopts)
-vim.keymap.set('v', '<Leader>hs', ':Gitsigns stage_hunk<CR>', bufopts)
--- unstage hunk
-vim.keymap.set('n', '<Leader>hr', ':Gitsigns reset_hunk<CR>', bufopts)
-vim.keymap.set('v', '<Leader>hr', ':Gitsigns reset_hunk<CR>', bufopts)
--- stage file
-vim.keymap.set('n', '<Leader>hS', ':Gitsigns stage_buffer<CR>', bufopts)
--- unstage file
-vim.keymap.set('n', '<Leader>hR', ':Gitsigns reset_buffer<CR>', bufopts)
--- view line deleted
-vim.keymap.set('n', '<Leader>td', ':Gitsigns toggle_deleted<CR>', bufopts)
--- undo hunk stage
-vim.keymap.set('n', '<Leader>hu', ':Gitsigns undo_stage_hunk<CR>', bufopts)
--- preview hunk
-vim.keymap.set('n', '<Leader>hp', ':Gitsigns preview_hunk<CR>', bufopts)
--- line blame
-vim.keymap.set('n', '<Leader>hb', ':Gitsigns blame_line<CR>', bufopts)
-vim.keymap.set('n', '<Leader>tb', ':Gitsigns toggle_current_line_blame<CR>', bufopts)
 
 require('gitsigns').setup({
   signs = {
@@ -64,6 +41,48 @@ require('gitsigns').setup({
     interval = 1000,
     follow_files = true,
   },
+  on_attach = function(bufnr)
+    -- hunk navigation
+    vim.keymap.set('n', ']c', function()
+      if vim.wo.diff then return ']c' end
+      vim.schedule(function() package.loaded.gitsigns.next_hunk() end)
+      return '<Ignore>'
+    end, { expr = true })
+
+    vim.keymap.set('n', '[c', function()
+      if vim.wo.diff then return '[c' end
+      vim.schedule(function() package.loaded.gitsigns.prev_hunk() end)
+      return '<Ignore>'
+    end, { expr = true })
+
+    -- stage hunk
+    vim.keymap.set('n', '<leader>hs', ':Gitsigns stage_hunk<CR>')
+    vim.keymap.set('v', '<leader>hs', ':Gitsigns stage_hunk<CR>')
+    -- reset hunk
+    vim.keymap.set('n', '<leader>hr', ':Gitsigns reset_hunk<CR>')
+    vim.keymap.set('v', '<leader>hr', ':Gitsigns reset_hunk<CR>')
+    -- stage buffer
+    vim.keymap.set('n', '<leader>hS', package.loaded.gitsigns.stage_buffer)
+    -- undo stage hunk
+    vim.keymap.set('n', '<leader>hu', package.loaded.gitsigns.undo_stage_hunk)
+    -- reset buffer
+    vim.keymap.set('n', '<leader>hR', package.loaded.gitsigns.reset_buffer)
+    -- preview
+    vim.keymap.set('n', '<leader>hp', package.loaded.gitsigns.preview_hunk)
+    -- line blame
+    vim.keymap.set('n', '<leader>hb', function() package.loaded.gitsigns.blame_line { full = true } end)
+    -- current line blame
+    vim.keymap.set('n', '<leader>tb', package.loaded.gitsigns.toggle_current_line_blame)
+    -- diff
+    vim.keymap.set('n', '<leader>hd', package.loaded.gitsigns.diffthis)
+    vim.keymap.set('n', '<leader>hD', function() package.loaded.gitsigns.diffthis('~') end)
+    -- show deleted lines
+    vim.keymap.set('n', '<leader>td', package.loaded.gitsigns.toggle_deleted)
+
+    -- in hunk text object
+    vim.keymap.set('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+    vim.keymap.set('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+  end,
   attach_to_untracked = true,
   current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
   current_line_blame_opts = {
