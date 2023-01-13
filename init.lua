@@ -1,6 +1,6 @@
 -- options
-require('user.core.options')
+require('core.options')
 -- plugins
-require('user.core.lazy')
+require('core.lazy')
 -- keymaps
-require('user.core.keymaps')
+require('core.keymaps')
