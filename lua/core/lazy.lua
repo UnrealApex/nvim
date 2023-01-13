@@ -13,7 +13,7 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 -- load lazy
-require("lazy").setup("user.core.plugins", {
+require("lazy").setup("core.plugins", {
   performance = {
     rtp = {
       disabled_plugins = {

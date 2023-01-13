@@ -15,14 +15,14 @@ return {
     lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      require('user.plugins.gitsigns')
+      require('plugins.gitsigns')
     end
   },
   -- status bar
   {
     'nvim-lualine/lualine.nvim',
     config = function()
-      require('user.plugins.lualine')
+      require('plugins.lualine')
     end
   },
   -- conveniently run git commands from vim
@@ -104,7 +104,7 @@ return {
     event = { 'VeryLazy' },
     dependencies = { 'neoclide/coc-sources', 'honza/vim-snippets' },
     config = function()
-      require('user.plugins.coc')
+      require('plugins.coc')
     end
   },
   -- improved syntax highlighting
@@ -167,7 +167,7 @@ return {
   {
     'goolord/alpha-nvim',
     config = function()
-      require('user.plugins.alpha')
+      require('plugins.alpha')
     end
   },
   -- fuzzy finder
@@ -185,7 +185,7 @@ return {
       }
     },
     config = function()
-      require("user.plugins.telescope")
+      require("plugins.telescope")
     end
   },
 

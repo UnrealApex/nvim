@@ -218,28 +218,28 @@ vim.env.CONFIG = vim.fn.stdpath('config')
 -- handle os file path variations
 if vim.fn.has('unix') == 1 then
   -- $OPTIONS
-  vim.env.OPTIONS = vim.fn.stdpath('config') .. "/lua/user/core/options.lua"
+  vim.env.OPTIONS = vim.fn.stdpath('config') .. "/lua/core/options.lua"
 
   -- $LAZY
-  vim.env.LAZY = vim.fn.stdpath('config') .. "/lua/user/core/lazy.lua"
+  vim.env.LAZY = vim.fn.stdpath('config') .. "/lua/core/lazy.lua"
 
   -- $PLUGINS
-  vim.env.PLUGINS = vim.fn.stdpath('config') .. "/lua/user/core/plugins.lua"
+  vim.env.PLUGINS = vim.fn.stdpath('config') .. "/lua/core/plugins.lua"
 
   -- $KEYMAPS
-  vim.env.KEYMAPS = vim.fn.stdpath('config') .. "/lua/user/core/keymaps.lua"
+  vim.env.KEYMAPS = vim.fn.stdpath('config') .. "/lua/core/keymaps.lua"
 elseif vim.fn.has('win32') == 1 then
 
   -- $OPTIONS
-  vim.env.OPTIONS = vim.fn.stdpath('config') .. "\\lua\\user\\core\\options.lua"
+  vim.env.OPTIONS = vim.fn.stdpath('config') .. "\\lua\\core\\options.lua"
 
   -- $LAZY
-  vim.env.LAZY = vim.fn.stdpath('config') .. "\\lua\\user\\core\\lazy.lua"
+  vim.env.LAZY = vim.fn.stdpath('config') .. "\\lua\\core\\lazy.lua"
 
   -- $PLUGINS
-  vim.env.PLUGINS = vim.fn.stdpath('config') .. "\\lua\\user\\core\\plugins.lua"
+  vim.env.PLUGINS = vim.fn.stdpath('config') .. "\\lua\\core\\plugins.lua"
 
   -- $KEYMAPS
-  vim.env.KEYMAPS = vim.fn.stdpath('config') .. "\\lua\\user\\core\\keymaps.lua"
+  vim.env.KEYMAPS = vim.fn.stdpath('config') .. "\\lua\\core\\keymaps.lua"
 else
 end
