@@ -35,6 +35,12 @@ return {
     'tpope/vim-surround',
     keys = { "ds", "cs", "ys", { "S", mode = 'v' }, { "gS", mode = 'v' } }
   },
+  -- TODO: integrate repeat with other plugins
+  {
+    'tpope/vim-repeat',
+    lazy = true,
+    event = 'VeryLazy'
+  },
   -- git commit browser
   {
     'junegunn/gv.vim',
