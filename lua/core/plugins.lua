@@ -3,7 +3,30 @@ return {
   -- better file explorer
   {
     'justinmk/vim-dirvish',
-    dependencies = 'tpope/vim-eunuch'
+  },
+  -- unix helpers
+  {
+    'tpope/vim-eunuch',
+    lazy = true,
+    cmd = {
+      'Remove',
+      'Unlink',
+      'Delete',
+      'Copy',
+      'Duplicate',
+      'Move',
+      'Rename',
+      'Chmod',
+      'Mkdir',
+      'Cfind',
+      'Lfind',
+      'Clocate',
+      'Llocate',
+      'SudoEdit',
+      'SudoWrite',
+      'Wall',
+      'W',
+    }
   },
   {
     'tpope/vim-unimpaired',
