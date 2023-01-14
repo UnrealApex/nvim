@@ -241,7 +241,6 @@ vim.keymap.set('v', '<leader>ca', '<Plug>(coc-codeaction-selected)<CR>')
 
 vim.keymap.set('n', '<leader>ce', ':CocList extensions<CR>')
 
-
 vim.keymap.set('n', '<leader>z', function()
   require("zen-mode").toggle({
     window = {
