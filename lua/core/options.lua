@@ -57,13 +57,25 @@ you are never gonna undo 1000 steps which is the default value for undolevels
 --]]
 vim.opt.undolevels = 500
 vim.opt.history = 500
+
+-- make sure undo and swap file directories exist
+if vim.fn.isdirectory('~/.vim/swap') == 0 and vim.fn.isdirectory('~/.vim/undo') == 0 then
+  vim.fn.mkdir(vim.fn.expand('~/.vim/swap'), 'p')
+  vim.fn.mkdir(vim.fn.expand('~/.vim/undo'), 'p')
+elseif vim.fn.isdirectory('~/.vim/swap') == 1 and vim.fn.isdirectory('~/.vim/undo') == 0 then
+  vim.fn.mkdir(vim.fn.expand('~/.vim/undo'), 'p')
+elseif vim.fn.isdirectory('~/.vim/swap') == 0 and vim.fn.isdirectory('~/.vim/undo') == 1 then
+  vim.fn.mkdir(vim.fn.expand('~/.vim/swap'), 'p')
+else
+end
+
 -- store all swap files in one directory
-vim.opt.dir = vim.fn.stdpath('config') .. '/swap'
+vim.opt.dir = vim.fn.expand('~/.vim/swap//')
 -- store all backup files in one directory
-vim.opt.backupdir = vim.fn.stdpath('config') .. '/swap'
+vim.opt.backupdir = vim.fn.expand('~/.vim/swap//')
 -- persistent undo tree
 vim.opt.undofile = true
-vim.opt.undodir = vim.fn.stdpath('config') .. '/undo'
+vim.opt.undodir = vim.fn.expand('~/.vim/undo//')
 vim.opt.wildmode = 'longest:full,full'
 vim.opt.wildmenu = true
 -- set updatetime to 200 milliseconds
