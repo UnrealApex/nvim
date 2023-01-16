@@ -190,7 +190,9 @@ function prose()
     vim.keymap.set('v', '$', 'g$')
     vim.keymap.set('v', '^', 'g^')
     prosed = true
-    vim.cmd [[ZenMode]]
+    if vim.fn.exists(':ZenMode') == 2 then
+      vim.cmd [[ZenMode]]
+    end
     vim.notify('Prose Mode Enabled')
   else
     -- disable spellcheck and line wrapping
@@ -212,7 +214,9 @@ function prose()
     vim.keymap.set('v', '$', '$')
     vim.keymap.set('v', '^', '^')
     prosed = false
-    vim.cmd [[ZenMode]]
+    if vim.fn.exists(':ZenMode') == 2 then
+      vim.cmd [[ZenMode]]
+    end
     vim.notify('Prose Mode Disabled')
   end
 end
