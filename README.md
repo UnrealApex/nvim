@@ -6,8 +6,8 @@ You're free to copy my config but it is generally [frowned upon](https://github.
 That being said, suggestions are definitely open!
 
 ### Plugins
-I have several plugins to enhance my experience using Neovim. As a side note, this config only works in Neovim. If you're using Vim, it might be more useful to look at my [`.vimrc`](/.vimrc).
-My plugins are managed using [lazy.nvim](https://github.com/folke/lazy.nvim). Lazy is bootstrapped automatically when you first run the config.
+I have several plugins to enhance my experience using Neovim. As a side note, this config only works in Neovim. If you use Vim, it might be more relevant to look at my [`.vimrc`](/.vimrc).
+My plugins are managed using [lazy.nvim](https://github.com/folke/lazy.nvim). Lazy is [bootstrapped](https://github.com/UnrealApex/dotfiles/blob/main/lua/core/lazy.lua#L1-L13) automatically.
 The plugins I use are [here](https://github.com/UnrealApex/dotfiles/blob/main/lua/core/plugins.lua).
 
 **Notes**
