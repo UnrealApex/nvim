@@ -113,8 +113,6 @@ vim.g.did_load_filetypes = 0
 -- set the mapleader to space
 vim.g.mapleader = ' '
 
-vim.g.netrw_keepdir = 0
-
 -- declare before indent-blankline is loaded
 vim.g.indent_blankline_filetype_exclude = {
   'help',
