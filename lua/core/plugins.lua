@@ -29,6 +29,14 @@ return {
     }
   },
   {
+    'echasnovski/mini.move',
+    lazy = true,
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      require('mini.move').setup()
+    end
+  },
+  {
     'tpope/vim-unimpaired',
     keys = { '[', ']' }
   },
