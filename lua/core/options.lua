@@ -24,7 +24,7 @@ vim.opt.title = true
 vim.opt.scrolloff = 8
 -- don't wrap lines
 vim.opt.wrap = false
-vim.opt.pumheight = 10
+vim.opt.pumheight = 15
 -- basic completion
 vim.opt.omnifunc = 'syntaxcomplete#Complete'
 vim.opt.completeopt = 'menu,menuone,noselect'
