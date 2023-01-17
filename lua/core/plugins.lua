@@ -93,10 +93,10 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
-      require("indent_blankline").setup {
+      require("indent_blankline").setup({
         show_current_context = true,
         show_current_context_start = true,
-      }
+      })
     end
   },
   -- zen mode
@@ -149,7 +149,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     lazy = true,
-    event = {'VeryLazy'},
+    event = { 'VeryLazy' },
     cmd = {
       'TSBufDisable',
       'TSBufEnable',
