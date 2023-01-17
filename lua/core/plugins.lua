@@ -139,7 +139,13 @@ return {
     lazy = true,
     -- VimEnter loads coc faster but startup time is increased by ~20ms
     event = { 'VeryLazy' },
-    dependencies = { 'neoclide/coc-sources', 'honza/vim-snippets' },
+    dependencies = { 'neoclide/coc-sources',
+      {
+        'honza/vim-snippets',
+        lazy = true,
+        event = 'InsertEnter'
+      }
+    },
     config = function()
       require('plugins.coc')
     end
