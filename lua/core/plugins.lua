@@ -31,7 +31,7 @@ return {
   {
     'echasnovski/mini.move',
     lazy = true,
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufReadPre', 'BufNewFile', 'BufWinEnter' },
     config = function()
       require('mini.move').setup()
     end
@@ -44,7 +44,7 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     lazy = true,
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufReadPre', 'BufNewFile', 'BufWinEnter' },
     config = function()
       require('plugins.gitsigns')
     end
@@ -90,7 +90,7 @@ return {
   {
     'lukas-reineke/indent-blankline.nvim',
     lazy = true,
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufReadPre', 'BufNewFile', 'BufWinEnter' },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       require("indent_blankline").setup({
@@ -110,7 +110,7 @@ return {
   {
     'junegunn/rainbow_parentheses.vim',
     lazy = true,
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufReadPre', 'BufNewFile', 'BufWinEnter' },
     config = function()
       vim.cmd [[RainbowParentheses]]
     end
@@ -238,7 +238,7 @@ return {
   {
     'wellle/context.vim',
     lazy = true,
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufReadPre', 'BufNewFile', 'BufWinEnter' },
     config = function()
       vim.cmd [[ContextEnable]]
     end
