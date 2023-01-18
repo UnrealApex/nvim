@@ -100,10 +100,6 @@ augroup END
 ]]
 
 
--- load the matchit plugin
-vim.cmd [[packadd matchit]]
-
-
 --globals
 
 -- enable filetype.lua
