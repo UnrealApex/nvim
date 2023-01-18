@@ -92,14 +92,10 @@ vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>')
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
 
 -- easier copying and pasteing into clipboard
-vim.keymap.set('n', '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>d', '"+d')
-vim.keymap.set('v', '<leader>y', '"+y')
-vim.keymap.set('v', '<leader>d', '"+d')
-vim.keymap.set('n', '<leader>p', '"+p')
-vim.keymap.set('n', '<leader>P', '"+P')
-vim.keymap.set('v', '<leader>p', '"+p')
-vim.keymap.set('v', '<leader>P', '"+P')
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
+vim.keymap.set({ 'n', 'v' }, '<leader>d', '"+d')
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')
+vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P')
 
 -- don't lose selection when shifting text
 vim.keymap.set('x', '<', '<gv')
@@ -182,19 +178,14 @@ vim.keymap.set("n", "<leader>cl", "<Plug>(coc-codelens-action)", opts)
 
 -- Map function and class text objects
 -- NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-vim.keymap.set("x", "if", "<Plug>(coc-funcobj-i)", opts)
-vim.keymap.set("o", "if", "<Plug>(coc-funcobj-i)", opts)
-vim.keymap.set("x", "af", "<Plug>(coc-funcobj-a)", opts)
-vim.keymap.set("o", "af", "<Plug>(coc-funcobj-a)", opts)
-vim.keymap.set("x", "ic", "<Plug>(coc-classobj-i)", opts)
-vim.keymap.set("o", "ic", "<Plug>(coc-classobj-i)", opts)
-vim.keymap.set("x", "ac", "<Plug>(coc-classobj-a)", opts)
-vim.keymap.set("o", "ac", "<Plug>(coc-classobj-a)", opts)
+vim.keymap.set({ "x", "o" }, "if", "<Plug>(coc-funcobj-i)", opts)
+vim.keymap.set({ "x", "o" }, "af", "<Plug>(coc-funcobj-a)", opts)
+vim.keymap.set({ "x", "o" }, "ic", "<Plug>(coc-classobj-i)", opts)
+vim.keymap.set({ "x", "o" }, "ac", "<Plug>(coc-classobj-a)", opts)
 
 -- Use CTRL-S for selections ranges.
 -- Requires 'textDocument/selectionRange' support of language server.
-vim.keymap.set("n", "<C-s>", "<Plug>(coc-range-select)", { silent = true })
-vim.keymap.set("x", "<C-s>", "<Plug>(coc-range-select)", { silent = true })
+vim.keymap.set({ "n", "x" }, "<C-s>", "<Plug>(coc-range-select)", { silent = true })
 
 
 -- Mappings for CoCList
@@ -228,8 +219,7 @@ vnoremap <silent><nowait><expr> <C-u> coc#float#has_scroll() ? coc#float#scroll(
 vim.keymap.set('n', '[d', '<Plug>(coc-diagnostic-prev)', { silent = true })
 vim.keymap.set('n', ']d', '<Plug>(coc-diagnostic-next)', { silent = true })
 
-vim.keymap.set('n', '<leader>ca', '<Plug>(coc-codeaction-selected)<CR>')
-vim.keymap.set('v', '<leader>ca', '<Plug>(coc-codeaction-selected)<CR>')
+vim.keymap.set({ 'n', 'v' }, '<leader>ca', '<Plug>(coc-codeaction-selected)<CR>')
 
 vim.keymap.set('n', '<leader>ce', ':CocList extensions<CR>')
 

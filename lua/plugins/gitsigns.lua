@@ -56,11 +56,9 @@ require('gitsigns').setup({
     end, { expr = true })
 
     -- stage hunk
-    vim.keymap.set('n', '<leader>hs', ':Gitsigns stage_hunk<CR>')
-    vim.keymap.set('v', '<leader>hs', ':Gitsigns stage_hunk<CR>')
+    vim.keymap.set({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<CR>')
     -- reset hunk
-    vim.keymap.set('n', '<leader>hr', ':Gitsigns reset_hunk<CR>')
-    vim.keymap.set('v', '<leader>hr', ':Gitsigns reset_hunk<CR>')
+    vim.keymap.set({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>')
     -- stage buffer
     vim.keymap.set('n', '<leader>hS', package.loaded.gitsigns.stage_buffer)
     -- undo stage hunk
@@ -80,8 +78,7 @@ require('gitsigns').setup({
     vim.keymap.set('n', '<leader>td', package.loaded.gitsigns.toggle_deleted)
 
     -- in hunk text object
-    vim.keymap.set('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-    vim.keymap.set('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+    vim.keymap.set({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end,
   attach_to_untracked = true,
   current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
