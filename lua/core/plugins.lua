@@ -190,7 +190,17 @@ return {
       }
       -- hack to make rainbow_parentheses work with treesitter
       vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "" })
-    end
+    end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-context',
+      config = function()
+        require('treesitter-context').setup({
+          enable = true,
+          mode = 'cursor',
+        })
+        vim.cmd[[TSContextEnable]]
+      end
+    }
   },
   -- automatically close pairs
   {
@@ -238,15 +248,6 @@ return {
     keys = { 's', 'S', { 's', mode = 'v' }, { 'S', mode = 'v' }, 'gs' },
     config = function()
       require('leap').set_default_keymaps()
-    end
-  },
-
-  {
-    'wellle/context.vim',
-    lazy = true,
-    event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
-      vim.cmd [[ContextEnable]]
     end
   },
 
