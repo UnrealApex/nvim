@@ -137,7 +137,6 @@ return {
     'neoclide/coc.nvim',
     branch = 'release',
     lazy = true,
-    -- VimEnter loads coc faster but startup time is increased by ~20ms
     event = { 'VeryLazy' },
     dependencies = {
       {
