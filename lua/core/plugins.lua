@@ -277,11 +277,5 @@ return {
     'ellisonleao/glow.nvim',
     lazy = true,
     ft = 'markdown'
-  },
-  {
-    'ahmedkhalf/project.nvim',
-    config = function()
-      require('project_nvim').setup()
-    end
   }
 }
