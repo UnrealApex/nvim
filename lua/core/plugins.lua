@@ -30,8 +30,16 @@ return {
   },
   {
     'echasnovski/mini.move',
-    lazy = true,
-    event = { 'BufReadPre', 'BufNewFile' },
+    keys = {
+      '<A-h>',
+      '<A-j>',
+      '<A-k>',
+      '<A-l>',
+      { '<A-h>', mode = 'v' },
+      { '<A-j>', mode = 'v' },
+      { '<A-k>', mode = 'v' },
+      { '<A-l>', mode = 'v' }
+    },
     config = function()
       require('mini.move').setup()
     end
