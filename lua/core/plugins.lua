@@ -139,7 +139,7 @@ return {
     lazy = true,
     -- VimEnter loads coc faster but startup time is increased by ~20ms
     event = { 'VeryLazy' },
-    dependencies = { 'neoclide/coc-sources',
+    dependencies = {
       {
         'honza/vim-snippets',
         lazy = true,
