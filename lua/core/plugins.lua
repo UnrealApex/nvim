@@ -189,18 +189,23 @@ return {
       }
       -- hack to make rainbow_parentheses work with treesitter
       vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "" })
-    end,
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-context',
-      config = function()
-        require('treesitter-context').setup({
-          enable = true,
-          mode = 'cursor',
-        })
-        vim.cmd[[TSContextEnable]]
-      end
-    }
+    end
   },
+
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    opt = true,
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      require('treesitter-context').setup({
+        enable = true,
+        mode = 'cursor',
+      })
+      vim.cmd[[TSContextEnable]]
+    end,
+    dependencies = 'nvim-treesitter/nvim-treesitter'
+  },
+
   -- automatically close pairs
   {
     "windwp/nvim-autopairs",
