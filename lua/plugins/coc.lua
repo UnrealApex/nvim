@@ -23,6 +23,10 @@ function _G.check_back_space()
   return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
 end
 
+vim.cmd[[
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+]]
+
 vim.api.nvim_create_augroup("CocGroup", {})
 
 -- Setup formatexpr specified filetype(s).
