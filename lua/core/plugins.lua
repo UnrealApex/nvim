@@ -138,13 +138,7 @@ return {
     branch = 'release',
     lazy = true,
     event = { 'VeryLazy' },
-    dependencies = {
-      {
-        'honza/vim-snippets',
-        lazy = true,
-        event = 'InsertEnter'
-      }
-    },
+    dependencies = 'honza/vim-snippets',
     config = function()
       require('plugins.coc')
     end
