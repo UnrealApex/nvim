@@ -1,9 +1,7 @@
 -- plugins
 return {
   -- better file explorer
-  {
-    'justinmk/vim-dirvish',
-  },
+  'justinmk/vim-dirvish',
   -- unix helpers
   {
     'tpope/vim-eunuch',
