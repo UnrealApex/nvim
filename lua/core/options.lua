@@ -172,19 +172,13 @@ function prose()
     vim.opt_local.spelllang = 'en_us'
     vim.opt_local.wrap = true
 
-    -- normal mode mappings
-    vim.keymap.set('n', 'j', 'gj')
-    vim.keymap.set('n', 'k', 'gk')
-    vim.keymap.set('n', '0', 'g0')
-    vim.keymap.set('n', '$', 'g$')
-    vim.keymap.set('n', '^', 'g^')
+    -- normal and visual mode mappings
+    vim.keymap.set({'n', 'v'}, 'j', 'gj')
+    vim.keymap.set({'n', 'v'}, 'k', 'gk')
+    vim.keymap.set({'n', 'v'}, '0', 'g0')
+    vim.keymap.set({'n', 'v'}, '$', 'g$')
+    vim.keymap.set({'n', 'v'}, '^', 'g^')
 
-    -- visual mode mappings
-    vim.keymap.set('v', 'j', 'gj')
-    vim.keymap.set('v', 'k', 'gk')
-    vim.keymap.set('v', '0', 'g0')
-    vim.keymap.set('v', '$', 'g$')
-    vim.keymap.set('v', '^', 'g^')
     prosed = true
     if vim.fn.exists(':ZenMode') == 2 then
       vim.cmd [[ZenMode]]
@@ -196,19 +190,12 @@ function prose()
     vim.opt_local.spelllang = nil
     vim.opt_local.wrap = false
 
-    -- reset normal mode mappings
-    vim.keymap.set('n', 'j', 'j')
-    vim.keymap.set('n', 'k', 'k')
-    vim.keymap.set('n', '0', '0')
-    vim.keymap.set('n', '$', '$')
-    vim.keymap.set('n', '^', '^')
-
-    -- reset visual mode mappings
-    vim.keymap.set('v', 'j', 'j')
-    vim.keymap.set('v', 'k', 'k')
-    vim.keymap.set('v', '0', '0')
-    vim.keymap.set('v', '$', '$')
-    vim.keymap.set('v', '^', '^')
+    -- reset normal and visual mode mappings
+    vim.keymap.del({'n', 'v'}, 'j')
+    vim.keymap.del({'n', 'v'}, 'k')
+    vim.keymap.del({'n', 'v'}, '0')
+    vim.keymap.del({'n', 'v'}, '$')
+    vim.keymap.del({'n', 'v'}, '^')
     prosed = false
     if vim.fn.exists(':ZenMode') == 2 then
       vim.cmd [[ZenMode]]
