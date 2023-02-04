@@ -185,10 +185,6 @@ let g:coc_global_extensions = [
 
 " CoC keybindings
 
-" map ctrl + j and ctrl + k to traverse up and down the coc completion list
-inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
-inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-p>"
-
 " map tab to accept completion
 inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
 
