@@ -1,62 +1,77 @@
+-- automatic indentation
+vim.opt.autoindent = true
+-- reread file if it has been modified outside of Vim
+vim.opt.autoread = true
+-- set window background to dark
+vim.opt.background = 'dark'
+-- more powerful backspacing
+vim.opt.backspace = 'indent,eol,start'
+-- store all backup files in one directory
+vim.opt.backupdir = vim.fn.expand('~/.vim/swap//')
 -- enter the current millennium
 vim.opt.compatible = false
--- allow hidden buffers
-vim.opt.hidden = true
--- show line numbers
-vim.opt.number = true
--- show relative line numbers
-vim.opt.relativenumber = true
+vim.opt.completeopt = 'menu,menuone,noselect'
 -- enable cursor line
 vim.opt.cursorline = true
+-- store all swap files in one directory
+vim.opt.dir = vim.fn.expand('~/.vim/swap//')
 -- disable annoying error bell
 vim.opt.errorbells = false
-vim.opt.visualbell = false
--- syntax highlighting
-vim.cmd [[syntax on]]
+vim.opt.expandtab = true
+vim.opt.fo:append('jpor')
+-- enable folding
+vim.opt.foldmethod = 'indent'
+vim.opt.foldenable = false
+-- allow hidden buffers
+vim.opt.hidden = true
+vim.opt.history = 500
+-- ignore case unless explicitly stated
+vim.opt.ignorecase = true
+-- incremental search
+vim.opt.incsearch = true
+vim.opt.list = true
+vim.opt.listchars = ''
+vim.opt.magic = true
+-- show line numbers
+vim.opt.number = true
+-- basic completion
+vim.opt.omnifunc = 'syntaxcomplete#Complete'
+vim.opt.path:append('.,**')
+vim.opt.pumheight = 15
+-- show relative line numbers
+vim.opt.relativenumber = true
+-- show cursor position in status bar
+vim.opt.ruler = true
+-- 8 lines above or below cursor when scrolling
+vim.opt.scrolloff = 8
 vim.opt.showmode = false
 -- show typed command in status bar
 vim.opt.showcmd = true
--- show cursor position in status bar
-vim.opt.ruler = true
--- show file in titlebar
-vim.opt.title = true
--- 8 lines above or below cursor when scrolling
-vim.opt.scrolloff = 8
--- don't wrap lines
-vim.opt.wrap = false
-vim.opt.pumheight = 15
--- basic completion
-vim.opt.omnifunc = 'syntaxcomplete#Complete'
-vim.opt.completeopt = 'menu,menuone,noselect'
-vim.opt.list = true
-vim.opt.listchars = ''
--- automatic indentation
-vim.opt.autoindent = true
-vim.opt.fo:append('jpor')
--- more powerful backspacing
-vim.opt.backspace = 'indent,eol,start'
--- set tabs to two spaces
-vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 -- indents to next multiple of 'shiftwidth'.
 vim.opt.shiftround = true
-
-vim.opt.expandtab = true
--- incremental search
-vim.opt.incsearch = true
-vim.opt.magic = true
--- ignore case unless explicitly stated
-vim.opt.ignorecase = true
+vim.opt.signcolumn = 'yes'
 vim.opt.smartcase = true
--- reread file if it has been modified outside of Vim
-vim.opt.autoread = true
---[[
-save yourself some memory
-you are never gonna undo 1000 steps which is the default value for undolevels
-50 is the default value for history which is relatively low to be useful.
---]]
+-- show file in titlebar
+vim.opt.title = true
+vim.opt.termguicolors = true
+-- set tabs to two spaces
+vim.opt.tabstop = 2
 vim.opt.undolevels = 500
-vim.opt.history = 500
+-- persistent undo tree
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand('~/.vim/undo//')
+-- set updatetime to 200 milliseconds
+vim.opt.updatetime = 200
+vim.opt.visualbell = false
+vim.opt.wildmode = 'longest:full,full'
+vim.opt.wildmenu = true
+-- don't wrap lines
+vim.opt.wrap = false
+
+-- syntax highlighting
+vim.cmd [[syntax on]]
+
 
 -- make sure undo and swap file directories exist
 if vim.fn.isdirectory('~/.vim/swap') == 0 and vim.fn.isdirectory('~/.vim/undo') == 0 then
@@ -69,27 +84,8 @@ elseif vim.fn.isdirectory('~/.vim/swap') == 0 and vim.fn.isdirectory('~/.vim/und
 else
 end
 
--- store all swap files in one directory
-vim.opt.dir = vim.fn.expand('~/.vim/swap//')
--- store all backup files in one directory
-vim.opt.backupdir = vim.fn.expand('~/.vim/swap//')
--- persistent undo tree
-vim.opt.undofile = true
-vim.opt.undodir = vim.fn.expand('~/.vim/undo//')
-vim.opt.wildmode = 'longest:full,full'
-vim.opt.wildmenu = true
--- set updatetime to 200 milliseconds
-vim.opt.updatetime = 200
--- set window background to dark
-vim.opt.background = 'dark'
-vim.opt.termguicolors = true
--- enable folding
-vim.opt.foldmethod = 'indent'
-vim.opt.foldenable = false
-vim.opt.signcolumn = 'yes'
 -- make gutter match background color
 vim.cmd [[highlight clear SignColumn]]
-vim.opt.path:append('.,**')
 
 -- show whitespaces as characters in visual mode
 vim.cmd [[
