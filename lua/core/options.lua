@@ -86,6 +86,7 @@ vim.opt.termguicolors = true
 -- enable folding
 vim.opt.foldmethod = 'indent'
 vim.opt.foldenable = false
+vim.opt.signcolumn = 'yes'
 -- make gutter match background color
 vim.cmd [[highlight clear SignColumn]]
 vim.opt.path:append('.,**')
