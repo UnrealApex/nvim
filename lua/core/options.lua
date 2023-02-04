@@ -66,6 +66,7 @@ vim.opt.updatetime = 200
 vim.opt.visualbell = false
 vim.opt.wildmode = 'longest:full,full'
 vim.opt.wildmenu = true
+vim.opt.winbar = '%=%m %f'
 -- don't wrap lines
 vim.opt.wrap = false
 
