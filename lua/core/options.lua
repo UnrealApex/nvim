@@ -20,8 +20,8 @@ vim.opt.errorbells = false
 vim.opt.expandtab = true
 vim.opt.fo:append('jpor')
 -- enable folding
-vim.opt.foldmethod = 'indent'
 vim.opt.foldenable = false
+vim.opt.foldmethod = 'indent'
 -- allow hidden buffers
 vim.opt.hidden = true
 vim.opt.history = 500
@@ -44,28 +44,28 @@ vim.opt.relativenumber = true
 vim.opt.ruler = true
 -- 8 lines above or below cursor when scrolling
 vim.opt.scrolloff = 8
+-- indents to next multiple of 'shiftwidth'.
+vim.opt.shiftwidth = 2
+vim.opt.shiftround = true
 vim.opt.showmode = false
 -- show typed command in status bar
 vim.opt.showcmd = true
-vim.opt.shiftwidth = 2
--- indents to next multiple of 'shiftwidth'.
-vim.opt.shiftround = true
 vim.opt.signcolumn = 'yes'
 vim.opt.smartcase = true
--- show file in titlebar
-vim.opt.title = true
-vim.opt.termguicolors = true
 -- set tabs to two spaces
 vim.opt.tabstop = 2
-vim.opt.undolevels = 500
+vim.opt.termguicolors = true
+-- show file in titlebar
+vim.opt.title = true
+vim.opt.undodir = vim.fn.expand('~/.vim/undo//')
 -- persistent undo tree
 vim.opt.undofile = true
-vim.opt.undodir = vim.fn.expand('~/.vim/undo//')
+vim.opt.undolevels = 500
 -- set updatetime to 200 milliseconds
 vim.opt.updatetime = 200
 vim.opt.visualbell = false
-vim.opt.wildmode = 'longest:full,full'
 vim.opt.wildmenu = true
+vim.opt.wildmode = 'longest:full,full'
 vim.opt.winbar = '%=%m %f'
 -- don't wrap lines
 vim.opt.wrap = false
