@@ -94,7 +94,7 @@ nnoremap <Leader>n :enew<CR>
 nnoremap <Leader>q :bd<CR>
 
 
-nnoremap <leader>cd :cd %:p:h | echo getcwd()<CR>
+nnoremap <leader>cd :cd %:p:h <Bar> echo getcwd()<CR>
 
 
 " efficient editing in insert mode
@@ -156,7 +156,7 @@ endif
 call plug#begin('~/.vim/plugged')
 " file explorer
 Plug 'justinmk/vim-dirvish'
-Plug 'tpope/vim-eunuch', {'on', [
+Plug 'tpope/vim-eunuch', {'on': [
 \  'Remove',
 \  'Unlink',
 \  'Delete',
@@ -174,8 +174,8 @@ Plug 'tpope/vim-eunuch', {'on', [
 \  'SudoWrite',
 \  'Wall',
 \  'W',
-  ]
-}
+\  ]
+\ }
 Plug 'tpope/vim-unimpaired'
 " Use vim gitgutter instead of gitsigns for git gutter indicators
 Plug 'airblade/vim-gitgutter'
