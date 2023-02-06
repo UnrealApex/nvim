@@ -142,7 +142,7 @@ Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 " Rainbow Parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
 " Conquerer of Completion(code completion)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'} | Plug 'honza/vim-snippets'
 " Repeat.vim
 Plug 'tpope/vim-repeat'
 " Vim Startify(start screen)
