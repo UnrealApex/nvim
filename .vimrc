@@ -96,11 +96,29 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   :echo "Vim Plug installed"
 endif
 
-" TODO: lazy load plugins
 call plug#begin('~/.vim/plugged')
 " file explorer
 Plug 'justinmk/vim-dirvish'
-Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch', {'on', {
+  'Remove',
+  'Unlink',
+  'Delete',
+  'Copy',
+  'Duplicate',
+  'Move',
+  'Rename',
+  'Chmod',
+  'Mkdir',
+  'Cfind',
+  'Lfind',
+  'Clocate',
+  'Llocate',
+  'SudoEdit',
+  'SudoWrite',
+  'Wall',
+  'W',
+  }
+}
 Plug 'tpope/vim-unimpaired'
 " Use vim gitgutter instead of gitsigns for git gutter indicators
 Plug 'airblade/vim-gitgutter'
@@ -120,7 +138,7 @@ Plug 'tpope/vim-commentary'
 " indent guides
 Plug 'yggdroot/indentline'
 " Goyo
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 " Rainbow Parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
 " Conquerer of Completion(code completion)
@@ -135,7 +153,7 @@ Plug 'junegunn/fzf.vim'
 " Vim Sneak(better horizontal movement)
 Plug 'justinmk/vim-sneak'
 " Emmet
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', {'for': {'html', 'css'}}
 " Vim dev icons
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
