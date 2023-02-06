@@ -96,11 +96,17 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   :echo "Vim Plug installed"
 endif
 
+" TODO: lazy load plugins
 call plug#begin('~/.vim/plugged')
 " file explorer
-Plug 'tpope/vim-vinegar'
+Plug 'justinmk/vim-dirvish'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-unimpaired'
 " Use vim gitgutter instead of gitsigns for git gutter indicators
 Plug 'airblade/vim-gitgutter'
+Plug 'romainl/vim-cool'
+Plug 'junegunn/gv.vim'
+Plug 'wellle/context.vim'
 " Lightline (status bar)
 Plug 'itchyny/lightline.vim'
 " Fugitive.vim(git superpowers)
@@ -119,7 +125,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Conquerer of Completion(code completion)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-sources'
 " Repeat.vim
 Plug 'tpope/vim-repeat'
 " Vim Startify(start screen)
@@ -129,8 +134,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Vim Sneak(better horizontal movement)
 Plug 'justinmk/vim-sneak'
-" VM multi cursors
-Plug 'mg979/vim-visual-multi'
 " Emmet
 Plug 'mattn/emmet-vim'
 " Vim dev icons
