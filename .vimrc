@@ -156,25 +156,25 @@ endif
 call plug#begin('~/.vim/plugged')
 " file explorer
 Plug 'justinmk/vim-dirvish'
-Plug 'tpope/vim-eunuch', {'on', {
-  'Remove',
-  'Unlink',
-  'Delete',
-  'Copy',
-  'Duplicate',
-  'Move',
-  'Rename',
-  'Chmod',
-  'Mkdir',
-  'Cfind',
-  'Lfind',
-  'Clocate',
-  'Llocate',
-  'SudoEdit',
-  'SudoWrite',
-  'Wall',
-  'W',
-  }
+Plug 'tpope/vim-eunuch', {'on', [
+\  'Remove',
+\  'Unlink',
+\  'Delete',
+\  'Copy',
+\  'Duplicate',
+\  'Move',
+\  'Rename',
+\  'Chmod',
+\  'Mkdir',
+\  'Cfind',
+\  'Lfind',
+\  'Clocate',
+\  'Llocate',
+\  'SudoEdit',
+\  'SudoWrite',
+\  'Wall',
+\  'W',
+  ]
 }
 Plug 'tpope/vim-unimpaired'
 " Use vim gitgutter instead of gitsigns for git gutter indicators
