@@ -94,7 +94,7 @@ nnoremap <Leader>n :enew<CR>
 nnoremap <Leader>q :bd<CR>
 
 
-nnoremap <leader>cd :cd %:p:h | echo getcwd() <CR>
+nnoremap <leader>cd :cd %:p:h | echo getcwd()<CR>
 
 
 " efficient editing in insert mode
@@ -210,7 +210,7 @@ Plug 'junegunn/fzf.vim'
 " Vim Sneak(better horizontal movement)
 Plug 'justinmk/vim-sneak'
 " Emmet
-Plug 'mattn/emmet-vim', {'for': {'html', 'css'}}
+Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 " Vim dev icons
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
