@@ -186,8 +186,6 @@ Plug 'wellle/context.vim'
 Plug 'itchyny/lightline.vim'
 " Fugitive.vim(git superpowers)
 Plug 'tpope/vim-fugitive'
-" Sensible.vim
-Plug 'tpope/vim-sensible'
 " Vim Surround
 Plug 'tpope/vim-surround'
 " Vim Commentary
