@@ -186,22 +186,23 @@ augroup end
 
 " CoC Extensions
 let g:coc_global_extensions = [
-\ 'coc-vimlsp',
-\ 'coc-pyright',
-\ 'coc-clangd',
-\ 'coc-java',
-\ 'coc-sumneko-lua',
-\ 'coc-sql',
-\ 'coc-html',
-\ 'coc-html-css-support',
-\ 'coc-tsserver',
-\ 'coc-css',
-\ 'coc-json',
-\ 'coc-highlight',
-\ 'coc-snippets',
-\ 'coc-lightbulb',
-\ 'coc-symbol-line',
-\ 'coc-calc'
+\  'coc-vimlsp',
+\  'coc-sumneko-lua',
+\  'coc-sh',
+\  'coc-pyright',
+\  'coc-clangd',
+\  'coc-java',
+\  'coc-sql',
+\  'coc-html',
+\  'coc-html-css-support',
+\  'coc-tsserver',
+\  'coc-css',
+\  'coc-json',
+\  'coc-highlight',
+\  'coc-snippets',
+\  'coc-lightbulb',
+\  'coc-calc',
+\  'coc-emoji',
 \ ]
 
 " CoC keybindings
