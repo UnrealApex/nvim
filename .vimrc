@@ -69,11 +69,6 @@ set wildmenu
 set wildmode=longest:full,full
 " don't wrap lines
 set nowrap
-" set the working directory as the one of the file currently being edited
-autocmd BufEnter * lcd %:p:h
-
-" built in debugger(requires gdb)
-packadd termdebug
 
 " keybindings
 
@@ -186,10 +181,6 @@ augroup show_whitespace
   autocmd ModeChanged *:[vV\x16]* :set listchars+=space:·
   autocmd Modechanged [vV\x16]*:* :set listchars-=space:·
 augroup END
-
-" bind Enter to accept Copilot suggestions
-" imap <silent><script><expr> <C-Enter> copilot#Accept("\<CR>")
-" let g:copilot_no_tab_map = v:true
 
 " enable RainbowParentheses
 augroup rainbow_parens
@@ -328,6 +319,3 @@ elseif has("vim")
         " \ 'startify#pad(g:ascii + startify#fortune#boxed())'
 else
 endif
-
-" startify bookmarks
-let g:startify_bookmarks = ["$MYVIMRC", "$HOME", "$PLUGINS", "$KEYMAPS"]
