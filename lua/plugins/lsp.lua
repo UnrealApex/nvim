@@ -126,6 +126,7 @@ vim.keymap.set("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
 
 -- Hover Doc
 vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+vim.keymap.set("n", "gh", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
 
 -- cosmic ui ✨
