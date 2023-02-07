@@ -81,7 +81,6 @@ end
 
 -- lspsaga
 
-local keymap = vim.keymap.set
 local saga = require('lspsaga')
 
 saga.init_lsp_saga()
@@ -92,55 +91,55 @@ saga.init_lsp_saga()
 -- Lsp finder find the symbol definition implement reference
 -- when you use action in finder like open vsplit then you can
 -- use <C-t> to jump back
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
 -- Code action
--- keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
--- keymap("v", "<leader>ca", "<cmd>Lspsaga range_code_action<CR>", { silent = true })
+-- vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+-- vim.keymap.set("v", "<leader>ca", "<cmd>Lspsaga range_code_action<CR>", { silent = true })
 
 -- Rename
--- keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { silent = true })
+-- vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { silent = true })
 
 -- Definition peek
-keymap("n", "gD", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+vim.keymap.set("n", "gD", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
 -- Show line diagnostics
-keymap("n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+vim.keymap.set("n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 
 -- Show cursor diagnostic
-keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
+vim.keymap.set("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
 
 -- Diagnsotic jump can use `<c-o>` to jump back
-keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
-keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
+vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 
 -- Only jump to error
-keymap("n", "[E", function()
+vim.keymap.set("n", "[E", function()
   require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
-keymap("n", "]E", function()
+vim.keymap.set("n", "]E", function()
   require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
 
 -- Outline
-keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
+vim.keymap.set("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
 
 -- Hover Doc
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
 
 -- cosmic ui ✨
 require('cosmic-ui').setup()
 
 -- cosmic ui renamer
-keymap("n", "<leader>rn", function()
+vim.keymap.set("n", "<leader>rn", function()
   require('cosmic-ui').rename()
 end, { silent = true })
 
 --cosmic ui code actions
-keymap("n", "<leader>ca", function()
+vim.keymap.set("n", "<leader>ca", function()
   require('cosmic-ui').code_actions()
 end, { silent = true })
-keymap("v", "<leader>ca", function()
+vim.keymap.set("v", "<leader>ca", function()
   require('cosmic-ui').range_code_actions()
 end, { silent = true })
