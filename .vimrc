@@ -219,12 +219,6 @@ let g:indentLine_enabled = 1
 " enable sneak label mode
 let g:sneak#label = 1
 
-augroup show_whitespace
-  autocmd!
-  autocmd ModeChanged *:[vV\x16]* :set listchars+=space:·
-  autocmd Modechanged [vV\x16]*:* :set listchars-=space:·
-augroup END
-
 " enable RainbowParentheses
 augroup rainbow_parens
   autocmd!
