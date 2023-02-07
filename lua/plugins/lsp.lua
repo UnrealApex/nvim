@@ -1,5 +1,24 @@
+require('mason').setup()
+
+require('mason-lspconfig').setup({
+   ensure_installed = {
+    'vimls',
+    'pyright',
+    'clangd',
+    'jdtls',
+    'sumneko_lua',
+    'jsonls',
+    'sqlls',
+    'html',
+    'tsserver',
+    'cssls',
+   }
+})
+
+
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 -- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
 --   capabilities = capabilities
@@ -15,7 +34,7 @@ local opts = { noremap=true, silent=true }
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local lsp_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -36,7 +55,7 @@ local on_attach = function(client, bufnr)
   -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   -- vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set('n', '<space>cf', vim.lsp.buf.formatting, bufopts)
 end
 
 
@@ -45,46 +64,6 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-require('lspconfig')['vimls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-require('lspconfig')['pyright'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-require('lspconfig')['clangd'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-require('lspconfig')['jdtls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-require('lspconfig')['sumneko_lua'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-require('lspconfig')['jsonls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-require('lspconfig')['sqlls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-require('lspconfig')['html'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-require('lspconfig')['tsserver'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-require('lspconfig')['cssls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
 
 -- disable neovim lsp's inline diagnostics(use lspsaga's popup diagnostics instead)
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
