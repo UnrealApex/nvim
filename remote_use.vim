@@ -2,78 +2,73 @@
 " vim -Nu <(curl https://raw.githubusercontent.com/UnrealApex/dotfiles/main/remote_use.vim)
 
 
-" show line numbers
-set number
-" show relative line numbers
-set relativenumber
-" disable annoying error bell to prevent your ears from dying
-set noerrorbells visualbell t_vb=
-" syntax highlighting
-syntax on
-" enable filetype detection
-filetype on
-" omni completion
-filetype plugin on
-" better indentation
-filetype indent on
-" show mode in status bar (insert/replace/...)
-set showmode
-" show typed command in status bar
-set showcmd
-" show cursor position in status bar
-set ruler
-" show file in titlebar
-set title
-" 8 lines above or below cursor when scrolling
-set scrolloff=8
-" don't wrap lines
-set nowrap
-" basic completion
-set omnifunc=syntaxcomplete#Complete
-set completeopt=menu,menuone,noselect
+colorscheme elflord
 " automatic indentation
 set autoindent
-" more powerful backspacing
-set backspace=indent,eol,start
-" set tabs to two spaces
-set tabstop=2
-set shiftwidth=2
-set expandtab
-" incremental search
-set incsearch
-set magic
-set ignorecase
-set smartcase
-" prevent backup files from being created
-set nobackup
-set noswapfile
-set wildmode=longest:full,full
-set wildmenu
-" auto close html tags
-set matchpairs+=<:>
-" set updatetime to 25 milliseconds
-set updatetime=25
+" reread file if it has been modified outside of Vim
+set autoread
 " set window background to dark
 set background=dark
+" more powerful backspacing
+set backspace=indent,eol,start
+" enter the current millennium
+set nocompatible
+set completeopt=menu,menuone,noselect
+" enable cursor line
+set cursorline
+" disable annoying error bell
+set noerrorbells
+set expandtab
+set fo+=jpor
+" enable folding
+set nofoldenable
+set foldmethod=indent
+" allow hidden buffers
+set hidden
+" ignore case unless explicitly stated
+set ignorecase
+" incremental search
+set incsearch
+set list
+set listchars=
+set magic
+" show line numbers
+set number
+" basic completion
+set omnifunc=syntaxcomplete#Complete
+set path+=.,**
+set pumheight=15
+" show relative line numbers
+set relativenumber
+" show cursor position in status bar
+set ruler
+" 8 lines above or below cursor when scrolling
+set scrolloff=8
+" indents to next multiple of 'shiftwidth'.
+set shiftwidth=2
+set shiftround
+set noshowmode
+" show typed command in status bar
+set showcmd
+set signcolumn=yes
+set smartcase
+" set tabs to two spaces
+set tabstop=2
 set termguicolors
-set lazyredraw
-" set gutter color to match background color
-highlight clear SignColumn
-" set path
-set path=.,**
-" set the working directory as the one of the file currently being edited
-autocmd BufEnter * lcd %:p:h
+" show file in titlebar
+set title
+" set updatetime to 200 milliseconds
+set updatetime=200
+set novisualbell
+set wildmenu
+set wildmode=longest:full,full
+" don't wrap lines
+set nowrap
 
-augroup show_whitespace
-  autocmd!
-  autocmd ModeChanged *:[vV\x16]* :set listchars+=space:·
-  autocmd Modechanged [vV\x16]*:* :set listchars-=space:·
-augroup END
 
 " change map leader to space
 let mapleader=" "
 
-let g:ftplugin_sql_omni_key = '<C-;>'
 
 " keymaps
 
@@ -82,6 +77,9 @@ let g:ftplugin_sql_omni_key = '<C-;>'
 imap <C-BS> <C-W>
 " map shift + tab to unindent
 inoremap <S-Tab> <C-d>
+
+nnoremap <leader>cd :cd %:p:h <Bar> echo getcwd()<CR>
+
 
 " saner CTRL-L
 nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
