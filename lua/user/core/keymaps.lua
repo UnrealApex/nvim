@@ -6,7 +6,7 @@ vim.keymap.set('i', '<C-BS>', '<C-W>')
 vim.keymap.set('i', '<S-Tab>', '<C-d>')
 
 -- saner CTRL-L
--- vim.keymap.set('n', '<C-l>', ':nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>')
+vim.keymap.set('n', '<C-l>', ':nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>')
 
 -- change directory
 vim.keymap.set('n', '<leader>cd', function()
@@ -14,9 +14,6 @@ vim.keymap.set('n', '<leader>cd', function()
   print(vim.fn.getcwd())
 end
 )
-
--- source init.lua
-vim.keymap.set('n', '<leader><CR>', ':luafile $MYVIMRC<CR>')
 
 -- vanilla buffer switcher
 vim.keymap.set('n', '<leader>b', ':set nomore <Bar> echo "Open buffers:" <Bar> :buffers <Bar> :set more <CR>:b<Space>')
@@ -67,14 +64,6 @@ endfunction
 vnoremap <C-r> <Esc>:%s/<c-r>=GetVisual()<cr>//g<left><left>
 ]]
 
--- move lines up or down
-vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { silent = true })
-vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { silent = true })
-vim.keymap.set('i', '<A-j>', '<Esc>:m .+1<CR>==gi', { silent = true })
-vim.keymap.set('i', '<A-k>', '<Esc>:m .-2<CR>==gi', { silent = true })
-vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv', { silent = true })
-vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv', { silent = true })
-
 -- buffer stuff
 -- create a new buffer
 vim.keymap.set('n', '<leader>n', ':enew<CR>')
@@ -103,14 +92,10 @@ vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>')
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
 
 -- easier copying and pasteing into clipboard
-vim.keymap.set('n', '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>d', '"+d')
-vim.keymap.set('v', '<leader>y', '"+y')
-vim.keymap.set('v', '<leader>d', '"+d')
-vim.keymap.set('n', '<leader>p', '"+p')
-vim.keymap.set('n', '<leader>P', '"+P')
-vim.keymap.set('v', '<leader>p', '"+p')
-vim.keymap.set('v', '<leader>P', '"+P')
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
+vim.keymap.set({ 'n', 'v' }, '<leader>d', '"+d')
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')
+vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P')
 
 -- don't lose selection when shifting text
 vim.keymap.set('x', '<', '<gv')
@@ -121,21 +106,20 @@ vim.keymap.set('x', '>', '>gv')
 -- NOTE: ensure that keymaps for plugins lazy loaded by command are here or
 -- else they won't load
 
+-- telescope keymaps
+vim.keymap.set('n', '<leader>ff', function()
+  require('telescope.builtin').find_files()
+end
+)
+vim.keymap.set('n', '<leader>fg', function()
+  require('telescope.builtin').live_grep()
+end
+)
+
 vim.keymap.set('n', '<leader>z', function()
   require("zen-mode").toggle({
     window = {
       width = 0.85 -- width will be 85% of the editor width
     }
   })
-end)
-
-vim.keymap.set('n', '<C-\\>', ':ToggleTerm<CR>')
-
-
--- telescope keymaps
-vim.keymap.set('n', '<leader>ff', function()
-  require('telescope.builtin').find_files()
-end)
-vim.keymap.set('n', '<leader>fg', function()
-  require('telescope.builtin').live_grep()
 end)
