@@ -133,8 +133,14 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 require('cosmic-ui').setup()
 
 -- cosmic ui renamer
-keymap("n", "<leader>rn", "<cmd>lua require('cosmic-ui').rename()<CR>", { silent = true })
+keymap("n", "<leader>rn", function()
+  require('cosmic-ui').rename()
+end, { silent = true })
 
 --cosmic ui code actions
-keymap("n", "<leader>ca", "<cmd>lua require('cosmic-ui').code_actions()<CR>", { silent = true })
-keymap("v", "<leader>ca", "<cmd>lua require('cosmic-ui').range_code_actions()<CR>", { silent = true })
+keymap("n", "<leader>ca", function()
+  require('cosmic-ui').code_actions()
+end, { silent = true })
+keymap("v", "<leader>ca", function()
+  require('cosmic-ui').range_code_actions()
+end, { silent = true })
