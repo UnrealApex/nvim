@@ -27,6 +27,11 @@ return {
     }
   },
   {
+    'tpope/vim-rsi',
+    lazy = true,
+    event = {'InsertEnter', 'CmdlineEnter'}
+  },
+  {
     'echasnovski/mini.move',
     keys = {
       '<A-h>',
