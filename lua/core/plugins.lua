@@ -55,14 +55,14 @@
     lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      require('user.plugins.gitsigns')
+      require('plugins.gitsigns')
     end
   },
   -- status bar
   {
     'nvim-lualine/lualine.nvim',
       config = function()
-        require('user.plugins.lualine')
+        require('plugins.lualine')
       end
   },
   -- conveniently run git commands from vim
@@ -138,7 +138,7 @@
   {
     'neovim/nvim-lspconfig',
     config = function()
-      require('user.plugins.lsp')
+      require('plugins.lsp')
     end
   },
   {
@@ -162,7 +162,7 @@
     lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      require('user.plugins.lsp')
+      require('plugins.lsp')
     end
   },
 
@@ -171,7 +171,7 @@
     lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      require('user.plugins.lsp')
+      require('plugins.lsp')
     end,
     dependencies = {'MunifTanjim/nui.nvim'}
   },
@@ -181,8 +181,8 @@
     lazy = true,
     event = {'InsertEnter', 'CmdlineEnter'},
     config = function()
-      require('user.plugins.cmp')
-      require('user.plugins.lsp')
+      require('plugins.cmp')
+      require('plugins.lsp')
     end,
     dependencies = {
        'hrsh7th/cmp-cmdline',
@@ -263,7 +263,7 @@
   {
     'mhinz/vim-startify',
     config = function()
-      require('user.plugins.startify')
+      require('plugins.startify')
     end
   },
   -- fuzzy finder
@@ -280,7 +280,7 @@
       }
     },
     config = function()
-      require("user.plugins.telescope")
+      require("plugins.telescope")
 
     end
   },
