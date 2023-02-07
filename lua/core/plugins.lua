@@ -145,6 +145,7 @@ return {
     lazy = true,
     event = { 'VeryLazy' },
     dependencies = 'honza/vim-snippets',
+    build = 'python -m pip install --user --upgrade pynvim',
     config = function()
       require('plugins.coc')
     end
