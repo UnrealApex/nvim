@@ -27,6 +27,11 @@ return {
     }
   },
   {
+    'tpope/vim-rsi',
+    lazy = true,
+    event = {'InsertEnter', 'CmdlineEnter'}
+  },
+  {
     'echasnovski/mini.move',
     keys = {
       '<A-h>',
@@ -145,6 +150,7 @@ return {
     lazy = true,
     event = { 'VeryLazy' },
     dependencies = 'honza/vim-snippets',
+    build = 'python -m pip install --user --upgrade pynvim',
     config = function()
       require('plugins.coc')
     end
