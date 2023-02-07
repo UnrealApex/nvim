@@ -1,155 +1,115 @@
--- bootstrap packer
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
-end
-
-local packer_bootstrap = ensure_packer()
-
-vim.cmd([[
-  " automatically compile plugins when this file is written
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
-
--- declare before indent-blankline is loaded
-vim.g.indent_blankline_filetype_exclude = {
-  'help',
-  'startify',
-  'dashboard',
-  'packer',
-  'neogitstatus',
-  'NvimTree',
-  'Trouble',
-  'WhichKey',
-  'lsp-installer',
-  'mason',
-  'text',
-  'sh'
-}
-
-vim.g['rainbow#pairs'] = {{'(', ')'}, {'[', ']'}, {'{', '}'}}
-
--- plugins
-require('packer').startup({ function(use)
-  use 'wbthomason/packer.nvim'
-  -- performance enhancements
-  use {
-    'lewis6991/impatient.nvim',
-    config = "require('impatient')"
-  }
+{
   -- more aesthetic notifications
-  use {
+  {
     'rcarriga/nvim-notify',
-    config = "require('user.plugins.notify')"
-  }
+    config = function()
+      require('user.plugins.notify')
+    end
+  },
   -- enhance netrw
-  use 'tpope/vim-vinegar'
-  use {
+  'tpope/vim-vinegar',
+  {
     'tpope/vim-unimpaired',
-    keys = {
-      { 'n', '[' },
-      { 'n', ']' }
-    }
-  }
+    keys = { '[', ']' }
+  },
   -- better git integration
-  use {
+  {
     'lewis6991/gitsigns.nvim',
-    opt = true,
+    lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
-    config = "require('user.plugins.gitsigns')"
-  }
+    config = function()
+      require('user.plugins.gitsigns')
+    end
+  },
   -- status bar
-  use {
+  {
     'nvim-lualine/lualine.nvim',
-      config = "require('user.plugins.lualine')"
-  }
+      config = function()
+        require('user.plugins.lualine')
+      end
+  },
   -- conveniently run git commands from vim
-  use 'tpope/vim-fugitive'
-  use {
+  'tpope/vim-fugitive',
+  {
     'tpope/vim-surround',
-    keys = { { "n", "ds" }, { "n", "cs" }, { "n", "ys" }, { "v", "S" }, { "v", "gS" } }
-  }
+    keys = {  "ds",  "cs",  "ys", { "S", mode="v" }, { "gS", mode="v" } }
+  },
   -- git commit browser
-  use {
+  {
     'junegunn/gv.vim',
-    opt = true,
+    lazy = true,
     cmd = { 'GV' },
-    requires = { 'tpope/vim-fugitive' }
-  }
+    dependencies = { 'tpope/vim-fugitive' }
+  },
   -- sensible default settings
-  use 'tpope/vim-sensible'
+  'tpope/vim-sensible',
   -- commenter
-  use {
+  {
     'numToStr/Comment.nvim',
-    requires = { 'nvim-treesitter/nvim-treesitter' },
-    keys = { { "n", "gc" }, { "n", "gb" }, { "v", "gc" }, { "v", "gb" } },
-    config = "require('Comment').setup()"
-  }
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    keys = {  "gc",  "gb", { "gc", mode="v" }, { "gb", mode="v" } },
+    config = true
+  },
   -- indent guides
-  use {
+  {
     'lukas-reineke/indent-blankline.nvim',
-    opt = true,
+    lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
-    requires = { 'nvim-treesitter/nvim-treesitter' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       require("indent_blankline").setup {
         show_current_context = true,
         show_current_context_start = true,
       }
     end
-  }
+  },
   -- zen mode
-  use {
+  {
     'folke/zen-mode.nvim',
-    opt = true,
+    lazy = true,
     cmd = { 'ZenMode' },
-    config = "require('zen-mode').setup()"
-  }
+    config = true
+  },
   -- parentheses colorizer
-  use {
+  {
     'junegunn/rainbow_parentheses.vim',
-    opt = true,
+    lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
-    config = 'vim.cmd [[RainbowParentheses]]'
-  }
+    config = function()
+      vim.cmd [[RainbowParentheses]]
+    end
+  },
   -- turn off search highlighting automatically
-  use {
+  {
     'romainl/vim-cool',
     -- load vim-cool when doing a search
     keys = {
-      { "n", "/" },
-      { "n", "?" },
-      { "n", "n" },
-      { "n", "N" },
-      { "n", "*" },
-      { "n", "#" },
-      { "v", "*" },
-      { "v", "#" },
-      { "n", "g*" },
-      { "n", "g#" },
+       "/",
+       "?",
+       "n",
+       "N",
+       "*",
+       "#",
+      { "*", mode="v" },
+      { "#", mode="v" },
+       "g*",
+       "g#",
     }
-  }
+  },
 
 
-  use {
+  {
     'neovim/nvim-lspconfig',
-    config = "require('user.plugins.lsp')"
-  }
-  use {
+    config = function()
+      require('user.plugins.lsp')
+    end
+  },
+  {
     'williamboman/mason.nvim',
-    opt = true,
+    lazy = true,
     cmd = {'Mason'},
-    config = "require('mason').setup()",
-    requires = {
+    config = true,
+    dependencies = {
       {
           'williamboman/mason-lspconfig.nvim',
           config = function()
@@ -159,31 +119,35 @@ require('packer').startup({ function(use)
           end
       }
     }
-  }
-  use {
+  },
+  {
     'glepnir/lspsaga.nvim',
-    opt = true,
+    lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
-    config = "require('user.plugins.lsp')"
-  }
+    config = function()
+      require('user.plugins.lsp')
+    end
+  },
 
-  use {
+  {
     'CosmicNvim/cosmic-ui',
-    opt = true,
+    lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
-    config = "require('user.plugins.lsp')",
-    requires = {'MunifTanjim/nui.nvim'}
-  }
+    config = function()
+      require('user.plugins.lsp')
+    end,
+    dependencies = {'MunifTanjim/nui.nvim'}
+  },
 
-  use {
+  {
     'hrsh7th/nvim-cmp',
-    opt = true,
+    lazy = true,
     event = {'InsertEnter', 'CmdlineEnter'},
     config = function()
       require('user.plugins.cmp')
       require('user.plugins.lsp')
     end,
-    requires = {
+    dependencies = {
        'hrsh7th/cmp-cmdline',
        'hrsh7th/cmp-nvim-lsp',
        'hrsh7th/cmp-nvim-lsp-signature-help',
@@ -194,20 +158,20 @@ require('packer').startup({ function(use)
        'L3MON4D3/LuaSnip',
        'rafamadriz/friendly-snippets',
       }
-    }
+  },
 
-  use {
+  {
     'folke/trouble.nvim',
-    opt = true,
+    lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
-    config = "require('trouble').setup()"
-  }
+    config = true
+  },
 
   -- improved syntax highlighting
-  use {
+  {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    opt = true,
+     ':TSUpdate',
+    lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
     cmd = {
       'TSBufDisable',
@@ -244,185 +208,68 @@ require('packer').startup({ function(use)
       -- hack to make rainbow_parentheses work with treesitter
       vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "" })
     end
-  }
+  },
   -- automatically close pairs
-  use {
+  {
     "windwp/nvim-autopairs",
     -- load when starting bracket delimiter is pressed
     keys = {
-      { 'i', '(' },
-      { 'i', '{' },
-      { 'i', '[' },
-      { 'i', '"' },
-      { 'i', "'" }
+      { '(', mode="i" },
+      { '{', mode="i"},
+      { '[', mode="i"},
+      { '"', mode="i"},
+      { "'", mode="i"}
     },
-    config = "require('nvim-autopairs').setup()"
-  }
+    config = true
+  },
   -- start screen
-  use {
+  {
     'mhinz/vim-startify',
-    config = "require('user.plugins.startify')"
-  }
+    config = function()
+      require('user.plugins.startify')
+    end
+  },
   -- fuzzy finder
-  -- TODO: figure out how to lazy load this properly
-  use {
+  {
     'nvim-telescope/telescope.nvim',
-    requires = {
+    lazy = true,
+    dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
       {
         -- increase telescope search speed
         'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'make',
+        build = 'make',
       }
     },
     config = function()
       require("user.plugins.telescope")
 
-      -- telescope keymaps
-      vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
-      vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>')
     end
-  }
+  },
 
   -- improved movement
-  use {
+  {
     'ggandor/leap.nvim',
-    keys = { { 'n', 's' }, { 'n', 'S' } },
-    config = "require('leap').set_default_keymaps()"
-  }
-  -- icons
-  use 'nvim-tree/nvim-web-devicons'
-  -- colorscheme
-  use {
-    "rebelot/kanagawa.nvim",
-    config = 'vim.cmd [[colorscheme kanagawa]]'
-  }
-  -- markdown preview
-  use {
-    'ellisonleao/glow.nvim',
-    opt = true,
-    ft = 'markdown'
-  }
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end,
-  config = {
-    display = {
-      open_fn = function()
-        return require('packer.util').float({ border = 'single' })
-      end
-    }
-  }
-})
-
-
--- plugin related keymaps
--- lazy loaded plugin keymaps set here
--- NOTE: ensure that keymaps for plugins lazy loaded by command are here or
--- else they won't load
-
-vim.keymap.set('n', '<leader>z', ':ZenMode<CR>')
-
-vim.keymap.set('n', '<C-\\>', ':ToggleTerm<CR>')
-
-
-function LargeFileHandler()
-  vim.notify(
-    'Large file detected, disabling certain features for performance reasons',
-    vim.log.levels.WARNING
-  )
-  if vim.fn.exists(':TSBufDisable') then
-    vim.cmd [[TSBufDisable highlight]]
-    vim.cmd [[TSBufDisable autotag]]
-  end
-  vim.opt.foldmethod = 'manual'
-  vim.cmd [[syntax clear]]
-  vim.cmd [[syntax off]]
-  vim.cmd [[filetype off]]
-  vim.opt.undofile = false
-  vim.opt.swapfile = false
-end
-
-function LargeFileChecker()
-  if vim.fn.getfsize(vim.fn.expand("%")) > (512 * 1024) then
-    LargeFileHandler()
-  else
-  end
-end
-
--- TODO: find a way to make these two autocommands one
-vim.cmd [[
-augroup LargeFileDetection
-    autocmd!
-    autocmd BufReadPre * lua LargeFileChecker()
-    autocmd FileReadPre * lua LargeFileChecker()
-augroup END
-]]
-
-
-prosed = false
-function prose()
-  -- make sure zen-mode.nvim is installed
-  if packer_plugins["zen-mode.nvim"] then
-    -- toggle prose mode
-    if not prosed then
-      -- enable spellcheck and line wrapping
-      vim.opt_local.spell = true
-      vim.opt_local.spelllang = 'en_us'
-      vim.opt_local.wrap = true
-
-      -- normal mode mappings
-      vim.keymap.set('n', 'j', 'gj')
-      vim.keymap.set('n', 'k', 'gk')
-      vim.keymap.set('n', '0', 'g0')
-      vim.keymap.set('n', '$', 'g$')
-      vim.keymap.set('n', '^', 'g^')
-
-      -- visual mode mappings
-      vim.keymap.set('v', 'j', 'gj')
-      vim.keymap.set('v', 'k', 'gk')
-      vim.keymap.set('v', '0', 'g0')
-      vim.keymap.set('v', '$', 'g$')
-      vim.keymap.set('v', '^', 'g^')
-      prosed = true
-      vim.cmd [[ZenMode]]
-      vim.notify('Prose Mode Enabled')
-    else
-      -- disable spellcheck and line wrapping
-      vim.opt_local.spell = false
-      vim.opt_local.spelllang = nil
-      vim.opt_local.wrap = false
-
-      -- reset normal mode mappings
-      vim.keymap.set('n', 'j', 'j')
-      vim.keymap.set('n', 'k', 'k')
-      vim.keymap.set('n', '0', '0')
-      vim.keymap.set('n', '$', '$')
-      vim.keymap.set('n', '^', '^')
-
-      -- reset visual mode mappings
-      vim.keymap.set('v', 'j', 'j')
-      vim.keymap.set('v', 'k', 'k')
-      vim.keymap.set('v', '0', '0')
-      vim.keymap.set('v', '$', '$')
-      vim.keymap.set('v', '^', '^')
-      prosed = false
-      vim.cmd [[ZenMode]]
-      vim.notify('Prose Mode Disabled')
+    keys = { 's', 'S' },
+    config = function()
+      require('leap').set_default_keymaps()
     end
-  else
-    vim.notify(
-      "error: zen-mode.nvim is not installed!" ..
-      "\n" ..
-      "prose mode will not function without it!",
-      vim.log.levels.ERROR
-    )
-  end
-end
+  },
+  -- icons
+  'nvim-tree/nvim-web-devicons'
+  -- colorscheme
+  {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      vim.cmd [[colorscheme kanagawa]]
+    end
+  },
+  -- markdown preview
+  {
+    'ellisonleao/glow.nvim',
+    lazy = true,
+    ft = 'markdown'
+  },
+}
 
-vim.api.nvim_create_user_command('Prose', prose, {})
