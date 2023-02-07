@@ -135,6 +135,8 @@
 
   {
     'neovim/nvim-lspconfig',
+    lazy = true,
+    event = 'VeryLazy'
     config = function()
       require('plugins.lsp')
     end
@@ -147,6 +149,7 @@
     dependencies = {
       {
           'williamboman/mason-lspconfig.nvim',
+          dependencies = 'neovim/nvim-lspconfig'
           config = function()
             require("mason-lspconfig").setup({
               automatic_installation = true,
@@ -177,23 +180,50 @@
   {
     'hrsh7th/nvim-cmp',
     lazy = true,
-    event = {'InsertEnter', 'CmdlineEnter'},
     config = function()
       require('plugins.cmp')
       require('plugins.lsp')
     end,
     dependencies = {
-       'hrsh7th/cmp-cmdline',
        'hrsh7th/cmp-nvim-lsp',
        'hrsh7th/cmp-nvim-lsp-signature-help',
-       'hrsh7th/cmp-nvim-lua',
-       'hrsh7th/cmp-calc',
-       'hrsh7th/cmp-emoji',
-       'saadparwaiz1/cmp_luasnip',
-       'L3MON4D3/LuaSnip',
-       'rafamadriz/friendly-snippets',
       }
   },
+
+  {
+    'hrsh7th/cmp-cmdline',
+    lazy = true,
+    event = 'CmdlineEnter',
+    dependencies = 'hrsh7th/nvim-cmp'
+  },
+  {
+    'hrsh7th/cmp-nvim-lua',
+    lazy = true,
+    ft = 'lua',
+    dependencies = 'hrsh7th/nvim-cmp'
+  },
+  {
+    'hrsh7th/cmp-calc',
+    lazy = true,
+    event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = 'hrsh7th/nvim-cmp'
+  },
+  {
+    'hrsh7th/cmp-emoji',
+    lazy = true,
+    keys = {':', mode='i'}
+    dependencies = 'hrsh7th/nvim-cmp'
+  },
+  {
+    'saadparwaiz1/cmp_luasnip',
+    lazy = true,
+    event = 'InsertEnter',
+    dependencies = {
+      'L3MON4D3/LuaSnip',
+      'rafamadriz/friendly-snippets',
+    }
+  },
+
 
   {
     'folke/trouble.nvim',
