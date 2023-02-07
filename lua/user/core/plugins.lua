@@ -1,13 +1,50 @@
 {
-  -- more aesthetic notifications
+  -- enhance netrw
+  'justinmk/vim-dirvish',
   {
-    'rcarriga/nvim-notify',
+    'tpope/vim-eunuch',
+    lazy = true,
+    cmd = {
+      'Remove',
+      'Unlink',
+      'Delete',
+      'Copy',
+      'Duplicate',
+      'Move',
+      'Rename',
+      'Chmod',
+      'Mkdir',
+      'Cfind',
+      'Lfind',
+      'Clocate',
+      'Llocate',
+      'SudoEdit',
+      'SudoWrite',
+      'Wall',
+      'W',
+    }
+  },
+  {
+    'tpope/vim-rsi',
+    lazy = true,
+    event = {'InsertEnter', 'CmdlineEnter'}
+  },
+  {
+    'echasnovski/mini.move',
+    keys = {
+      '<A-h>',
+      '<A-j>',
+      '<A-k>',
+      '<A-l>',
+      { '<A-h>', mode = 'v' },
+      { '<A-j>', mode = 'v' },
+      { '<A-k>', mode = 'v' },
+      { '<A-l>', mode = 'v' }
+    },
     config = function()
-      require('user.plugins.notify')
+      require('mini.move').setup()
     end
   },
-  -- enhance netrw
-  'tpope/vim-vinegar',
   {
     'tpope/vim-unimpaired',
     keys = { '[', ']' }
