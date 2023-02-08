@@ -80,10 +80,7 @@ for type, icon in pairs(signs) do
 end
 
 -- lspsaga
-
-local saga = require('lspsaga')
-
-saga.init_lsp_saga()
+require('lspsaga').setup()
 
 -- Show cursor diagnostics automatically in popup window
 -- vim.cmd("autocmd CursorHold * silent Lspsaga show_cursor_diagnostics")
