@@ -1,4 +1,4 @@
-{
+return {
   -- enhance netrw
   'justinmk/vim-dirvish',
   {
@@ -136,7 +136,7 @@
   {
     'neovim/nvim-lspconfig',
     lazy = true,
-    event = 'VeryLazy'
+    event = 'VeryLazy',
     config = function()
       require('plugins.lsp')
     end
@@ -149,7 +149,7 @@
     dependencies = {
       {
           'williamboman/mason-lspconfig.nvim',
-          dependencies = 'neovim/nvim-lspconfig'
+          dependencies = 'neovim/nvim-lspconfig',
           config = function()
             require("mason-lspconfig").setup({
               automatic_installation = true,
@@ -211,7 +211,7 @@
   {
     'hrsh7th/cmp-emoji',
     lazy = true,
-    keys = {':', mode='i'}
+    keys = {':', mode='i'},
     dependencies = 'hrsh7th/nvim-cmp'
   },
   {
@@ -322,7 +322,7 @@
     end
   },
   -- icons
-  'nvim-tree/nvim-web-devicons'
+  'nvim-tree/nvim-web-devicons',
   -- colorscheme
   {
     "rebelot/kanagawa.nvim",
