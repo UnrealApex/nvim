@@ -162,18 +162,12 @@ return {
     'glepnir/lspsaga.nvim',
     lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
-      require('plugins.lsp')
-    end
   },
 
   {
     'CosmicNvim/cosmic-ui',
     lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
-      require('plugins.lsp')
-    end,
     dependencies = {'MunifTanjim/nui.nvim'}
   },
 
@@ -182,7 +176,6 @@ return {
     lazy = true,
     config = function()
       require('plugins.cmp')
-      require('plugins.lsp')
     end,
     dependencies = {
        'hrsh7th/cmp-nvim-lsp',
