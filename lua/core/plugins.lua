@@ -235,7 +235,7 @@ return {
   -- improved syntax highlighting
   {
     'nvim-treesitter/nvim-treesitter',
-     ':TSUpdate',
+    build = ':TSUpdate',
     lazy = true,
     event = { 'BufReadPre', 'BufNewFile' },
     cmd = {
