@@ -59,11 +59,15 @@ local lsp_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>cf', vim.lsp.buf.formatting, bufopts)
 end
 
-
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
+local lspconfig = require('lspconfig')
+require('mason-lspconfig').setup_handlers({
+    function(server_name)
+      lspconfig[server_name].setup({
+            on_attach = lsp_attach,
+            capabilities = lsp_capabilities,
+          })
+    end,
+})
 
 
 -- disable neovim lsp's inline diagnostics(use lspsaga's popup diagnostics instead)
