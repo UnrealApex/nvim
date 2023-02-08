@@ -66,7 +66,11 @@ return {
       end
   },
   -- conveniently run git commands from vim
-  'tpope/vim-fugitive',
+  {
+    'tpope/vim-fugitive',
+    lazy = true,
+    cmd = 'G'
+  },
   {
     'tpope/vim-surround',
     keys = {  "ds",  "cs",  "ys", { "S", mode="v" }, { "gS", mode="v" } }
@@ -136,7 +140,7 @@ return {
   {
     'neovim/nvim-lspconfig',
     lazy = true,
-    event = 'VeryLazy',
+    event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       require('plugins.lsp')
     end
@@ -177,10 +181,16 @@ return {
     config = function()
       require('plugins.cmp')
     end,
-    dependencies = {
-       'hrsh7th/cmp-nvim-lsp',
-       'hrsh7th/cmp-nvim-lsp-signature-help',
-      }
+  },
+  {
+    'hrsh7th/cmp-nvim-lsp',
+    lazy = true,
+    event = { 'BufReadPre', 'BufNewFile' },
+  },
+  {
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    lazy = true,
+    event = { 'BufReadPre', 'BufNewFile' },
   },
 
   {
