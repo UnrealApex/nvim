@@ -75,15 +75,8 @@ vim.cmd [[syntax on]]
 
 
 -- make sure undo and swap file directories exist
-if vim.fn.isdirectory('~/.vim/swap') == 0 and vim.fn.isdirectory('~/.vim/undo') == 0 then
-  vim.fn.mkdir(vim.fn.expand('~/.vim/swap'), 'p')
-  vim.fn.mkdir(vim.fn.expand('~/.vim/undo'), 'p')
-elseif vim.fn.isdirectory('~/.vim/swap') == 1 and vim.fn.isdirectory('~/.vim/undo') == 0 then
-  vim.fn.mkdir(vim.fn.expand('~/.vim/undo'), 'p')
-elseif vim.fn.isdirectory('~/.vim/swap') == 0 and vim.fn.isdirectory('~/.vim/undo') == 1 then
-  vim.fn.mkdir(vim.fn.expand('~/.vim/swap'), 'p')
-else
-end
+vim.fn.mkdir(vim.fn.expand('~/.vim/swap'), 'p')
+vim.fn.mkdir(vim.fn.expand('~/.vim/undo'), 'p')
 
 -- make gutter match background color
 vim.cmd [[highlight clear SignColumn]]
