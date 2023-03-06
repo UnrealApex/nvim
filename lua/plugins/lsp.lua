@@ -7,7 +7,7 @@ require('mason-lspconfig').setup({
     'pyright',
     'clangd',
     'jdtls',
-    'sumneko_lua',
+    'lua_ls',
     'jsonls',
     'sqlls',
     'html',
