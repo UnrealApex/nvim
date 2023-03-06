@@ -56,7 +56,7 @@ local lsp_attach = function(client, bufnr)
   -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   -- vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>cf', vim.lsp.buf.formatting, bufopts)
+   vim.keymap.set('n', '<space>cf', vim.lsp.buf.format({ async = true }), bufopts)
 end
 
 local lspconfig = require('lspconfig')
